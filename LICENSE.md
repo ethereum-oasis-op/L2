@@ -1,17 +1,13 @@
-Creative Commons Legal Code
+This Open Project operates under the license below. 
+OASIS invites anyone who knows of any IPR claims to disclose them if they  may be essential to the implementation of any of the work of this project 
+so that notice of them may be posted. 
 
-CC0 1.0 Universal
+For information on any statements regarding IPR claims related to the work of this project, see the [OASIS OP IPR Statements](https://github.com/oasis-open-projects/administration/blob/master/IPR_STATEMENTS.md) 
+page.
 
-    CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE
-    LEGAL SERVICES. DISTRIBUTION OF THIS DOCUMENT DOES NOT CREATE AN
-    ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS
-    INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES
-    REGARDING THE USE OF THIS DOCUMENT OR THE INFORMATION OR WORKS
-    PROVIDED HEREUNDER, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM
-    THE USE OF THIS DOCUMENT OR THE INFORMATION OR WORKS PROVIDED
-    HEREUNDER.
+# CC0 1.0 Universal
 
-Statement of Purpose
+## Statement of Purpose
 
 The laws of most jurisdictions throughout the world automatically confer
 exclusive Copyright and Related Rights (defined below) upon the creator
@@ -103,6 +99,7 @@ express Statement of Purpose.
 
  a. No trademark or patent rights held by Affirmer are waived, abandoned,
     surrendered, licensed or otherwise affected by this document.
+    
  b. Affirmer offers the Work as-is and makes no representations or
     warranties of any kind concerning the Work, express, implied,
     statutory or otherwise, including without limitation warranties of
@@ -110,12 +107,31 @@ express Statement of Purpose.
     infringement, or the absence of latent or other defects, accuracy, or
     the present or absence of errors, whether or not discoverable, all to
     the greatest extent permissible under applicable law.
+    
  c. Affirmer disclaims responsibility for clearing rights of other persons
     that may apply to the Work or any use thereof, including without
     limitation any person's Copyright and Related Rights in the Work.
     Further, Affirmer disclaims responsibility for obtaining any necessary
     consents, permissions or other rights required for any use of the
     Work.
+    
  d. Affirmer understands and acknowledges that Creative Commons is not a
     party to this document and has no duty or obligation with respect to
     this CC0 or use of the Work.
+
+
+# Call for Patent Disclosure
+OASIS requests that any participant contact the OASIS OP Administrator if 
+it is aware of a claim of ownership of any patent claims that would necessarily 
+be infringed by implementations of an OASIS Project Specification; and that any 
+such claimant provide an indication of its willingness to grant a Specification Nonassertion Covenant 
+with respect to such patent claims, or otherwise to negotiate patent licenses 
+free of charge with other parties on a nondiscriminatory basis on reasonable 
+terms and conditions.
+
+OASIS may include such claims on its website, but disclaims any obligation to do so. 
+OASIS takes no position regarding the validity or scope of any intellectual property 
+or other rights that might be claimed to pertain to the implementation or use of the 
+technology described in an OASIS Project Specification, or the extent to which any 
+license under such rights might or might not be available; neither does it represent 
+that it has made any effort to identify any such rights.
