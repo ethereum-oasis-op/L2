@@ -37,3 +37,4 @@ Once your pull request has been approved by the required number of Maintainers, 
 | Organization | Representative (First, Last name)  | GitHub handle| 
 | :--- | :--- | :--- |
 |Ethereum Foundation |Andreas Freund | @Therecanbeonlyone1969 |
+|Ethereum Foundation |Tas Dienes | @tasdienes |
