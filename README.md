@@ -36,7 +36,7 @@ The WG currently meets every Wednesday at 7 am PT / 10 am ET / 16:00 GMT.
 
 Please, reach out to Andreas Freund (a.freundhaskel@gmail.com) or Tas Dienes (tas.dienes@ethereum.org) or Dan Shaw (dshaw@ethereum.org) to be added to the meeting invite and added to the mailing list , if interested to participate.
 
-The meeting minutes of all meetings can be found [here]
+The meeting minutes of all meetings can be found [here](https://github.com/eea-oasis/L2/blob/main/meeting_minutes.md)
 
 ## WG Communications 
 
@@ -44,7 +44,7 @@ The WG primarily uses slack for real time communications. You can join our slack
 
 ## Key WG Documents
 
-* [Charter](https://github.com/eea-oasis/L2/blob/main/charter.md)
-* [Governance](https://github.com/eea-oasis/L2/blob/main/governance.md)
-* [Code of Conduct](https://github.com/eea-oasis/L2/blob/main/Code_of_Conduct.md)
+* [Charter](https://github.com/eea-oasis/L2/blob/main/docs/charter.md)
+* [Governance](https://github.com/eea-oasis/L2/blob/main/docs/governance.md)
+* [Code of Conduct](https://github.com/eea-oasis/L2/blob/main/docs/Code_of_Conduct.md)
 * [Running Meeting Minutes](https://github.com/eea-oasis/L2/blob/main/meeting_minutes.md)
