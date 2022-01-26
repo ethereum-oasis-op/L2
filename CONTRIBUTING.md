@@ -39,3 +39,4 @@ Once your pull request has been approved by the required number of Maintainers, 
 |Ethereum Foundation |Andreas Freund | @Therecanbeonlyone1969 |
 |Ethereum Foundation |Tas Dienes | @tasdienes |
 |Provide |Kyle Thomas | @kthomas |
+|Ethereum Foundation |Dan Shaw | @dshaw |
