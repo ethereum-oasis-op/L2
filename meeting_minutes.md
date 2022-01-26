@@ -1,5 +1,75 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 26th Jan 2022, 7 am PT
+
+Attending: Andreas Freund, Tas Dienes, Dan Shaw, John Wolpert, Samrat Kishor, Cody Burns, David Hatz, Marco Cora (new), Rahul Sethuram (new)
+
+Scribe: Dan Shaw
+
+Proposed agenda:
+* Welcome, and a reminder of WG meeting rules
+* Introduction of new participants
+* Selection of scribe
+* Review of new Github repo etc.
+* WG Governance
+* Nominations for Chair/Vice-Chair (to present WG at PGB meetings)
+* Nominations for Maintainer group
+* Discuss initially selected work items, and next steps
+* Use Cases: Digital Assets with Residuals
+* Technical: Precompiles for L1 -> L2 Onboarding
+* Requirements: Privacy requirements while maintaining security
+* Open Forum for other items
+
+### Notes
+
+Reminder to use Q+ in chat if you have a question.
+Vote +1/-1
+Rough consensus followed by group.
+
+Marco Cora of Matter Labs, creator of ZKSynk, introduced himself.
+
+Rahul Sethuram, CTO and Co-founder of Connext, bridging L2 and L1s. Invited by Kyle Thomas of Provide.
+
+Andreas introduces WG GitHub, Slack, and Mailing List
+* GitHub: https://github.com/eea-oasis/L2 -> add yourself, if you haven’t already
+* Slack invite link: https://join.slack.com/t/eeacommunityp-kte2307/shared_invite/zt-120jtrzs2-zOVQ5PJi3cYmt27VlV33NQ
+* Mailing group link:  https://lists.oasis-open-projects.org/g/eea-cp-l2
+* Mailing group email: eea-cp-l2@lists.oasis-open-projects.org
+
+Minutes will still be mailed out every week after the minutes have been PRed into the WG repo.
+
+Andreas reviewed the WG work items.
+
+Call for nominations for Chair and Vice Chair
+* Duties:
+   * Prepare agenda
+   * Manage Minutes
+   * Represents WG at EEA Community Project PGB (Project Governing Board)
+     * Meets bi-weekly
+     * Chair or Vice-Chair should attend
+
+Call for nominations for Maintainers / Code Owners
+Current nominations are Andreas Freund and Kyle Thomas
+
+WG has a Doodle poll to validate best times for meeting. WG is considering alternating meeting times to include a broader group of participants.
+* Next week we will stick with 7am PT / 10am PT
+* West Coast folks register their bleary votes that 7am is rough
+
+Initial discussion of work items
+* Digital assets with residuals L2 to L1 and back
+  * Rahul shared how the team explored creating a rebased token to make a normal ERC-20.
+  * Cody laid out how an asset with residuals could be abused if the asset were moved off L1 to an L2 and back to L1.
+  * Andreas will PR the proposal for the work item to the repo.
+  * Andreas asked the group about the scenario when a token owns another token.
+* Moving forward these working item will be the primary discussion topic for the group.
+
+Discussion of Baseline Protocol as a potential solution for data moving back and forth from L1 to L2.
+
+John Wolpert proposes creating a WG promotion sub-committee to get the word out.
+
+Meeting adjourned
+
+
 ## Meeting Wed, 19th Jan 2022, 7 am PT
 
 Attending: Andreas Freund, Tas Dienes, Samrat Kishore, Cody Burns, Matthias Geihs, David Katz, Sebastian Stammler, Kyle Thomas
