@@ -1,5 +1,35 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 2 Feb 2022, 7 am PT
+
+Attending: Andreas Freund, Tas Dienes, Dan Shaw, Samrat Kishor, Kyle Thomas, David Katz, Marco Cora
+
+Scribe: Tas Dienes
+
+Proposed agenda:
+* Welcome, and a reminder of WG meeting rules
+* Introduction of new participants
+* Selection of scribe
+* WG Governance: Revisit
+* Nominations for Chair/Vice-Chair (to present WG at PGB meetings)
+* Nominations for Maintainer group
+* Issue and PR review
+  * Currently only one Issue: L2/Sidechain <-> L1 and L2/Sidechain <-> L2/Sidechain Bridging Digital Assets with Residuals
+* Open Forum for other topics
+
+Notes
+* Nominations
+  * Dan Shaw nominated himself for chair or vice-chair
+  * Samrat and John Wolpert nominated Andreas as chair
+  * Andreas nominated Dan Shaw as vice-chair
+  * David and Kyle nominated themselves as maintainers
+* Andreas to inquire with OASIS about how to conduct the vote
+* Discussion of Issue #6 -  L2/Sidechain <-> L1 and L2/Sidechain <-> L2/Sidechain Bridging Digital Assets with Residuals
+  * Andreas would like to post on ethresear.ch and ethereum-magicians.org
+  * Input from other teams is requested
+  * Andreas will start working on a blog post - Marco and Kyle agreed to be co-authors. David wants to dive deeper into the subject matter before committing.
+
+
 ## Meeting Wed, 26th Jan 2022, 7 am PT
 
 Attending: Andreas Freund, Tas Dienes, Dan Shaw, John Wolpert, Samrat Kishor, Cody Burns, David Hatz, Marco Cora (new), Rahul Sethuram (new)
