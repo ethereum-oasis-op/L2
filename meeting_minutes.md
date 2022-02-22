@@ -1,5 +1,31 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+
+## Meeting Wed, 16 Feb 2022, 7 am PT
+
+Attending: Dan Shaw, Tas Dienes, Samrat Kishor
+
+Scribe: Tas Dienes
+
+Proposed agenda:
+* Welcome, and a reminder of WG meeting rules
+* Introduction of new participants
+* Selection of scribe
+* WG Governance
+  * Nominations for Chair/Vice-Chair (to present WG at PGB meetings) see Reminder above
+  * Nominations for Maintainer group see Reminder above
+* Discussion on meeting times and frequency (PROPOSAL: Biweekly starting after our next meeting)
+* Final Review of proposed Eth Magician and Eth Research Posts on our Workitem 1 (Bridging Digital Assets with Residuals) here and publishing schedule.
+* Open Forum for other items
+
+Notes
+* Reminder about Doodle poll for meeting times https://doodle.com/poll/g64z5hbmsfcfbf57?utm_source=poll&utm_medium=link  
+* Reminder about last call for vice-chair of the group. After the meeting, we will ask OASIS to send out a voting ballot to the WG members
+* Call for maintainers to nominate themselves
+* Andreas is working on Eth Magician and Eth Research Posts on our Workitem 1 (Bridging Digital Assets with Residuals) here
+* Meeting schedule will move to biweekly starting in March. Next meeting Feb 23, then March 9.  Agreed by unanimous consent.
+
+
 ## Meeting Wed, 9 Feb 2022, 7 am PT
 
 Attending: Andreas Freund, Tas Dienes, Dan Shaw, Samrat Kishor, Cody Burns, David Katz
