@@ -1,5 +1,29 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 23 Feb 2022, 7 am PT
+
+Attending: Tas Dienes, Anais Ofranc, Dan Shaw, Marco Cora, Chaals Neville, Samrat Kishor, Cody Burns 
+
+Scribe: Tas Dienes
+
+Proposed agenda:
+* Welcome, and a reminder of WG meeting rules
+* Introduction of new participants
+* Selection of scribe
+* WG Governance
+  * Nominations for Chair/Vice-Chair have closed. Discussion of best voting method. PROSPAL: Use e-Ballot administered by OASIS.	
+  * Nominations for Maintainer group see Reminder above
+* Discuss proposed Eth Magicians and Eth Research Posts on our Workitem 1 (Bridging Digital Assets with Residuals) here based on the posting by Peter Robinson (GPACT protocol) to this work item.
+* Open Forum for other items
+
+Notes
+* Welcome to new members
+* Anais discussed the EEA Crosschain Interoperability WG.  Documents will be made public in the next few weeks.
+* Vote for chairs is coming up; will be run as an e-ballot by OASIS.  Reminder to new members to add themselves to the contributor list so they can vote.
+* Discuss proposed Eth Magicians and Eth Research Posts on our Workitem 1.  Anais said that the EEA Crosschain Interop WG has already been working on a solution to this problem, and the work in development is expected to be made public in the next week or two. Some information and specs are also public already, including a proposed EIP to identify chains The group is anticipating reaching Interop Testing in Q2.  Further discussion is needed.  We will probably go forward with the post anyway, to raise awareness of the problem and solution(s), but after discussion with the Crosschain Interop WG.
+* Noting that many participants here are EEA members so can participate directly in the EEA work. In addition, this group is a good mechanism to provide feedback to EEA, given good IPR policies, an informed group of participants who can provide relevant feedback and assess whether the current proposals meet the needs of L2.
+* Meetings will switch to biweekly.  Next is March 9.  Andreas to send an updated invitation.
+
 
 ## Meeting Wed, 16 Feb 2022, 7 am PT
 
