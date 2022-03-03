@@ -1,5 +1,119 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 23 Feb 2022, 7 am PT
+
+Attending: Tas Dienes, Anais Ofranc, Dan Shaw, Marco Cora, Chaals Neville, Samrat Kishor, Cody Burns 
+
+Scribe: Tas Dienes
+
+Proposed agenda:
+* Welcome, and a reminder of WG meeting rules
+* Introduction of new participants
+* Selection of scribe
+* WG Governance
+  * Nominations for Chair/Vice-Chair have closed. Discussion of best voting method. PROSPAL: Use e-Ballot administered by OASIS.	
+  * Nominations for Maintainer group see Reminder above
+* Discuss proposed Eth Magicians and Eth Research Posts on our Workitem 1 (Bridging Digital Assets with Residuals) here based on the posting by Peter Robinson (GPACT protocol) to this work item.
+* Open Forum for other items
+
+Notes
+* Welcome to new members
+* Anais discussed the EEA Crosschain Interoperability WG.  Documents will be made public in the next few weeks.
+* Vote for chairs is coming up; will be run as an e-ballot by OASIS.  Reminder to new members to add themselves to the contributor list so they can vote.
+* Discuss proposed Eth Magicians and Eth Research Posts on our Workitem 1.  Anais said that the EEA Crosschain Interop WG has already been working on a solution to this problem, and the work in development is expected to be made public in the next week or two. Some information and specs are also public already, including a proposed EIP to identify chains The group is anticipating reaching Interop Testing in Q2.  Further discussion is needed.  We will probably go forward with the post anyway, to raise awareness of the problem and solution(s), but after discussion with the Crosschain Interop WG.
+* Noting that many participants here are EEA members so can participate directly in the EEA work. In addition, this group is a good mechanism to provide feedback to EEA, given good IPR policies, an informed group of participants who can provide relevant feedback and assess whether the current proposals meet the needs of L2.
+* Meetings will switch to biweekly.  Next is March 9.  Andreas to send an updated invitation.
+
+
+## Meeting Wed, 16 Feb 2022, 7 am PT
+
+Attending: Dan Shaw, Tas Dienes, Samrat Kishor
+
+Scribe: Tas Dienes
+
+Proposed agenda:
+* Welcome, and a reminder of WG meeting rules
+* Introduction of new participants
+* Selection of scribe
+* WG Governance
+  * Nominations for Chair/Vice-Chair (to present WG at PGB meetings) see Reminder above
+  * Nominations for Maintainer group see Reminder above
+* Discussion on meeting times and frequency (PROPOSAL: Biweekly starting after our next meeting)
+* Final Review of proposed Eth Magician and Eth Research Posts on our Workitem 1 (Bridging Digital Assets with Residuals) here and publishing schedule.
+* Open Forum for other items
+
+Notes
+* Reminder about Doodle poll for meeting times https://doodle.com/poll/g64z5hbmsfcfbf57?utm_source=poll&utm_medium=link  
+* Reminder about last call for vice-chair of the group. After the meeting, we will ask OASIS to send out a voting ballot to the WG members
+* Call for maintainers to nominate themselves
+* Andreas is working on Eth Magician and Eth Research Posts on our Workitem 1 (Bridging Digital Assets with Residuals) here
+* Meeting schedule will move to biweekly starting in March. Next meeting Feb 23, then March 9.  Agreed by unanimous consent.
+
+
+## Meeting Wed, 9 Feb 2022, 7 am PT
+
+Attending: Andreas Freund, Tas Dienes, Dan Shaw, Samrat Kishor, Cody Burns, David Katz
+
+Scribe: Dan Shaw 
+
+Proposed agenda:
+* Welcome, and a reminder of WG meeting rules
+* Introduction of new participants
+* Selection of scribe
+* WG Governance: Revisit
+* Nominations for Chair/Vice-Chair (to present WG at PGB meetings)
+* Nominations for Maintainer group
+* Review content for Eth Magicians and Eth Research post
+* Issue & PR review
+* Open Forum
+
+Notes:
+* No new participants today
+* Andreas Freund has been nominated for Chair.
+* Dan Shaw has been nominated for Vice Chair.
+* More nominations are welcome.
+* Andeas reviewed the planned Ethresearch and EthMagicians posts.
+  * L2/Sidechain <-> L1 and L2/Sidechain <-> L2/Sidechain Bridging Digital Assets with Residuals - #6 on L2 WG GitHub
+  * Discussion
+  * Andreas surmises that the assets described cannot be transferred with integrity
+  * Cody asks who can help us solve this?
+  * Dan proposes pulling in some finance expertise to inform a technical solution
+  * Cody proposes that the technical solution looks like transferring private keys between parties.
+  * Like changing the ownership of a bank account
+  * Andreas will send out an email to gather another round of feedback with the objective of posting next week.
+
+Meeting adjourned
+
+## Meeting Wed, 2 Feb 2022, 7 am PT
+
+Attending: Andreas Freund, Tas Dienes, Dan Shaw, Samrat Kishor, Kyle Thomas, David Katz, Marco Cora
+
+Scribe: Tas Dienes
+
+Proposed agenda:
+* Welcome, and a reminder of WG meeting rules
+* Introduction of new participants
+* Selection of scribe
+* WG Governance: Revisit
+* Nominations for Chair/Vice-Chair (to present WG at PGB meetings)
+* Nominations for Maintainer group
+* Issue and PR review
+  * Currently only one Issue: L2/Sidechain <-> L1 and L2/Sidechain <-> L2/Sidechain Bridging Digital Assets with Residuals
+* Open Forum for other topics
+
+Notes
+* Nominations
+  * Dan Shaw nominated himself for chair or vice-chair
+  * Samrat and John Wolpert nominated Andreas as chair
+  * Andreas nominated Dan Shaw as vice-chair
+  * David and Kyle nominated themselves as maintainers
+* Andreas to inquire with OASIS about how to conduct the vote
+* Discussion of Issue #6 -  L2/Sidechain <-> L1 and L2/Sidechain <-> L2/Sidechain Bridging Digital Assets with Residuals
+  * Andreas would like to post on ethresear.ch and ethereum-magicians.org
+  * Input from other teams is requested
+  * Andreas will start working on a blog post - Marco and Kyle agreed to be co-authors. David wants to dive deeper into the subject matter before committing.
+
+
 ## Meeting Wed, 26th Jan 2022, 7 am PT
 
 Attending: Andreas Freund, Tas Dienes, Dan Shaw, John Wolpert, Samrat Kishor, Cody Burns, David Hatz, Marco Cora (new), Rahul Sethuram (new)
