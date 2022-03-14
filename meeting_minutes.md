@@ -1,5 +1,28 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 09 Mar 2022, 7 am PT
+Attending: Andreas Freund, Tas Dienes, Anais Ofranc, Dan Shaw, Samrat Kishor, Marco Cora
+
+Scribe: Tas Dienes
+Proposed agenda
+Welcome, and a reminder of WG meeting rules
+Selection of scribe
+Introduction of new participants
+Discuss collaboration between this WG and EEA Interop WG and next steps
+Discuss next steps after Eth Magician and Eth Research Posts on our Workitem 1 (Bridging Digital Assets with Residuals) here
+Open Forum for other items
+Notes
+Welcome to new members
+There was a discussion between EEA Interop WG (Peter, Weijah) and this WG (Andreas, Anais, Dan).  EEA WGs cannot accept contributions from non-members. Trying to maximize sharing and collaboration across groups. Interop WG aims to start testing in Q2-Q3.  Andreas is planning to meet and discuss further April 6.  Andreas will provide an overview/review of the topic at the next meeting of this WG.
+The Eth Magician and Eth Research Posts on our work item about interop for digital assets with residuals is out:
+https://ethereum-magicians.org/t/interop-of-digital-assets-with-residuals-l1-l1-l1-l2-l2-l2/8519
+https://ethresear.ch/t/interop-of-digital-assets-with-residuals-l1-l1-l1-l2-l2-l2/12156	
+Andreas will promote on social media, others encouraged to publicize as well
+Andreas will contact EEA marketing about publicizing the topic and collaboration with Interop WG
+Andreas will contact Immutable about participating. 
+Chair and vice-chair for this WG have been nominated, Chet sent out an email call for objections, which closes at the next meeting March 23.
+
+
 ## Meeting Wed, 23 Feb 2022, 7 am PT
 
 Attending: Tas Dienes, Anais Ofranc, Dan Shaw, Marco Cora, Chaals Neville, Samrat Kishor, Cody Burns 
