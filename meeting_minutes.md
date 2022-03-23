@@ -1,5 +1,31 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+
+## Meeting Wed, 23 Mar 2022, 7 am PT
+
+Attending: Andreas Freund, Tas Dienes, Anais Ofranc, Dan Shaw, Kyle Thomas, David Katz, Cody Burns, Samrat Kishor, John Wolpert
+
+Scribe: Tas Dienes
+
+Proposed agenda
+1. Welcome, and a reminder of WG meeting rules
+2. Selection of scribe
+3. Introduction of new participants
+4. Introduction and overview of GPACT protocol in preparation of April 6th meeting with Q&A / Discussion of applicability to L2 (Andreas)  
+5. Open Forum for other items
+
+Notes
+1. No new members today
+2. Numerous views but no comments so far on the Eth Magicians& ethresear.ch posts
+3. Blog post on the problem of paying residuals for assets that have moved across chains is in progress.  Andreas et al will be meeting with EEA marketing to discuss publicizing it.
+4. Anais mentioned this article [https://ethereum-magicians.org/t/outlining-a-standard-interface-for-cross-domain-erc20-transfers/6151. She offered to contact the contributors to see if they are interested in the above mentioned problem.  ACTION: Anais to contact them once a draft of the blog post is ready to share with them.](https://ethereum-magicians.org/t/outlining-a-standard-interface-for-cross-domain-erc20-transfers/6151)
+5. Andreas presented on the GPACT protocol.  Peter suggested it could solve the problem of paying residuals for assets that have moved across chains. \
+[https://docs.google.com/presentation/d/1KpsBI7lBI8WXk3xkcZ3_tucLmz5AUD12GH-e5q2pGac/edit?usp=sharing](https://docs.google.com/presentation/d/1KpsBI7lBI8WXk3xkcZ3_tucLmz5AUD12GH-e5q2pGac/edit?usp=sharing)
+    1. It’s not clear yet how this could work in a privacy preserving system such as zk-zk-rollup
+    2. GPACT group is aiming for limited interop testing at the end of Q2 or early Q3 with a few EEA members
+6. John Wolpert suggested promoting this WG harder to the L2 projects.  Samrat will reach out to Polygon. Tas will contact Offchain Labs after the blog post can be shared.
+
+
 ## Meeting Wed, 09 Mar 2022, 7 am PT
 Attending: Andreas Freund, Tas Dienes, Anais Ofranc, Dan Shaw, Samrat Kishor, Marco Cora
 
