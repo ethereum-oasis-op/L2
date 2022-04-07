@@ -1,5 +1,101 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 6 Apr 2022, 1:30 pm PT
+
+Meeting Assets:
+- [Presentation](https://docs.google.com/presentation/d/1s7BiFPsOzkrqfdP52Fa9ryQxhCoQdtn_-eSbTRVd5EM/edit?usp=sharing)
+- [Recording](https://us02web.zoom.us/rec/share/i-UqcjVTo9cgyZWwttASutqGgVvAzLZunLSn4PcAwL6vZhbTLthx-oX7BZCQnlL2.rqzVMsM4W_XqPu_-?startTime=1649277362000 (Passcode: ?3=53gNf))
+
+Welcome, and a reminder of WG meeting rules. Selection of scribe: Brittany Mauck
+
+Presentation by the EEA Interoperability WG on GPACT and digital assets with residuals with Q&A: Peter Robinson
+
+Peter Robinson- I sent a link for participants to watch before this meeting. EEA L2 and Crosschain presentation was given. 
+
+Crosschain Protocol Stack. Three separate layers:
+- Crosschain Applications- Application code across blockchains. 
+- Crosschain Function calls- Enables functions to be executed across blockchains. 
+- Crosschain messaging: Enables events generated on one blockchain to be trusted on another blockchain. 
+
+GPACT gives atomicity, multichains, return values, conditional logic, application authentication, gives good developer experience. 
+The General Purpose Atomic Crosschain Transaction (GPACT) protocol is a call tree commitment scheme that provides atomic crosschain function calls for an arbitrary function tree. 
+
+Sequence: Start- segment (getPrice)- segment (transfer)- segment (delivery)- segment (shipment)- root (executeTrade)- signaling (transfer)-signaling (delivery).
+Execution Process: Start, Segment, Root, Signaling will go into Crosschain control and check whether it trusts the information coming in. Once trusted, you will call out to business function for the entry point function you have previously committed to. 
+
+Andreas Freund- What happens when a contract state changes between commitment to the call tree and execution of the call tree that changes the function outcomes? would that not cause the execution tree failure? 
+
+Peter Robinson- Correct. You can have a situation where the function changes due to state changes and overall transaction will fail. Front running is a well understood issue in blockchain. With crosschain calling, you use the same mitigation for front running. 
+
+Chaals Nevile- Does the synchronicity have a stop rule, so you don't keep hanging forever?
+
+Peter Robinson- You executed the segments in the leaf first, so you’ll hand in the segment from the function you are calling, and it has the return value so no waiting. 
+
+Crosschain Messaging Layer- Only act on Ethereum Events that were emitted by transactions that are in blocks that are final. Finality depends on the chain.
+
+zkRollups with EVM Capability Presentation- Peter looking for feedback on below presentation. 
+
+zkRollup is run by the Operator. If the operator takes transactions and creates a batch, then have zero knowledge proof. Proof can prove you can go to old root hash to new root hash by verifying those transactions and anyone can verify. The user of the rollup will get a transaction receipt. 
+
+zkRollups Operators can be slashed if they: 
+- Maliciously sing a transaction receipt and do not include a transaction in the batch. 
+- Maliciously sign an incorrect transaction. 
+
+zkRollup Finality
+- Immediate? When the zkRollup Operator returns the signed transaction receipt? 
+- Once batch proof submitted to blockchain?
+- Once blockchain transaction that batch proof was submitted in is final. 
+
+Optimistic Rollups- based on a full proof window. Typically, one week. 
+
+Crosschain Protocol Stack and Rollups
+- Like other blockchains, it comes down to how to prove on a target chain that an event was emitted on a source chain and defining “final” for a source chain.
+
+Andreas Freund- Do we then not have the same issues as with bridges if an attacker poses as a validator with a correct signature? 
+
+Peter Robinson- If the attacker steals the zkRollup operator signature key, you are in trouble. If we are on Ethereum 2 for beacon chain and someone steals private keys, you are in trouble. It then comes down to operational security of the system. There are other ways of doing it to. 
+
+Andreas Freund- You are not accepting new blocks until a block has been verified. The user has the escape hash option where they can extract the last valid state of their holding without operator. So, operators can’t steal your funds. You can pull funds out if you don’t like the operator. Even if private key is compromised, you can’t steal funds. 
+
+Peter Robinson- Sounds good. 
+
+Andreas Freund- How do you ensure the issuer doesn’t know that the bond is on the rollup? Not online, just submits the payment. 
+Peter Robinson- Per the diagram, the payer calls the contract and it’s up to the people writing the business logic at application level to do the right thing. It’s a matter of solidity contract to do business logic.
+
+Andreas Freund- The bridge contract needs to understand the type of transactions that are happening and then reach out to the bond contract and update the relationship there. That current functionality doesn’t exist.  
+
+Weijia Zhang- Sequence can rearrange transaction which may impact the synchronization of crosschain, correct? 
+
+Andreas Freund- Once committed to the block, that is final. Anything can happen on the L2. 
+
+3.	ADJOURNMENT
+
+This meeting was adjourned on Wednesday, 6 April 2022 at 5:30PM ET. 
+
+**Attendance** 
+
+| Member Company | Name | 
+| ----------- | ----------- | 
+| Accenture | Cody Burns | 
+| Adhara Ltd | Coenie Beyers | 
+| Blockdaemon | Fode Toure | 
+| Clearmatics | Aiman Baharna | 
+| Ethereum Foundation | Andreas Freund | 
+| ConsenSys | Angela Potter | 
+| ConsenSys AG | Ermyas Abebe | 
+| ConsenSys AG | Lucas Saldanha |
+| ConsenSys Software R&D | Peter Robinson | 
+| Datachain | Susumu Toriumi | 
+| EEA | Anais Ofranc | 
+| EEA | Brittany Mauck | 
+| EEA | Chaals Nevile | 
+| EEA | James Harsh | 
+| Ethereum Foundation | Dan Shaw | 
+| Ethereum Foundation | Tas Dienes | 
+| Wanchain | Weijia Zhang |
+| Accenture | David Katz|
+
+
 ## Meeting Wed, 09 Mar 2022, 7 am PT
 Attending: Andreas Freund, Tas Dienes, Anais Ofranc, Dan Shaw, Samrat Kishor, Marco Cora
 
