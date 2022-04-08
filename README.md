@@ -40,7 +40,7 @@ The meeting minutes of all meetings can be found [here](https://github.com/eea-o
 
 ## WG Communications 
 
-The WG primarily uses slack for real time communications. You can join our slack [here](https://join.slack.com/t/eeacommunityp-kte2307/shared_invite/zt-14hmwtosl-HLR7AtO2KVM1jM586gZHfg).
+The WG primarily uses slack for real time communications. You can join our slack [here](https://join.slack.com/t/eeacommunityp-kte2307/shared_invite/zt-16zr67jb8-D9eHrRuLi1o9OQhyX42dfQ).
 
 ## Key WG Documents
 
