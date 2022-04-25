@@ -1,5 +1,9 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 20 Apr 2022, 7:00 am PT
+
+Postponed due to key participants attending DevConnect in Amsterdam.
+
 ## Meeting Wed, 6 Apr 2022, 1:30 pm PT
 
 Meeting Assets:
