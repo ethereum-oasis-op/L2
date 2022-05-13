@@ -1,5 +1,39 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 4 May 2022, 7:00 am PT
+
+Attending: Andreas Freund, Tas Dienes, Dan Shaw, David Katz, Samrat Kishor
+
+Scribe: Samrat Kishor
+
+Proposed agenda
+1. Welcome, and a reminder of WG meeting rules
+2. Selection of scribe
+3. Introduction of new participants
+4. Report on L2 relevant subjects and feedback on L2 WG launch from Devconnect -- Tas
+5. Review of  A DeFi Conundrum: L2s are awesome but they still suck for real financial assets" [(here)](https://docs.google.com/document/d/1RCq9XfH8daEQ_djabRIkXXn0LBYdiNBUV9NiH5lZdT4/edit?usp=sharing) and discussion on content and where to publish
+6. Discuss next steps on collaboration with EEA Cross-Chain Interop WG (see new issue on EEA WG Testing Run at the end of Q2 and call for participants) 
+7. Open Forum for other items
+
+Notes from the meeting:
+
+Tas: Updates from L2 event at DevConnect Amsterdam:
+- The L2 working group announced at DevConnect.
+- Most of the major L2 platforms were present.
+- General sense in the conversations was that the time is right for talking about standards.
+- The group agreed on the fact that we need to follow up with them and explore ways to work together and hence find a way of working in asynchronous/synchronous ways. We could possibly use Slack.
+
+Andreas appealed to the group to review the draft blog post on digital assets with residuals: https://docs.google.com/document/d/1RCq9XfH8daEQ_djabRIkXXn0LBYdiNBUV9NiH5lZdT4/edit?usp=sharing
+The group collectively needs to take a look. Comments have been addressed from EEA and post this round of feedback the article will be ready to publish.
+
+Andreas suggested that we need to join forces and have joint communication with the Interop working group. We can explore working with Anais to see if our working group can coordinate on outbound communication.
+
+Andreas suggested that we should reach out to the L2 platforms like Socket and let them know about this working group. We should plan L2<->L2 interop testing their tech.
+
+The group discussed about the user experience for new members and it was concluded that Giithub and Slack is the best place to land new members for this woking group.
+
+A conversation ensued between John W and Andreas F about various growth and outreach strategies for this working group.
+
 ## Meeting Wed, 20 Apr 2022, 7:00 am PT
 
 Postponed due to key participants attending DevConnect in Amsterdam.
