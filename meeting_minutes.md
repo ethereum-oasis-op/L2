@@ -1,5 +1,68 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 18 May 2022, 7:00 am PT
+
+Attending: Andreas Freund (EF/TreeTrunk), Tas Dienes (EF), Dan Shaw (EF), Pavel Sinelnikov (Metis), Will Harborne (Deversifi), Konrad (Deversifi), Kelvin Fichter (Optimism), Kyle Thomas (Provide)
+
+Scribe: Dan Shaw
+
+Proposed agenda
+* Welcome, and a reminder of WG meeting rules
+* Selection of scribe
+* Introduction of new participants
+* Discuss the list of new work items Tas brought back from Devconnect, plus any other items members want to bring up, decide to focus on 1 - 2 items with the greatest interest and open issues for them.
+* Open Forum for other items
+
+Notes from the meeting:
+
+1. Welcome new members: 
+ * Kelvin from Optimism - long time L2
+ * Conrad, CTO Deversifi - running StarkEx
+ * Pavel, Integration Lead at Metis
+ * Will, Deversifi - Started on Starkware StarkEx, but now exploring multiple Layer 2s
+
+2. New Work Items discussed in-person at DevConnect
+ * Big thank you to Layer Two Amsterdam
+ * Will expressed the need for something like IBC which allow roll-ups standard interfaces for ZK
+ * Mass migration strategies
+ * Tas suggested balancing ambitious projects like standardized interfaces with easier wins like token list
+ * Token list
+ * Pavel: Looking at EIP 4844 standard for optimistic roll-ups at Layer 2
+ * Clarifying question: Do Roll-ups need a modification of EIP 4844?
+ * Kyle +1 for interface. Maybe strawman for what the interface would look like. +1 for EIP 4844
+ * Conrad cross L2 state changes. Something better than trust notifications.
+ * Kelvin standard properly pricing transactions. The fee model, transaction structure, does not work across execution and call data at Layer 2. Standardize transaction format at Layer. Pay this much for execution and that much for call data. Related to EIP 4844.
+ * Will asked Is the standard focused on developer experience or is there some other reason for this.
+ * Kelvin responded that this would improve developer experience, reduce protocol complexity and overhead, and give a more consistent end user experience.
+ * Andreas proposes account experience and wallet considerations at Layer 2. User hub to manage keys and create a portable identity. A generalized account model to provide a better user experience across L2s.
+ * Will +1 on wallet proposal
+
+3. Topic: who else should we be reaching out to to work on the projects that were discussed?
+ * Aztec
+ * Starkware
+ * hermez / Jordi
+ * Other Polygon folks working on roll-ups
+
+4. Proposals in review
+
+    1. Define L2 Interop Interface standards - engage crosschain working group
+    2. Transaction fee - new ethereum transaction type with execution on Layer 2 and what data needs to be published to Layer 1
+    3. Token list - mapping contract addresses to the 3-4 character representations. Need chain ID, an address and a code. Simple. No protocol changes. Quick win for standardization.
+      * Noted that Multiple representations of the same thing push complexity up significantly
+      * Andreas points out that this is like a CUSIP in traditional finance
+    4. Standard wallet account representation that work across L2s
+
+5. Delegation of tasks
+ * Andreas will take the Wallet issue
+ * Will will take the Interop Interface issue
+ * Kelvin will take on transaction standard
+ * Kelvin will ask Ben at Optimism to create the issue for token list
+
+6. Andreas shared some background context around the Crosschain Interop WG and GPACT
+
+7. Reminder to all new members to add themselves to project Contributor List: https://github.com/eea-oasis/L2/blob/main/CONTRIBUTING.md
+
+
 ## Meeting Wed, 4 May 2022, 7:00 am PT
 
 Attending: Andreas Freund, Tas Dienes, Dan Shaw, David Katz, Samrat Kishor
