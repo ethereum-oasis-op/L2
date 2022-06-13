@@ -1,5 +1,34 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 1 June 2022, 7:00 am PT
+A
+ttending: Andreas Freund (EF/TreeTrunk), Tas Dienes (EF), Dan Shaw (EF), Syed Shamayel (Accenture), Niraj Gadgilwar (Accenture), Yuan “Peter” Su (Metis), Samrat Kishor, Cody Burns (Accenture), Sushil Saha (Accenture)
+
+Regrets: Pavel Sinelnikov (Metis), Will Harborne (Deversifi), Konrad (Deversifi), Kelvin Fichter (Optimism), Kyle Thomas (Provide),
+
+Scribe: Tas Dienes
+
+Proposed agenda
+1. Welcome, and a reminder of WG meeting rules
+2. Selection of scribe
+3. Introduction of new participants
+4. Discuss the list and contact of new issues and organize workgroups around some or all of them
+5. Discuss potential timing and logistics for a presentation by Arbitrum folks on AnyTrust.
+6. Open Forum for other items
+
+Notes the meeting
+
+1. If you want to be on the WG’s email list, send an email to general-l2-scalability+subscribe@lists.oasis-open-projects.org
+2. Blog post on cross chain asset migration is in the pipeline, almost ready to publish 
+3. Discussion of issues https://github.com/eea-oasis/L2/issues
+    - Yuan will add some comments and details on #20.  It could be split up into multiple parallel topics.
+    - [#21](https://github.com/eea-oasis/L2/issues/21) is for an RPC API
+    - [#22](https://github.com/eea-oasis/L2/issues/22) was suggested by Optimism 
+    - [#23](https://github.com/eea-oasis/L2/issues/23) (transaction fee structure) has been raised by Optimism and Arbitrum. Metis interested too. 
+    - [#24](https://github.com/eea-oasis/L2/issues/24) was brought up by Will Harborne and Andreas Freund.  Cody suggested using soulbound tokens.  Andreas discussed using DIDs. One DID can connect to multiple keys with multiple algos. Yuan expressed interest in working on it.
+4. Discussing a presentation about AnyTrust.  Metis also has an L2 that keeps data off of L1 in the happy case; only a Tx hash is written to L1 when cooperating.  Tas to propose some dates/time.
+
+
 ## Meeting Wed, 18 May 2022, 7:00 am PT
 
 Attending: Andreas Freund (EF/TreeTrunk), Tas Dienes (EF), Dan Shaw (EF), Pavel Sinelnikov (Metis), Will Harborne (Deversifi), Konrad (Deversifi), Kelvin Fichter (Optimism), Kyle Thomas (Provide)
