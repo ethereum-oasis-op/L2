@@ -1,8 +1,47 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 15 June 2022, 7:00 am PT
+
+Attending: Andreas Freund (EF/TreeTrunk), Tas Dienes (EF), Dan Shaw (EF), Kelvin Fichter (Optimism), Anav Agrawal (Polygon), Pavel Sinelnikov (Metis), Cody Burns (Accenture)
+
+Regrets: Elena Sinelnikova (Metis)
+
+Scribe: Pavel Sinelnikov
+
+Proposed agenda
+1. Welcome, and a reminder of WG meeting rules 
+2. Selection of scribe Introduction of new participants 
+3. Status of Arbitrum/Metis presentation on Validium-type Optimistic Rollups -- Tas 
+4. First focused discussion and distribution of work items on the most commented issues -- Transaction Fees, Transaction Interfaces, Transaction Interop Interfaces or Token List 
+5. Open Forum for other items 
+
+Notes for the meeting
+
+Problem of standardized token lists - here are the tokens and routes
+- Token names and symbols should not be used as identifiers
+- Governance headaches when implementing a single token list
+- Canonical Token List + Bridge Token List
+- No bridge is currently working on this
+- Need to contact all existing L2s and other chains that are based on Ethereum - just standardizing it under all L2s would give reasons for other chains to adopt the standard
+tokenId in a dedicated namespace, similar to a DID
+  * DID registry as long as it is compliant with the interface and node for governance - registry does not need to be in a single location
+    - Pull in PR
+    - Reviewers that review to be compliant with the spec
+    - If using an existing namespace, it would not be allowed (e.g. did.microsoft)
+    - How namespace conflicts are handled is still under discussion
+    - Can have duplicate methods, choice of registry matters
+    - Write a test suite to test compliance to make sure that there are no duplicates, essentially governance with more automation
+  * PR is merged
+
+Discussion on the creation of a Oracle Aggregation standard - likely more fitting for a different standardization platform
+
+https://github.com/eea-oasis/L2/issues/21 - Testnet creation on the EIP-4844 standard. Need nodes to see if there is support
+- Testnet will be created likely within a few months
+- Creating a new issue or discussion on the standard
+
+
 ## Meeting Wed, 1 June 2022, 7:00 am PT
-A
-ttending: Andreas Freund (EF/TreeTrunk), Tas Dienes (EF), Dan Shaw (EF), Syed Shamayel (Accenture), Niraj Gadgilwar (Accenture), Yuan “Peter” Su (Metis), Samrat Kishor, Cody Burns (Accenture), Sushil Saha (Accenture)
+Attending: Andreas Freund (EF/TreeTrunk), Tas Dienes (EF), Dan Shaw (EF), Syed Shamayel (Accenture), Niraj Gadgilwar (Accenture), Yuan “Peter” Su (Metis), Samrat Kishor, Cody Burns (Accenture), Sushil Saha (Accenture)
 
 Regrets: Pavel Sinelnikov (Metis), Will Harborne (Deversifi), Konrad (Deversifi), Kelvin Fichter (Optimism), Kyle Thomas (Provide),
 
