@@ -1,5 +1,33 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 29 June 2022, 7:00 am PT
+
+Attending: Andreas Freund (EF/TreeTrunk), Tas Dienes (EF), Dan Shaw (EF), Kelvin Fichter (Optimism), Ino Murko (Boba Network), Souradeep (Boba Network), Alan Chiu (Boba Network)
+
+Regrets: Elena Sinelnikova (Metis), Anav Agrawal (Polygon), Pavel Sinelnikov (Metis), Cody Burns (Accenture)
+
+Scribe: Tas Dienes
+
+Proposed agenda:
+1. Welcome, and a reminder of WG meeting rules
+2. Selection of scribe
+3. Introduction of new participants
+4. Continue the discussion on the Token List work item with a focus on reaching an agreement on an updated schema.
+5. Decide on a date for the AnyTrust presentation by Arbitrum and, subsequently, Metis.
+PROPOSAL: Utilize our off weeks for projects to present their current project to the WG including the EEA Crosschain Interop WG 
+6. Open Forum for other items
+
+Meeting notes
+- Alan, Ino, and Souradeep from Boba Network introduced themselves
+- Discussion of Issue #22 - Token list standard  https://github.com/eea-oasis/L2/issues/22	
+- Kelvin restated the problem
+- Andreas said he added a new token list format proposal which incorporates input from previous comments
+- Each chain will maintain their own TokenList, because maintaining one global TokenList is a governance headache.
+- Andreas and Kelvin discussed the proposed format and made some changes
+- Andreas will add some additional ideas (including TokenId) to the proposal after this meeting
+- Tas to work on choosing a date for AnyTrust presentation - favor off weeks from this WG meeting. Andreas made a proposal to offer off weeks for L2 education sessions; approved with no objections. 
+
+
 ## Meeting Wed, 15 June 2022, 7:00 am PT
 
 Attending: Andreas Freund (EF/TreeTrunk), Tas Dienes (EF), Dan Shaw (EF), Kelvin Fichter (Optimism), Anav Agrawal (Polygon), Pavel Sinelnikov (Metis), Cody Burns (Accenture)

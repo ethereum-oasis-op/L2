@@ -34,7 +34,7 @@ The current work items the WG is focusing on is in the [Work Item folder](https:
 
 The WG currently meets every Wednesday at 7 am PT / 10 am ET / 16:00 GMT.
 
-Please, reach out to Andreas Freund (a.freundhaskel@gmail.com) or Tas Dienes (tas.dienes@ethereum.org) or Dan Shaw (dshaw@ethereum.org) to be added to the meeting invite and added to the mailing list , if interested to participate.
+Please, reach out to Andreas Freund (a.freundhaskel@gmail.com) or Tas Dienes (tas.dienes@ethereum.org) or Dan Shaw (dshaw@ethereum.org) to be added to the meeting invite. You can add yourself to the mailing list by sending an email to this email -- general-l2-scalability+subscribe@lists.oasis-open-projects.org --, if interested to participate.
 
 The meeting minutes of all meetings can be found [here](https://github.com/eea-oasis/L2/blob/main/meeting_minutes.md)
 
