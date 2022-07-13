@@ -1,5 +1,36 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 13 July 2022, 7:00 am PT
+
+Attending: Andreas Freund (EF/TreeTrunk), Tas Dienes (EF), Dan Shaw (EF), Pavel Sinelnikov (Metis), Kelvin Fichter (Optimism), Omar Azhar (Matter Labs), Samrat Kishor (Golden Next Ventures), Parth Bhatt
+
+Regrets: Elena Sinelnikova (Metis), Anav Agrawal (Polygon), , Cody Burns (Accenture), Ino Murko (Boba Network), Souradeep (Boba Network), Alan Chiu (Boba Network)
+
+Scribe: Pavel Sinelnikov
+
+Proposed agenda
+1. Welcome, and a reminder of WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Continue the discussion on the Token List work item with a focus on reaching an agreement on an updated schema.& discuss proposed governance process
+5. Open Forum for other items
+
+Meeting notes
+
+Discussion of Issue #22 - https://github.com/eea-oasis/L2/issues/22
+  * No objections to https://github.com/eea-oasis/L2/issues/22#issuecomment-1180894487
+    -  Intention is to eventually move it to IPFS
+  * Getting more complex than what the initial vision was
+    - Can make things optional, what is REQUIRED and OPTIONAL
+  * Next steps is to write a standards document with what oasis recommends
+  * Try to bring in Arbitrum, Loopring, Aztec, Starkware, and Polygon to review the issue 
+    - Arbitrum - Tas
+    - Starkware, Loopring, and Aztec, and Polygon (mailing list) - Andreas
+  * Following standardization process outlined by https://github.com/eea-oasis/baseline-standard/issues/72
+  * People might not be familiar with the spec standards, joining the meeting would be the best way to communicate
+  * Should a deadline be set on commenting? - no rush
+
+
 ## Meeting Wed, 29 June 2022, 7:00 am PT
 
 Attending: Andreas Freund (EF/TreeTrunk), Tas Dienes (EF), Dan Shaw (EF), Kelvin Fichter (Optimism), Ino Murko (Boba Network), Souradeep (Boba Network), Alan Chiu (Boba Network)
