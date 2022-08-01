@@ -1,5 +1,31 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 27 July 2022, 7:00 am PT
+
+Attending: Tas Dienes (EF), Dan Shaw (EF), Omar Azhar (Matter Labs), Souradeep (Boba Network), Violet (Boba Network)
+
+Regrets: Andreas Freund (EF/TreeTrunk),  Pavel Sinelnikov (Metis), Kelvin Fichter (Optimism),  Samrat Kishor (Golden Next Ventures), Parth Bhatt, Elena Sinelnikova (Metis), Anav Agrawal (Polygon), Cody Burns (Accenture), Ino Murko (Boba Network), Alan Chiu (Boba Network)
+
+Scribe: Tas Dienes
+
+Proposed agenda:
+1. Welcome, and a reminder of WG meeting rules
+2. Selection of scribe
+3. Introduction of new participants
+4. Review the new Token List Spec Draft  PR https://github.com/eea-oasis/L2/pull/26 
+5. Open Forum for other items
+
+Meeting notes:
+- Andreas was out; Dan Shaw ran the meeting
+- TokenList draft spec discussion
+  - Omar and Souradeep have looked at it; reviewing further
+  - It was posted to ethresear.ch 
+  - Micah Zoltu commented that https://tokenlists.org/ already exists, run by Uniswap
+  -  ACTION: Ask Kelvin why Optimism isn’t using that
+  - ACTION: Tas to contact Optimism and Arbitrum and Metis to review the PR
+- Omar asked about Issue #6 and GPACT. Dan pointed him to the EEA Crosschain WG github repo.
+
+
 ## Meeting Wed, 13 July 2022, 7:00 am PT
 
 Attending: Andreas Freund (EF/TreeTrunk), Tas Dienes (EF), Dan Shaw (EF), Pavel Sinelnikov (Metis), Kelvin Fichter (Optimism), Omar Azhar (Matter Labs), Samrat Kishor (Golden Next Ventures), Parth Bhatt

@@ -43,3 +43,4 @@ Once your pull request has been approved by the required number of Maintainers, 
 |Matter Labs |Marco Cora | @Be1garath |
 |Accenture |David Katz | @katzdh |
 |Golden Next Ventures |Samrat Kishor  |@samratkishor
+|Metis |Pavel Sinelnikov |@psinelnikov |
