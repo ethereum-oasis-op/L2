@@ -120,13 +120,17 @@ The work is an [Ethereum Community Project](https://github.com/ethereum/oasis-op
 
 ## 1.1 Overview
 
-There is a significant challenge around the definition and listing of tokens on Layer 1 (L1), Layer 2 (L2), and Sidechain systems. Note that for simplicity, this document we will collectively refer to L1, L2 and Sidechains systems as chains below since the challenge described below is valid across all such systems:
+There is a significant challenge around the definition and listing of tokens on Layer 1 (L1), Layer 2 (L2), and Sidechain systems. Note that for simplicity, this document we will collectively refer to L1, L2 and Sidechain systems as chains below since the challenge described below is valid across all such systems:
 
 * Consensus on the "canonical" token on chain B that corresponds to some token on chain A. When one wants to bridge token X from chain A to chain B, one must create some new representation of the token on chain B. It is worth noting that this problem is not limited to L2s -- every chain connected via bridges must deal with the same issue.
 
-Related to the above challenge is the standardization around lists of bridges and their routes across different chains. This will be addressed in a separate document 
+Related to the above challenge is the standardization around lists of bridges and their routes across different chains. This will be addressed in a separate document. 
 
 Note that both of these issues are fundamental problems for the current multi-chain world.
+
+Therefore, the goal of this document is to help token users to operationalize and disambiguate the usage of a token in their systems.
+
+Also note that a standard for defining tokens is beyond the scope of this document
 
 ## 1.2 Glossary
 
@@ -197,6 +201,7 @@ extensions: {
 }
 ```
 This standard will build upon the current framework and augment it with concepts from the W3C DID Specification [[1]](#w3c-did) based on the JSON linked data model [[2]](#jsonld) such as resolvable unique resource identifiers (URIs) and JSON-LD schemas which enable easier schema verification using existing tools.
+
 
 -------
 
@@ -559,7 +564,7 @@ A standardized set of test-fixtures with test inputs for all MUST, SHOULD, and M
 
 This section specifies the conformance levels of this standard. The conformance levels offer implementers several levels of conformance. These can be used to establish competitive differentiation.
 
-This document defines the conformance levels of a BPI as follows:
+This document defines the conformance levels of a canonical token list as follows:
 * **Level 1:** All MUST requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 * **Level 2:** All MUST and SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 * **Level 3:** All MUST, SHOULD, and MAY requirements with conditional MUST or SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
