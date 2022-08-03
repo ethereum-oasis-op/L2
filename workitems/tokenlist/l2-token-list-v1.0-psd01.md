@@ -568,7 +568,7 @@ This document defines the conformance levels of a BPI as follows:
 A claim that a canonical token list implementation conforms to this specification SHOULD describe the testing procedure used to justify the claim.
 
 #### **[R3]** 
-A claim that a BPI conforms to this specification at **level 2** or higher MUST describe the testing procedure used to justify the claim.
+A claim that a canonical token list conforms to this specification at **level 2** or higher MUST describe the testing procedure used to justify the claim.
 
 
 -------
@@ -602,7 +602,7 @@ There are no additional security requirements.
 
 ## B.1 Data Privacy
 
-The standard does not set any requirements for compliance to jurisdiction legislation/regulations, the responsibility of the implementer to comply with applicable data privacy laws.
+The standard does not set any requirements for compliance to jurisdiction legislation/regulations. It is the responsibility of the implementer to comply with applicable data privacy laws.
 
 ## B.2 Production Readiness 
 
