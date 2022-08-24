@@ -247,6 +247,28 @@ if the extension data elements is used, the following data elements MUST be pres
 
 Note, that the detailed definition of the data elements in [[D1]](#d1) and [[CR1]>[D1]](#cr1d1) along with descriptions and examples are given in the schema itself below.
 
+#### **[R3]**
+All properties in the schema identified in the description to be a Universal Resource Identifier (URI) MUST follow in their semantics [RFC 3986](#rfc3986).
+
+#### **[R4]**
+The `chainId` property MUST follow [EIP-155](#eip155) standard.
+
+#### **[D2]**
+The `chainId` property SHOULD follow [EIP-3220](#eip3220) draft standard.
+
+#### **[O1]**
+The `humanReadableTokenSymbol` property MAY be used.
+
+#### **[CR2]>[O1]**
+The `humanReadableTokenSymbol` property MUST be constructed as the hyphenated concatenation of first the `tokenSymbol` and then the `chainId`.
+
+An example would be:
+```
+"tokenSymbol" = ETH;
+"chainId" = 1;
+"humanReadableTokenSymbol" = ETH-1;
+```
+
 The schema for a canonical token list is given below as follows and can be utilized as a JSON-LD schema if a JSON-LD context file is utilized (see [[1]](#w3c-did) for a concrete example in the context of a standard):
 
 ```
@@ -284,7 +306,7 @@ The schema for a canonical token list is given below as follows and can be utili
             "tokenListId": {
                 "$comment": "{\"term\": \"tokenListId\", \"@id\": \"https://schema.org/identifier\"}",
                 "title": "tokenListId",
-                "description": "A resolvable URI to the publicly accessible place where this list can be found.",
+                "description": "A resolvable URI to the publicly accessible place where this list can be found following the RFC 3986 standard.",
                 "type": "string",
                 "examples": ["https://ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew"]
             },
@@ -298,7 +320,7 @@ The schema for a canonical token list is given below as follows and can be utili
             "logoURI": {
                 "$comment": "{\"term\": \"logoURI\", \"@id\": \"https://schema.org/identifier\"}",
                 "title": "logoURI",
-                "description": "URI or URL of the token list logo",
+                "description": "URI or URL of the token list logo following the RFC 3986 standard",
                 "type": "string",
                 "examples": ["https://ipfs.io/ipns/k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl"]
             },
@@ -389,7 +411,7 @@ The schema for a canonical token list is given below as follows and can be utili
                         "chainURI": {
                             "$comment": "{\"term\": \"chainURI\", \"@id\": \"https://schema.org/identifier\"}",
                             "title": "chainURI",
-                            "description": "A resolvable URI to the genesis block of the chain on which the token was issued.",
+                            "description": "A resolvable URI to the genesis block of the chain on which the token was issued following the RFC 3986 standard.",
                             "type": "string"
                              "examples": ["https://polygonscan.com/block/0"]
                         },
@@ -403,9 +425,9 @@ The schema for a canonical token list is given below as follows and can be utili
                         "tokenIssuerId": {
                             "$comment": "{\"term\": \"tokenIssuerId\", \"@id\": \"https://schema.org/identifier\"}",
                             "title": "tokenIssuerId",
-                            "description": "A resolvable URI identifying the token issuer.",
+                            "description": "A resolvable URI identifying the token issuer following the RFC 3986 standard.",
                             "type": "string",
-                            "examples": ["0xa9c28ce2141b56c474f1dc504bee9b01eb1bd7d1a507580d5519d4437a97de1b"]
+                            "examples": ["https://polygonscan.com/address/0xa9c28ce2141b56c474f1dc504bee9b01eb1bd7d1a507580d5519d4437a97de1b"]
                         },
                         "tokenIssuerName": {
                             "$comment": "{\"term\": \"tokenIssuerName\", \"@id\": \"https://schema.org/name\"}",
@@ -417,7 +439,7 @@ The schema for a canonical token list is given below as follows and can be utili
                         "tokenId": {
                             "$comment": "{\"term\": \"tokenId\", \"@id\": \"https://schema.org/identifier\"}",
                             "title": "tokenId",
-                            "description": "A resolvable URI to a CanonicalTokenList entry of the token.",
+                            "description": "A resolvable URI to a CanonicalTokenList entry of the token following the RFC 3986 standard.",
                             "type": "string",
                             "example": ["https://polygonscan.com/address/0x0000000000000000000000000000000000001010"]
                         },
@@ -459,7 +481,7 @@ The schema for a canonical token list is given below as follows and can be utili
                         "addressAlg": {
                             "$comment": "{\"term\": \"addressAlg\", \"@id\": \"https://schema.org/algorithm\"}",
                             "title": "addressAlg",
-                            "description": "Algorithm used to create the address e.g. CREATE2.",
+                            "description": "Algorithm used to create the address e.g. CREATE2 or the standard ethereum address construction which is the last 40 characters/20 bytes of the Keccak-256 hash of a secp256k1 public key.",
                             "type": "string",
                             "examples": ["CREATE2"]
                         },
@@ -477,17 +499,24 @@ The schema for a canonical token list is given below as follows and can be utili
                             "type": "string",
                             "examples": ["MATIC"]
                         },
+                        "humanReadableTokenSymbol": {
+                            "$comment": "{\"term\": \"humanReadableTokenSymbol\", \"@id\": \"https://schema.org/currency\"}",
+                            "title": "humanReadableTokenSymbol",
+                            "description": "A Token symbol e.g. ETH, concatenated with the `chainId` the token was issued on or bridged to, e.g. ETH-1",
+                            "type": "string",
+                            "examples": ["MATIC-137"]
+                        },
                         "decimals": {
                             "$comment": "{\"term\": \"decimals\", \"@id\": \"https://schema.org/Number\"}",
                             "title": "decimals",
-                            "description": "Allowed number of decimals for the listed token.",
+                            "description": "Allowed number of decimals for the listed token. This property may be named differently by token standards e.g. granularity for ERC-777",
                             "type": "integer",
                             "examples": [18]
                         },
                         "tokenLogoURI": {
                             "$comment": "{\"term\": \"tokenLogoURI\", \"@id\": \"https://schema.org/identifier\"}",
                             "title": "tokenLogoURI",
-                            "description": "URI or URL of the token logo.",
+                            "description": "URI or URL of the token logo following the RFC 3986 standard.",
                             "type": "string"
                             "examples": ["https://polygonscan.com/token/images/matic_32.png"]
                         },
@@ -527,7 +556,7 @@ The schema for a canonical token list is given below as follows and can be utili
                                     "rootChainURI": {
                                         "$comment": "{\"term\": \"rootChainURI\", \"@id\": \"https://schema.org/identifier\"}",
                                         "title": "rootChainURI",
-                                        "description": "A resolvable URI to the genesis block of the root chain on which the token was originally issued.",
+                                        "description": "A resolvable URI to the genesis block of the root chain on which the token was originally issued following the RFC 3986 standard.",
                                         "type": "string",
                                         "examples": ["https://polygonscan.com/block/0"]
                                     },
@@ -569,10 +598,10 @@ This document defines the conformance levels of a canonical token list as follow
 * **Level 2:** All MUST and SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 * **Level 3:** All MUST, SHOULD, and MAY requirements with conditional MUST or SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 
-#### **[D2]** 
+#### **[D3]** 
 A claim that a canonical token list implementation conforms to this specification SHOULD describe the testing procedure used to justify the claim.
 
-#### **[R3]** 
+#### **[R5]** 
 A claim that a canonical token list conforms to this specification at **level 2** or higher MUST describe the testing procedure used to justify the claim.
 
 
@@ -593,6 +622,15 @@ The following documents are referenced in such a way that some or all of their c
 
 #### **[JSONLD]** 
 JSON-LD 1.1, M. Sporny, D. Longley, G. Kellogg, M. Lanthaler, Pierre-Antoine Champin, N. Lindström, W3C Recommendation, July 2020 , https://www.w3.org/TR/2020/REC-json-ld11-20200716/. Latest version available at https://www.w3.org/TR/json-ld11/. 
+
+#### **[RFC3986]**
+T. Berners-Lee, R. Fielding,  L. Masinter, Uniform Resource Identifier (URI): Generic Syntax, IETF RFC 3986, January 2005, https://www.ietf.org/rfc/rfc3986.txt.
+
+#### **[EIP155]**
+Vitalik Buterin, "EIP-155: Simple replay attack protection," Ethereum Improvement Proposals, no. 155, October 2016. [Online serial]. Available: https://eips.ethereum.org/EIPS/eip-155.
+
+#### **[EIP3220]**
+Weijia Zhang, Peter Robinson, "EIP-3220: Crosschain Identifier Specification [DRAFT]," Ethereum Improvement Proposals, no. 3220, October 2020. [Online serial]. Available: https://eips.ethereum.org/EIPS/eip-3220.
 
 
 ## A.2 Non-Normative References
