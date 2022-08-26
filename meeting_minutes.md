@@ -1,5 +1,42 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 24 August 2022, 7:00 am PT
+
+Attending: Andreas Freund (EF/TreeTrunk), Tas Dienes (EF), Dan Shaw (EF), Daniel Goldman (Offchain Labs), Weija Zhang (Wanchain, EEA Crosschain Interop Group), Samrat Kishor (Golden Next Ventures),
+
+Regrets:  Pavel Sinelnikov (Metis), Kelvin Fichter (Optimism),  Parth Bhatt, Elena Sinelnikova (Metis), Anav Agrawal (Polygon), Cody Burns (Accenture), Ino Murko (Boba Network), Alan Chiu (Boba Network), Omar Azhar (Matter Labs), Souradeep (Boba Network), Violet (Boba Network)
+
+Scribe: Tas Dienes
+
+Agenda
+1. Welcome, and a reminder of WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review PR #26 -- Canonical Token List Spec Draft https://github.com/eea-oasis/L2/pull/26
+5. Review Open Issues List
+6. Open Forum for other items
+
+Meeting notes
+-  Weija Zhang says the crosschain interoperability group previously did some work on token lists and has some interest in the topic.
+
+    * https://medium.com/wanchain-foundation/understanding-wanchain-two-way-bridge-and-direct-bridge-7f6088617734
+    * Human readable naming convention: [provider]TOKENSYMBOL@chainname * 
+    * E.g. wanETH@wanchain or ethWAN@ethereum, ETH@ethereum
+    * It’s a bit long
+- Andreas says apps can look up tokenSymbol by tokenId. tokenId may not be human readable.
+- Weija: can we recommend a naming convention for UX display of crosschain token symbols?
+- Daniel: make it an optional field in the token list?
+- Tas: Do we need a separate chainList?  Andreas: maybe
+- Weija will propose a change request to add a human readable token symbol to the tokenList
+- Andreas: add granularity into description of decimals property
+- chainURI could be a DID. Andreas to add explanatory text.
+- Andreas will add RFC numbers to URI properties, and EIPs where appropriate 
+- Daniel suggested the need for a separate list for bridges 
+
+## Meeting Wed, 10 August 2022, 7:00 am PT
+
+Canceled since both Chair were absent but excused.
+
 ## Meeting Wed, 27 July 2022, 7:00 am PT
 
 Attending: Tas Dienes (EF), Dan Shaw (EF), Omar Azhar (Matter Labs), Souradeep (Boba Network), Violet (Boba Network)
