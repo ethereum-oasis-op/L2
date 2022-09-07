@@ -1,5 +1,31 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 7 September 2022, 7:00 am PT
+
+Attending: Andreas Freund (EF), Tas Dienes (EF), Dan Shaw (EF), Kelvin Fichter (Optimism), Daniel Goldman (Offchain Labs), Sourdeep Das (Boba Network), Samrat Kishor (Golden Next Ventures),
+
+Regrets:  Pavel Sinelnikov (Metis), Parth Bhatt, Elena Sinelnikova (Metis), Anav Agrawal (Polygon), Cody Burns (Accenture), Ino Murko (Boba Network), Alan Chiu (Boba Network), Omar Azhar (Matter Labs), Violet (Boba Network)
+
+Scribe: Dan Shaw
+
+Agenda
+1. Welcome, and a reminder of WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review PR #26 -- Canonical Token List Spec Draft https://github.com/eea-oasis/L2/pull/26
+5. Review Open Issues List
+6. Open Forum for other items
+
+Meeting notes
+-  A propoal was made to ensure that the Token List Standard Proposal remain a strict superset of the tokenlist specification
+-  Looking for approvals on PR #26 from Cody Burns, Kelvin Fichter, and Kyle Thomas, then we'll do one final round of review and send it off to the PGB for approval
+-  Closing [Issue #6]([url](https://github.com/eea-oasis/L2/issues/6)) as completed
+-  Closing [Issue #17]([url](https://github.com/eea-oasis/L2/issues/17)) as completed
+-  Reviewed [Issue #24]([url](https://github.com/eea-oasis/L2/issues/24))
+  - Daniel Goldman proposed integrating [address aliasing]([url](https://developer.offchainlabs.com/arbos/l1-to-l2-messaging#address-aliasing))
+-  Reviewed [Issue #20]([url](https://github.com/eea-oasis/L2/issues/20))
+  - It was proposed that we add a definition of finality and then categorize by L2
+
 ## Meeting Wed, 24 August 2022, 7:00 am PT
 
 Attending: Andreas Freund (EF/TreeTrunk), Tas Dienes (EF), Dan Shaw (EF), Daniel Goldman (Offchain Labs), Weija Zhang (Wanchain, EEA Crosschain Interop Group), Samrat Kishor (Golden Next Ventures),
