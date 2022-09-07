@@ -439,7 +439,7 @@ The schema for a canonical token list is given below as follows and can be utili
                         "tokenId": {
                             "$comment": "{\"term\": \"tokenId\", \"@id\": \"https://schema.org/identifier\"}",
                             "title": "tokenId",
-                            "description": "A resolvable URI to a CanonicalTokenList entry of the token following the RFC 3986 standard.",
+                            "description": "A resolvable URI of the token following the RFC 3986 standard to for example the deployment transaction of the token, or a DID identifying the token and its issuer.",
                             "type": "string",
                             "example": ["https://polygonscan.com/address/0x0000000000000000000000000000000000001010"]
                         },
