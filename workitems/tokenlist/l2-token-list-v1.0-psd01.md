@@ -228,8 +228,8 @@ The tokens data element is a composite which MUST minimally contain the followin
 - tokenId
 - tokenType
 - address
-- tokenName
-- tokenSymbol
+- name
+- symbol
 - decimals
 - createdAt
 - updatedAt
@@ -394,8 +394,8 @@ The schema for a canonical token list is given below as follows and can be utili
                         "tokenId",
                         "tokenType",
                         "address",
-                        "tokenName",
-                        "tokenSymbol",
+                        "name",
+                        "symbol",
                         "decimals",
                         "createdAt",
                         "updatedAt"
@@ -485,16 +485,16 @@ The schema for a canonical token list is given below as follows and can be utili
                             "type": "string",
                             "examples": ["CREATE2"]
                         },
-                        "tokenName": {
-                            "$comment": "{\"term\": \"tokenName\", \"@id\": \"https://schema.org/name\"}",
-                            "title": "tokenName",
+                        "name": {
+                            "$comment": "{\"term\": \"name\", \"@id\": \"https://schema.org/name\"}",
+                            "title": "name",
                             "description": "Token name.",
                             "type": "string",
                             "examples": ["Matic"]
                         },
-                        "tokenSymbol": {
-                            "$comment": "{\"term\": \"tokenSymbol\", \"@id\": \"https://schema.org/currency\"}",
-                            "title": "tokenSymbol",
+                        "symbol": {
+                            "$comment": "{\"term\": \"symbol\", \"@id\": \"https://schema.org/currency\"}",
+                            "title": "symbol",
                             "description": "Token symbol e.g. ETH.",
                             "type": "string",
                             "examples": ["MATIC"]
@@ -513,9 +513,9 @@ The schema for a canonical token list is given below as follows and can be utili
                             "type": "integer",
                             "examples": [18]
                         },
-                        "tokenLogoURI": {
-                            "$comment": "{\"term\": \"tokenLogoURI\", \"@id\": \"https://schema.org/identifier\"}",
-                            "title": "tokenLogoURI",
+                        "logoURI": {
+                            "$comment": "{\"term\": \"logoURI\", \"@id\": \"https://schema.org/identifier\"}",
+                            "title": "logoURI",
                             "description": "URI or URL of the token logo following the RFC 3986 standard.",
                             "type": "string"
                             "examples": ["https://polygonscan.com/token/images/matic_32.png"]
