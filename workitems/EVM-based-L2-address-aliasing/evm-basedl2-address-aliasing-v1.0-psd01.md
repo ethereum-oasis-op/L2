@@ -90,7 +90,7 @@ For complete copyright information please see the Notices section in the Appendi
 &nbsp;&nbsp;&nbsp;&nbsp;[1.3 Typographical Conventions](#13-typographical-conventions) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.3.1	Requirement Ids](#131-requirement-ids) \
 [2 Concepts and Design](#2-Concepts-and-Design) \
-[3 Token List Specification](#3-evm-based-l2-address-aliasing-specification) \
+[3 Aliasing of EVM based Addresses Specification](#3-evm-based-l2-address-aliasing-specification) \
 [4 Conformance](#4-conformance) \
 &nbsp;&nbsp;&nbsp;&nbsp;[4.1 Conformance Targets](#41-conformance-targets) \
 &nbsp;&nbsp;&nbsp;&nbsp;[4.2 Conformance Levels](#42-conformance-levels)\
@@ -119,17 +119,17 @@ The work is an [Ethereum Community Project](https://github.com/ethereum/oasis-op
 
 ## 1.1 Overview
 
-...
+The ability to deterministically derive addresses of a digital asset or an externally owned account (EOA) in EVM based execution frameworks for L1s, L2s, Sidechains based on an origin chain of an asset or EOA, known as address aliasing, simplifies interoperability between EVM based L1s, L2s, and Sidechains because: 
+- It allows messages from chain A (source chain) to unambiguously address asset A (smart contract) or EOA on chain Y (target chain), if asset A or EOA exists on Chain X and on Chain Y. 
+- It allows a user to deterministically verify the source chain of a message, and, if required, directly verify the origin chain of asset A or EOA and its state on its origin chain utilizing a canonical token list of the (message) source chain.
 
-Related to the above challenge is the standardization around lists of bridges and their routes across different chains. This will be addressed in a separate document. 
-
-Note that both of these issues are fundamental problems for the current multi-chain world.
-
-Therefore, the goal of this document is to help token users to operationalize and disambiguate the usage of a token in their systems.
-
-Also note that a standard for defining tokens is beyond the scope of this document
+Note, that address aliasing between non-EVM and EVM-based L1s, L2s, and Sidechains, and between non-EVM-based L1s, L2s, and Sidechains is out of scope of this document.
 
 ## 1.2 Glossary
+
+**Address Aliasing**
+
+Refers to a method by which an address is associated with another (destination) address.
 
 **Blockchain:**
 
@@ -145,7 +145,11 @@ A base network, such as Bitcoin, or Ethereum, and its underlying infrastructure 
 
 **Layer 2:**
 
-A secondary framework or protocol that is built on top of an existing Layer 1 system in such a way that it inherits the security properties of the Layer 1 system while allowing for a higher transaction throughput that the Layer 1 system.
+A secondary framework or protocol that is built on top of an existing Layer 1 system in such a way that it inherits the security properties of the Layer 1 system while allowing for a higher transaction throughput than the Layer 1 system.
+
+**Layer 3:**
+
+A tertiary framework or protocol that is built on top of an existing Layer 2 system in such a way that it inherits the security properties of the Layer 2 system while allowing for an improvement of a Layer 2 characteristic such as higher transaction throughput than the Layer 2 system or transaction privacy.
 
 **Sidechain:**
 
@@ -170,21 +174,53 @@ Note that requirements are uniquely numbered in ascending order within each requ
 
 Example : It should be read that [R1] is an absolute requirement of the specification whereas [D1] is a recommendation and [O1] is truly optional.
 
-
 -------
 
 # 2 Concept and Design
 
-...
+The ability to unambiguously, and deterministically, relate an address for a digital asset (smart contract) or an externally owned account (EOA) between EVM based L1s, L2s, and Sidechains where this digital asset or EOA exists, also known as address aliasing, is critical prerequisite for interoperability between EVM based L1s, L2s, and Sidechains. However, there is currently no way to do so in a standardized way -- imagine every internet service provider were to define its own IP addresses.
 
+Hence, this document establishes an unambiguous and deterministic standard for EVM based address aliasing based on the concept of root --> leaf where an address alias is derived based on the address on the origin chain and an offset which is an immutable characteristic of the origin chain.
+
+See Figure 1 for the conceptual root--> leaf design with offset.
+
+<div align="center">
+<figure>
+  <img
+  src="./images/address-aliasing-root-leaf-design.png"
+      alt="The figure describes conceptually how (interoperability) messages from source to target chain utilize address aliasing. At the bottom an EVM based L1 is uni-directionally connected to three EVM based L2s -- A, B, and C -- each with an alias of L1 address + L1 Offset. In addition, A is uni-directionally connected to B with an alias of L1 address + L1 offset + A offset. B is uni-directionally connected to an EVM-based Layer 3 or L3 with an alias of L1 address + L1 offset + B offset signaling that the address is anchored on L1 via the L2 B. And finally D is uni-directionally connected to C via the alias L1 address + L1 offset + B offset plus D offset indicating the asset chain of custody from L1 to B to D to C."
+  >
+  <figcaption>Figure 1: Root --> Leaf address aliasing concept using an chain immanent characteristics from L1 to L2 and L3 and back</figcaption>
+</figure>
+</div>
 -------
 
-# 3 Token List Specification
+# 3 Aliasing of EVM based Addresses Specification
 
-
+The requirements below are only valid for EVM based L1s, L2, or Sidechains. Address aliasing for non-EVM systems is out of scope of this document.
 
 #### **[R1]**
+An address alias -- `addressAlias` -- to be used between Chain A and Chain B MUST be constructed as follows:
+`addressAlias (Chain A) = relativeAddress (on Chain A) @ offsetAlias (for Chain A)`
 
+An example of address alias for the Ethereum Mainnet USDC asset would be `addressAlias = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48@1`
+
+#### **[R2]**
+
+The `offsetAlias` of a chain MUST be its `chainId`
+
+For example the `chainId` of Ethereum Mainnet is `1`, with the current list of EVM based `chainId`s to be found [here](https://chainlist.org/).
+
+#### **[R3]**
+
+The `relativeAddress` of an EOA or Smart Contract on a chain MUST either be the smart contract or EOA address of the origin chain or a `relativeAddress` of an EOA or Smart Contract from another chain.  
+
+An example of the former instance would be the relative address of wrapped USDC, `relativeAddress = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48@1`, and an example of the latter would be the relative address of wrapped USDC on Polygon, `relativeAddress = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48@1@137`.
+
+Finally, an example of an address alias for a message to another L1, L2, or Sidechain for wrapped USDC from Ethereum on Arbitrum would be:
+```
+addressAlias = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48@1@42161
+```
 
 -------
 # 4 Conformance
@@ -206,10 +242,10 @@ This document defines the conformance levels of a canonical token list as follow
 * **Level 2:** All MUST and SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 * **Level 3:** All MUST, SHOULD, and MAY requirements with conditional MUST or SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 
-#### **[D3]** 
+#### **[D1]** 
 A claim that a canonical token list implementation conforms to this specification SHOULD describe the testing procedure used to justify the claim.
 
-#### **[R5]** 
+#### **[R4]** 
 A claim that a canonical token list conforms to this specification at **level 2** or higher MUST describe the testing procedure used to justify the claim.
 
 
