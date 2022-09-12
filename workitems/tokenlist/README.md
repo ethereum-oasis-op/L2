@@ -22,7 +22,7 @@ The Token List specification is currently in draft status.
   </tr>
   <tr>
     <td>Conformance</td>
-    <td>Describes the conformance clauses and tests required to achieve baseline compliant implementations.</td>
+    <td>Describes the conformance clauses and tests required to achieve compliant implementations.</td>
   </tr>
 </table>
 
