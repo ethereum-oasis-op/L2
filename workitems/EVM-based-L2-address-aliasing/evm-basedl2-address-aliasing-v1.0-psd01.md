@@ -70,7 +70,7 @@ The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SH
 #### Citation format:
 When referencing this specification the following citation format should be used:
 
-**[evm-based-l2-address-aliasing-v1.0]** _Token List Specification Version 1.0_. Edited by Kelvin Fichter, and Andreas Freund. XX YYYY 2022. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/EVM-based-L2-address-aliasing/evm-based-l2-address-aliasing-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/EVM-based-L2-address-aliasing/evm-based-l2-address-aliasing-v1.0-psd01.md.
+**[evm-based-l2-address-aliasing-v1.0]** _EVM based Address Aliasing Specification Version 1.0_. Edited by Kelvin Fichter, and Andreas Freund. XX YYYY 2022. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/EVM-based-L2-address-aliasing/evm-based-l2-address-aliasing-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/EVM-based-L2-address-aliasing/evm-based-l2-address-aliasing-v1.0-psd01.md.
 
 -------
 
@@ -237,16 +237,16 @@ A standardized set of test-fixtures with test inputs for all MUST, SHOULD, and M
 
 This section specifies the conformance levels of this standard. The conformance levels offer implementers several levels of conformance. These can be used to establish competitive differentiation.
 
-This document defines the conformance levels of a canonical token list as follows:
+This document defines the conformance levels of EVM based Address Aliasing as follows:
 * **Level 1:** All MUST requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 * **Level 2:** All MUST and SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 * **Level 3:** All MUST, SHOULD, and MAY requirements with conditional MUST or SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 
 #### **[D1]** 
-A claim that a canonical token list implementation conforms to this specification SHOULD describe the testing procedure used to justify the claim.
+A claim that an EVM based Address Aliasing implementation conforms to this specification SHOULD describe the testing procedure used to justify the claim.
 
 #### **[R4]** 
-A claim that a canonical token list conforms to this specification at **level 2** or higher MUST describe the testing procedure used to justify the claim.
+A claim that an EVM based Address Aliasing implementation conforms to this specification at **level 2** or higher MUST describe the testing procedure used to justify the claim.
 
 
 -------
