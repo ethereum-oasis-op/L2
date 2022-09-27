@@ -1,5 +1,36 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 21 Sep 2022, 7:00 am PT
+
+Attending: Hanan Beer (EF), Tas Dienes (EF), Dan Shaw (EF), Andreas Freund (EF/TreeTrunk), Yoav Weiss (EF), Kelvin Fichter (Optimism), Samrat Kishor (Golden Next Ventures),
+
+Regrets: Daniel Goldman (Offchain Labs), Weija Zhang (Wanchain, EEA Crosschain Interop Group), Pavel Sinelnikov (Metis), Parth Bhatt, Elena Sinelnikova (Metis), Anav Agrawal (Polygon), Cody Burns (Accenture), Ino Murko (Boba Network), Alan Chiu (Boba Network), Omar Azhar (Matter Labs), Souradeep (Boba Network), Violet (Boba Network)
+
+Scribe: Tas Dienes
+
+Proposed agenda
+1. Welcome, and a reminder of the WG meeting rules
+2. Selection of scribe
+3. Introduction of new participants
+4. Review PRs: #26 -- Canonical Token List Spec Draft & #29 -- EVM-based Address Aliasing
+5. Review Open Issues List
+6. Open Forum for other items
+
+Meeting notes
+- PR #26 Canonical Token List Spec Draft
+  * Andreas presented an overview of the document 
+  * Tas will reach out to Offchain Labs for their input***
+- PR #29 EVM-based Address Aliasing
+  * Andreas and Kelvin discussed the spec
+  * In an execution context, you can’t tell if an address is an alias
+  * Disallow chainId 0, limit max chainId value
+  * Kelvin and Andreas will add details to the PR
+- Issue #21 L2 Transaction Interface was discussed
+  * Hanan mentioned the problem of bridging tokens to another chain and not having gas on that chain.  Yoav said that account abstraction ERC-4337 should help solve that. There is a potential spec to be developed around this.
+- Issue #23 L2 Tx Fee Structure was discussed by Andreas and Yoav
+- Andreas will send an email poll about whether to change the October meeting schedule due to Devcon.
+
+
 ## Meeting Wed, 7 September 2022, 7:00 am PT
 
 Attending: Andreas Freund (EF), Tas Dienes (EF), Dan Shaw (EF), Kelvin Fichter (Optimism), Daniel Goldman (Offchain Labs), Sourdeep Das (Boba Network), Samrat Kishor (Golden Next Ventures),
