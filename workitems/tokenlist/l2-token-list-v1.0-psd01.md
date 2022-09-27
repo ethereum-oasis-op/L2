@@ -71,7 +71,7 @@ The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SH
 #### Citation format:
 When referencing this specification the following citation format should be used:
 
-**[l2-token-list-v1.0]** _Token List Specification Version 1.0_. Edited by Kelvin Fichter, Andreas Freund, Pavel Sinelnikov. XX YYYY 2022. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/tokenlist/l2-token-list-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/tokenlist/l2-token-list-v1.0-psd01.md.
+**[l2-token-list-v1.0]** _Token List Specification Version 1.0_. Edited by Kelvin Fichter, Andreas Freund, Pavel Sinelnikov. 01 November 2022. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/tokenlist/l2-token-list-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/tokenlist/l2-token-list-v1.0-psd01.md.
 
 -------
 
@@ -636,7 +636,7 @@ Weijia Zhang, Peter Robinson, "EIP-3220: Crosschain Identifier Specification [DR
 ## A.2 Non-Normative References
 
 #### **[W3C-DID]** 
-Decentralized Identifiers (DIDs) v1.0, M. Sporny, D. Longley, M. Sabadello, D. Reed, O. Steele, C. Allen, W3C Proposed Recommendation, August 2021, https://www.w3.org/TR/2021/PR-did-core-20210803/. Latest version available at https://www.w3.org/TR/did-core/.
+Decentralized Identifiers (DIDs) v1.0, M. Sporny, D. Longley, M. Sabadello, D. Reed, O. Steele, C. Allen, W3C W3C Recommendation, July 2022, https://www.w3.org/TR/2022/REC-did-core-20220719/. Latest version available at https://www.w3.org/TR/did-core/.
 
 
 # Appendix B - Security Considerations
@@ -679,7 +679,6 @@ Kelvin Fichter \
 Andreas Freund \
 Daniel Shaw \
 Pavel Sinelnikov \
-**[please add names here]**
 ...
 
  
