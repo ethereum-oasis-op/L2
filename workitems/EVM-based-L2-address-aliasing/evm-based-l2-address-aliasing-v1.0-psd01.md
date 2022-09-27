@@ -70,7 +70,7 @@ The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SH
 #### Citation format:
 When referencing this specification the following citation format should be used:
 
-**[l2-token-list-v1.0]** _Token List Specification Version 1.0_. Edited by Kelvin Fichter, and Andreas Freund, . XX YYYY 2022. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/EVM-based-L2-address-aliasing/evm-based-l2-address-aliasing-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/EVM-based-L2-address-aliasing/evm-based-l2-address-aliasing-v1.0-psd01.md.
+**[evm-based-l2-address-aliasing-v1.0]** _EVM based Address Aliasing Specification Version 1.0_. Edited by Kelvin Fichter, and Andreas Freund. XX YYYY 2022. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/EVM-based-L2-address-aliasing/evm-based-l2-address-aliasing-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/EVM-based-L2-address-aliasing/evm-based-l2-address-aliasing-v1.0-psd01.md.
 
 -------
 
@@ -90,7 +90,7 @@ For complete copyright information please see the Notices section in the Appendi
 &nbsp;&nbsp;&nbsp;&nbsp;[1.3 Typographical Conventions](#13-typographical-conventions) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.3.1	Requirement Ids](#131-requirement-ids) \
 [2 Concepts and Design](#2-Concepts-and-Design) \
-[3 Token List Specification](#3-token-list-specification) \
+[3 Aliasing of EVM based Addresses Specification](#3-evm-based-l2-address-aliasing-specification) \
 [4 Conformance](#4-conformance) \
 &nbsp;&nbsp;&nbsp;&nbsp;[4.1 Conformance Targets](#41-conformance-targets) \
 &nbsp;&nbsp;&nbsp;&nbsp;[4.2 Conformance Levels](#42-conformance-levels)\
@@ -119,19 +119,17 @@ The work is an [Ethereum Community Project](https://github.com/ethereum/oasis-op
 
 ## 1.1 Overview
 
-There is a significant challenge around the definition and listing of tokens on Layer 1 (L1), Layer 2 (L2), and Sidechain systems. Note that for simplicity, this document we will collectively refer to L1, L2 and Sidechain systems as chains below since the challenge described below is valid across all such systems:
+The ability to deterministically derive addresses of a digital asset or an externally owned account (EOA) in EVM based execution frameworks for L1s, L2s, Sidechains based on an origin chain of an asset or EOA, known as address aliasing, simplifies interoperability between EVM based L1s, L2s, and Sidechains because: 
+- It allows messages from chain A (source chain) to unambiguously address asset A (smart contract) or EOA on chain Y (target chain), if asset A or EOA exists on Chain X and on Chain Y. 
+- It allows a user to deterministically verify the source chain of a message, and, if required, directly verify the origin chain of asset A or EOA and its state on its origin chain utilizing a canonical token list of the (message) source chain.
 
-* Consensus on the "canonical" token on chain B that corresponds to some token on chain A. When one wants to bridge token X from chain A to chain B, one must create some new representation of the token on chain B. It is worth noting that this problem is not limited to L2s -- every chain connected via bridges must deal with the same issue.
-
-Related to the above challenge is the standardization around lists of bridges and their routes across different chains. This will be addressed in a separate document. 
-
-Note that both of these issues are fundamental problems for the current multi-chain world.
-
-Therefore, the goal of this document is to help token users to operationalize and disambiguate the usage of a token in their systems.
-
-Also note that a standard for defining tokens is beyond the scope of this document
+Note, that address aliasing between non-EVM and EVM-based L1s, L2s, and Sidechains, and between non-EVM-based L1s, L2s, and Sidechains is out of scope of this document.
 
 ## 1.2 Glossary
+
+**Address Aliasing**
+
+Refers to a method by which an address is associated with another (destination) address.
 
 **Blockchain:**
 
@@ -147,7 +145,11 @@ A base network, such as Bitcoin, or Ethereum, and its underlying infrastructure 
 
 **Layer 2:**
 
-A secondary framework or protocol that is built on top of an existing Layer 1 system in such a way that it inherits the security properties of the Layer 1 system while allowing for a higher transaction throughput that the Layer 1 system.
+A secondary framework or protocol that is built on top of an existing Layer 1 system in such a way that it inherits the security properties of the Layer 1 system while allowing for a higher transaction throughput than the Layer 1 system.
+
+**Layer 3:**
+
+A tertiary framework or protocol that is built on top of an existing Layer 2 system in such a way that it inherits the security properties of the Layer 2 system while allowing for an improvement of a Layer 2 characteristic such as higher transaction throughput than the Layer 2 system or transaction privacy.
 
 **Sidechain:**
 
@@ -172,409 +174,61 @@ Note that requirements are uniquely numbered in ascending order within each requ
 
 Example : It should be read that [R1] is an absolute requirement of the specification whereas [D1] is a recommendation and [O1] is truly optional.
 
-
 -------
 
 # 2 Concept and Design
 
-For lists of canonical tokens, L2s currently maintain their own customized versions of the Uniswap token list. For example, Arbitrum maintains a [token list](https://bridge.arbitrum.io/token-list-42161.json) with various custom extensions. Optimism also maintains a [custom token list](https://raw.githubusercontent.com/ethereum-optimism/ethereum-optimism.github.io/master/optimism.tokenlist.json), but with different extensions. It should be noted that both of these custom extensions refer to the bridge that these tokens can be carried through. However, these are not the only bridges that the tokens can be carried through, which means that bridges and token lists should be separated. Also note that currently, both Optimism and Arbitrum base "canonicity" on the token name + symbol pair.
+The ability to unambiguously, and deterministically, relate an address for a digital asset (smart contract) or an externally owned account (EOA) between EVM based L1s, L2s, and Sidechains where this digital asset or EOA exists, also known as address aliasing, is critical prerequisite for interoperability between EVM based L1s, L2s, and Sidechains. However, there is currently no way to do so in a standardized way -- imagine every internet service provider were to define its own IP addresses.
 
-An example of an Arbitrum token entry is given below:
-```
-{
-logoURI: "https://assets.coingecko.com/coins/images/13469/thumb/1inch-token.png?1608803028",
-chainId: 42161,
-address: "0x6314C31A7a1652cE482cffe247E9CB7c3f4BB9aF",
-name: "1INCH Token",
-symbol: "1INCH",
-decimals: 18,
-extensions: {
-  bridgeInfo: {
-    1: {
-    tokenAddress: "0x111111111117dc0aa78b770fa6a738034120c302",
-    originBridgeAddress: "0x09e9222e96e7b4ae2a407b98d48e330053351eee",
-    destBridgeAddress: "0xa3A7B6F88361F48403514059F1F16C8E78d60EeC"
-     }
-   }
-  }
-}
-```
-This standard will build upon the current framework and augment it with concepts from the W3C DID Specification [[1]](#w3c-did) based on the JSON linked data model [[2]](#jsonld) such as resolvable unique resource identifiers (URIs) and JSON-LD schemas which enable easier schema verification using existing tools.
+Hence, this document establishes an unambiguous and deterministic standard for EVM based address aliasing based on the concept of root --> leaf where an address alias is derived based on the address on the origin chain and an offset which is an immutable characteristic of the origin chain.
 
+See Figure 1 for the conceptual root--> leaf design with offset.
 
+<div align="center">
+<figure>
+  <img
+  src="./images/address-aliasing-root-leaf-design.png"
+      alt="The figure describes conceptually how (interoperability) messages from source to target chain utilize address aliasing. At the bottom an EVM based L1 is uni-directionally connected to three EVM based L2s -- A, B, and C -- each with an alias of L1 address + L1 Offset. In addition, A is uni-directionally connected to B with an alias of L1 address + L1 offset + A offset. B is uni-directionally connected to an EVM-based Layer 3 or L3 with an alias of L1 address + L1 offset + B offset signaling that the address is anchored on L1 via the L2 B. And finally D is uni-directionally connected to C via the alias L1 address + L1 offset + B offset plus D offset indicating the asset chain of custody from L1 to B to D to C."
+  >
+  <figcaption>Figure 1: Root --> Leaf address aliasing concept using an chain immanent characteristics from L1 to L2 and L3 and back</figcaption>
+</figure>
+</div>
 -------
 
-# 3 Token List Specification
+# 3 Aliasing of EVM based Addresses Specification
 
-The schema for a canonical token list utilizes draft version 7 of https://json-schema.org for consistency purposes with the [W3C CCG](https://w3c-ccg.github.io/) effort. 
+The requirements below are only valid for EVM based L1s, L2, or Sidechains. Address aliasing for non-EVM systems is out of scope of this document.
 
 #### **[R1]**
-The following data elements MUST be present in a canonical token list:
-- type
-- tokenListId
-- name
-- createdAt
-- updatedAt
-- versions
-- tokens
-
-Note, that the detailed definition of the data elements in [[R1]](#r1) along with descriptions and examples are given in the schema itself below.
+An address alias -- `addressAlias` -- to be used between Chain A and Chain B MUST be constructed as follows:
+`addressAlias (Chain A) = offsetAlias (for Chain A)relativeAddress (on Chain A) offsetAlias (for Chain A)`
 
 #### **[R2]**
-The tokens data element is a composite which MUST minimally contain the following data elements:
-- chainId
-- chainURI
-- tokenId
-- tokenType
-- address
-- name
-- symbol
-- decimals
-- createdAt
-- updatedAt
+The `offsetAlias` of a chain MUST be `0xchainId00000000000000000000000000000000chainId`
 
-Note, that the detailed definition of the data elements in [[R2]](#r2) along with descriptions and examples are given in the schema itself below.
-
-#### **[D1]**
-All other data elements of the schema SHOULD be included in a representation of a canonical token list.
-
-#### **[CR1]>[D1]**
-if the extension data elements is used, the following data elements MUST be present in the schema representation:
-- rootChainId
-- rootChainURI
-- rootAddress
-
-Note, that the detailed definition of the data elements in [[D1]](#d1) and [[CR1]>[D1]](#cr1d1) along with descriptions and examples are given in the schema itself below.
+For example the `chainId` of Polygon PoS is `137`, with the current list of EVM based `chainId`s to be found [here](https://chainlist.org/), and its `offsetAlias` is `0x13700000000000000000000000000000000137`.
 
 #### **[R3]**
-All properties in the schema identified in the description to be a Universal Resource Identifier (URI) MUST follow in their semantics [RFC 3986](#rfc3986).
+The `chainId` used in the `offsetAlias` MUST NOT be zero (0)
 
 #### **[R4]**
-The `chainId` property MUST follow [EIP-155](#eip155) standard.
+The `chainId` used in the `offsetAlias` MUST NOT be larger than `uint255` to avoid overflows
 
-#### **[D2]**
-The `chainId` property SHOULD follow [EIP-3220](#eip3220) draft standard.
 
-#### **[O1]**
-The `humanReadableTokenSymbol` property MAY be used.
+#### **[R4]**
+The `offsetAlias`for Ethereum Mainnet as the primary anchor of EVM based chains MUST be `0x1111000000000000000000000000000000001111` due to current adoption of this offset by existing L2 solutions.
 
-#### **[CR2]>[O1]**
-The `humanReadableTokenSymbol` property MUST be constructed as the hyphenated concatenation of first the `tokenSymbol` and then the `chainId`.
+An example of address alias for the USDC asset would be `addressAlias = 0x1111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB481111` 
 
-An example would be:
+#### **[R5]**
+
+The `relativeAddress` of an EOA or Smart Contract on a chain MUST either be the smart contract or EOA address of the origin chain or a `relativeAddress` of an EOA or Smart Contract from another chain.  
+
+An example of the former instance would be the relative address of wrapped USDC, `relativeAddress = 0x1111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB481111`, and an example of the latter would be the relative address of wrapped USDC on Polygon, `relativeAddress = 0x1371111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB481111137`.
+
+Finally, an example of an address alias for a message to another L1, L2, or Sidechain for wrapped USDC from Ethereum on Arbitrum would be:
 ```
-"tokenSymbol" = ETH;
-"chainId" = 1;
-"humanReadableTokenSymbol" = ETH-1;
-```
-
-The schema for a canonical token list is given below as follows and can be utilized as a JSON-LD schema if a JSON-LD context file is utilized (see [[1]](#w3c-did) for a concrete example in the context of a standard):
-
-```
-{
-    "$id": "https://github.com/eea-oasis/l2/schemas/CanonicalTokenList.json",
-    "$schema": "https://json-schema.org/draft-07/schema#",
-    "$comment": "{\"term\": \"CanonicalTokenList\", \"@id\": \"https://github.com/eea-oasis/l2#CanonicalTokenList\"}",
-    "title": "CanonicalTokenList",
-    "description": "Canonical Token List",
-    "type": "object",
-    "required": [
-        "type",
-        "tokenListId",
-        "name",
-        "createdAt",
-        "updatedAt",
-        "versions",
-        "tokens"
-        ],
-        "properties": {
-            "@context": {
-                "type": "array"
-            },
-            "type": {
-                "oneOf": [
-                    {
-                        "type": "string"
-                    },
-                    {
-                        "type": "array"
-                    }
-                ],
-                "examples": ["CanonicalTokenList"]
-            },
-            "tokenListId": {
-                "$comment": "{\"term\": \"tokenListId\", \"@id\": \"https://schema.org/identifier\"}",
-                "title": "tokenListId",
-                "description": "A resolvable URI to the publicly accessible place where this list can be found following the RFC 3986 standard.",
-                "type": "string",
-                "examples": ["https://ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew"]
-            },
-            "name": {
-                "$comment": "{\"term\": \"name\", \"@id\": \"https://schema.org/name\"}",
-                "title": "name",
-                "description": "Token List name",
-                "type": "string",
-                "examples": ["Aggregate Canonical Token List"]
-            },
-            "logoURI": {
-                "$comment": "{\"term\": \"logoURI\", \"@id\": \"https://schema.org/identifier\"}",
-                "title": "logoURI",
-                "description": "URI or URL of the token list logo following the RFC 3986 standard",
-                "type": "string",
-                "examples": ["https://ipfs.io/ipns/k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl"]
-            },
-            "keywords": {
-                "$comment": "{\"term\": \"keywords\", \"@id\": \"https://schema.org/DefinedTerm\"}",
-                "title": "keywords",
-                "description": "List of key words for the token list",
-                "type": "array",
-                "examples": [Aggregate Token List]
-            },
-            "createdAt": {
-                "$comment": "{\"term\": \"createdAt\", \"@id\": \"https://schema.org/datePublished\"}",
-                "title": "createdAt",
-                "description": "Date and time token list was created",
-                "type": "string",
-                "examples": ["2022-05-08"]
-            },
-            "updatedAt": {
-                "$comment": "{\"term\": \"updatedAt\", \"@id\": \"https://schema.org/dateModified\"}",
-                "title": "updatedAt",
-                "description": "Date and time token list was updated",
-                "type": "string",
-                 "examples": ["2022-05-09"]
-            },
-            "versions": {
-                "$comment": "{\"term\": \"versions\", \"@id\": \"https://schema.org/version\"}",
-                "title": "versions",
-                "description": "Versions of the canonical token list",
-                "type": "array",
-                 "items": {
-                    "type":"object",
-                    "required":[
-                        "major",
-                        "minor",
-                        "patch"
-                    ],
-                    "properties": {
-                        "major": {
-                            "$comment": "{\"term\": \"major\", \"@id\": \"https://schema.org/Number\"}",
-                            "title": "major",
-                            "description": "Major Version Number of the Token List",
-                            "type": "integer",
-                             "examples": [1]
-                        },
-                        "minor": {
-                            "$comment": "{\"term\": \"minor\", \"@id\": \"https://schema.org/Number\"}",
-                            "title": "minor",
-                            "description": "Minor Version Number of the Token List",
-                            "type": "integer",
-                             "examples": [1]
-                        },
-                        "patch": {
-                            "$comment": "{\"term\": \"patch\", \"@id\": \"https://schema.org/Number\"}",
-                            "title": "patch",
-                            "description": "Patch Number of the Token List",
-                            "type": "integer",
-                             "examples": [1]
-                        },
-                    }
-                }
-            },
-            "tokens": {
-                "title": "Listed Token Entry",
-                "description": "Listed Token Entry",
-                "type": "array",
-                 "items": {
-                    "type":"object",
-                    "required": [
-                        "chainId",
-                        "chainURI",
-                        "tokenId",
-                        "tokenType",
-                        "address",
-                        "name",
-                        "symbol",
-                        "decimals",
-                        "createdAt",
-                        "updatedAt"
-                    ],
-                    "properties": {
-                        "chainId": {
-                            "$comment": "{\"term\": \"chainId\", \"@id\": \"https://schema.org/identifier\"}",
-                            "title": "chainId",
-                            "description": "The typically used number identifier for the chain on which the token was issued.",
-                            "type": "number",
-                            "examples": [137]
-                        },
-                        "chainURI": {
-                            "$comment": "{\"term\": \"chainURI\", \"@id\": \"https://schema.org/identifier\"}",
-                            "title": "chainURI",
-                            "description": "A resolvable URI to the genesis block of the chain on which the token was issued following the RFC 3986 standard.",
-                            "type": "string"
-                             "examples": ["https://polygonscan.com/block/0"]
-                        },
-                        "genesisBlockHash": {
-                            "$comment": "{\"term\": \"genesisBlockHash\", \"@id\": \"https://schema.org/sha256\"}",
-                            "title": "genesisBlockHash",
-                            "description": "The hash of the genesis block of the chain on which the token was issued.",
-                            "type": "string",
-                            "examples": ["0xa9c28ce2141b56c474f1dc504bee9b01eb1bd7d1a507580d5519d4437a97de1b"]
-                        },
-                        "tokenIssuerId": {
-                            "$comment": "{\"term\": \"tokenIssuerId\", \"@id\": \"https://schema.org/identifier\"}",
-                            "title": "tokenIssuerId",
-                            "description": "A resolvable URI identifying the token issuer following the RFC 3986 standard.",
-                            "type": "string",
-                            "examples": ["https://polygonscan.com/address/0xa9c28ce2141b56c474f1dc504bee9b01eb1bd7d1a507580d5519d4437a97de1b"]
-                        },
-                        "tokenIssuerName": {
-                            "$comment": "{\"term\": \"tokenIssuerName\", \"@id\": \"https://schema.org/name\"}",
-                            "title": "tokenIssuerName",
-                            "description": "The name oof the token issuer.",
-                            "type": "string"
-                            "examples": ["Matic"]
-                        },
-                        "tokenId": {
-                            "$comment": "{\"term\": \"tokenId\", \"@id\": \"https://schema.org/identifier\"}",
-                            "title": "tokenId",
-                            "description": "A resolvable URI of the token following the RFC 3986 standard to for example the deployment transaction of the token, or a DID identifying the token and its issuer.",
-                            "type": "string",
-                            "example": ["https://polygonscan.com/address/0x0000000000000000000000000000000000001010"]
-                        },
-                        "tokenType": {
-                            "$comment": "{\"term\": \"tokenType\", \"@id\": \https://schema.org/StructuredValue\"}",
-                            "title": "tokenType",
-                            "description": "Describes the type of token.",
-                            "type": "array"
-                            "examples"[["fungible","transferable"]]
-                        },
-                        "tokenDesc": {
-                            "$comment": "{\"term\": \"tokenDesc\", \"@id\": \"https://schema.org/description\"}",
-                            "title": "tokenDesc",
-                            "description": "Brief description of the token and its functionality.",
-                            "type": "string",
-                            "examples": ["Protocol Token for the Matic Network"]
-                        },
-                        "standard": {
-                            "$comment": "{\"term\": \"standard\", \"@id\": \"https://schema.org/citation\"}",
-                            "title": "standard",
-                            "description": "Describes which standard the token adheres to.",
-                            "type": "string",
-                            "examples": ["ERC20"]
-                        },
-                        "address": {
-                            "$comment": "{\"term\": \"address\", \"@id\": \"https://schema.org/identifier\"}",
-                            "title": "address",
-                            "description": "Address of the token smart contract.",
-                            "type": "string",
-                            "examples": ["0x0000000000000000000000000000000000001010"]
-                        },
-                        "addressType": {
-                            "$comment": "{\"term\": \"address\", \"@id\": \"https://schema.org/Intangible\"}",
-                            "title": "addressType",
-                            "description": "AddressType of the token smart contract.",
-                            "type": "string",
-                            "examples": ["MaticNameSpace"]
-                        },
-                        "addressAlg": {
-                            "$comment": "{\"term\": \"addressAlg\", \"@id\": \"https://schema.org/algorithm\"}",
-                            "title": "addressAlg",
-                            "description": "Algorithm used to create the address e.g. CREATE2 or the standard ethereum address construction which is the last 40 characters/20 bytes of the Keccak-256 hash of a secp256k1 public key.",
-                            "type": "string",
-                            "examples": ["CREATE2"]
-                        },
-                        "name": {
-                            "$comment": "{\"term\": \"name\", \"@id\": \"https://schema.org/name\"}",
-                            "title": "name",
-                            "description": "Token name.",
-                            "type": "string",
-                            "examples": ["Matic"]
-                        },
-                        "symbol": {
-                            "$comment": "{\"term\": \"symbol\", \"@id\": \"https://schema.org/currency\"}",
-                            "title": "symbol",
-                            "description": "Token symbol e.g. ETH.",
-                            "type": "string",
-                            "examples": ["MATIC"]
-                        },
-                        "humanReadableTokenSymbol": {
-                            "$comment": "{\"term\": \"humanReadableTokenSymbol\", \"@id\": \"https://schema.org/currency\"}",
-                            "title": "humanReadableTokenSymbol",
-                            "description": "A Token symbol e.g. ETH, concatenated with the `chainId` the token was issued on or bridged to, e.g. ETH-1",
-                            "type": "string",
-                            "examples": ["MATIC-137"]
-                        },
-                        "decimals": {
-                            "$comment": "{\"term\": \"decimals\", \"@id\": \"https://schema.org/Number\"}",
-                            "title": "decimals",
-                            "description": "Allowed number of decimals for the listed token. This property may be named differently by token standards e.g. granularity for ERC-777",
-                            "type": "integer",
-                            "examples": [18]
-                        },
-                        "logoURI": {
-                            "$comment": "{\"term\": \"logoURI\", \"@id\": \"https://schema.org/identifier\"}",
-                            "title": "logoURI",
-                            "description": "URI or URL of the token logo following the RFC 3986 standard.",
-                            "type": "string"
-                            "examples": ["https://polygonscan.com/token/images/matic_32.png"]
-                        },
-                        "createdAt": {
-                            "$comment": "{\"term\": \"createdAt\", \"@id\": \"https://schema.org/datePublished\"}",
-                            "title": "createdAt",
-                            "description": "Date and time token was created",
-                            "type": "string",
-                            "examples": ["2020-05-31"]
-                        },
-                        "updatedAt": {
-                            "$comment": "{\"term\": \"updatedAt\", \"@id\": \"https://schema.org/dateModified\"}",
-                            "title": "updatedAt",
-                            "description": "Date and time token was updated",
-                            "type": "string"
-                            "examples": ["2020-05-31"]
-                        },
-                        "extensions": {
-                            "title": "extensions",
-                            "description": "Extension to the token list entry to specify an origin chain if the token entry refers to another chain other than the origin chain of the token",
-                            "type": "array",
-                            "items": {
-                                "type":"object",
-                                "required": [
-                                    "rootChainId",
-                                    "rootChainURI",
-                                    "rootAddress",
-                                ],
-                                "properties": {
-                                    "rootChainId": {
-                                        "$comment": "{\"term\": \"rootChainId\", \"@id\": \"https://schema.org/identifier\"}",
-                                        "title": "rootChainId",
-                                        "description": "The typically used number identifier for the root chain on which the token was originally issued.",
-                                        "type": "number",
-                                        "examples": [137]
-                                    },
-                                    "rootChainURI": {
-                                        "$comment": "{\"term\": \"rootChainURI\", \"@id\": \"https://schema.org/identifier\"}",
-                                        "title": "rootChainURI",
-                                        "description": "A resolvable URI to the genesis block of the root chain on which the token was originally issued following the RFC 3986 standard.",
-                                        "type": "string",
-                                        "examples": ["https://polygonscan.com/block/0"]
-                                    },
-                                    "rootAddress": {
-                                        "$comment": "{\"term\": \"rootAddress\", \"@id\": \"https://schema.org/identifier\"}",
-                                        "title": "rootAddress",
-                                        "description": "Root address of the token smart contract.",
-                                        "type": "string",
-                                        "examples": ["0x0000000000000000000000000000000000001010"]
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-    "additionalProperties": false,
-}
+addressAlias = 0x421611111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48111142161
 ```
 
 -------
@@ -592,16 +246,16 @@ A standardized set of test-fixtures with test inputs for all MUST, SHOULD, and M
 
 This section specifies the conformance levels of this standard. The conformance levels offer implementers several levels of conformance. These can be used to establish competitive differentiation.
 
-This document defines the conformance levels of a canonical token list as follows:
+This document defines the conformance levels of EVM based Address Aliasing as follows:
 * **Level 1:** All MUST requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 * **Level 2:** All MUST and SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 * **Level 3:** All MUST, SHOULD, and MAY requirements with conditional MUST or SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 
-#### **[D3]** 
-A claim that a canonical token list implementation conforms to this specification SHOULD describe the testing procedure used to justify the claim.
+#### **[D1]** 
+A claim that an EVM based Address Aliasing implementation conforms to this specification SHOULD describe the testing procedure used to justify the claim.
 
-#### **[R5]** 
-A claim that a canonical token list conforms to this specification at **level 2** or higher MUST describe the testing procedure used to justify the claim.
+#### **[R6]** 
+A claim that an EVM based Address Aliasing implementation conforms to this specification at **level 2** or higher MUST describe the testing procedure used to justify the claim.
 
 
 -------
@@ -619,23 +273,12 @@ The following documents are referenced in such a way that some or all of their c
 #### **[RFC2119]**
  S. Bradner, Key words for use in RFCs to Indicate Requirement Levels, http://www.ietf.org/rfc/rfc2119.txt, IETF RFC 2119, March 1997.
 
-#### **[JSONLD]** 
-JSON-LD 1.1, M. Sporny, D. Longley, G. Kellogg, M. Lanthaler, Pierre-Antoine Champin, N. Lindström, W3C Recommendation, July 2020 , https://www.w3.org/TR/2020/REC-json-ld11-20200716/. Latest version available at https://www.w3.org/TR/json-ld11/. 
-
-#### **[RFC3986]**
-T. Berners-Lee, R. Fielding,  L. Masinter, Uniform Resource Identifier (URI): Generic Syntax, IETF RFC 3986, January 2005, https://www.ietf.org/rfc/rfc3986.txt.
-
-#### **[EIP155]**
-Vitalik Buterin, "EIP-155: Simple replay attack protection," Ethereum Improvement Proposals, no. 155, October 2016. [Online serial]. Available: https://eips.ethereum.org/EIPS/eip-155.
-
-#### **[EIP3220]**
-Weijia Zhang, Peter Robinson, "EIP-3220: Crosschain Identifier Specification [DRAFT]," Ethereum Improvement Proposals, no. 3220, October 2020. [Online serial]. Available: https://eips.ethereum.org/EIPS/eip-3220.
-
 
 ## A.2 Non-Normative References
 
-#### **[W3C-DID]** 
-Decentralized Identifiers (DIDs) v1.0, M. Sporny, D. Longley, M. Sabadello, D. Reed, O. Steele, C. Allen, W3C Proposed Recommendation, August 2021, https://www.w3.org/TR/2021/PR-did-core-20210803/. Latest version available at https://www.w3.org/TR/did-core/.
+NA
+
+...
 
 
 # Appendix B - Security Considerations
@@ -677,7 +320,6 @@ Tas Dienes \
 Kelvin Fichter \
 Andreas Freund \
 Daniel Shaw \
-Pavel Sinelnikov \
 **[please add names here]**
 ...
 
@@ -686,7 +328,7 @@ Pavel Sinelnikov \
 
 # Appendix D - Revision History
 
-Revisions made since the initial stage of this numbered Version of this document have been tracked on [Github](https://github.com/eea-oasis/L2/tree/main/workitems/tokenlist/l2-token-list-v1.0-psd01.md).
+Revisions made since the initial stage of this numbered Version of this document have been tracked on [Github](https://github.com/eea-oasis/L2/tree/main/workitems/EVM-based-L2-address-aliasing/evm-based-l2-address-aliasing-v1.0-psd01.md).
 
 -------
 
