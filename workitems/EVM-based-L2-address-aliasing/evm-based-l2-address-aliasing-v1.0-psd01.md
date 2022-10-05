@@ -268,7 +268,7 @@ This document defines the conformance levels of EVM based Address Aliasing as fo
 #### **[D1]** 
 A claim that an EVM based Address Aliasing implementation conforms to this specification SHOULD describe the testing procedure used to justify the claim.
 
-#### **[R6]** 
+#### **[R8]** 
 A claim that an EVM based Address Aliasing implementation conforms to this specification at **level 2** or higher MUST describe the testing procedure used to justify the claim.
 
 
