@@ -180,9 +180,9 @@ Example : It should be read that [R1] is an absolute requirement of the specific
 
 The ability to unambiguously, and deterministically, relate an address for a digital asset (smart contract) or an externally owned account (EOA) between EVM based L1s, L2s, and Sidechains where this digital asset or EOA exists, also known as address aliasing, is critical prerequisite for interoperability between EVM based L1s, L2s, and Sidechains. However, there is currently no way to do so in a standardized way -- imagine every internet service provider were to define its own IP addresses.
 
-Hence, this document establishes an unambiguous and deterministic standard for EVM based address aliasing based on the concept of root --> leaf where an address alias is derived based on the address on the origin chain and an offset which is an immutable characteristic of the origin chain.
+Hence, this document establishes an unambiguous and deterministic standard for EVM based address aliasing based on the concept of root &rarr; leaf where an address alias is derived based on the address on the origin chain and an offset which is an immutable characteristic of the origin chain.
 
-See Figure 1 for the conceptual root--> leaf design with offset.
+See Figure 1 for the conceptual root &rarr; leaf design with offset.
 
 <div align="center">
 <figure>
@@ -190,7 +190,7 @@ See Figure 1 for the conceptual root--> leaf design with offset.
   src="./images/address-aliasing-root-leaf-design.png"
       alt="The figure describes conceptually how (interoperability) messages from source to target chain utilize address aliasing. At the bottom an EVM based L1 is uni-directionally connected to three EVM based L2s -- A, B, and C -- each with an alias of L1 address + L1 Offset. In addition, A is uni-directionally connected to B with an alias of L1 address + L1 offset + A offset. B is uni-directionally connected to an EVM-based Layer 3 or L3 with an alias of L1 address + L1 offset + B offset signaling that the address is anchored on L1 via the L2 B. And finally D is uni-directionally connected to C via the alias L1 address + L1 offset + B offset plus D offset indicating the asset chain of custody from L1 to B to D to C."
   >
-  <figcaption>Figure 1: Root --> Leaf address aliasing concept using an chain immanent characteristics from L1 to L2 and L3 and back</figcaption>
+  <figcaption> Figure 1: Root &rarr; Leaf address aliasing concept using an chain immanent characteristics from L1 to L2 and L3 and back</figcaption>
 </figure>
 </div>
 -------
@@ -201,7 +201,7 @@ The requirements below are only valid for EVM based L1s, L2, or Sidechains. Addr
 
 #### **[R1]**
 An address alias -- `addressAlias` -- to be used between Chain A and Chain B MUST be constructed as follows:
-`addressAlias (Chain A) = offsetAlias (for Chain A)relativeAddress (on Chain A) offsetAlias (for Chain A)`
+`addressAlias (Chain A) = offsetAlias (for Chain A) relativeAddress (on Chain A) offsetAlias (for Chain A)`
 
 #### **[R2]**
 The `offsetAlias` of a chain MUST be `0xchainId00000000000000000000000000000000chainId`
@@ -215,12 +215,12 @@ The `chainId` used in the `offsetAlias` MUST NOT be zero (0)
 The `chainId` used in the `offsetAlias` MUST NOT be larger than `uint255` to avoid overflows
 
 
-#### **[R4]**
+#### **[R5]**
 The `offsetAlias`for Ethereum Mainnet as the primary anchor of EVM based chains MUST be `0x1111000000000000000000000000000000001111` due to current adoption of this offset by existing L2 solutions.
 
 An example of address alias for the USDC asset would be `addressAlias = 0x1111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB481111` 
 
-#### **[R5]**
+#### **[R6]**
 
 The `relativeAddress` of an EOA or Smart Contract on a chain MUST either be the smart contract or EOA address of the origin chain or a `relativeAddress` of an EOA or Smart Contract from another chain.  
 
@@ -230,6 +230,20 @@ Finally, an example of an address alias for a message to another L1, L2, or Side
 ```
 addressAlias = 0x421611111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48111142161
 ```
+
+#### **[R7]**
+
+The order of the `offsetAlias`es in an `addressAlias` MUST be ordered from the `offSetAlias` of the root chain bracketing the `relativeAddress` on the root chain through the ordered sequence of `offsetAlias`es of the chains on which the digital asset exists.
+
+For example, a valid `addressAlias` of an asset on chain A bridged to chain B and subsequently to chain C and that is to be bridged to yet another chain from chain C would be:
+```
+addressAlias = chainId(C) chainId(B) chainId(A) relativeAddress chainId(A) chainId(B) chainId(C)
+```   
+However, the reverse order is invalid:
+```
+addressAlias = chainId(A) chainId(B) chainId(C) relativeAddress chainId(C) chainId(B) chainId(A)
+```  
+Note, that a proof that a given is provably correct is beyond the scope of this document.
 
 -------
 # 4 Conformance
