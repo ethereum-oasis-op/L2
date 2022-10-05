@@ -1,5 +1,37 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 5 Oct 2022, 7:00 am PT
+
+Attending: Andreas Freund (EF/TreeTrunk), Tas Dienes (EF), Dan Shaw (EF), Gabriel Barros (Cartesi), Jose Fabrega (Metis), Samrat Kishor (Golden Next Ventures), Anais Ofranc 
+
+Regrets: Daniel Goldman (Offchain Labs), Weija Zhang (Wanchain, EEA Crosschain Interop Group), Pavel Sinelnikov (Metis), Parth Bhatt, Elena Sinelnikova (Metis), Anav Agrawal (Polygon), Cody Burns (Accenture), Ino Murko (Boba Network), Alan Chiu (Boba Network), Omar Azhar (Matter Labs), Souradeep (Boba Network), Violet (Boba Network), Hanan Beer (EF), Yoav Weiss (EF), Kelvin Fichter (Optimism), 
+
+Scribe: Tas Dienes
+
+Proposed agenda
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review PRs: 
+    - #26 -- Canonical Token List Spec Draft
+    - #29 -- EVM-based Address Aliasing
+5. Review Open Issues List
+6. Open Forum for other items
+
+Meeting notes
+
+* Review PR #26 (token list)
+  - It’s at the point of final review, ready to merge if no more comments. 
+  - Andreas explained the proposed standard
+  - Q: where will token lists be hosted? A: each project will have and host its own.  It’s not centralized.
+  - Need 2 more approvals
+* Review PR #29 (address aliasing)
+  - Andreas explained the proposed standard
+  - Gabriel pointed out the need for an address order requirement. Andreas said he would add it.
+* Issue #23 (transaction fee structure) was reviewed
+* Issue #20 (cross chain interop interface) was reviewed
+  - Anais mentioned work that the EEA cross chain interop group is working on https://entethalliance.github.io/crosschain-interoperability/draft_crosschain_techspec_messaging.html 
+
 ## Meeting Wed, 21 Sep 2022, 7:00 am PT
 
 Attending: Hanan Beer (EF), Tas Dienes (EF), Dan Shaw (EF), Andreas Freund (EF/TreeTrunk), Yoav Weiss (EF), Kelvin Fichter (Optimism), Samrat Kishor (Golden Next Ventures),
