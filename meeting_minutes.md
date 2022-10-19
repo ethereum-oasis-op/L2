@@ -1,5 +1,38 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 19 Oct 2022, 7:00 am PT
+
+Attending: Andreas Freund (EF), Dan Shaw (EF), Gabriel Barros (Cartesi), Daniel Goldman (Offchain Labs), Anais Ofranc (EEA)
+
+Regrets: Tas Dienes (EF), Daniel Goldman (Offchain Labs), Weija Zhang (Wanchain, EEA Crosschain Interop Group), Pavel Sinelnikov (Metis), Parth Bhatt, Elena Sinelnikova (Metis), Anav Agrawal (Polygon), Cody Burns (Accenture), Ino Murko (Boba Network), Alan Chiu (Boba Network), Omar Azhar (Matter Labs), Souradeep (Boba Network), Violet (Boba Network), Hanan Beer (EF), Yoav Weiss (EF), Kelvin Fichter (Optimism), Jose Fabrega (Metis), Samrat Kishor (Golden Next Ventures),
+
+Scribe: Dan Shaw
+
+Agenda
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review PRs: #26 -- Canonical Token List Spec Draft (merge after meeting hopefully) & #29 -- EVM-based Address Aliasing
+Review Open Issues List
+5. Open Forum for other items
+
+Meeting notes
++ Review PR #29 (address aliasing)
+  - Discussed whether we should start this standardization effort with an EIP to get 
+  - All EVM-based chains MUST have a chain id to prevent replay attack
+  - It was identified that the current max character length for chain IDs is 13, so we need to increase to at least 16 characters
+  - Anais noted EIP 3220 https://eips.ethereum.org/EIPS/eip-3220, noting that it would be good to align where we land with the EEA Crosschain Working Groups efforts
+  - Decision was made to start with an EIP for Chain IDs
+  - Next steps
+    * Finalize PR approval
+    * Then need at least 2 implementations
+OASIS Standardization
+    * Anais invited the L2 WG to come join the Crosschain WG and the Crosschain WG to the L2 WG
+    * Andreas will represent the group at the Crosschain WG 
++ Issue #23 (transaction fee structure) was reviewed
+  - Daniel will add how Arbitrum handles this
+
+
 ## Meeting Wed, 5 Oct 2022, 7:00 am PT
 
 Attending: Andreas Freund (EF/TreeTrunk), Tas Dienes (EF), Dan Shaw (EF), Gabriel Barros (Cartesi), Jose Fabrega (Metis), Samrat Kishor (Golden Next Ventures), Anais Ofranc 
