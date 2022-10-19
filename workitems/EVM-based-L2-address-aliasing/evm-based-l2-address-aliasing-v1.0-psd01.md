@@ -206,32 +206,34 @@ An address alias -- `addressAlias` -- to be used between Chain A and Chain B MUS
 #### **[R2]**
 The `offsetAlias` of a chain MUST be `0xchainId00000000000000000000000000000000chainId`
 
-For example the `chainId` of Polygon PoS is `137`, with the current list of EVM based `chainId`s to be found [here](https://chainlist.org/), and its `offsetAlias` is `0x13700000000000000000000000000000000137`.
-
 #### **[R3]**
 The `chainId` used in the `offsetAlias` MUST NOT be zero (0)
 
 #### **[R4]**
-The `chainId` used in the `offsetAlias` MUST NOT be larger than `uint255` to avoid overflows
-
+The `chainId` used in the `offsetAlias` MUST be 16 bytes where 1 byte represents 1 digit of the known `chainId`.
 
 #### **[R5]**
+In case the `chainId` has less than 16 digits the `chainId` MUST be padded with zeros to 16 digits.
+
+For example the `chainId` of Polygon PoS is `137`, with the current list of EVM based `chainId`s to be found [here](https://chainlist.org/), and its `offsetAlias` is `0x0000000000000137000000000000000000000000000000000000000000000137`.
+
+#### **[R6]**
 The `offsetAlias`for Ethereum Mainnet as the primary anchor of EVM based chains MUST be `0x1111000000000000000000000000000000001111` due to current adoption of this offset by existing L2 solutions.
 
 An example of address alias for the USDC asset would be `addressAlias = 0x1111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB481111` 
 
-#### **[R6]**
+#### **[R7]**
 
 The `relativeAddress` of an EOA or Smart Contract on a chain MUST either be the smart contract or EOA address of the origin chain or a `relativeAddress` of an EOA or Smart Contract from another chain.  
 
-An example of the former instance would be the relative address of wrapped USDC, `relativeAddress = 0x1111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB481111`, and an example of the latter would be the relative address of wrapped USDC on Polygon, `relativeAddress = 0x1371111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB481111137`.
+An example of the former instance would be the relative address of wrapped USDC, `relativeAddress = 0x1111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB481111`, and an example of the latter would be the relative address of wrapped USDC on Polygon, `relativeAddress = 0x00000000000001371111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB4811110000000000000137`.
 
 Finally, an example of an address alias for a message to another L1, L2, or Sidechain for wrapped USDC from Ethereum on Arbitrum would be:
 ```
-addressAlias = 0x421611111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48111142161
+addressAlias = 0x00000000000421611111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB4811110000000000042161
 ```
 
-#### **[R7]**
+#### **[R8]**
 
 The order of the `offsetAlias`es in an `addressAlias` MUST be ordered from the `offSetAlias` of the root chain bracketing the `relativeAddress` on the root chain through the ordered sequence of `offsetAlias`es of the chains on which the digital asset exists.
 
@@ -268,7 +270,7 @@ This document defines the conformance levels of EVM based Address Aliasing as fo
 #### **[D1]** 
 A claim that an EVM based Address Aliasing implementation conforms to this specification SHOULD describe the testing procedure used to justify the claim.
 
-#### **[R8]** 
+#### **[R9]** 
 A claim that an EVM based Address Aliasing implementation conforms to this specification at **level 2** or higher MUST describe the testing procedure used to justify the claim.
 
 
