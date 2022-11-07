@@ -1,5 +1,45 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 2 Novt 2022, 7:00 am PT
+
+Attending: Andreas Freund (EF), Dan Shaw (EF), Daniel Goldman (Offchain Labs), Anais Ofranc (EEA), Tas Dienes (EF), Ramon Canales (Matter Labs), Kelvin Fichter (Optimism),
+
+Regrets: Daniel Goldman (Offchain Labs), Weija Zhang (Wanchain, EEA Crosschain Interop Group), Pavel Sinelnikov (Metis), Parth Bhatt, Elena Sinelnikova (Metis), Anav Agrawal (Polygon), Cody Burns (Accenture), Ino Murko (Boba Network), Alan Chiu (Boba Network), Omar Azhar (Matter Labs), Souradeep (Boba Network), Violet (Boba Network), Hanan Beer (EF), Yoav Weiss (EF), Jose Fabrega (Metis), Samrat Kishor (Golden Next Ventures), Gabriel Barros (Cartesi)
+
+Scribe: Anais Ofranc
+
+Proposed agenda
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review PRs: 
+  * #26 -- Canonical Token List Spec Draft (merge after meeting hopefully)
+  * #29 -- EVM-based Address Aliasing
+5. Review Open Issues List
+6. Open Forum for other items
+
+Meeting notes
+
+* New Participants
+  - Ramon Canales (Matter Labs), recently joined the ZK Sync team.
+* Review PRs: #26 -- Canonical Token List Spec Draft
+  - Andreas provided a review of the draft and its purpose
+  - All participants agreed it is ready to merge
+* Review PRs: #29 -- EVM-based Address Aliasing
+  - Andreas provided an overview of the specification and its purpose
+  - Ramon asked clarifying questions
+  - Kelvin noted tha 8 bytes for encoding should be enough
+  - Kelvin suggested that it needs a security section to ensure that addresses for bridged assets are validated to have no code in order to avoid malicious behavior
+  - Kelvin agreed to add suggestions on wording for 8 byte limitation and a security section  by the next meeting
+* Review of open issues
+  - Confirmed L2 report out date for EEA Crosschain WG of 11/9 with Anais
+  - Participants agreed that providing a definition of transaction fee terms and general structure would be a good next work item
+  - Kelvin agreed to add Optimisim fee structure, definitions and calculations to the fee issue
+  - WG briefly discussed remaining open items with agreement that additional low-hanging-fruit interoperability work items should be a focus in 2023
+* Meeting adjourned
+
+
 ## Meeting Wed, 19 Oct 2022, 7:00 am PT
 
 Attending: Andreas Freund (EF), Dan Shaw (EF), Gabriel Barros (Cartesi), Daniel Goldman (Offchain Labs), Anais Ofranc (EEA)
