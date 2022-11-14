@@ -190,9 +190,23 @@ See Figure 1 for the conceptual root &rarr; leaf design with offset.
   src="./images/address-aliasing-root-leaf-design.png"
       alt="The figure describes conceptually how (interoperability) messages from source to target chain utilize address aliasing. At the bottom an EVM based L1 is uni-directionally connected to three EVM based L2s -- A, B, and C -- each with an alias of L1 address + L1 Offset. In addition, A is uni-directionally connected to B with an alias of L1 address + L1 offset + A offset. B is uni-directionally connected to an EVM-based Layer 3 or L3 with an alias of L1 address + L1 offset + B offset signaling that the address is anchored on L1 via the L2 B. And finally D is uni-directionally connected to C via the alias L1 address + L1 offset + B offset plus D offset indicating the asset chain of custody from L1 to B to D to C."
   >
-  <figcaption> Figure 1: Root &rarr; Leaf address aliasing concept using an chain immanent characteristics from L1 to L2 and L3 and back</figcaption>
+  <figcaption> Figure 1: Root &rarr; Leaf address aliasing concept using an chain immanent characteristics from L1 to L2 and L3 and back </figcaption>
 </figure>
 </div>
+
+To further clarify the connections between the different possible paths an asset can take from an L1 to different L2/L3s and the `relativAddress`of that asset, we visually highlight in red the path from the EVM based L1 to the B L2, to the D L3, and finally to the C L2.
+
+div align="center">
+<figure>
+  <img
+  src="./images/visual-Highlight-Path-Red-evm-based-aliasing..png"
+      alt="The figure is the same as Figure 1. However, the uni-directional connections between the EVM based L1 to the L2 B, to the L3 D, and finally to the L2 C are highlighted in red."
+  >
+  <figcaption> Figure 2: Visually highlighted path in red from the EVM based L1 to the B L2, to the D L3, and finally to the C L2 </figcaption>
+</figure>
+</div>
+
+
 -------
 
 # 3 Aliasing of EVM based Addresses Specification
@@ -210,7 +224,7 @@ The `offsetAlias` of a chain MUST be `0xchainId00000000000000000000000000000000c
 The `chainId` used in the `offsetAlias` MUST NOT be zero (0)
 
 #### **[R4]**
-The `chainId` used in the `offsetAlias` MUST be 16 bytes where 1 byte represents 1 digit of the known `chainId`.
+The `chainId` used in the `offsetAlias` MUST be 8 bytes.
 
 #### **[R5]**
 In case the `chainId` has less than 16 digits the `chainId` MUST be padded with zeros to 16 digits.
