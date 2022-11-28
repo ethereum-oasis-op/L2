@@ -139,6 +139,10 @@ An open, distributed ledger that can record transactions between two parties eff
 
 Provides a connection that allows for the transfer of digital tokens or data between two different Layer 1, Layer 2 or Sidechain systems.
 
+**Externally Owned Account**
+
+An Ethereum address that is controlled by a cryptographic private key.
+
 **Layer 1:**
 
 A base network, such as Bitcoin, or Ethereum, and its underlying infrastructure that validates and finalizes transactions without the need of another network.
@@ -238,7 +242,7 @@ An example of address alias for the USDC asset would be `addressAlias = 0x1111A0
 
 #### **[R7]**
 
-The `relativeAddress` of an EOA or Smart Contract on a chain MUST either be the smart contract or EOA address of the origin chain or a `relativeAddress` of an EOA or Smart Contract from another chain.  
+The `relativeAddress` of an Externally Owned Account (EOA) or Smart Contract on a chain MUST either be the smart contract or EOA address of the origin chain or a `relativeAddress` of an EOA or Smart Contract from another chain.  
 
 An example of the former instance would be the relative address of wrapped USDC, `relativeAddress = 0x1111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB481111`, and an example of the latter would be the relative address of wrapped USDC on Polygon, `relativeAddress = 0x00000000000001371111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB4811110000000000000137`.
 
@@ -313,8 +317,6 @@ NA
 
 # Appendix B - Security Considerations
 
-There are no additional security requirements.
-
 ## B.1 Data Privacy
 
 The standard does not set any requirements for compliance to jurisdiction legislation/regulations. It is the responsibility of the implementer to comply with applicable data privacy laws.
@@ -322,6 +324,12 @@ The standard does not set any requirements for compliance to jurisdiction legisl
 ## B.2 Production Readiness 
 
 The standard does not set any requirements for the use of specific applications/tools/libraries etc. The implementer should perform due diligence when selecting specific applications/tools/libraries.
+
+There are security considerations as to the Ethereum-type addresses used in the construction of the `relativeAddress`. 
+
+If the Ethereum-type address used in address aliasing is supposed to be an EOA, the target system/recipient should validate that the `codehash` of the source account is `NULL` such that no malicious code can be executed surrepticiously in an asset transfer.    
+
+If the Ethereum-type address used in address aliasing is supposed to be a smart contract account representing an asset, the target system/recipient should validate that the `codehash` of the source account matches the `codehash` of the published smart contract solidity code to ensure that the source smart contract behaves as expected.
 
 <!--
 
@@ -346,11 +354,10 @@ The following individuals have participated in the creation of this specificatio
 
 **Participants**:
 
-Tas Dienes \
+Gabriel Barros \
 Kelvin Fichter \
 Andreas Freund \
-Daniel Shaw \
-**[please add names here]**
+Daniel Goldman \
 ...
 
  
