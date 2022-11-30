@@ -1,5 +1,81 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 30 Novt 2022, 7:00 am PT
+
+Attending: Andreas Freund (EF), Daniel Goldman (Offchain Labs), Cody Burns (Accenture), Kartheek Solipuram (E&Y)
+
+Regrets: Ramon Canales (Matter Labs), Kelvin Fichter (Optimism), Weija Zhang (Wanchain, EEA Crosschain Interop Group), Pavel Sinelnikov (Metis), Parth Bhatt, Elena Sinelnikova (Metis), Anav Agrawal (Polygon), Ino Murko (Boba Network), Alan Chiu (Boba Network), Omar Azhar (Matter Labs), Souradeep (Boba Network), Violet (Boba Network), Hanan Beer (EF), Yoav Weiss (EF), Jose Fabrega (Metis), Samrat Kishor (Golden Next Ventures), Dan Shaw (EF), Anais Ofranc (EEA), Tas Dienes (EF), Gabriel Barros (Cartesi)
+
+Scribe: Andreas Freund
+
+Proposed agenda
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. EEA Crosschain Interoperability WG Presentation on the current status of their efforts on crosschain addressing
+5. Review PR: #29 -- EVM-based Address Aliasing, and updates made based on last WG meeting and other feedback
+6. Review Open Issues List
+7. Select the next work item
+8. Open Forum for other items
+
+Meeting notes
+1. Kartheek Solipuram (E&Y) joined for the first time
+2. After Welcomes, Andreas Freund was selected as scribe
+Katheek introduced himself to the group and his interest and work in Layer 2 and Layer 2 bridges as E&Y solution architect
+3. EEA Crosschain Interoperability WG did not present as scheduled. Will move presentation to the next meeting on 12/14
+4. PR#29 – EVM-based Address Aliasing
+    - Andreas: Presented an overview of PR #29 with a focus on the added security considerations
+    - Dan: Agreed with proposed language
+    - Cody: Asked clarifying questions, in particular on checksum for relativeAddress. Will add comment.
+    - Kartheek: Asked clarifying questions on relativAddress structure and security considerations. 
+5. Open Issues Review
+    - On L2 Interfaces: Karhteek to add some comments based on what he is working on with L2 bridges
+    - On L2 Trxn Fees: 
+      * Dan and Andreas discussed possible substructures of the priority fee around MEV. 
+      * Also discussed trxn ordering in a decentralized sequencer network and how that can be achieved with PoS consensus. Andreas mentioned EigenLayer as a staking mechanism to add L1 protection to L2 sequencer consensus. 
+      * Andreas will create PR with draft of definition before next WG meeting
+6. Other Business
+    - Andeas updated on submission of Canonical Token List spec to PGB and next steps
+
+
+## Meeting Wed, 16 Novt 2022, 7:00 am PT
+
+Attending: Andreas Freund (EF), Dan Shaw (EF), Anais Ofranc (EEA), Tas Dienes (EF), Gabriel Barros (Cartesi)
+
+Regrets: Daniel Goldman (Offchain Labs),  Ramon Canales (Matter Labs), Kelvin Fichter (Optimism), Daniel Goldman (Offchain Labs), Weija Zhang (Wanchain, EEA Crosschain Interop Group), Pavel Sinelnikov (Metis), Parth Bhatt (MOBI), Elena Sinelnikova (Metis), Anav Agrawal (Polygon), Cody Burns (Accenture), Ino Murko (Boba Network), Alan Chiu (Boba Network), Omar Azhar (Matter Labs), Souradeep (Boba Network), Violet (Boba Network), Hanan Beer (EF), Yoav Weiss (EF), Jose Fabrega (Metis), Samrat Kishor (Golden Next Ventures), 
+
+Scribe: Gabriel Barros
+
+Proposed Agenda:
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Report out from Meeting with EEA Cross-chain Interop WG meeting on 11/9
+5. Review PR: #29 -- EVM-based Address Aliasing, and updates made based on last WG meeting and other feedback
+6. Review Open Issues List
+7. Select the next work item
+8. Open Forum for other items
+
+Meeting Notes:
+
+1. No new participants.
+2. Merged PR #26 - Canonical Token List Spec Draft : Will be submit for approval by PGB
+2. Review PR #29 - EVM-based Address Aliasing
+    - Andreas provided an overview from last meeting discussions
+    - Gabriel asked clarifying question about 8bytes size limit and human readable chainIDs
+    - We need clarification on "no-code at the address for bridged assets" security concern
+    - Presentation on the agenda for the next meeting (issue #31 – Crosschain WG x L2 Group) 
+3. Review of open issues
+    - Call out for interested parties on issue #21
+    - Closing issue #20 as dup of #21
+    - Gabriel to add Cartesi model as comment to issue #23 - Fee structure
+4. Next work item
+    - Andreas shared "The State of L2 Bridges" wip document
+5. Discussion on the dates of the last meetings of the year and return on 11th of Jan of next year. No meeting Dec 28.
+6. Anais brought up the topic of reaching out to other interested groups (such as EVM compatible L1 chains) for the standards created here. 
+
 ## Meeting Wed, 2 Novt 2022, 7:00 am PT
 
 Attending: Andreas Freund (EF), Dan Shaw (EF), Daniel Goldman (Offchain Labs), Anais Ofranc (EEA), Tas Dienes (EF), Ramon Canales (Matter Labs), Kelvin Fichter (Optimism),
