@@ -115,7 +115,7 @@ The L2 WG is an open-source initiative with a scope to
 - For EVM compatible public blockchains, identify, document, and devise solution approaches for Layer 2 Blockchain scalability solution specific challenges such as MEV, block (gas) limits, TVL concentration, etc.
 - Identify and document characteristics of Layer 2 Blockchain environments for EVM compatible public blockchains that will be key in addressing mainstream and enterprise adoption.
 
-The work is an [Ethereum Community Project](https://github.com/ethereum/oasis-open-project), which is managed by [OASIS](https://oasis-open-projects.org/).
+The work is an [EEA Community Project](https://entethalliance.org/eeacommunityprojects/), which is managed by [OASIS](https://oasis-open-projects.org/).
 
 ## 1.1 Overview
 
@@ -188,7 +188,7 @@ Hence, this document establishes an unambiguous and deterministic standard for E
 
 See Figure 1 for the conceptual root &rarr; leaf design with offset.
 
-<div align="center">
+<div align="left">
 <figure>
   <img
   src="./images/address-aliasing-root-leaf-design.png"
@@ -200,7 +200,7 @@ See Figure 1 for the conceptual root &rarr; leaf design with offset.
 
 To further clarify the connections between the different possible paths an asset can take from an L1 to different L2/L3s and the `relativAddress`of that asset, we visually highlight in red the path from the EVM based L1 to the B L2, to the D L3, and finally to the C L2.
 
-div align="center">
+<div align="left">
 <figure>
   <img
   src="./images/visual-Highlight-Path-Red-evm-based-aliasing..png"
@@ -327,9 +327,9 @@ The standard does not set any requirements for the use of specific applications/
 
 There are security considerations as to the Ethereum-type addresses used in the construction of the `relativeAddress`. 
 
-If the Ethereum-type address used in address aliasing is supposed to be an EOA, the target system/recipient should validate that the `codehash` of the source account is `NULL` such that no malicious code can be executed surrepticiously in an asset transfer.    
+If the Ethereum-type address used in the `relativeAddress` is supposed to be an EOA, the target system/recipient should validate that the `codehash` of the source account is `NULL` such that no malicious code can be executed surrepticiously in an asset transfer.    
 
-If the Ethereum-type address used in address aliasing is supposed to be a smart contract account representing an asset, the target system/recipient should validate that the `codehash` of the source account matches the `codehash` of the published smart contract solidity code to ensure that the source smart contract behaves as expected.
+If the Ethereum-type address used in the `relativeAddress` is supposed to be a smart contract account representing an asset, the target system/recipient should validate that the `codehash` of the source account matches the `codehash` of the published smart contract solidity code to ensure that the source smart contract behaves as expected.
 
 <!--
 
