@@ -170,7 +170,7 @@ A mechanism by which tokens are transferred between a blockchain and a sidechain
 A requirement is uniquely identified by a unique ID composed of its requirement level followed by a requirement number, as per convention **[RequirementLevelRequirementNumber]**. 
 There are four requirement levels that are coded in requirement ids as per below convention: 
 
-**[R]** - The requirement level for requirements which IDs start with the letter _R_ is to be interpreted as **MUST** as described in [RFC2119](###-RFC2119). \
+**[R]** - The requirement level for requirements which IDs start with the letter _R_ is to be interpreted as **MUST** as described in [RFC2119](#rfc2119). \
 **[D]** - The requirement level for requirements which IDs start with the letter _D_ is to be interpreted as **SHOULD** as described in RFC2119. \
 **[O]** - The requirement level for requirements which IDs start with the letter _O_ is to be interpreted as **MAY** as described in RFC2119. 
 
@@ -263,7 +263,7 @@ However, the reverse order is invalid:
 ```
 addressAlias = chainId(A) chainId(B) chainId(C) relativeAddress chainId(C) chainId(B) chainId(A)
 ```  
-Note, that a proof that a given is provably correct is beyond the scope of this document.
+Note, that a proof that a given order is provably correct is beyond the scope of this document.
 
 -------
 # 4 Conformance
@@ -310,7 +310,9 @@ The following documents are referenced in such a way that some or all of their c
 
 ## A.2 Non-Normative References
 
-NA
+#### **[EIP55]**
+Vitalik Buterin , Alex Van de Sande, "Mixed-case checksum address encoding",
+https://github.com/ethereum/EIPs/blob/master/EIPS/eip-55.md, EIP Repository, January 2016
 
 ...
 
@@ -330,6 +332,8 @@ There are security considerations as to the Ethereum-type addresses used in the 
 If the Ethereum-type address used in the `relativeAddress` is supposed to be an EOA, the target system/recipient should validate that the `codehash` of the source account is `NULL` such that no malicious code can be executed surrepticiously in an asset transfer.    
 
 If the Ethereum-type address used in the `relativeAddress` is supposed to be a smart contract account representing an asset, the target system/recipient should validate that the `codehash` of the source account matches the `codehash` of the published smart contract solidity code to ensure that the source smart contract behaves as expected.
+
+Lastly, it is recommended that as part of the `relativeAddress` validation the target system performs an address checksum validation as defined in [[EIP-55](#eip55)].
 
 <!--
 
