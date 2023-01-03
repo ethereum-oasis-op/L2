@@ -221,6 +221,8 @@ The following data elements MUST be present in a canonical token list:
 
 Note, that the detailed definition of the data elements in [[R1]](#r1) along with descriptions and examples are given in the schema itself below.
 
+[[R1]](#r1) testability: See suggested test fixtures for the data schema below. 
+
 #### **[R2]**
 The tokens data element is a composite which MUST minimally contain the following data elements:
 - chainId
@@ -236,28 +238,42 @@ The tokens data element is a composite which MUST minimally contain the followin
 
 Note, that the detailed definition of the data elements in [[R2]](#r2) along with descriptions and examples are given in the schema itself below.
 
+[[R2]](#r2) testability: See suggested test fixtures for this documents' data schema below.
+
 #### **[D1]**
 All other data elements of the schema SHOULD be included in a representation of a canonical token list.
 
+[[D1]](#d1) testability: See suggested test fixtures for this documents' data schema below.
+
 #### **[CR1]>[D1]**
-if the extension data elements is used, the following data elements MUST be present in the schema representation:
+If the extension data elements is used, the following data elements MUST be present in the schema representation:
 - rootChainId
 - rootChainURI
 - rootAddress
 
 Note, that the detailed definition of the data elements in [[D1]](#d1) and [[CR1]>[D1]](#cr1d1) along with descriptions and examples are given in the schema itself below.
 
+[[CR1]>[D1]](#cr1d1) testability: See suggested test fixtures for this documents' data schema below.
+
 #### **[R3]**
 All properties in the schema identified in the description to be a Universal Resource Identifier (URI) MUST follow in their semantics [RFC 3986](#rfc3986).
+
+[[R3]](#r3) testability: As an approved standard, all requirements for [RFC 3986](#rfc3986) are testable.
 
 #### **[R4]**
 The `chainId` property MUST follow [EIP-155](#eip155) standard.
 
+[[R4]](#r4) testability: As an approved standard, all requirements for [EIP-155](#eip155) are testable.
+
 #### **[D2]**
 The `chainId` property SHOULD follow [EIP-3220](#eip3220) draft standard.
 
+[D2]](#d2) testability: The [EIP-3220](#eip3220) draft standard has test fixtures.
+
 #### **[O1]**
 The `humanReadableTokenSymbol` property MAY be used.
+
+[O1]](#o1) testability: A data property is always implementable in a schema.
 
 #### **[CR2]>[O1]**
 The `humanReadableTokenSymbol` property MUST be constructed as the hyphenated concatenation of first the `tokenSymbol` and then the `chainId`.
@@ -268,6 +284,9 @@ An example would be:
 "chainId" = 1;
 "humanReadableTokenSymbol" = ETH-1;
 ```
+
+[[CR2]>[O1]](#cr2o1) testability: `humanReadableTokenSymbol` can be parsed and split based on existing open source packages and the result compared to the `tokenSymbol` and `chainId` used in the data schema.
+
 
 The schema for a canonical token list is given below as follows and can be utilized as a JSON-LD schema if a JSON-LD context file is utilized (see [[1]](#w3c-did) for a concrete example in the context of a standard):
 
@@ -577,6 +596,7 @@ The schema for a canonical token list is given below as follows and can be utili
     "additionalProperties": false,
 }
 ```
+Data Schema Testability: The above data schema can be tested following a schema validation approach as utilized in for example the [W3C CCG Traceability Work Item](https://github.com/w3c-ccg/traceability-interop).
 
 -------
 # 4 Conformance
@@ -601,9 +621,12 @@ This document defines the conformance levels of a canonical token list as follow
 #### **[D3]** 
 A claim that a canonical token list implementation conforms to this specification SHOULD describe the testing procedure used to justify the claim.
 
+[D3]](#d3) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document.
+
 #### **[R5]** 
 A claim that a canonical token list conforms to this specification at **level 2** or higher MUST describe the testing procedure used to justify the claim.
 
+[D3]](#d3) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document.
 
 -------
 
@@ -639,9 +662,19 @@ Weijia Zhang, Peter Robinson, "EIP-3220: Crosschain Identifier Specification [DR
 Decentralized Identifiers (DIDs) v1.0, M. Sporny, D. Longley, M. Sabadello, D. Reed, O. Steele, C. Allen, W3C W3C Recommendation, July 2022, https://www.w3.org/TR/2022/REC-did-core-20220719/. Latest version available at https://www.w3.org/TR/did-core/.
 
 
+#### **[W3C-String-Meta]**
+
+Strings on the Web: Language and Direction Metadata, R. Ishida, A. Phillips, August 2022,
+https://www.w3.org/TR/string-meta/
+
+#### **[CVE-2021-42574]**
+NIST Publication, 2021,
+https://nvd.nist.gov/vuln/detail/CVE-2021-42574
+
+
 # Appendix B - Security Considerations
 
-There are no additional security requirements.
+There are no additional security requirements apart from the warnings that URIs utilized in implementations of this standard might be direct to malicious resources such as websites. Since this standard is focused on a data schema and its data properties there are no additional security considerations from for example homoglyph attacks (see [CVE-2021-42574](#CVE-2021-42574)).
 
 ## B.1 Data Privacy
 
@@ -650,6 +683,10 @@ The standard does not set any requirements for compliance to jurisdiction legisl
 ## B.2 Production Readiness 
 
 The standard does not set any requirements for the use of specific applications/tools/libraries etc. The implementer should perform due diligence when selecting specific applications/tools/libraries.
+
+## B.3 Internationalization/Localization
+
+The standard encourages implementers to follow the [W3C "Strings on the Web: Language and Direction Metadata" best practices guide](#W3C-String-Meta) for identifying language and base direction for strings used on the Web wherever appropriate. 
 
 <!--
 
