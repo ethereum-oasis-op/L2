@@ -131,7 +131,7 @@ An open, distributed ledger that can record transactions between two parties eff
 
 **Gas**
 
-Tefers to the unit that measures the amount of computational and storage effort required to execute specific operations on an EVM-compatible network.
+Refers to the unit that measures the amount of computational and storage effort required to execute specific operations on an EVM-compatible network.
 
 **Base Fee**
 
