@@ -221,24 +221,36 @@ The requirements below are only valid for EVM based L1s, L2, or Sidechains. Addr
 An address alias -- `addressAlias` -- to be used between Chain A and Chain B MUST be constructed as follows:
 `addressAlias (Chain A) = offsetAlias (for Chain A) relativeAddress (on Chain A) offsetAlias (for Chain A)`
 
+[[R1]](#r1) testability: `addressAlias` can be parsed and split using existing open source packages and the result compared to known `addressAlias` and `relativeAddress` used in the construction.
+
 #### **[R2]**
 The `offsetAlias` of a chain MUST be `0xchainId00000000000000000000000000000000chainId`
+
+[[R2]](#r2) testability: `offsetAlias` can be parsed and split using existing open source packages and the result compared to known `chainId` used in the construction.
 
 #### **[R3]**
 The `chainId` used in the `offsetAlias` MUST NOT be zero (0)
 
+[[R3]](#r3) testability: A `chainId` is a numerical value and can be compared to `0`.
+
 #### **[R4]**
 The `chainId` used in the `offsetAlias` MUST be 8 bytes.
+
+[[R4]](#r4) testability: The length of the `chainId` string can be converted to bytes and then compared to `8`.
 
 #### **[R5]**
 In case the `chainId` has less than 16 digits the `chainId` MUST be padded with zeros to 16 digits.
 
 For example the `chainId` of Polygon PoS is `137`, with the current list of EVM based `chainId`s to be found [here](https://chainlist.org/), and its `offsetAlias` is `0x0000000000000137000000000000000000000000000000000000000000000137`.
 
+[[R5]](#r5) testability: `chainId` can be parsed and split using existing open source packages and the result compared to known `chainId` used in the construction. Subsequently the number of zeros used in the padding can be computed and compared to the expected number of zeros for the padding.
+
 #### **[R6]**
 The `offsetAlias`for Ethereum Mainnet as the primary anchor of EVM based chains MUST be `0x1111000000000000000000000000000000001111` due to current adoption of this offset by existing L2 solutions.
 
 An example of address alias for the USDC asset would be `addressAlias = 0x1111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB481111` 
+
+[[R6]](#r6) testability: This requirement is a special case of [[R1]](#r1). Hence, it is testable. 
 
 #### **[R7]**
 
@@ -250,6 +262,7 @@ Finally, an example of an address alias for a message to another L1, L2, or Side
 ```
 addressAlias = 0x00000000000421611111A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB4811110000000000042161
 ```
+[[R7]](#r7) testability: Since this document is dealing with EVM-based systems with multiple live implementations, there are multiple known methods of how to verify if an address belongs to an EOA or a smart contract.
 
 #### **[R8]**
 
@@ -263,6 +276,8 @@ However, the reverse order is invalid:
 ```
 addressAlias = chainId(A) chainId(B) chainId(C) relativeAddress chainId(C) chainId(B) chainId(A)
 ```  
+[[R8]](#r8) testability: Since [[R1]](#r1) is testable and since [[R8]](#r8) is an order rule for the construction in [[R1]](#r1), which can be tested by applying logic operations on the output of [[R1]](#r1) tests, [[R8]](#r8) is testable. 
+
 Note, that a proof that a given order is provably correct is beyond the scope of this document.
 
 -------
@@ -288,9 +303,12 @@ This document defines the conformance levels of EVM based Address Aliasing as fo
 #### **[D1]** 
 A claim that an EVM based Address Aliasing implementation conforms to this specification SHOULD describe the testing procedure used to justify the claim.
 
+[D1]](#d1) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document.
+
 #### **[R9]** 
 A claim that an EVM based Address Aliasing implementation conforms to this specification at **level 2** or higher MUST describe the testing procedure used to justify the claim.
 
+[R9]](#r9) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document.
 
 -------
 
@@ -329,11 +347,15 @@ The standard does not set any requirements for the use of specific applications/
 
 There are security considerations as to the Ethereum-type addresses used in the construction of the `relativeAddress`. 
 
-If the Ethereum-type address used in the `relativeAddress` is supposed to be an EOA, the target system/recipient should validate that the `codehash` of the source account is `NULL` such that no malicious code can be executed surrepticiously in an asset transfer.    
+If the Ethereum-type address used in the `relativeAddress` is supposed to be an EOA, the target system/recipient should validate that the `codehash` of the source account is `NULL` such that no malicious code can be executed surreptitiously in an asset transfer.    
 
 If the Ethereum-type address used in the `relativeAddress` is supposed to be a smart contract account representing an asset, the target system/recipient should validate that the `codehash` of the source account matches the `codehash` of the published smart contract solidity code to ensure that the source smart contract behaves as expected.
 
 Lastly, it is recommended that as part of the `relativeAddress` validation the target system performs an address checksum validation as defined in [[EIP-55](#eip55)].
+
+## B.3 Internationalization/Localization
+
+Given the non-language specific features of EVM-based address aliasing, there are no internationalization/localization considerations.
 
 <!--
 
