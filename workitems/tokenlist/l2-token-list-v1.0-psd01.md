@@ -263,12 +263,12 @@ All properties in the schema identified in the description to be a Universal Res
 #### **[R4]**
 The `chainId` property MUST follow [EIP-155](#eip155) standard.
 
-[[R4]](#r4) testability: As an approved standard, all requirements for [EIP-155](#eip155) are testable.
+[[R4]](#r4) testability: Given that there are production implementations of [EIP-155](#eip155) such as Ethereum, all requirements of the standard are testable, and, therefore, by extension also [[R4]](#r4). 
 
 #### **[D2]**
 The `chainId` property SHOULD follow [EIP-3220](#eip3220) draft standard.
 
-[D2]](#d2) testability: The [EIP-3220](#eip3220) draft standard has test fixtures.
+[D2]](#d2) testability: The [EIP-3220](#eip3220) draft standard can be tested because the crosschain id is specified as a concatenation of well-defined strings, and using open source tooling can be used to parse and split a crosschain id, the obtained string segments can be compared against expected string lengths, and context dependent, the values for the strings specified in the standard. Consequently, [D2]](#d2) is testable.
 
 #### **[O1]**
 The `humanReadableTokenSymbol` property MAY be used.
@@ -596,7 +596,7 @@ The schema for a canonical token list is given below as follows and can be utili
     "additionalProperties": false,
 }
 ```
-Data Schema Testability: The above data schema can be tested following a schema validation approach as utilized in for example the [W3C CCG Traceability Work Item](https://github.com/w3c-ccg/traceability-interop).
+Data Schema Testability: As the above data schema follows a JSON/JSON-LD schema format, and since such formats are known to be testable for schema conformance (see for example the [W3C CCG Traceability Work Item](https://github.com/w3c-ccg/traceability-interop)), the above data schema is testable.
 
 -------
 # 4 Conformance
@@ -621,12 +621,12 @@ This document defines the conformance levels of a canonical token list as follow
 #### **[D3]** 
 A claim that a canonical token list implementation conforms to this specification SHOULD describe the testing procedure used to justify the claim.
 
-[D3]](#d3) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document.
+[D3]](#d3) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests can exist, and can be described as required in [D3]](#d3).
 
 #### **[R5]** 
 A claim that a canonical token list conforms to this specification at **level 2** or higher MUST describe the testing procedure used to justify the claim.
 
-[D3]](#d3) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document.
+[R5]](#r5) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, be described, be built and implemented and results can be recorded as required in [R5]](#r5).
 
 -------
 
