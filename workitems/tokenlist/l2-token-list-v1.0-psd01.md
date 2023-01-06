@@ -258,7 +258,7 @@ Note, that the detailed definition of the data elements in [[D1]](#d1) and [[CR1
 #### **[R3]**
 All properties in the schema identified in the description to be a Universal Resource Identifier (URI) MUST follow in their semantics [RFC 3986](#rfc3986).
 
-[[R3]](#r3) testability: As an approved standard, all requirements for [RFC 3986](#rfc3986) are testable.
+[[R3]](#r3) testability: All requirements for [RFC 3986](#rfc3986) are testable.
 
 #### **[R4]**
 The `chainId` property MUST follow [EIP-155](#eip155) standard.
