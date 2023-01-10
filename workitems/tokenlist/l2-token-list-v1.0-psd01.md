@@ -101,6 +101,7 @@ For complete copyright information please see the Notices section in the Appendi
 [Appendix B - Security Considerations](#appendix-b---security-considerations) \
 &nbsp;&nbsp;&nbsp;&nbsp;[B.1 Data Privacy](#b1-data-privacy) \
 &nbsp;&nbsp;&nbsp;&nbsp;[B.2 Production Readiness](#b2-production-readiness) \
+&nbsp;&nbsp;&nbsp;&nbsp;[B.3 Internationalization and Localization](#b2-internationalization-and-localization) \
 [Appendix C - Acknowledgments](#appendix-c---acknowledgments)\
 [Appendix D - Revision History](#appendix-d---revision-history)\
 [Appendix E - Notices](#appendix-e---notices)
@@ -684,7 +685,7 @@ The standard does not set any requirements for compliance to jurisdiction legisl
 
 The standard does not set any requirements for the use of specific applications/tools/libraries etc. The implementer should perform due diligence when selecting specific applications/tools/libraries.
 
-## B.3 Internationalization/Localization
+## B.3 Internationalization and Localization
 
 The standard encourages implementers to follow the [W3C "Strings on the Web: Language and Direction Metadata" best practices guide](#W3C-String-Meta) for identifying language and base direction for strings used on the Web wherever appropriate. 
 
