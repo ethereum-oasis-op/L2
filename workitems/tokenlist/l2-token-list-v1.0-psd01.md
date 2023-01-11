@@ -145,7 +145,7 @@ Provides a connection that allows for the transfer of digital tokens or data bet
 
 **Layer 1:**
 
-A base network, such as Bitcoin, or Ethereum, and its underlying infrastructure that validates and finalizes transactions without the need of another network.
+A base blockchain network, such as Bitcoin, or Ethereum, and its underlying infrastructure that validates and finalizes transactions without the need of another blockchain network.
 
 **Layer 2:**
 
