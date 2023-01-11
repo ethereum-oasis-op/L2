@@ -101,7 +101,7 @@ For complete copyright information please see the Notices section in the Appendi
 [Appendix B - Security Considerations](#appendix-b---security-considerations) \
 &nbsp;&nbsp;&nbsp;&nbsp;[B.1 Data Privacy](#b1-data-privacy) \
 &nbsp;&nbsp;&nbsp;&nbsp;[B.2 Production Readiness](#b2-production-readiness) \
-&nbsp;&nbsp;&nbsp;&nbsp;[B.3 Internationalization and Localization](#b2-internationalization-and-localization) \
+&nbsp;&nbsp;&nbsp;&nbsp;[B.3 Internationalization and Localization](#b3-internationalization-and-localization) \
 [Appendix C - Acknowledgments](#appendix-c---acknowledgments)\
 [Appendix D - Revision History](#appendix-d---revision-history)\
 [Appendix E - Notices](#appendix-e---notices)
