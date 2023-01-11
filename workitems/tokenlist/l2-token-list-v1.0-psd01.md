@@ -153,7 +153,7 @@ A secondary framework or protocol that is built on top of an existing Layer 1 sy
 
 **Sidechain:**
 
-A secondary blockchain connected to the main blockchain with a two-way peg.
+A secondary blockchain connected to the main blockchain with a two-way peg and using its own trust assumptions.
 
 **Two-Way Peg:**
 
