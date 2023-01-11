@@ -1,5 +1,34 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 11 Jan 2022, 7:00 am PT
+
+Attending: Andreas Freund (EF), Dan Shaw (EF), Tas Dienes (EF), Daniel Goldman (Offchain Labs), Anais Ofranc (EEA), Shawn Rogers (Accenture), Kartheek Solipuram (E&Y), 
+
+Regrets: Cody Burns (Accenture), Ramon Canales (Matter Labs), Kelvin Fichter (Optimism), Weija Zhang (Wanchain, EEA Crosschain Interop Group), Pavel Sinelnikov (Metis), Parth Bhatt, Elena Sinelnikova (Metis), Anav Agrawal (Polygon), Ino Murko (Boba Network), Alan Chiu (Boba Network), Omar Azhar (Matter Labs), Souradeep (Boba Network), Violet (Boba Network), Hanan Beer (EF), Yoav Weiss (EF), Jose Fabrega (Metis), Samrat Kishor (Golden Next Ventures), Gabriel Barros (Cartesi), 
+Scribe: Dan Shaw
+
+Proposed agenda
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Report out from Meeting with EEA Cross-chain Interop WG meeting on 11/9
+5. Review Open PRs
+6. Review Open Issues
+7. Open Forum for other items
+
+Meeting notes
+
+1. Weija Zhang of the EEA Cross-chain Interop WG is now confirmed for 1/25
+2. Review of the Initial Draft of definitions for [Layer 2 Transaction Fees #34](https://github.com/eea-oasis/L2/pull/34)
+    - Daniel G. proposed that we adjust our definition of Sidechain and use this definition consistently throughout.
+4. Daniel G. will be added as a reviewer to 1st draft of [EVM based address aliasing specification #29](https://github.com/eea-oasis/L2/pull/29)
+5. All new active contributors are invited to sign the iCLA - https://github.com/eea-oasis/L2/blob/main/CONTRIBUTING.md
+6. Andreas is working with the EEA Community Projects project governing board (PGB) to establish a definition of “testability”.
+7. Welcome Shawn Rogers from Accenture
+8. Andreas will kick off an Eth Magicians post and get the EIP process started for the [Draft L2 WG: Token List Specifications](https://github.com/eea-oasis/L2/tree/main/workitems/tokenlist).
+9. Andreas asked everyone to review [“The Current State of Layer 2 Bridges” mini-report](https://docs.google.com/document/d/1U0XIs47TLmQtFZKVSdRI9UsQEg9QyJHnqlDRd-ZCyqA/edit?usp=sharing). This mini-report will be published on the EEA Community Projects blog by the end of January.
+
 ## Meeting Wed, 30 Novt 2022, 7:00 am PT
 
 Attending: Andreas Freund (EF), Daniel Goldman (Offchain Labs), Cody Burns (Accenture), Kartheek Solipuram (E&Y)
