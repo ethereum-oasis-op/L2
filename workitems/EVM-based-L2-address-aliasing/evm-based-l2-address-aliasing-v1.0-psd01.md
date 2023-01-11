@@ -146,7 +146,7 @@ An Ethereum address that is controlled by a cryptographic private key.
 
 **Layer 1:**
 
-A base network, such as Bitcoin, or Ethereum, and its underlying infrastructure that validates and finalizes transactions without the need of another network.
+A base blockchain network, such as Bitcoin, or Ethereum, and its underlying infrastructure that validates and finalizes transactions without the need of another blockchain network.
 
 **Layer 2:**
 
