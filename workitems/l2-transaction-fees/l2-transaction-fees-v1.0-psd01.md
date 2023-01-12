@@ -141,7 +141,7 @@ Note that a gas price is typically variable and changes with the level of usage 
 
 **Execution Fee**
 
-A value when multiplied by a base fee will be sufficient to cover both the Layer 2 and Layer 1 transaction fees.
+A gas value when multiplied by a base fee will be sufficient to cover both the Layer 2 and Layer 1 transaction fees.
 
 An example of such a calculation is:
 $$L2\space Gas\space Limit + {L1\space Transaction\space Fee \over L2\space Gas\space Price}$$
@@ -158,7 +158,7 @@ A secondary framework or protocol that is built on top of an existing Layer 1 sy
 
 Refers to the maximum value that can be extracted from block production in excess of the standard block reward and gas fees by including, excluding, and changing the order of transactions in a block.
 
-**Priorirty Fee**
+**Priority Fee**
 
 To be paid by the transaction originator to a Layer 2 sequencer to obtain a desired slot for its transaction in a new block.
 
