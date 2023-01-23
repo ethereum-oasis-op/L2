@@ -28,7 +28,7 @@ Learn how to join and contribute [here](https://github.com/eea-oasis/L2/blob/mai
 
 ## Project Work Items
 
-The current work items the WG is focusing on is in the [Work Item folder](https://github.com/eea-oasis/L2/blob/main/workitems).
+The current work items the WG is focusing on is in the [Work Item folder](https://github.com/eea-oasis/L2/blob/main/workitems) and in this GitHub's open [issues](https://github.com/eea-oasis/L2/issues) section.
 
 ## WG Meetings
 
@@ -48,3 +48,15 @@ The WG primarily uses slack for real time communications. You can join our slack
 * [Governance](https://github.com/eea-oasis/L2/blob/main/docs/governance.md)
 * [Code of Conduct](https://github.com/eea-oasis/L2/blob/main/docs/Code_of_Conduct.md)
 * [Running Meeting Minutes](https://github.com/eea-oasis/L2/blob/main/meeting_minutes.md)
+* [Working Group Glossary of Terms Used](https://github.com/eea-oasis/L2/blob/main/docs/working-group-standards-glossary.md)
+
+## WG Media Content and related Other Sources
+
+ 
+### WG Blogs and Reports
+
+- [A DeFi Conundrum: L2s are Awesome but not yet for Real Financial Assets](https://entethalliance.org/a-defi-conundrum-l2s-are-awesome-but-not-yet-for-real-financial-assets/)
+
+### Content from Other Sources
+
+- [L2Beat](https://l2beat.com)
