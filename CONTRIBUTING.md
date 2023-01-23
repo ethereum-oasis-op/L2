@@ -44,3 +44,4 @@ Once your pull request has been approved by the required number of Maintainers, 
 |Accenture |David Katz | @katzdh |
 |Golden Next Ventures |Samrat Kishor  |@samratkishor
 |Metis |Pavel Sinelnikov |@psinelnikov |
+| Offchain Labs (Arbitrum) | Daniel Z Goldman | @DZGoldman |
