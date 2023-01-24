@@ -480,9 +480,9 @@ The schema for a canonical token list is given below as follows and can be utili
                         "standard": {
                             "$comment": "{\"term\": \"standard\", \"@id\": \"https://schema.org/citation\"}",
                             "title": "standard",
-                            "description": "Describes which standard the token adheres to.",
+                            "description": "A resolvable URI to the description of the token standard.",
                             "type": "string",
-                            "examples": ["ERC20"]
+                            "examples": ["https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md"]
                         },
                         "address": {
                             "$comment": "{\"term\": \"address\", \"@id\": \"https://schema.org/identifier\"}",
@@ -620,12 +620,12 @@ This document defines the conformance levels of a canonical token list as follow
 * **Level 3:** All MUST, SHOULD, and MAY requirements with conditional MUST or SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 
 #### **[D3]** 
-A claim that a canonical token list implementation conforms to this specification SHOULD describe the testing procedure used to justify the claim.
+A claim that a canonical token list implementation conforms to this specification SHOULD describe a testing procedure carried out for each requirement to which conformance is claimed, that justifies the claim with respect to that requirement.
 
-[D3]](#d3) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests can exist, and can be described as required in [D3]](#d3).
+[D3]](#d3) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, and can be described as required in [D3]](#d3).
 
 #### **[R5]** 
-A claim that a canonical token list conforms to this specification at **level 2** or higher MUST describe the testing procedure used to justify the claim.
+A claim that a canonical token list implementation conforms to this specification at **Level 2** or higher MUST describe the testing procedure carried out for each requirement at **Level 2** or higher, that justifies the claim to that requirement.
 
 [R5]](#r5) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, be described, be built and implemented and results can be recorded as required in [R5]](#r5).
 
