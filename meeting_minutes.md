@@ -1,6 +1,38 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
-## Meeting Wed, 11 Jan 2022, 7:00 am PT
+## Meeting Wed, 25 Jan 2023, 7:00 am PT
+
+Attending: Andreas Freund (EF), Dan Shaw (EF), Tas Dienes (EF), Daniel Goldman (Offchain Labs), Anais Ofranc (EEA), Omar Azhar (Matter Labs), Weijia Zhang (Wanchain, EEA Crosschain Interop Group), Samrat Kishor (Golden Next Ventures), Molly Beach (Accenture)
+
+Regrets: Cody Burns (Accenture), Ramon Canales (Matter Labs), Kelvin Fichter (Optimism), Pavel Sinelnikov (Metis), Parth Bhatt, Elena Sinelnikova (Metis), Anav Agrawal (Polygon), Ino Murko (Boba Network), Alan Chiu (Boba Network), Souradeep (Boba Network), Violet (Boba Network), Hanan Beer (EF), Yoav Weiss (EF), Jose Fabrega (Metis), Gabriel Barros (Cartesi),  Shawn Rogers (Accenture), Kartheek Solipuram (E&Y), 
+
+Scribe: Tas Dienes
+
+Proposed agenda
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. EEA Cross-chain Interop WG meeting update to L2 WG
+5. Review 2nd Blog/Report on L2 Bridges
+6. Review Open PRs
+7. Review Open Issues
+8. Open Forum for other items
+
+Meeting notes
+1. The meeting was recorded: https://us02web.zoom.us/rec/share/gW1ldfh2ocIgLs05hHogddoXR-sGZyNiTGsyT9MvO23eoGSZmZ5DhrsyRzCv50sH.41OT6e8b7xqHnK11 Passcode: %508Y+#Y
+2. Weijia, Omar, and Daniel introduced themselves 
+3. Weija provided an update on the EEA Crosschain Interop Working Group
+    - https://entethalliance.github.io/crosschain-interoperability/ 
+    - Relayer function spec in review
+    - Crosschain discovery mechanism spec and function call spec in progress
+    - Some of the WG’s specs are being brought into IETF
+4. The draft article on [L2 bridges](https://docs.google.com/document/d/1U0XIs47TLmQtFZKVSdRI9UsQEg9QyJHnqlDRd-ZCyqA/edit) was discussed
+    - Weija asked about zk vs optimistic bridges' pros and cons
+5. Andreas and Dan’s terms as co-chairs end at the end of the month. They have been nominated for a new term. Other nominations are welcome. An election will be started asap.
+6. Review Open PRs
+    - #35 Canonical token list standard - currently in draft release. Progressing for draft status. A discussion about testability is ongoing with Chaals. Chain ID uniqueness per EIP-155 is the main topic yet to be resolved. Nobody in the meeting expressed concern about the lack of a uniqueness requirement in EIP-155.
+
+## Meeting Wed, 11 Jan 2023, 7:00 am PT
 
 Attending: Andreas Freund (EF), Dan Shaw (EF), Tas Dienes (EF), Daniel Goldman (Offchain Labs), Anais Ofranc (EEA), Shawn Rogers (Accenture), Kartheek Solipuram (E&Y), 
 
