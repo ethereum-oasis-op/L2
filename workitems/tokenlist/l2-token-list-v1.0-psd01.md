@@ -76,7 +76,7 @@ When referencing this specification the following citation format should be used
 -------
 
 ## Notices
-Copyright © OASIS Open 2022. All Rights Reserved.
+Copyright © OASIS Open 2023. All Rights Reserved.
 
 Distributed under the terms of the OASIS [IPR Policy](https://www.oasis-open.org/policies-guidelines/ipr).
 
@@ -262,19 +262,21 @@ All properties in the schema identified in the description to be a Universal Res
 [[R3]](#r3) testability: All requirements for [RFC 3986](#rfc3986) are testable.
 
 #### **[R4]**
-The `chainId` property MUST follow [EIP-155](#eip155) standard.
+The chainId property utilized MUST allow for the requirements of the EIP-155 standard to be met.
 
-[[R4]](#r4) testability: Given that there are production implementations of [EIP-155](#eip155) such as Ethereum, all requirements of the standard are testable, and, therefore, by extension also [[R4]](#r4). 
+Namely, transaction replay protection on the network that is identified by the chainId property value. Note, that for replay protection to be guaranteed, the chainId should be unique. Ensuring a unique chainId is beyond the scope of this document.
+
+[[R4]](#r4) testability: EIP-155 requires that a transaction hash is derived from the keccak256 hash of the following nine RLP encoded elements `(nonce, gasprice, startgas, to, value, data, chainid, 0, 0)` which can be tested easily with existing cryptographic libraries. EIP-155 further requires that the `v` value of the secp256k1 signature must be set to `{0,1} + CHAIN_ID * 2 + 35` where `{0,1}` is the parity of the `y` value of the curve point for which the signature `r`-value is the `x`-value in the secp256k1 signing process. This requirement is testable with available open-source secp256k1 digital signature suites. Therefore, [[R4]](#r4) is testable. 
 
 #### **[D2]**
 The `chainId` property SHOULD follow [EIP-3220](#eip3220) draft standard.
 
-[D2]](#d2) testability: The [EIP-3220](#eip3220) draft standard can be tested because the crosschain id is specified as a concatenation of well-defined strings, and using open source tooling can be used to parse and split a crosschain id, the obtained string segments can be compared against expected string lengths, and context dependent, the values for the strings specified in the standard. Consequently, [D2]](#d2) is testable.
+[[D2]](#d2) testability: The [EIP-3220](#eip3220) draft standard can be tested because the crosschain id is specified as a concatenation of well-defined strings, and using open source tooling can be used to parse and split a crosschain id, the obtained string segments can be compared against expected string lengths, and context dependent, the values for the strings specified in the standard. Consequently, [D2]](#d2) is testable.
 
 #### **[O1]**
 The `humanReadableTokenSymbol` property MAY be used.
 
-[O1]](#o1) testability: A data property is always implementable in a schema.
+[[O1]](#o1) testability: A data property is always implementable in a schema.
 
 #### **[CR2]>[O1]**
 The `humanReadableTokenSymbol` property MUST be constructed as the hyphenated concatenation of first the `tokenSymbol` and then the `chainId`.
@@ -675,7 +677,7 @@ https://nvd.nist.gov/vuln/detail/CVE-2021-42574
 
 # Appendix B - Security Considerations
 
-There are no additional security requirements apart from the warnings that URIs utilized in implementations of this standard might be direct to malicious resources such as websites. Since this standard is focused on a data schema and its data properties there are no additional security considerations from for example homoglyph attacks (see [CVE-2021-42574](#CVE-2021-42574)).
+There are no additional security requirements apart from the warnings that URIs utilized in implementations of this standard might be direct to malicious resources such as websites, and that implementers should ensure that data utilized for a canonical token list is secure and correct. Since this standard is focused on a data schema and its data properties there are no additional security considerations from for example homoglyph attacks (see [CVE-2021-42574](#CVE-2021-42574)).
 
 ## B.1 Data Privacy
 
@@ -730,7 +732,7 @@ Revisions made since the initial stage of this numbered Version of this document
 
 # Appendix E - Notices
 
-Copyright © OASIS Open 2022. All Rights Reserved.
+Copyright © OASIS Open 2023. All Rights Reserved.
 
 All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property Rights Policy (the "OASIS IPR Policy"). The full [Policy](https://www.oasis-open.org/policies-guidelines/ipr) may be found at the OASIS website.
 
