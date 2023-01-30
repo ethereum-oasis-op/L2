@@ -71,7 +71,7 @@ The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SH
 #### Citation format:
 When referencing this specification the following citation format should be used:
 
-**[l2-token-list-v1.0]** _Token List Specification Version 1.0_. Edited by Kelvin Fichter, Andreas Freund, Pavel Sinelnikov. 01 November 2022. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/tokenlist/l2-token-list-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/tokenlist/l2-token-list-v1.0-psd01.md.
+**[l2-token-list-v1.0]** _Token List Specification Version 1.0_. Edited by Kelvin Fichter, Andreas Freund, Pavel Sinelnikov. 30 November 2022. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/tokenlist/l2-token-list-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/tokenlist/l2-token-list-v1.0-psd01.md.
 
 -------
 
@@ -167,8 +167,8 @@ A requirement is uniquely identified by a unique ID composed of its requirement 
 There are four requirement levels that are coded in requirement ids as per below convention: 
 
 **[R]** - The requirement level for requirements which IDs start with the letter _R_ is to be interpreted as **MUST** as described in [RFC2119](###-RFC2119). \
-**[D]** - The requirement level for requirements which IDs start with the letter _D_ is to be interpreted as **SHOULD** as described in RFC2119. \
-**[O]** - The requirement level for requirements which IDs start with the letter _O_ is to be interpreted as **MAY** as described in RFC2119. 
+**[D]** - The requirement level for requirements which IDs start with the letter _D_ is to be interpreted as **SHOULD** as described in [RFC2119](###-RFC2119). \
+**[O]** - The requirement level for requirements which IDs start with the letter _O_ is to be interpreted as **MAY** as described in [RFC2119](###-RFC2119). 
 
 Note that requirements are uniquely numbered in ascending order within each requirement level.
 
@@ -271,7 +271,7 @@ Namely, transaction replay protection on the network that is identified by the c
 #### **[D2]**
 The `chainId` property SHOULD follow [EIP-3220](#eip3220) draft standard.
 
-[[D2]](#d2) testability: The [EIP-3220](#eip3220) draft standard can be tested because the crosschain id is specified as a concatenation of well-defined strings, and using open source tooling can be used to parse and split a crosschain id, the obtained string segments can be compared against expected string lengths, and context dependent, the values for the strings specified in the standard. Consequently, [D2]](#d2) is testable.
+[[D2]](#d2) testability: The [EIP-3220](#eip3220) draft standard can be tested because the crosschain id is specified as a concatenation of well-defined strings, and using open source tooling can be used to parse and split a crosschain id, the obtained string segments can be compared against expected string lengths, and context dependent, the values for the strings specified in the standard. Consequently, [[D2]](#d2) is testable.
 
 #### **[O1]**
 The `humanReadableTokenSymbol` property MAY be used.
@@ -624,12 +624,12 @@ This document defines the conformance levels of a canonical token list as follow
 #### **[D3]** 
 A claim that a canonical token list implementation conforms to this specification SHOULD describe a testing procedure carried out for each requirement to which conformance is claimed, that justifies the claim with respect to that requirement.
 
-[D3]](#d3) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, and can be described as required in [D3]](#d3).
+[[D3]](#d3) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, and can be described as required in [[D3]](#d3).
 
 #### **[R5]** 
 A claim that a canonical token list implementation conforms to this specification at **Level 2** or higher MUST describe the testing procedure carried out for each requirement at **Level 2** or higher, that justifies the claim to that requirement.
 
-[R5]](#r5) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, be described, be built and implemented and results can be recorded as required in [R5]](#r5).
+[[R5]](#r5) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, be described, be built and implemented and results can be recorded as required in [[R5]](#r5).
 
 -------
 
