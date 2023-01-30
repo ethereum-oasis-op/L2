@@ -31,7 +31,7 @@ Dan Shaw (daniel.shaw@ethereum.org), [Ethereum Foundation](https://ethereum.org)
 
 #### Editors:
 Kelvin Fichter (kelvin@optimism.io)\
-Andreas Freund (a.freundhaskel@gmail.com) \
+Andreas Freund (a.freundhaskel@gmail.com)
 
 <!--
 #### Additional artifacts:
@@ -70,12 +70,12 @@ The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SH
 #### Citation format:
 When referencing this specification the following citation format should be used:
 
-**[evm-based-l2-address-aliasing-v1.0]** _EVM based Address Aliasing Specification Version 1.0_. Edited by Kelvin Fichter, and Andreas Freund. XX YYYY 2022. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/EVM-based-L2-address-aliasing/evm-based-l2-address-aliasing-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/EVM-based-L2-address-aliasing/evm-based-l2-address-aliasing-v1.0-psd01.md.
+**[evm-based-l2-address-aliasing-v1.0]** _EVM based Address Aliasing Specification Version 1.0_. Edited by Kelvin Fichter, and Andreas Freund. XX YYYY 2023. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/EVM-based-L2-address-aliasing/evm-based-l2-address-aliasing-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/EVM-based-L2-address-aliasing/evm-based-l2-address-aliasing-v1.0-psd01.md.
 
 -------
 
 ## Notices
-Copyright © OASIS Open 2022. All Rights Reserved.
+Copyright © OASIS Open 2023. All Rights Reserved.
 
 Distributed under the terms of the OASIS [IPR Policy](https://www.oasis-open.org/policies-guidelines/ipr).
 
@@ -162,7 +162,7 @@ A secondary blockchain connected to the main blockchain with a two-way peg and u
 
 **Two-Way Peg:**
 
-A mechanism by which tokens are transferred between a blockchain and a sidechain and back at a fixed or otherwise deterministic exchange rate.
+A mechanism by which tokens are transferred between a blockchain and a Sidechain and back at a fixed or otherwise deterministic exchange rate.
 
 ## 1.3 Typographical Conventions
 
@@ -172,8 +172,8 @@ A requirement is uniquely identified by a unique ID composed of its requirement 
 There are four requirement levels that are coded in requirement ids as per below convention: 
 
 **[R]** - The requirement level for requirements which IDs start with the letter _R_ is to be interpreted as **MUST** as described in [RFC2119](#rfc2119). \
-**[D]** - The requirement level for requirements which IDs start with the letter _D_ is to be interpreted as **SHOULD** as described in RFC2119. \
-**[O]** - The requirement level for requirements which IDs start with the letter _O_ is to be interpreted as **MAY** as described in RFC2119. 
+**[D]** - The requirement level for requirements which IDs start with the letter _D_ is to be interpreted as **SHOULD** as described in [RFC2119](#rfc2119). \
+**[O]** - The requirement level for requirements which IDs start with the letter _O_ is to be interpreted as **MAY** as described in [RFC2119](#rfc2119). 
 
 Note that requirements are uniquely numbered in ascending order within each requirement level.
 
@@ -199,7 +199,7 @@ See Figure 1 for the conceptual root &rarr; leaf design with offset.
 </figure>
 </div>
 
-To further clarify the connections between the different possible paths an asset can take from an L1 to different L2/L3s and the `relativAddress`of that asset, we visually highlight in red the path from the EVM based L1 to the B L2, to the D L3, and finally to the C L2.
+To further clarify the connections between the different possible paths an asset can take from an L1 to different L2/L3s and the `relativAddress` of that asset, we visually highlight in red the path from the EVM based L1 to the B L2, to the D L3, and finally to the C L2.
 
 <div align="left">
 <figure>
@@ -304,12 +304,12 @@ This document defines the conformance levels of EVM based Address Aliasing as fo
 #### **[D1]** 
 A claim that a canonical token list implementation conforms to this specification SHOULD describe a testing procedure carried out for each requirement to which conformance is claimed, that justifies the claim with respect to that requirement.
 
-[D1]](#d1) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, and can be described as required in [D1]](#d1).
+[[D1]](#d1) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, and can be described as required in [[D1]](#d1).
 
 #### **[R9]** 
 A claim that a canonical token list implementation conforms to this specification at **Level 2** or higher MUST describe the testing procedure carried out for each requirement at **Level 2** or higher, that justifies the claim to that requirement.
 
-[R9]](#r9) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, be described, be built and implemented and results can be recorded as required in [R9]](#r9).
+[[R9]](#r9) testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, be described, be built and implemented and results can be recorded as required in [[R9]](#r9).
 
 -------
 
