@@ -90,7 +90,7 @@ For complete copyright information please see the Notices section in the Appendi
 &nbsp;&nbsp;&nbsp;&nbsp;[1.2 Glossary](#12-glossary) \
 &nbsp;&nbsp;&nbsp;&nbsp;[1.3 Typographical Conventions](#13-typographical-conventions) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.3.1	Requirement Ids](#131-requirement-ids) \
-[2 Concepts and Design](#2-concepts-and-cesign) \
+[2 Concepts and Design](#2-concepts-and-design) \
 [3 Token List Specification](#3-token-list-specification) \
 [4 Conformance](#4-conformance) \
 &nbsp;&nbsp;&nbsp;&nbsp;[4.1 Conformance Targets](#41-conformance-targets) \
