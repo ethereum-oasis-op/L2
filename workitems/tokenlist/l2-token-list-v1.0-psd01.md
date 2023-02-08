@@ -71,7 +71,7 @@ The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SH
 #### Citation format:
 When referencing this specification the following citation format should be used:
 
-**[l2-token-list-v1.0]** _Token List Specification Version 1.0_. Edited by Kelvin Fichter, Andreas Freund, Pavel Sinelnikov. 30 November 2022. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/tokenlist/l2-token-list-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/tokenlist/l2-token-list-v1.0-psd01.md.
+**[l2-token-list-v1.0]** _Token List Specification Version 1.0_. Edited by Kelvin Fichter, Andreas Freund, Pavel Sinelnikov. 08 February 2023. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/tokenlist/l2-token-list-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/tokenlist/l2-token-list-v1.0-psd01.md.
 
 -------
 
@@ -90,7 +90,7 @@ For complete copyright information please see the Notices section in the Appendi
 &nbsp;&nbsp;&nbsp;&nbsp;[1.2 Glossary](#12-glossary) \
 &nbsp;&nbsp;&nbsp;&nbsp;[1.3 Typographical Conventions](#13-typographical-conventions) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.3.1	Requirement Ids](#131-requirement-ids) \
-[2 Concepts and Design](#2-Concepts-and-Design) \
+[2 Concepts and Design](#2-concepts-and-cesign) \
 [3 Token List Specification](#3-token-list-specification) \
 [4 Conformance](#4-conformance) \
 &nbsp;&nbsp;&nbsp;&nbsp;[4.1 Conformance Targets](#41-conformance-targets) \
@@ -166,9 +166,9 @@ A mechanism by which tokens are transferred between a blockchain and a sidechain
 A requirement is uniquely identified by a unique ID composed of its requirement level followed by a requirement number, as per convention **[RequirementLevelRequirementNumber]**. 
 There are four requirement levels that are coded in requirement ids as per below convention: 
 
-**[R]** - The requirement level for requirements which IDs start with the letter _R_ is to be interpreted as **MUST** as described in [RFC2119](###-RFC2119). \
-**[D]** - The requirement level for requirements which IDs start with the letter _D_ is to be interpreted as **SHOULD** as described in [RFC2119](###-RFC2119). \
-**[O]** - The requirement level for requirements which IDs start with the letter _O_ is to be interpreted as **MAY** as described in [RFC2119](###-RFC2119). 
+**[R]** - The requirement level for requirements which IDs start with the letter _R_ is to be interpreted as **MUST** as described in [RFC2119](#rfc2119). \
+**[D]** - The requirement level for requirements which IDs start with the letter _D_ is to be interpreted as **SHOULD** as described in [RFC2119](#rfc2119). \
+**[O]** - The requirement level for requirements which IDs start with the letter _O_ is to be interpreted as **MAY** as described in [RFC2119](#rfc2119). 
 
 Note that requirements are uniquely numbered in ascending order within each requirement level.
 
@@ -177,7 +177,7 @@ Example : It should be read that [R1] is an absolute requirement of the specific
 
 -------
 
-# 2 Concept and Design
+# 2 Concepts and Design
 
 For lists of canonical tokens, L2s currently maintain their own customized versions of the Uniswap token list. For example, Arbitrum maintains a [token list](https://bridge.arbitrum.io/token-list-42161.json) with various custom extensions. Optimism also maintains a [custom token list](https://raw.githubusercontent.com/ethereum-optimism/ethereum-optimism.github.io/master/optimism.tokenlist.json), but with different extensions. It should be noted that both of these custom extensions refer to the bridge that these tokens can be carried through. However, these are not the only bridges that the tokens can be carried through, which means that bridges and token lists should be separated. Also note that currently, both Optimism and Arbitrum base "canonicity" on the token name + symbol pair.
 
@@ -718,8 +718,7 @@ Tas Dienes \
 Kelvin Fichter \
 Andreas Freund \
 Daniel Shaw \
-Pavel Sinelnikov \
-...
+Pavel Sinelnikov
 
  
 -------
