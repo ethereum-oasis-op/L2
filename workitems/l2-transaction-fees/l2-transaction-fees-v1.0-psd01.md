@@ -30,9 +30,9 @@ URI list end (commented out except during publication by OASIS TC Admin) -->
 Dan Shaw (daniel.shaw@ethereum.org), [Ethereum Foundation](https://ethereum.org), Andreas Freund (a.freundhaskel@gmail.com), [Ethereum Foundation](https://ethereum.org)  
 
 #### Editors:
-Daniel Goldman (dgoldman@offchainlabs.com)\
 Kelvin Fichter (kelvin@optimism.io)\
-Andreas Freund (a.freundhaskel@gmail.com) \
+Andreas Freund (a.freundhaskel@gmail.com)\
+Daniel Goldman (dgoldman@offchainlabs.com)\
 
 <!--
 #### Additional artifacts:
@@ -71,12 +71,12 @@ The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SH
 #### Citation format:
 When referencing this specification the following citation format should be used:
 
-**[l2-transaction-fees-v1.0]** _Layer 2 Transaction Fees Version 1.0_. Edited by Kelvin Fichter, Andreas Freund, Pavel Sinelnikov. 01 November 2022. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/l2-transaction-fees/l2-transaction-fees-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/l2-transaction-fees/l2-transaction-fees-v1.0-psd01.md.
+**[l2-transaction-fees-v1.0]** _Layer 2 Transaction Fees Version 1.0_. Edited by Kelvin Fichter, Andreas Freund, Daniel Goldman. 22 February 2023. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/l2-transaction-fees/l2-transaction-fees-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/l2-transaction-fees/l2-transaction-fees-v1.0-psd01.md.
 
 -------
 
 ## Notices
-Copyright © OASIS Open 2022. All Rights Reserved.
+Copyright © OASIS Open 2023. All Rights Reserved.
 
 Distributed under the terms of the OASIS [IPR Policy](https://www.oasis-open.org/policies-guidelines/ipr).
 
@@ -90,8 +90,8 @@ For complete copyright information please see the Notices section in the Appendi
 &nbsp;&nbsp;&nbsp;&nbsp;[1.2 Glossary](#12-glossary) \
 &nbsp;&nbsp;&nbsp;&nbsp;[1.3 Typographical Conventions](#13-typographical-conventions) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.3.1	Requirement Ids](#131-requirement-ids) \
-[2 Concepts and Design](#2-Concepts-and-Design) \
-[3 Layer 2 Transaction Fees Specification](#3-l2-transaction-fees-specification) \
+[2 Concepts and Design](#2-concepts-and-design) \
+[3 Layer 2 Transaction Fees Specification](#3-layer-2-transaction-fees-specification) \
 [4 Conformance](#4-conformance) \
 &nbsp;&nbsp;&nbsp;&nbsp;[4.1 Conformance Targets](#41-conformance-targets) \
 &nbsp;&nbsp;&nbsp;&nbsp;[4.2 Conformance Levels](#42-conformance-levels)\
@@ -120,7 +120,7 @@ The work is an [EEA Community Project](https://entethalliance.org/eeacommunitypr
 
 ## 1.1 Overview
 
-... 
+TBD
 
 
 ## 1.2 Glossary
@@ -141,9 +141,9 @@ Note that a gas price is typically variable and changes with the level of usage 
 
 **Execution Fee**
 
-A gas value when multiplied by a base fee will be sufficient to cover both the Layer 2 and Layer 1 transaction fees.
+A fee to be paid by the transaction originator sufficient to cover both the Layer 2 and Layer 1 transaction fees.
 
-An example of such a calculation is:
+An example calculation of such an Execution Fee is:
 $$L2\space Gas\space Limit + {L1\space Transaction\space Fee \over L2\space Gas\space Price}$$
 
 **Layer 1:**
@@ -171,11 +171,11 @@ Collects transactions, publishes them in a batch to the Layer 1 on which the Lay
 
 **Sidechain:**
 
-A secondary blockchain connected to the main blockchain with a two-way peg.
+A secondary blockchain connected to the main blockchain with a two-way peg and using its own trust assumptions.
 
 **Transaction Fee**
 
-The fee in a Layer 2 network token to be paid by a transaction originator to a Layer 2 sequencer comprised of the sum of a Base Fee, an Execution Fee and a Priorirty Fee.
+The fee in a Layer 2 network or protocol token to be paid by a transaction originator comprised of the sum of a Base Fee, an Execution Fee and a Priority Fee.
 
 ## 1.3 Typographical Conventions
 
@@ -184,9 +184,9 @@ The fee in a Layer 2 network token to be paid by a transaction originator to a L
 A requirement is uniquely identified by a unique ID composed of its requirement level followed by a requirement number, as per convention **[RequirementLevelRequirementNumber]**. 
 There are four requirement levels that are coded in requirement ids as per below convention: 
 
-**[R]** - The requirement level for requirements which IDs start with the letter _R_ is to be interpreted as **MUST** as described in [RFC2119](###-RFC2119). \
-**[D]** - The requirement level for requirements which IDs start with the letter _D_ is to be interpreted as **SHOULD** as described in RFC2119. \
-**[O]** - The requirement level for requirements which IDs start with the letter _O_ is to be interpreted as **MAY** as described in RFC2119. 
+**[R]** - The requirement level for requirements which IDs start with the letter _R_ is to be interpreted as **MUST** as described in [RFC2119](#rfc2119). \
+**[D]** - The requirement level for requirements which IDs start with the letter _D_ is to be interpreted as **SHOULD** as described in [RFC2119](#rfc2119). \
+**[O]** - The requirement level for requirements which IDs start with the letter _O_ is to be interpreted as **MAY** as described in [RFC2119](#rfc2119). 
 
 Note that requirements are uniquely numbered in ascending order within each requirement level.
 
@@ -195,7 +195,7 @@ Example : It should be read that [R1] is an absolute requirement of the specific
 
 -------
 
-# 2 Concept and Design
+# 2 Concepts and Design
 
 TBD
 
