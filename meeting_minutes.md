@@ -1,5 +1,52 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 08 Feb 2023, 7:00 am PT
+
+Attending: Andreas Freund (EF), Dan Shaw (EF), T, Anais Ofranc (EEA), Omar Azhar (Matter Labs), Kelvin Fichter (Optimism), Omar Azhar, Shawn Rogers
+
+Scribe: Anais Ofranc
+
+Proposed Agenda:
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Announcement of the WG Co-Chairs Election results
+5. Review Open PRs
+6. Review Open Issues
+7. Open Forum for other items
+
+**Announcement of the WG Co-Chairs Election results**
+
+Andreas informed: Andreas Freund and Dan Shaw re-elected as co-chairs for one year until 31 January 2024.
+
+**Review Open PRs**
+
+- PR #35: Andreas reminded that in the last meeting, the group decided that Chain ID is beyond the scope of the Canonical Token List Standard
+  * Decision: Decision to merge the draft PR for it to be submitted to the PGB as a work item to be approved.
+- PR#29: EVM based address aliasing specification
+  * Andreas provided an overview of the current status. The next step is to complete the draft and then submit it to the board for approval. Then it will be submitted  as an EIP late February/beginning of March.
+  * Decision: Decision to merge the draft PR for it to be submitted to the PGB as a work item to be approved.
+- PR #34 L2 Transaction Fees
+  * Omar Azhar had to leave earlier and apologized. He will review the L2 fees page and provide feedback as needed
+  * Andreas provides an overview of the definitions of the different fees.
+  * Kelvin: Execution fee definition is specific to Arbitrum. In Optimism, the divisor does not exist/is not used. The suggestion is to limit the definition to “a fee sufficient to cover both L1 and L2 transaction fees” and not to provide a specific calculation. Instead, we could indicate that there are different ways to calculate that fee.
+  * Andreas: Sidechain definition to be updated. Current definition is incomplete.
+  * No objections on the definitions of the other types of fees and other terms in the specification.
+  * Kevin: Transaction fee is paid by the transaction originator but not necessarily paid to the L2 sequencer. Suggestion to remove the “to a Layer 2 sequencer” from the definition.
+  * Andreas: Working Group Standards Glossary of Terms has been created.
+  * Dan: Provided overview of the meeting with L2beats. This is an initial engagement. Next step is to review bridge reports and glossary of terms.
+
+**New Agenda Item: Review State of L2 Bridged Report**
+- Andreas: The State of L2 Bridges  has been reviewed by Dan Goldman. Link to document:  https://docs.google.com/document/d/1U0XIs47TLmQtFZKVSdRI9UsQEg9QyJHnqlDRd-ZCyqA/edit?usp=sharing 
+- Andreas provides an overview of the report.
+- Kelvin: L2 to L2 Landscape is more interesting because it is not well-understood. His company is doing an event in Mexico.
+- Andreas: Request Kelvin to review report. Would like to publish this month.
+
+**No further business**
+
+Meeting adjourned.
+
+
 ## Meeting Wed, 25 Jan 2023, 7:00 am PT
 
 Attending: Andreas Freund (EF), Dan Shaw (EF), Tas Dienes (EF), Daniel Goldman (Offchain Labs), Anais Ofranc (EEA), Omar Azhar (Matter Labs), Weijia Zhang (Wanchain, EEA Crosschain Interop Group), Samrat Kishor (Golden Next Ventures), Molly Beach (Accenture)
