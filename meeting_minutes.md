@@ -1,5 +1,9 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 22 Feb 2023, 7:00 am PT
+
+Canceled due to lack of attendance because of Eth Denver travel.
+
 ## Meeting Wed, 08 Feb 2023, 7:00 am PT
 
 Attending: Andreas Freund (EF), Dan Shaw (EF), T, Anais Ofranc (EEA), Omar Azhar (Matter Labs), Kelvin Fichter (Optimism), Omar Azhar, Shawn Rogers
