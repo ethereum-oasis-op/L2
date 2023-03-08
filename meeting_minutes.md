@@ -1,5 +1,34 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 08 March 2022, 7:00 am PT
+
+Attending: Andreas Freund (EF), Dan Shaw (EF), Tas Dienes (EF), Anais Ofranc (EEA), Daniel Goldman (Offchain Labs), Tom Ngo (Metis), Nikolai (Metis), Omar Azhar (Matter Labs)
+
+Scribe: Dan Shaw
+
+Proposed agenda:
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Discussion on the next major workitem for the WG after the transaction fee definitions
+5. Review Open PRs
+6. Review Open Issues
+7. Open Forum for other items
+
+Meeting Notes:
+- Welcome Tom Ngo and Nikolai from Metis
+- Last meeting was canceled due to everyone being out for ETHDenver
+- Review of published Blog/Report on L2 Bridges
+- Andreas opened discussion for the next work item to see if participants are ready to begin #23 “Define standard L2 Transaction Fee Structure”
+  - Anais suggested we better define who are the actors expected to implement the fee
+  - Andreas asked if we should add bridges to proposal
+  - Nikolai proposed that the fee structures of bridges are too diverse to be included
+  - The group decided to invite bridges to the discussion, but to limit the scope of effort to just layer 2 fees for now
+- Reviewed open PRs
+  - 34 Initial Draft of definitions for Layer 2 Transaction Fees
+    - Daniel and Tas discussed fee naming consistency
+
+
 ## Meeting Wed, 22 Feb 2023, 7:00 am PT
 
 Canceled due to lack of attendance because of Eth Denver travel.
