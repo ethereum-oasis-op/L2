@@ -2,7 +2,7 @@
 
 ## Meeting Wed, 08 March 2022, 7:00 am PT
 
-Attending: Andreas Freund (EF), Dan Shaw (EF), Tas Dienes (EF), Anais Ofranc (EEA), Daniel Goldman (Offchain Labs), Tom Ngo (Metis), Nikolai (Metis), Omar Azhar (Matter Labs)
+Attending: Andreas Freund (EF), Dan Shaw (EF), Tas Dienes (EF), Anais Ofranc (EEA), Daniel Goldman (Offchain Labs), Tom Ngo (Metis), Nikolai Prokhorenko (Metis), Omar Azhar (Matter Labs)
 
 Scribe: Dan Shaw
 
