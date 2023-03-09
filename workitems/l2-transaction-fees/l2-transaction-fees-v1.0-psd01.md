@@ -133,11 +133,15 @@ An open, distributed ledger that can record transactions between two parties eff
 
 Refers to the unit that measures the amount of computational and storage effort required to execute specific operations on an EVM-compatible network.
 
+**Fee Price**
+
+A Layer 2 gas price or a price of a Layer 2 gas equivalent unit of compute and storage consumption.
+
+Note that a gas price or a price of a Layer 2 gas equivalent unit of compute and storage consumption is typically variable and changes with the level of usage of a Layer 2 network. Note, that a gas price is expressed in Giga Wei (GWEI) for EVM-compatible networks, where Wei represents the smallest unit of gas; 1 Wei = 10<sup>-18</sup> Eth in Ethereum's native token.
+
 **Base Fee**
 
-The Layer 2 gas price. 
-
-Note that a gas price is typically variable and changes with the level of usage of a Layer 2 network and is expressed in Giga Wei (GWEI) for EVM-compatible networks, where Wei represents the smallest unit of gas; 1 Wei = 10<sup>-18</sup> Eth in Ethereum's native token. Also note, that typically there is a minimal, fixed base fee which normally varies by Layer 2 network. 
+The minimum amount of gas or a Layer 2 gas equivalent unit of compute and storage consumption required to include a transaction on a Layer 2.  
 
 **Execution Fee**
 
