@@ -16,7 +16,7 @@ Proposed agenda:
 7. Open Forum for other items
 
 Meeting Notes:
-- Welcome Tom Ngo and Nikolai from Metis
+- Welcome Tom Ngo and Nikolai Prokhorenko from Metis
 - Last meeting was canceled due to everyone being out for ETHDenver
 - Review of published Blog/Report on L2 Bridges
 - Andreas opened discussion for the next work item to see if participants are ready to begin #23 “Define standard L2 Transaction Fee Structure”
