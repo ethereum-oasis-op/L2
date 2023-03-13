@@ -7,7 +7,9 @@ The document describes the minimal set of business and technical prerequisites, 
 
 ## Status
 
-The Token List specification is in **Draft Release** status per PGB vote on 11/30/2022.
+The Token List specification is in **Draft** status per PGB vote on 03/08/2023.
+
+Until 3/8/2023: The Token List specification is in **Draft Release** status per PGB vote on 11/30/2022.
 
 ## Components
 
