@@ -7,7 +7,7 @@ The document describes the minimal set of business and technical prerequisites, 
 
 ## Status
 
-The Aliasing of EVM based Addresses specification is currently in draft status.
+The Aliasing of EVM based Addresses specification is currently in **Release** status per PGB vote on 3/8/2023.
 
 ## Components
 
