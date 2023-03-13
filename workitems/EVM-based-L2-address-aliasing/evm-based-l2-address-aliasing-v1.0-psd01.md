@@ -31,7 +31,7 @@ Dan Shaw (daniel.shaw@ethereum.org), [Ethereum Foundation](https://ethereum.org)
 
 #### Editors:
 Kelvin Fichter (kelvin@optimism.io)\
-Andreas Freund (a.freundhaskel@gmail.com)
+Andreas Freund (a.freundhaskel@gmail.com)\
 Daniel Goldman (dgoldman@offchainlabs.com)
 
 <!--
