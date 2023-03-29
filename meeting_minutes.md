@@ -1,5 +1,36 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 22 March 2022, 7:00 am PT
+
+Attending: Andreas Freund (EF), Tom Ngo (Metis), Nikolai Prokhorenko (Metis), Omar Azhar (Matter Labs), Rami Husani (Metis), Anais Ofranc (EEA), Kartheek Solipuram (EY)
+
+Scribe: Anais Ofranc
+
+Proposed agenda
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review Open PRs
+5. Review Open Issues
+6. Open Forum for other items
+
+Notes:
+- Introduction of new participants: Rami Husani
+- Andreas has informed the WG that the Weekly WG updates were sent to EF
+- Andreas has confirmed that the two EIPs now available on the Ethereum repo 
+  * Initial submission of [L2 Token List Draft #6734](https://github.com/ethereum/EIPs/pull/6734)
+  * Initial Submission of [Draft of EVM-based L2 address aliasing specification #6735](https://github.com/ethereum/EIPs/pull/6735)
+- Open PR#34 - Draft of definition for Layer 2 Transactions fees.
+  * Review of the amended definitions
+  * Decision: The group agrees to merge the PR.
+- Issue #23 - Define standard L2 transaction Fee Structure
+  * Andreas updated the issue based on the decision for PR #34.
+  * The group identified and discussed the types of requirements needed for the specification
+  * The group agreed on out-of-scope items.
+- ACTION FOR NEXT MEETING: Understand what happens with paid fees for chain reorgs
+- Meeting adjourned
+
+
 ## Meeting Wed, 08 March 2022, 7:00 am PT
 
 Attending: Andreas Freund (EF), Dan Shaw (EF), Tas Dienes (EF), Anais Ofranc (EEA), Daniel Goldman (Offchain Labs), Tom Ngo (Metis), Nikolai Prokhorenko (Metis), Omar Azhar (Matter Labs)
