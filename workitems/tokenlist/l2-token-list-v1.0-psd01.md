@@ -1,5 +1,5 @@
 
-![OASIS Logo](http://docs.oasis-open.org/templates/OASISLogo-v2.0.jpg)
+![OASIS Logo](../tokenlist/images/eea-symbol.png)
 -------
 
 # L2 Token List Version 1.0

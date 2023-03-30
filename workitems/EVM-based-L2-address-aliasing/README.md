@@ -28,7 +28,7 @@ The Aliasing of EVM based Addresses specification is currently in **Release** st
 
 ## License
 
-All contribution in this repo is released under the CC0 1.0 Universal public domain dedication. For the full license text, refer to [LICENSE](https://github.com/ethereum-oasis/baseline/blob/master/LICENSE).
+All contribution in this repo is released under the CC0 1.0 Universal public domain dedication. For the full license text, refer to [LICENSE](https://github.com/eea-oasis/L2/blob/main/LICENSE.md).
 
 ## Contributions
 

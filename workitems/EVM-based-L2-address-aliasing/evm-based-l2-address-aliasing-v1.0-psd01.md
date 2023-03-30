@@ -1,5 +1,5 @@
 
-![OASIS Logo](http://docs.oasis-open.org/templates/OASISLogo-v2.0.jpg)
+![OASIS Logo](../EVM-based-L2-address-aliasing/images/eea-symbol.png)
 -------
 
 # L2 Aliasing of EVM based Addresses Version 1.0

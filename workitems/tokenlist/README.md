@@ -30,7 +30,7 @@ Until 3/8/2023: The Token List specification is in **Draft Release** status per 
 
 ## License
 
-All contribution in this repo is released under the CC0 1.0 Universal public domain dedication. For the full license text, refer to [LICENSE](https://github.com/ethereum-oasis/baseline/blob/master/LICENSE).
+All contribution in this repo is released under the CC0 1.0 Universal public domain dedication. For the full license text, refer to [LICENSE](ttps://github.com/eea-oasis/L2/blob/main/LICENSE.md).
 
 ## Contributions
 
