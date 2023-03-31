@@ -322,7 +322,7 @@ In this section we will formulate requirements in the following areas:
 
 #### **[R1]**
 
-A L2 Transaction Fee MUST be comprised of the Base Fee, the Execution Fee, an the Priority Fee.
+A L2 Transaction Fee MUST be comprised as the sum of the Base Fee, the Execution Fee, and the Priority Fee.
 
 [[R1]](#r1) Testability: Mathematical equality equations can be translated into computer code, and any computer code is testable. Therefore, the requirement is testable.
 
@@ -340,10 +340,21 @@ A L2 Transaction Fee or any of its components MAY BE zero.
 
 #### **[R3]**
 
-The setting or calculation of a Base Fee MUST be well documented and verifiable.
+The setting and/or calculation of a Base Fee MUST be well documented and verifiable.
 
-[[R3]](#r3) Testability: Documentation about the setting or calculation of a Base Fee can be reviewed by individuals, and subsequently compared to computer code the sets or calculates a Base Fee. And computer code is always testable. Therefore, the requirement is testable.
+[[R3]](#r3) Testability: Documentation about the setting and/or calculation of a Base Fee can be reviewed by individuals, and subsequently compared to computer code that sets and/or calculates a Base Fee. And computer code is always testable. Therefore, the requirement is testable.
 
+#### **[R4]**
+
+The setting and/or calculation of an Execution Fee MUST be well documented and verifiable.
+
+[[R4]](#r4) Testability: Documentation about the setting and/or calculation of an Execution can be reviewed by individuals, and subsequently compared to computer code that sets and/or calculates an Execution Fee. And computer code is always testable. Therefore, the requirement is testable.
+
+#### **[R5]**
+
+The setting of a Priority Fee MUST be well documented and verifiable.
+
+[[R5]](#r5) Testability: Documentation about the setting of a Priority Fee can be reviewed by individuals, and subsequently compared to computer code that sets a Priority Fee. And computer code is always testable. Therefore, the requirement is testable.
 
 
 
