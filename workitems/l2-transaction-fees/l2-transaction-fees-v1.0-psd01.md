@@ -223,6 +223,10 @@ A digitally signed message sent from an Layer 2 account that contains instructio
 
 The fee in a Layer 2 network or protocol token to be paid by a transaction originator comprised of the sum of a Base Fee, an Execution Fee and a Priority Fee.
 
+**Transaction Fee Refund:**
+
+The difference between the Transaction Fee that the Transaction Sender has included in the Transaction when sent to the Layer 2 and the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been finalized on the Layer 2
+
 **Transaction Originator:**
 
 The account that created a transaction for a Layer 1, Layer 2, or Sidechain.
@@ -322,7 +326,7 @@ In this section we will formulate requirements in the following areas:
 
 #### **[R1]**
 
-A L2 Transaction Fee MUST be comprised as the sum of the Base Fee, the Execution Fee, and the Priority Fee.
+A L2 Transaction Fee MUST be comprised as the sum of a Base Fee, a Execution Fee, and a Priority Fee.
 
 [[R1]](#r1) Testability: Mathematical equality equations can be translated into computer code, and any computer code is testable. Therefore, the requirement is testable.
 
@@ -356,6 +360,53 @@ The setting of a Priority Fee MUST be well documented and verifiable.
 
 [[R5]](#r5) Testability: Documentation about the setting of a Priority Fee can be reviewed by individuals, and subsequently compared to computer code that sets a Priority Fee. And computer code is always testable. Therefore, the requirement is testable.
 
+#### **[R6]**
+
+A Layer 2 implementation MUST provide a capability to estimate a Transaction Fee based on a given Transaction and the current state of the L2.
+
+[[R6]](#r6) Testability: Given a transaction for whom a resource consumption can be calculated based on a software emulation of the relevant L2 State Transition function which is testable, and given a Fee price based on the state of current resource consumption of the L2, and given that the testable requirements [[R1]](#r1) through [[R5]](#r5) are required to be implemented for [[R6]](#r6), the requirement [[R6]](#r6) itself is testable.
+
+#### **[R7]**
+
+A Layer 2 implementation MUST record and provide access to the Transaction Fee that the Transaction Sender has included in the Transaction when a Transaction has been sent to the Layer 2.
+
+[[R7]](#r7) Testability: A Layer 2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since Layer 2 transactions are recorded on a Sequencer until they are recorded and finalized on both the Layer 2 and the Layer 1, and since a Sequencer is open to a transactions sender, and since a Sequencer is part of a Layer 2 protocol, and since Layer 2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+
+#### **[R8]**
+
+A Layer 2 implementation MUST record and provide access to the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been processed by the Layer 2.
+
+[[R8]](#r8) Testability: A Layer 2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since Layer 2 transactions are recorded on a Sequencer until they are recorded and finalized on both the Layer 2 and the Layer 1, and since Layer 2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+
+
+#### **[R9]**
+
+A Layer 2 implementation MUST record and provide access to the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been finalized on the Layer 2.
+
+Transaction finality in the context of this document is defined as the condition when a transaction can no longer be reverted on a Layer 2. Not that the finality condition will vary by Layer 2. Layer 2 finality requirements are outside of the scope of this document.
+
+[[R9]](#r9) Testability: A Layer 2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since Layer 2 transactions are recorded on a Sequencer until they are recorded and finalized on both the Layer 2 and the Layer 1, and since Layer 2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+
+
+#### **[R10]**
+
+If there is a Transaction Fee Refund, a Layer 2 implementation MUST record and provide access to the Transaction Fee Refund when a Transaction has been finalized on the Layer 2.
+
+A Transaction Fee Refund in the context of this document is defined as the difference between the Transaction Fee that the Transaction Sender has included in the Transaction sent to the Layer 2 and the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been finalized on the Layer 2.
+
+[[R10]](#r10) Testability: A Layer 2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since Layer 2 transactions are recorded on a Sequencer until they are recorded and finalized on both the Layer 2 and the Layer 1, and since Layer 2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+
+#### **[R11]**
+
+A Layer 2 MUST provide continuous access to the Transaction Fee, the Transaction Fee components, and Transaction Fee Refund, if applicable, of all Transaction finalized on the Layer 2.
+
+[[R11]](#r11) Testability: Since Layer 2 protocols record all transactions and their fees, and are open to access by any 3rd party, and have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+
+#### **[R12]**
+
+A Layer 2 MUST provide a capability that delivers a current Fee Price that a Transaction Fee calculation by the Transactions Sender or Transaction Originator can be based on. 
+
+[[R12]](#r12) Testability: Layer 2 protocols typically provide Fee Prices to transactions senders which may or may not be dynamic such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests) with its test suite. Therefore, the requirement is testable. 
 
 
 ## 3.2 Transaction Fee Visibility Requirements
