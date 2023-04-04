@@ -150,6 +150,7 @@ The means for the transfer of information and digital assets between between Lay
 An individual writing computer code for software applications that operate on a Layer 1, Layer 2 or Sidechain.
 
 **Direct Transaction:**
+
 A transaction where the transaction originator is also the transaction sender.
 
 **Execution Fee:**
@@ -184,6 +185,10 @@ A secondary framework or protocol that is built on top of an existing Layer 1 sy
 **Layer 2 Operator:**
 
 An entity responsible for the operation of a Layer 2.
+
+**Layer 2 Block:**
+
+A batch of Layer 2 Transactions and a representation of the Layer 2 State due to the Layer 2 Transactions in the batch cryptographically linked to the previous Layer 2 Block where the cryptographic link is derived using only the previous Layer 2 Block's data, and where the Layer 2 block is stored on a Layer 1.
 
 **Maximal Extractable Value:**
 
@@ -322,7 +327,7 @@ In this section we will formulate requirements in the following areas:
 - Visibility
 - Roles and Transactions
 
-## 3.1 Transaction Fee Transparency Requirements
+## 3.1 Layer 2 Transaction Fee Transparency Requirements
 
 #### **[R1]**
 
@@ -409,13 +414,93 @@ A Layer 2 MUST provide a capability that delivers a current Fee Price that a Tra
 [[R12]](#r12) Testability: Layer 2 protocols typically provide Fee Prices to transactions senders which may or may not be dynamic such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests) with its test suite. Therefore, the requirement is testable. 
 
 
-## 3.2 Transaction Fee Visibility Requirements
+## 3.2 Layer 2 Transaction Fee Visibility Requirements
+
+In this section, the document discusses the visibility requirements for different Layer 2 Transaction Types and Roles.
+
+#### **[R13]**
+
+A Transaction Originator, a Transaction Sender and a Developer MUST be able to view an estimated Transaction Fee and its components before a Layer 2 Transaction is submitted.
+
+#### **[R14]**
+
+A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee and its components after a Layer 2 Direct Transaction has been processed on the Layer 2.
 
 
-## 3.3 Requirements for Roles and Transactions
+#### **[R15]**
+
+An Intermediary and a Developer MUST be able to view a Transaction Fee and its components after a Layer 2 Meta Transaction has been processed on the Layer 2.
+
+#### **[R16]**
+
+A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee and its components after a Layer 2 Direct Transaction has been finalized on the Layer 2.
 
 
+#### **[R17]**
 
+An Intermediary and a Developer MUST be able to view a Transaction Fee and its components after a Layer 2 Meta Transaction has been finalized on the Layer 2.
+
+
+#### **[R18]**
+
+A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Refund after a Layer 2 Direct Transaction has been finalized on the Layer 2.
+
+
+#### **[R19]**
+
+If there is a Transaction Fee Refund, a Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee Refund after a Layer 2 Direct Transaction has been finalized on the Layer 2.
+
+
+#### **[R20]**
+
+If there is a Transaction Fee Refund, an Intermediary and a Developer MUST be able to view a Transaction Fee Refund after a Layer 2 Meta Transaction has been finalized on the Layer 2.
+
+
+#### **[R21]**
+
+A Layer 2 MUST provide an Intermediary with a capability to display the Transaction Fee and its components of a Layer 2 Meta Transaction after it has been processed on the Layer 2.
+
+
+#### **[R22]**
+
+A Layer 2 MUST provide an Intermediary with a capability to display the Transaction Fee and its components of a Layer 2 Meta Transaction after it has been finalized on the Layer 2.
+
+
+#### **[R23]**
+
+If there is a Transaction Fee Refund, a Layer 2 MUST provide an Intermediary with a capability to display the Transaction Fee Refund of a Layer 2 Meta Transaction to its Transaction Originator after it has been finalized on the Layer 2.
+
+
+#### **[R24]**
+
+A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a current Fee Price that a Transaction Fee calculation by the Transactions Sender or Transaction Originator can be based on. 
+
+
+## 3.3 Transaction Fee Requirements for Layer 2 Transactions
+
+In this section, the documents details Transaction Fee requirements for a Layer 2 Transaction and its processing. 
+
+
+#### **[R25]**
+
+Every Layer 2 Transaction MUST contain a Transaction Fee and its components.
+
+
+#### **[R26]**
+
+Every Layer 2 Block MUST contain one or more Layer 2 account addresses to which the accumulated Transaction Fees in said Layer 2 Block are transferred either whole or in proportion based on the specification of the Layer 2 protocol.
+
+
+#### **[R27]**
+
+If one or more Layer 2 Transactions are reverted before they are finalized on the Layer 2's Layer 1, the Transaction Fees in the affected Transactions MUST be returned as a Transaction Fee Refund to the Transaction Senders.
+
+Note that it is not important why a Layer 2 Transactions has been reverted before it is finalized.
+
+
+#### **[D1]**
+
+If one or more Layer 2 Meta Transactions are reverted before they are finalized on the Layer 2's Layer 1, the Transaction Fees in the affected Meta Transactions SHOULD be returned to the Transaction Originator by the Intermediary as a Transaction Fee Refund.
 
 -------
 # 4 Conformance
@@ -437,15 +522,15 @@ This document defines the conformance levels of Layer 2 Transaction Fees as foll
 * **Level 2:** All MUST and SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 * **Level 3:** All MUST, SHOULD, and MAY requirements with conditional MUST or SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 
-### **[DX]** 
+### **[D2]** 
 A claim that a Transaction Fee conforms to this specification SHOULD describe a testing procedure carried out for each requirement to which conformance is claimed, that justifies the claim with respect to that requirement.
 
-[[DX]](#dx) Testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, and can be described as required in [[DX]](#dx).
+[[D2]](#d2) Testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, and can be described as required in [[D2]](#d2).
 
-#### **[RX]** 
+#### **[R28]** 
 A claim that a Transaction Fee conforms to this specification at **Level 2** or higher MUST describe the testing procedure carried out for each requirement at **Level 2** or higher, that justifies the claim to that requirement.
 
-[[RX]](#rx) Testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, be described, be built and implemented and results can be recorded as required in [[RX]](#rx).
+[[R28]](#r28) Testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, be described, be built and implemented and results can be recorded as required in [[R28]](#r28).
 
 
 -------
