@@ -462,7 +462,10 @@ The following documents are referenced in such a way that some or all of their c
 
 ## A.2 Non-Normative References
 
-TBD
+#### **[W3C-String-Meta]**
+
+Strings on the Web: Language and Direction Metadata, R. Ishida, A. Phillips, August 2022,
+https://www.w3.org/TR/string-meta/
 
 
 # Appendix B - Security Considerations
@@ -476,6 +479,10 @@ The standard does not set any requirements for compliance to jurisdiction legisl
 ## B.2 Production Readiness 
 
 The standard does not set any requirements for the use of specific applications/tools/libraries etc. The implementer should perform due diligence when selecting specific applications/tools/libraries.
+
+## B.3 Internationalization and Localization Reference
+
+The standard encourages implementers to follow the [W3C "Strings on the Web: Language and Direction Metadata" best practices guide](#w3c-string-meta) for identifying language and base direction for strings used on the Web wherever appropriate.
 
 <!--
 
