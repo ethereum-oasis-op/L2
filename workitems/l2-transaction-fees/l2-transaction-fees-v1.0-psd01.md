@@ -2,7 +2,7 @@
 ![EEA Logo](../l2-transaction-fees/images/eea-symbol.png)
 -------
 
-# Layer 2 Transaction Fee Specification Version 1.0
+# L2 Token List Version 1.0
 
 ## Project Specification Draft
 
@@ -120,58 +120,35 @@ The work is an [EEA Community Project](https://entethalliance.org/eeacommunitypr
 
 ## 1.1 Overview
 
-Layer 2 (L2) Transaction Fees are a crucial element of financing the operations of L2 platforms apart from rewards given to participants for providing economic security guarantees such as validators in consensus protocols. Yet how these transaction fees are derived, to whom they are paid, how and where they are displayed to any of the participants in L2 platforms varies greatly between L2 platforms. 
-
-Given the above, the need for transparency in a open ecosystem to build trust, and the evolving legal and regulatory landscape around fee transparency and what type of fees can be charged, this document sets out to define the different types of L2 transaction fees and then define requirements around transaction fee transparency for L2 platforms.
-
-Note, that fees associated with asset and data bridges between L2 platforms is beyond the scope of this document, as well as between L2 platforms and centralized exchanges.
+TBD
 
 
 ## 1.2 Glossary
-
-**Account:**
-
-A unit that is minimally comprised of a unique account identifier, a deterministic ordering parameter, also referred to as a nonce, a balance of a Layer 1, Layer 2 or Sidechain unit of exchange, also referred to as a protocol token. Changes to an account are controlled by a unique cryptographic public and private key pair. There are typically additional account elements referring to instructions and data associated to the account that determine account changes. 
-
-**Base Fee:**
-
-The minimum amount of gas or a Layer 2 gas equivalent unit of compute and storage consumption required to include a transaction on a Layer 2.  
 
 **Blockchain:**
 
 An open, distributed ledger that can record transactions between two parties efficiently and in a verifiable and permanent way.
 
-**Bridge:** 
+**Gas**
 
-The means for the transfer of information and digital assets between between Layer 2s, Layer 1s, and Sidechains.
+Refers to the unit that measures the amount of computational and storage effort required to execute specific operations on an EVM-compatible network.
 
-**Developer:**
-
-An individual writing computer code for software applications that operate on a Layer 1, Layer 2 or Sidechain.
-
-**Direct Transaction:**
-A transaction where the transaction originator is also the transaction sender.
-
-**Execution Fee:**
-
-A fee to be paid by the transaction originator sufficient to cover both the Layer 2 and Layer 1 transaction fees.
-
-An example calculation of such an Execution Fee is:
-$$L2\space Gas\space Limit + {L1\space Transaction\space Fee \over L2\space Gas\space Price}$$
-
-**Fee Price:**
+**Fee Price**
 
 A Layer 2 gas price or a price of a Layer 2 gas equivalent unit of compute and storage consumption.
 
 Note that a gas price or a price of a Layer 2 gas equivalent unit of compute and storage consumption is typically variable and changes with the level of usage of a Layer 2 network. Note, that a gas price is expressed in Giga Wei (GWEI) for EVM-compatible networks, where Wei represents the smallest unit of gas; 1 Wei = 10<sup>-18</sup> Eth in Ethereum's native token.
 
-**Gas:**
+**Base Fee**
 
-Refers to the unit that measures the amount of computational and storage effort required to execute specific operations on an EVM-compatible network.
+The minimum amount of gas or a Layer 2 gas equivalent unit of compute and storage consumption required to include a transaction on a Layer 2.  
 
-**Intermediary:**
+**Execution Fee**
 
-An entity that is the sender of a transaction for which it is not the transaction originator.
+A fee to be paid by the transaction originator sufficient to cover both the Layer 2 and Layer 1 transaction fees.
+
+An example calculation of such an Execution Fee is:
+$$L2\space Gas\space Limit + {L1\space Transaction\space Fee \over L2\space Gas\space Price}$$
 
 **Layer 1:**
 
@@ -181,60 +158,28 @@ A base network, such as Bitcoin, or Ethereum, and its underlying infrastructure 
 
 A secondary framework or protocol that is built on top of an existing Layer 1 system in such a way that it inherits the security properties of the Layer 1 system while allowing for a higher transaction throughput that the Layer 1 system.
 
-**Layer 2 Operator:**
-
-An entity responsible for the operation of a Layer 2.
-
-**Maximal Extractable Value:**
+**Maximal Extractable Value**
 
 Refers to the maximum value that can be extracted from block production in excess of the standard block reward and gas fees by including, excluding, and changing the order of transactions in a block.
 
-**Meta Transaction:**
-
-A transaction where the transaction sender is not the transaction originator, and the transaction fee for the transaction originator is different if the same transaction was a direct transaction.
-
-**Priority Fee:**
+**Priority Fee**
 
 To be paid by the transaction originator to a Layer 2 sequencer to obtain a desired slot for its transaction in a new block.
 
 Note that the exact position of a transaction in a new block may be determined by factors such as time-stamp, or minimization of Maximal Extractable Value (MEV) of a block in addition to a Priority Fee.
 
-**Sequencer:**
+**Sequencer**
 
 Collects transactions, publishes them in a batch to the Layer 1 on which the Layer 2 operates, receives transaction fees from the published transactions, pays Layer 2 fees to other Layer 2 protocol participants, and, if required, participates in a consensus algorithm with other sequencers to determine transaction  ordering in a block.
+
 
 **Sidechain:**
 
 A secondary blockchain connected to the main blockchain with a two-way peg and using its own trust assumptions.
 
-**State:**
-
-The set of all accounts on a Layer 2 that are mapped to one another using a cryptographic data structure.
-
-**State Transition:**
-
-An event that deterministically changes one or more accounts in the set of all accounts that comprise the complete state of a Layer 2.
-
-**Transaction:**
-
-A digitally signed message sent from an Layer 2 account that contains instructions and data that result in a Layer 2 state transition. 
-
-**Transaction Fee:**
+**Transaction Fee**
 
 The fee in a Layer 2 network or protocol token to be paid by a transaction originator comprised of the sum of a Base Fee, an Execution Fee and a Priority Fee.
-
-**Transaction Fee Refund:**
-
-The difference between the Transaction Fee that the Transaction Sender has included in the Transaction when sent to the Layer 2 and the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been finalized on the Layer 2
-
-**Transaction Originator:**
-
-The account that created a transaction for a Layer 1, Layer 2, or Sidechain.
-
-**Transaction Sender:**
-
-The account that sent a transaction to a Layer 1, Layer 2, or Sidechain.
-
 
 ## 1.3 Typographical Conventions
 
@@ -251,171 +196,18 @@ Note that requirements are uniquely numbered in ascending order within each requ
 
 Example : It should be read that [R1] is an absolute requirement of the specification whereas [D1] is a recommendation and [O1] is truly optional.
 
+
 -------
 
 # 2 Concepts and Design
 
-To specify requirements about L2 transaction fees, this document will first:
-- Define the meaning of a transaction fee and its components
-- Define the roles relevant to transaction fees
-- Define transaction types and their relationship to transaction fees
-
-Note, that all definitions can be found in the [Glossary](#12-glossary)
-
-Subsequently, the specification section will define requirements around fee transparency, fee estimation, final fees, and how, when and where fees are communicated to the different roles. The specification will also discuss requirements around responsibilities and accountability of roles towards one another.
-
-## 2.1 Definition of Transaction Fee and its Components
-
-This document defines Transaction Fee as the fee in a Layer 2 network or protocol token to be paid by a transaction originator comprised of the sum of a Base Fee, an Execution Fee and a Priority Fee.
-
-Note that this document defines as Transaction as a digitally signed message sent from an Layer 2 account that contains instructions and data that result in a Layer 2 state transition. Also note that this document defines State and State Transition as follows:
-- State: The set of all accounts on a Layer 2 that are mapped to one another using a cryptographic data structure.
-- State Transition: An event that deterministically changes one or more accounts in the set of all accounts that comprise the complete state of a Layer 2.
-
-Further note that this document defines Account as a unit that is minimally comprised of a unique account identifier, a deterministic ordering parameter, also referred to as a nonce, a balance of a Layer 1, Layer 2 or Sidechain unit of exchange, also referred to as a protocol token. Changes to an account are controlled by a unique cryptographic public and private key pair. There are typically additional account elements referring to instructions and data associated to the account that determine account changes.
-
-In formula form the Transaction Fee is given as:
-
-**Transaction Fee = Base Fee + Execution Fee + Priority Fee**
-
-The different components are defined as follows:
-- **Base Fee:** The minimum amount of Gas or a Layer 2 gas equivalent unit of compute and storage consumption required to include a transaction on a Layer 2.
-- **Execution Fee:** A fee to be paid by the transaction originator sufficient to cover both the Layer 2 and Layer 1 transaction fees.
-- **Priority Fee:** To be paid by the transaction originator to a Layer 2 sequencer to obtain a desired slot for its transaction in a new block. Note that the exact position of a transaction, a slot, in a new block may be determined by factors such as time-stamp, or minimization of Maximal Extractable Value (MEV) of a block in addition to a Priority Fee. And that MEV is defined as the maximum value that can be extracted from block production in excess of the standard block reward and gas fees by including, excluding, and changing the order of transactions in a block.
-
-Note that a Transaction Fee has a Transaction Fee Price which is defined in the context of this document as a Layer 2 Gas price or a price of a Layer 2 gas equivalent unit of compute and storage consumption.
-
-Note that a Gas price or a price of a Layer 2 gas equivalent unit of compute and storage consumption is typically variable and changes with the level of usage of a Layer 2 network. Note, that a gas price is expressed in Giga Wei (GWEI) for EVM-compatible networks, where Wei represents the smallest unit of gas; 1 Wei = 10<sup>-18</sup> Eth in Ethereum's native token.
-
-Furthermore, note that Gas in this document refers to the unit that measures the amount of computational and storage effort required to execute specific operations on an EVM-compatible network. 
-
-## 2.2 Definition of L2 Roles relevant to Transaction Fees
-
-The following roles are relevant to transaction fees, their calculation and how, when and where they are presented:
-- **Transaction Originator:** The account that created a transaction for a Layer 1, Layer 2, or Sidechain.
-- **Transaction Sender:** The account that sent a transaction to a Layer 1, Layer 2, or Sidechain.
-- **Intermediary:** An entity that is the sender of a transaction for which it is not the transaction originator.
-- **Sequencer:** Collects transactions, publishes them in a batch to the Layer 1 on which the Layer 2 operates, receives transaction fees from the published transactions, pays Layer 2 fees to other Layer 2 protocol participants, and, if required, participates in a consensus algorithm with other sequencers to determine transaction  ordering in a block.
-- **Layer 2 Operator:** An entity responsible for the operation of a Layer 2.
-- **Developer:** An individual writing computer code for software applications that operate on a Layer 1, Layer 2 or Sidechain.
-
-## 2.3 Definition of Transaction Types
-
-There are different types of transactions, and depending on the context transaction fees are paid for differently and by different roles.
-
-There are two types of transactions in the context of this document:
-- **Direct Transaction:** A transaction where the transaction originator is also the transaction sender.
-- **Meta Transaction:** A transaction where the transaction sender is not the transaction originator, and the transaction fee for the transaction originator is different if the same transaction was a direct transaction.
-
-In the case of a Direct Transaction the Transaction Originator pays for the Transaction Fee based on the Transaction Fee Price the Transaction Originator is maximally willing to pay.
-
-In the case of a Meta Transaction, the Transaction Originator may pay only a portion or no transaction fees at all. Instead, an Intermediary pays all or part of the Transaction Fee. Note that the Intermediary may be the Transaction Sender, or pay the Transaction Sender for the Transaction Fees incurred. Also note that the Transaction Originator may pre-pay Transaction Fees to the Intermediary or the Transaction Sender or both, or submit payment together with the Transaction sent to the Intermediary.
-
-Therefore, the communication of a Transaction Fee and its components is different for different business scenarios. This document will not break down requirements by business scenario but rather by role and if that role is responsible to pay part or all of a Transaction Fee. 
+TBD
 
 -------
 
-# 3 Layer 2 Transaction Fee Specification
+# 3 Layer 2 Transaction Fees Specification
 
-In this section we will formulate requirements in the following areas:
-- Transparency
-- Visibility
-- Roles and Transactions
-
-## 3.1 Transaction Fee Transparency Requirements
-
-#### **[R1]**
-
-A L2 Transaction Fee MUST be comprised as the sum of a Base Fee, a Execution Fee, and a Priority Fee.
-
-[[R1]](#r1) Testability: Mathematical equality equations can be translated into computer code, and any computer code is testable. Therefore, the requirement is testable.
-
-#### **[R2]**
-
-All components of a L2 Transaction Fee MUST NOT be less than zero.
-
-[[R2]](#r2) Testability: Mathematical equality equations can be translated into computer code, and any computer code is testable for specific conditions such as the sum of three elements, or each individual element being less than zero. Therefore, the requirement is testable.
-
-#### **[O1]**
-
-A L2 Transaction Fee or any of its components MAY BE zero.
-
-[[O1]](#o1) Testability: Mathematical equality equations can be translated into computer code, and any computer code is testable for specific conditions such as the sum of three elements, or each individual element being zero. Therefore, the requirement is testable.
-
-#### **[R3]**
-
-The setting and/or calculation of a Base Fee MUST be well documented and verifiable.
-
-[[R3]](#r3) Testability: Documentation about the setting and/or calculation of a Base Fee can be reviewed by individuals, and subsequently compared to computer code that sets and/or calculates a Base Fee. And computer code is always testable. Therefore, the requirement is testable.
-
-#### **[R4]**
-
-The setting and/or calculation of an Execution Fee MUST be well documented and verifiable.
-
-[[R4]](#r4) Testability: Documentation about the setting and/or calculation of an Execution can be reviewed by individuals, and subsequently compared to computer code that sets and/or calculates an Execution Fee. And computer code is always testable. Therefore, the requirement is testable.
-
-#### **[R5]**
-
-The setting of a Priority Fee MUST be well documented and verifiable.
-
-[[R5]](#r5) Testability: Documentation about the setting of a Priority Fee can be reviewed by individuals, and subsequently compared to computer code that sets a Priority Fee. And computer code is always testable. Therefore, the requirement is testable.
-
-#### **[R6]**
-
-A Layer 2 implementation MUST provide a capability to estimate a Transaction Fee based on a given Transaction and the current state of the L2.
-
-[[R6]](#r6) Testability: Given a transaction for whom a resource consumption can be calculated based on a software emulation of the relevant L2 State Transition function which is testable, and given a Fee price based on the state of current resource consumption of the L2, and given that the testable requirements [[R1]](#r1) through [[R5]](#r5) are required to be implemented for [[R6]](#r6), the requirement [[R6]](#r6) itself is testable.
-
-#### **[R7]**
-
-A Layer 2 implementation MUST record and provide access to the Transaction Fee that the Transaction Sender has included in the Transaction when a Transaction has been sent to the Layer 2.
-
-[[R7]](#r7) Testability: A Layer 2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since Layer 2 transactions are recorded on a Sequencer until they are recorded and finalized on both the Layer 2 and the Layer 1, and since a Sequencer is open to a transactions sender, and since a Sequencer is part of a Layer 2 protocol, and since Layer 2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
-
-#### **[R8]**
-
-A Layer 2 implementation MUST record and provide access to the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been processed by the Layer 2.
-
-[[R8]](#r8) Testability: A Layer 2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since Layer 2 transactions are recorded on a Sequencer until they are recorded and finalized on both the Layer 2 and the Layer 1, and since Layer 2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
-
-
-#### **[R9]**
-
-A Layer 2 implementation MUST record and provide access to the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been finalized on the Layer 2.
-
-Transaction finality in the context of this document is defined as the condition when a transaction can no longer be reverted on a Layer 2. Not that the finality condition will vary by Layer 2. Layer 2 finality requirements are outside of the scope of this document.
-
-[[R9]](#r9) Testability: A Layer 2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since Layer 2 transactions are recorded on a Sequencer until they are recorded and finalized on both the Layer 2 and the Layer 1, and since Layer 2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
-
-
-#### **[R10]**
-
-If there is a Transaction Fee Refund, a Layer 2 implementation MUST record and provide access to the Transaction Fee Refund when a Transaction has been finalized on the Layer 2.
-
-A Transaction Fee Refund in the context of this document is defined as the difference between the Transaction Fee that the Transaction Sender has included in the Transaction sent to the Layer 2 and the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been finalized on the Layer 2.
-
-[[R10]](#r10) Testability: A Layer 2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since Layer 2 transactions are recorded on a Sequencer until they are recorded and finalized on both the Layer 2 and the Layer 1, and since Layer 2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
-
-#### **[R11]**
-
-A Layer 2 MUST provide continuous access to the Transaction Fee, the Transaction Fee components, and Transaction Fee Refund, if applicable, of all Transaction finalized on the Layer 2.
-
-[[R11]](#r11) Testability: Since Layer 2 protocols record all transactions and their fees, and are open to access by any 3rd party, and have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
-
-#### **[R12]**
-
-A Layer 2 MUST provide a capability that delivers a current Fee Price that a Transaction Fee calculation by the Transactions Sender or Transaction Originator can be based on. 
-
-[[R12]](#r12) Testability: Layer 2 protocols typically provide Fee Prices to transactions senders which may or may not be dynamic such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests) with its test suite. Therefore, the requirement is testable. 
-
-
-## 3.2 Transaction Fee Visibility Requirements
-
-
-## 3.3 Requirements for Roles and Transactions
-
-
-
+TBD
 
 -------
 # 4 Conformance
@@ -464,13 +256,14 @@ The following documents are referenced in such a way that some or all of their c
 
 #### **[W3C-String-Meta]**
 
-Strings on the Web: Language and Direction Metadata, R. Ishida, A. Phillips, August 2022,
-https://www.w3.org/TR/string-meta/
+Strings on the Web: Language and Direction Metadata, R. Ishida, A. Phillips, August 2022, https://www.w3.org/TR/string-meta/
 
 
 # Appendix B - Security Considerations
 
-TBD
+There are no additional security requirements.
+
+It should be noted that any Layer 2 should have completed a security audit by a reputable security auditor and resolved all security issues before going to production.
 
 ## B.1 Data Privacy
 
