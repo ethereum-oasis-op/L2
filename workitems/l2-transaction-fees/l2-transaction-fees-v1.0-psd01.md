@@ -437,11 +437,15 @@ This document defines the conformance levels of Layer 2 Transaction Fees as foll
 * **Level 2:** All MUST and SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 * **Level 3:** All MUST, SHOULD, and MAY requirements with conditional MUST or SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 
-#### **[DX]** 
-A claim that a Layer 2 transaction fee implementation conforms to this specification SHOULD describe the testing procedure used to justify the claim.
+### **[DX]** 
+A claim that a Transaction Fee conforms to this specification SHOULD describe a testing procedure carried out for each requirement to which conformance is claimed, that justifies the claim with respect to that requirement.
+
+[[DX]](#dx) Testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, and can be described as required in [[DX]](#dx).
 
 #### **[RX]** 
-A claim that a Layer 2 transaction fee conforms to this specification at **level 2** or higher MUST describe the testing procedure used to justify the claim.
+A claim that a Transaction Fee conforms to this specification at **Level 2** or higher MUST describe the testing procedure carried out for each requirement at **Level 2** or higher, that justifies the claim to that requirement.
+
+[[RX]](#rx) Testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, be described, be built and implemented and results can be recorded as required in [[RX]](#rx).
 
 
 -------
@@ -462,12 +466,17 @@ The following documents are referenced in such a way that some or all of their c
 
 ## A.2 Non-Normative References
 
-TBD
+#### **[W3C-String-Meta]**
+
+Strings on the Web: Language and Direction Metadata, R. Ishida, A. Phillips, August 2022,
+https://www.w3.org/TR/string-meta/
 
 
 # Appendix B - Security Considerations
 
-TBD
+There are no additional security requirements.
+
+It should be noted that any Layer 2 should have completed a security audit by a reputable security auditor and resolved all security issues before going to production.
 
 ## B.1 Data Privacy
 
@@ -476,6 +485,10 @@ The standard does not set any requirements for compliance to jurisdiction legisl
 ## B.2 Production Readiness 
 
 The standard does not set any requirements for the use of specific applications/tools/libraries etc. The implementer should perform due diligence when selecting specific applications/tools/libraries.
+
+## B.3 Internationalization and Localization Reference
+
+The standard encourages implementers to follow the [W3C "Strings on the Web: Language and Direction Metadata" best practices guide](#w3c-string-meta) for identifying language and base direction for strings used on the Web wherever appropriate. 
 
 <!--
 
