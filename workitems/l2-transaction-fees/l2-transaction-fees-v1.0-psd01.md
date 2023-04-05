@@ -407,11 +407,13 @@ A Transaction Fee Refund in the context of this document is defined as the diffe
 
 [[R10]](#r10) Testability: A L2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since L2 transactions are recorded on a Sequencer until they are recorded and finalized on both the L2 and the Layer 1, and since L2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
 
+
 #### **[R11]**
 
 A L2 MUST provide continuous access to the Transaction Fee, the Transaction Fee components, and Transaction Fee Refund, if applicable, of all Transaction finalized on the L2.
 
 [[R11]](#r11) Testability: Since L2 protocols record all transactions and their fees, and are open to access by any 3rd party, and have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+
 
 #### **[R12]**
 
@@ -422,91 +424,106 @@ A L2 MUST provide a capability that delivers a current Fee Price that a Transact
 
 ## 3.2 Layer 2 Transaction Fee Visibility Requirements
 
-In this section, the document discusses the visibility requirements for different L2 Transaction Types and Roles.
+In this section, this document discusses the visibility requirements for different L2 Transaction Types and Roles.
 
 #### **[R13]**
 
 A Transaction Originator, a Transaction Sender and a Developer MUST be able to view an estimated Transaction Fee and its components before a L2 Transaction is submitted.
 
+[[R13]](#r13) Testability: Given that [[R6]](#r6) that provides the necessary capability for [[R13]](#r13) to be realized is testable, and given that the ability to view a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
+
 #### **[R14]**
 
 A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee and its components after a L2 Direct Transaction has been processed on the L2.
+
+[[R14]](#r14) Testability: Given that [[R8]](#r8) that provides the necessary capability for [[R14]](#r14) to be realized is testable, and given that the ability to view a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
 
 
 #### **[R15]**
 
 An Intermediary and a Developer MUST be able to view a Transaction Fee and its components after a L2 Meta Transaction has been processed on the L2.
 
+[[R15]](#r15) Testability: Given that [[R8]](#r8) that provides the necessary capability for [[R15]](#r15) to be realized is testable, and given that the ability to view a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
+
 #### **[R16]**
 
 A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee and its components after a L2 Direct Transaction has been finalized on the L2.
+
+[[R16]](#r16) Testability: Given that [[R9]](#r9) that provides the necessary capability for [[R16]](#r16) to be realized is testable, and given that the ability to view a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
 
 
 #### **[R17]**
 
 An Intermediary and a Developer MUST be able to view a Transaction Fee and its components after a L2 Meta Transaction has been finalized on the L2.
 
+[[R17]](#r17) Testability: Given that [[R9]](#r9) that provides the necessary capability for [[R17]](#r17) to be realized is testable, and given that the ability to view a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
+
 
 #### **[R18]**
 
-A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Refund after a L2 Direct Transaction has been finalized on the L2.
+If there is a Transaction Fee Refund, a Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee Refund after a L2 Direct Transaction has been finalized on the L2.
 
+[[R18]](#r18) Testability: Given that [[R10]](#r10) that provides the necessary capability for [[R18]](#r18) to be realized is testable, and given that the ability to view a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
 
 #### **[R19]**
 
-If there is a Transaction Fee Refund, a Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee Refund after a L2 Direct Transaction has been finalized on the L2.
+If there is a Transaction Fee Refund, an Intermediary and a Developer MUST be able to view a Transaction Fee Refund after a L2 Meta Transaction has been finalized on the L2.
+
+[[R19]](#r19) Testability: Given that [[R10]](#r10) that provides the necessary capability for [[R19]](#r19) to be realized is testable, and given that the ability to view a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
 
 
 #### **[R20]**
 
-If there is a Transaction Fee Refund, an Intermediary and a Developer MUST be able to view a Transaction Fee Refund after a L2 Meta Transaction has been finalized on the L2.
+A L2 MUST provide an Intermediary with a capability to display the Transaction Fee and its components of a L2 Meta Transaction after it has been processed on the L2 to 3rd parties.
+
+[[R20]](#r20) Testability: Given that [[R17]](#r17) that provides the necessary capability for [[R20]](#r20) to be realized is testable, and given that the ability to display a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
 
 
 #### **[R21]**
 
-A L2 MUST provide an Intermediary with a capability to display the Transaction Fee and its components of a L2 Meta Transaction after it has been processed on the L2.
+If there is a Transaction Fee Refund, a L2 MUST provide an Intermediary with a capability to display the Transaction Fee Refund of a L2 Meta Transaction to its Transaction Originator after it has been finalized on the L2 to 3rd parties.
+
+[[R21]](#r21) Testability: Given that [[R18]](#r18) that provides the necessary capability for [[R21]](#r21) to be realized is testable, and given that the ability to display a data object such as a Fee Price can be realized in computer code, and since computer code is testable, the requirement is testable. 
 
 
 #### **[R22]**
 
-A L2 MUST provide an Intermediary with a capability to display the Transaction Fee and its components of a L2 Meta Transaction after it has been finalized on the L2.
-
-
-#### **[R23]**
-
-If there is a Transaction Fee Refund, a L2 MUST provide an Intermediary with a capability to display the Transaction Fee Refund of a L2 Meta Transaction to its Transaction Originator after it has been finalized on the L2.
-
-
-#### **[R24]**
-
 A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a current Fee Price that a Transaction Fee calculation by the Transactions Sender or Transaction Originator can be based on. 
 
+[R22]](#r22) Testability: Given that [[R12]](#r12) that provides the necessary capability for [[R22]](#r22) to be realized is testable, and given that the ability to view a data object such as a Fee Price in computer code, and since computer code is testable, the requirement is testable.
 
 ## 3.3 Transaction Fee Requirements for Layer 2 Transactions
 
 In this section, the documents details Transaction Fee requirements for a L2 Transaction and its processing. 
 
 
-#### **[R25]**
+#### **[R23]**
 
 Every L2 Transaction MUST contain a Transaction Fee and its components.
 
+[[R23]](#r23) Testability: L2 protocols include a Transaction Fee in a L2 Transaction such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests) with its test suite. Therefore, the requirement is testable.
 
-#### **[R26]**
+#### **[R24]**
 
 Every L2 Block MUST contain one or more L2 account addresses to which the accumulated Transaction Fees in said L2 Block are transferred either whole or in proportion based on the specification of the L2 protocol.
 
+[[R24]](#r24) Testability: L2 protocols include one or more L2 addresses to which Transaction Fees in a L2 Block are transferred such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests) with its test suite. Therefore, the requirement is testable.
 
-#### **[R27]**
 
-If one or more L2 Transactions are reverted before they are finalized on the L2's Layer 1, the Transaction Fees in the affected Transactions MUST be returned as a Transaction Fee Refund to the Transaction Senders.
+#### **[R25]**
+
+If one or more L2 Transactions are reverted before they are finalized on the L2's Layer 1, the Transaction Fees in the affected Transactions MUST not be charged to the Transaction Senders.
 
 Note that it is not important why a L2 Transactions has been reverted before it is finalized.
+
+[[R25]](#r25) Testability: Reverting one or more L2 Transactions means that the L2 State is reverted to a previous L2 State which is recorded on both the L2 and its corresponding L1, and this means that the reverted L2 transaction are removed from the L2 State. Since [[R11]](#r11) is testable and allows to view the history of all L2 Transactions and their Transactions Fees, it can be tested if a L2 transaction has been reverted, in other words has been removed from the L2, and, therefore, if a Transaction Fee has been charged to a Transaction Sender. 
 
 
 #### **[D1]**
 
 If one or more L2 Meta Transactions are reverted before they are finalized on the L2's Layer 1, the Transaction Fees in the affected Meta Transactions SHOULD be returned to the Transaction Originator by the Intermediary as a Transaction Fee Refund.
+
+[[D1]](#d1) Testability: Unless the Intermediary is paid through a L2 Transactions submitted as part of a Meta Transaction, in which case the Meta Transaction reversion would also reverse the Transaction Fee paid by the Transaction Originator to the Intermediary, the Transaction Fee has been prepaid to the Intermediary by the Transaction Originator. This means the prepayment is included in a finalized L2 State. Therefore, the Intermediary must submit a new L2 Transaction which pays back the Transaction Fee of the reversed L2 Meta Transaction to the Tranaction Originator. Since L2 Transactions and their recording on a L2 are testable such as with [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests) with its test suite, the requirement is testable.  
 
 -------
 # 4 Conformance
@@ -533,10 +550,10 @@ A claim that a Transaction Fee conforms to this specification SHOULD describe a 
 
 [[D2]](#d2) Testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, and can be described as required in [[D2]](#d2).
 
-#### **[R28]** 
+#### **[R26]** 
 A claim that a Transaction Fee conforms to this specification at **Level 2** or higher MUST describe the testing procedure carried out for each requirement at **Level 2** or higher, that justifies the claim to that requirement.
 
-[[R28]](#r28) Testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, be described, be built and implemented and results can be recorded as required in [[R28]](#r28).
+[[R26]](#r26) Testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, be described, be built and implemented and results can be recorded as required in [[R26]](#r26).
 
 
 -------
