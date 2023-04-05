@@ -664,7 +664,6 @@ Weijia Zhang, Peter Robinson, "EIP-3220: Crosschain Identifier Specification [DR
 #### **[W3C-DID]** 
 Decentralized Identifiers (DIDs) v1.0, M. Sporny, D. Longley, M. Sabadello, D. Reed, O. Steele, C. Allen, W3C W3C Recommendation, July 2022, https://www.w3.org/TR/2022/REC-did-core-20220719/. Latest version available at https://www.w3.org/TR/did-core/.
 
-
 #### **[W3C-String-Meta]**
 
 Strings on the Web: Language and Direction Metadata, R. Ishida, A. Phillips, August 2022,
@@ -689,7 +688,7 @@ The standard does not set any requirements for the use of specific applications/
 
 ## B.3 Internationalization and Localization
 
-The standard encourages implementers to follow the [W3C "Strings on the Web: Language and Direction Metadata" best practices guide](#W3C-String-Meta) for identifying language and base direction for strings used on the Web wherever appropriate. 
+The standard encourages implementers to follow the [W3C "Strings on the Web: Language and Direction Metadata" best practices guide](#w3c-string-meta) for identifying language and base direction for strings used on the Web wherever appropriate. 
 
 <!--
 

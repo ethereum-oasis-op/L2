@@ -1,5 +1,32 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 5 April 2022, 7:00 am PT
+
+Attending: Andreas Freund (EF), Nikolai Prokhorenko (Metis), Rami Husani (Metis), Anais Ofranc (EEA), Kartheek Solipuram (EY)
+
+Scribe: Anais Ofranc
+
+Proposed agenda
+  1. Welcome, and a reminder of the WG meeting rule
+  2. Selection of scribe
+  3. Introduction of new participants
+  4. Review Open PRs (focus on new PR #43 on the 5. Transaction Fee draft)
+  5. Review Open Issues
+  6. Open Forum for other items
+
+Notes:
+Review Open PRs
+- PR #43 - First draft of L2 transaction fees specification submitted by Andreas.
+  * Review of abstract the L2 transaction draft specification.
+  * Review of newly added definitions in the Glossary
+  * Discussion of what to include in the Layer 2 Block definition - Nikolai explained that Polygon zkEVM seems to include more than transactions and state. Nikolai shared more information. Definition to be updated.
+  * Review of Concepts & Design section
+  * Review of L2 Transaction Fee Specification section/requirements
+  * Rami suggested modifying [R6] - The requirement refers to“Current state” but current state indicates “account state”, maybe it is better to use “Operating State” and define what this means. 
+  * [R6] will be updated to take the feedback into account.
+- Meeting adjourned
+
+
 ## Meeting Wed, 22 March 2022, 7:00 am PT
 
 Attending: Andreas Freund (EF), Tom Ngo (Metis), Nikolai Prokhorenko (Metis), Omar Azhar (Matter Labs), Rami Husani (Metis), Anais Ofranc (EEA), Kartheek Solipuram (EY)
