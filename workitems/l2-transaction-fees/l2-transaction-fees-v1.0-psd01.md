@@ -379,15 +379,15 @@ Note that L2 operating state refers to a combination of transaction volume being
 
 #### **[R7]**
 
-A L2 MUST record and provide access to the Transaction Fee that the Transaction Sender has included in the Transaction when a Transaction has been sent to the Layer 2.
+A L2 MUST record and provide access to the Transaction Fee that the Transaction Sender has included in the Transaction when a Transaction has been sent to the L2.
 
-[[R7]](#r7) Testability: A Layer 2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since Layer 2 transactions are recorded on a Sequencer until they are recorded and finalized on both the Layer 2 and the Layer 1, and since a Sequencer is open to a transaction's sender, and since a Sequencer is part of a Layer 2 protocol, and since Layer 2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+[[R7]](#r7) Testability: A L2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since L2 transactions are recorded on a Sequencer until they are recorded and finalized on both the L2 and the Layer 1, and since a Sequencer is open to a transaction's sender, and since a Sequencer is part of a L2 protocol, and since L2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
 
 #### **[R8]**
 
-A L2 MUST record and provide access to the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been processed by the Layer 2.
+A L2 MUST record and provide access to the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been processed by the L2.
 
-[[R8]](#r8) Testability: A Layer 2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since Layer 2 transactions are recorded on a Sequencer until they are recorded and finalized on both the Layer 2 and the Layer 1, and since Layer 2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+[[R8]](#r8) Testability: A L2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since L2 transactions are recorded on a Sequencer until they are recorded and finalized on both the L2 and the Layer 1, and since L2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
 
 
 #### **[R9]**
