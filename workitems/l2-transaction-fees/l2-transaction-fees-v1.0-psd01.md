@@ -3,6 +3,7 @@
 -------
 
 # Layer 2 Transaction Fee Specification Version 1.0
+###### L2TFSPEC
 
 ## Project Specification Draft
 
@@ -109,6 +110,7 @@ For complete copyright information please see the Notices section in the Appendi
 
 -------
 # 1 Introduction
+###### L2TFSPECINTRO
 
 The L2 WG is an open-source initiative with a scope to
 - Identify and document the most relevant use cases and business requirements for Layer 2 and other Blockchain Scalability solutions for EVM compatible public blockchains
@@ -119,6 +121,7 @@ The L2 WG is an open-source initiative with a scope to
 The work is an [EEA Community Project](https://entethalliance.org/eeacommunityprojects/), which is managed by [OASIS](https://oasis-open-projects.org/).
 
 ## 1.1 Overview
+###### L2TFSPECOVERV
 
 Layer 2 (L2) Transaction Fees are a crucial element of financing the operations of L2 platforms apart from rewards given to participants for providing economic security guarantees such as validators in consensus protocols. Yet how these transaction fees are derived, to whom they are paid, how and where they are displayed to any of the participants in L2 platforms varies greatly between L2 platforms. 
 
@@ -128,6 +131,7 @@ Note, that fees associated with asset and data bridges between L2 platforms as w
 
 
 ## 1.2 Glossary
+###### L2TFSPECGLOS
 
 **Account:**
 
@@ -190,9 +194,9 @@ An entity responsible for the development and/or operation of a Layer 2 network 
 
 A Layer 2 data object typically comprised of a set of Layer 2 Transactions or their compressed representations and/or a cryptographic representation of the Layer 2 State due to the set of Layer 2 Transactions and cryptographically linked to the previous Layer 2 Block where the cryptographic link is derived using only the previous Layer 2 Block's data, and where such a Layer 2 data object is stored on a Layer 1.
 
-**Layer 2 Operating State:** 
+**Layer 2 Operating Condition:** 
 
-A combination of transaction volume being processed on an L2 and the state of all Accounts on an L2.
+A combination of the current volume of L2 transactions waiting to be processed on an L2 and all the transactions currently being processed on an L2.
 
 **Maximal Extractable Value:**
 
@@ -246,8 +250,10 @@ The account that sent a transaction to a Layer 1, Layer 2, or Sidechain.
 
 
 ## 1.3 Typographical Conventions
+###### L2TFSPECTYPO
 
 ### 1.3.1 Requirement Ids
+###### L2TFSPECREQIDS
 
 A requirement is uniquely identified by a unique ID composed of its requirement level followed by a requirement number, as per convention **[RequirementLevelRequirementNumber]**. 
 There are four requirement levels that are coded in requirement ids as per below convention: 
@@ -263,23 +269,27 @@ Example : It should be read that [R1] is an absolute requirement of the specific
 -------
 
 # 2 Concepts and Design
+###### L2TFSPECCONCEPT
 
 To specify requirements about L2 transaction fees, this document will first:
-- Define the meaning of a transaction fee and its components
-- Define the roles relevant to transaction fees
-- Define transaction types and their relationship to transaction fees
+
+* Define the meaning of a transaction fee and its components
+* Define the roles relevant to transaction fees
+* Define transaction types and their relationship to transaction fees
 
 Note, that all definitions can be found in the [Glossary](#12-glossary)
 
 Subsequently, the specification section will define requirements around fee transparency, fee estimation, final fees, and how, when and where fees are communicated to the different roles. The specification will also discuss requirements around responsibilities and accountability of roles towards one another.
 
 ## 2.1 Definition of Transaction Fee and its Components
+###### L2TFSPECDEF
 
 This document defines Transaction Fee as the fee in a Layer 2 (L2) network or protocol token to be paid by a Transaction Originator or Transaction Sender comprised of the sum of a Base Fee, an Execution Fee and a Priority Fee.
 
 Note that this document defines as Transaction as a digitally signed message sent from a L2 account that contains instructions and data that result in a L2 state transition. Also note that this document defines State and State Transition as follows:
-- State: The set of all accounts on a L2 that are mapped to one another using a cryptographic data structure.
-- State Transition: An event that deterministically changes one or more accounts in the set of all accounts that comprise the complete state of a L2.
+
+* State: The set of all accounts on a L2 that are mapped to one another using a cryptographic data structure.
+* State Transition: An event that deterministically changes one or more accounts in the set of all accounts that comprise the complete state of a L2.
 
 Further note that this document defines Account as a unit that is minimally comprised of a unique account identifier, a deterministic ordering parameter, also referred to as a nonce, a balance of a Layer 1, Layer 2 or Sidechain unit of exchange, also referred to as a protocol token. Changes to an account are controlled by a unique cryptographic public and private key pair. There are typically additional account elements referring to instructions and data associated to the account that determine account changes.
 
@@ -288,9 +298,10 @@ In formula form the Transaction Fee is given as:
 **Transaction Fee = Base Fee + Execution Fee + Priority Fee**
 
 The different components are defined as follows:
-- **Base Fee:** The minimum amount of Gas or a L2 gas equivalent unit of compute and storage consumption required to include a transaction on a L2.
-- **Execution Fee:** A fee to be paid by the Transaction Originator or Transaction Sender sufficient to cover both the L2 and Layer 1 transaction fees.
-- **Priority Fee:** To be paid by the Transaction Originator or Transaction Sender to a L2 sequencer to obtain a desired slot for its transaction in a new block. Note that the exact position of a transaction, a slot, in a new block may be determined by factors such as time-stamp, or minimization of Maximal Extractable Value (MEV) of a block in addition to a Priority Fee. And that MEV is defined as the maximum value that can be extracted from block production in excess of the standard block reward and gas fees by including, excluding, and changing the order of transactions in a block.
+
+* **Base Fee:** The minimum amount of Gas or a L2 gas equivalent unit of compute and storage consumption required to include a transaction on a L2.
+* **Execution Fee:** A fee to be paid by the Transaction Originator or Transaction Sender sufficient to cover both the L2 and Layer 1 transaction fees.
+* **Priority Fee:** To be paid by the Transaction Originator or Transaction Sender to a L2 sequencer to obtain a desired slot for its transaction in a new block. Note that the exact position of a transaction, a slot, in a new block may be determined by factors such as time-stamp, or minimization of Maximal Extractable Value (MEV) of a block in addition to a Priority Fee. And that MEV is defined as the maximum value that can be extracted from block production in excess of the standard block reward and gas fees by including, excluding, and changing the order of transactions in a block.
 
 Note that a Transaction Fee has a Transaction Fee Price which is defined in the context of this document as a L2 Gas price or a price of a L2 gas equivalent unit of compute and storage consumption.
 
@@ -299,22 +310,26 @@ Note that a Gas price or a price of a L2 gas equivalent unit of compute and stor
 Furthermore, note that Gas in this document refers to the unit that measures the amount of computational and storage effort required to execute specific operations on an EVM-compatible network. 
 
 ## 2.2 Definition of L2 Roles relevant to Transaction Fees
+###### L2TFSPECDEFROLES
 
 The following roles are relevant to transaction fees, their calculation and how, when and where they are presented:
-- **Transaction Originator:** The account that created a transaction for a Layer 1, L2, or Sidechain.
-- **Transaction Sender:** The account that sent a transaction to a Layer 1, L2, or Sidechain.
-- **Intermediary:** An entity that is the sender of a transaction for which it is not the Transaction Originator.
-- **Sequencer:** Collects transactions, publishes them in a batch to the Layer 1 on which the L2 operates, receives transaction fees from the published transactions, pays L2 fees to other L2 protocol participants, and, if required, participates in a consensus algorithm with other sequencers to determine transaction  ordering in a block.
-- **L2 Operator:** An entity responsible for the operation of a L2.
-- **Developer:** An individual writing computer code for software applications that operate on a Layer 1, L2 or Sidechain.
+
+* **Transaction Originator:** The account that created a transaction for a Layer 1, L2, or Sidechain.
+* **Transaction Sender:** The account that sent a transaction to a Layer 1, L2, or Sidechain.
+* **Intermediary:** An entity that is the sender of a transaction for which it is not the Transaction Originator.
+* **Sequencer:** Collects transactions, publishes them in a batch to the Layer 1 on which the L2 operates, receives transaction fees from the published transactions, pays L2 fees to other L2 protocol participants, and, if required, participates in a consensus algorithm with other sequencers to determine transaction  ordering in a block.
+* **L2 Operator:** An entity responsible for the operation of a L2.
+* **Developer:** An individual writing computer code for software applications that operate on a Layer 1, L2 or Sidechain.
 
 ## 2.3 Definition of Transaction Types
+###### L2TFSPECDEFTTYPES
 
 There are different types of transactions, and depending on the context transaction fees are paid for differently and by different roles.
 
 There are two types of transactions in the context of this document:
-- **Direct Transaction:** A transaction where the Transaction Originator is also the transaction sender.
-- **Meta Transaction:** A transaction where the transaction sender is not the Transaction Originator, and the transaction fee for the Transaction Originator is different if the same transaction was a direct transaction.
+
+* **Direct Transaction:** A transaction where the Transaction Originator is also the transaction sender.
+* **Meta Transaction:** A transaction where the transaction sender is not the Transaction Originator, and the transaction fee for the Transaction Originator is different if the same transaction was a direct transaction.
 
 In the case of a Direct Transaction the Transaction Originator pays for the Transaction Fee based on the Transaction Fee Price the Transaction Originator is maximally willing to pay.
 
@@ -325,13 +340,16 @@ Therefore, the communication of a Transaction Fee and its components is differen
 -------
 
 # 3 Layer 2 Transaction Fee Specification
+###### L2TFSPECSEC
 
 In this section we will formulate requirements in the following areas:
-- Transparency
-- Visibility and Roles
-- Transactions
+
+* Transparency
+* Visibility and Roles
+* Transactions
 
 ## 3.1 Layer 2 Transaction Fee Transparency Requirements
+###### L2TFSPECTFREQS
 
 #### **[R1]**
 
@@ -371,9 +389,9 @@ The setting of a Priority Fee MUST be well documented and verifiable.
 
 #### **[R6]**
 
-A L2 MUST provide a capability to estimate a Transaction Fee based on a given Transaction and the current operating state of the L2.
+An L2 MUST provide a capability to estimate a Transaction Fee based on a given Transaction and the current Operating Conditions of the L2.
 
-Note that L2 operating state refers to a combination of transaction volume being processed on an L2 and the state of all Accounts on an L2.
+Note that L2 Operating Conditions refer to a combination of the current volume of L2 transactions waiting to be processed on an L2 and all the transactions currently being processed on an L2.
 
 [[R6]](#r6) Testability: Given a transaction for whom a resource consumption can be calculated based on a software emulation of the relevant L2 State Transition function which is testable, and given a Fee price based on the state of current resource consumption of the L2, and given that the testable requirements [[R1]](#r1) through [[R5]](#r5) are required to be implemented for [[R6]](#r6), the requirement [[R6]](#r6) itself is testable.
 
@@ -527,16 +545,19 @@ If one or more L2 Meta Transactions are reverted before they are finalized on th
 
 -------
 # 4 Conformance
+###### L2TFSPECCONF
 
 This section describes the conformance clauses and tests required to achieve an implementation that is provably conformant with the requirements in this document.
 
 ## 4.1 Conformance Targets
+###### L2TFSPECCONFT
 
 This document does not yet define a standardized set of test-fixtures with test inputs for all MUST, SHOULD, and MAY requirements with conditional MUST or SHOULD requirements. 
 
 A standardized set of test-fixtures with test inputs for all MUST, SHOULD, and MAY requirements with conditional MUST or SHOULD requirements is intended to be published with the next version of the standard.
 
 ## 4.2 Conformance Levels
+###### L2TFSPECCONFL
 
 This section specifies the conformance levels of this standard. The conformance levels offer implementers several levels of conformance. These can be used to establish competitive differentiation.
 
@@ -559,12 +580,14 @@ A claim that a Transaction Fee conforms to this specification at **Level 2** or 
 -------
 
 # Appendix A - References
+###### L2TFSPECAPA
 
 This appendix contains the normative and non-normative references that are used in this document. 
 
 While any hyperlinks included in this appendix were valid at the time of publication, OASIS cannot guarantee their long-term validity.
 
 ## A.1 Normative References
+###### L2TFSPECAPREFNORM
 
 The following documents are referenced in such a way that some or all of their content constitute requirements of this document.
 
@@ -573,6 +596,7 @@ The following documents are referenced in such a way that some or all of their c
 
 
 ## A.2 Non-Normative References
+###### L2TFSPECAPREFNONNORM
 
 #### **[W3C-String-Meta]**
 
@@ -581,20 +605,24 @@ https://www.w3.org/TR/string-meta/
 
 
 # Appendix B - Security Considerations
+###### L2TFSPECAPBSEC
 
 There are no additional security requirements.
 
 It should be noted that any Layer 2 should have completed a security audit by a reputable security auditor and resolved all security issues before going to production.
 
 ## B.1 Data Privacy
+###### L2TFSPECAPBDP
 
 The standard does not set any requirements for compliance to jurisdiction legislation/regulations. It is the responsibility of the implementer to comply with applicable data privacy laws.
 
 ## B.2 Production Readiness 
+###### L2TFSPECAPBPR
 
 The standard does not set any requirements for the use of specific applications/tools/libraries etc. The implementer should perform due diligence when selecting specific applications/tools/libraries.
 
 ## B.3 Internationalization and Localization Reference
+###### L2TFSPECAPBINT
 
 The standard encourages implementers to follow the [W3C "Strings on the Web: Language and Direction Metadata" best practices guide](#w3c-string-meta) for identifying language and base direction for strings used on the Web wherever appropriate. 
 
@@ -613,6 +641,7 @@ We encourage editors and OP members concerned with this subject to read _Guideli
 -------
 
 # Appendix C - Acknowledgments
+###### L2TFSPECAPC
 <!--
 `(Note: A Work Product approved by the OP should include a list of people who participated in the development of the Work Product. This is generally done by collecting the list of names in this appendix. This list should be initially compiled by the Chair, and any Member of the OP may add or remove their names from the list by request. Remove this note before submitting for publication.)`
 -->
@@ -630,12 +659,14 @@ Andreas Freund \
 -------
 
 # Appendix D - Revision History
+###### L2TFSPECAPD
 
 Revisions made since the initial stage of this numbered Version of this document have been tracked on [Github](https://github.com/eea-oasis/L2/tree/main/workitems/l2-transaction-fees/l2-transaction-fees-v1.0-psd01.md).
 
 -------
 
 # Appendix E - Notices
+###### L2TFSPECAPBE
 
 Copyright © OASIS Open 2022. All Rights Reserved.
 
