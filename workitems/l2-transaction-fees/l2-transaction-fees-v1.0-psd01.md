@@ -147,7 +147,7 @@ An open, distributed ledger that can record transactions between two parties eff
 
 **Bridge:** 
 
-The means for the transfer of information and digital assets between between Layer 2s, Layer 1s, and Sidechains.
+The means for the transfer of information and digital assets between Layer 2s, Layer 1s, and Sidechains.
 
 **Developer:**
 
@@ -155,7 +155,7 @@ An individual writing computer code for software applications that operate on a 
 
 **Direct Transaction:**
 
-A transaction where the Transaction Originator is also the transaction sender.
+A transaction where the Transaction Originator is also the Transaction Sender.
 
 **Execution Fee:**
 
@@ -184,15 +184,15 @@ A base network, such as Bitcoin, or Ethereum, and its underlying infrastructure 
 
 **Layer 2:**
 
-A secondary framework or protocol that is built on top of an existing Layer 1 system in such a way that it inherits the security properties of the Layer 1 system while allowing for a higher transaction throughput that the Layer 1 system.
+A secondary framework or protocol that is built on top of an existing Layer 1 system in such a way that it inherits the security properties of the Layer 1 system while allowing for a higher transaction throughput than the Layer 1 system.
 
 **Layer 2 Operator:**
 
-An entity responsible for the development and/or operation of a Layer 2 network or single Layer 2 node.
+An entity responsible for the development and/or operation of a Layer 2 network or single Layer 2 network node, except for entities that only provide access to a Layer 2.
 
 **Layer 2 Block:**
 
-A Layer 2 data object typically comprised of a set of Layer 2 Transactions or their compressed representations and/or a cryptographic representation of the Layer 2 State due to the set of Layer 2 Transactions and cryptographically linked to the previous Layer 2 Block where the cryptographic link is derived using only the previous Layer 2 Block's data, and where such a Layer 2 data object is stored on a Layer 1.
+A Layer 2 data object stored on a Layer 1 and typically comprised of a set of Layer 2 Transactions or their compressed representations and/or a cryptographic representation of the Layer 2 State after applying the set of Layer 2 Transactions to the Layer 2 state. This Layer 2 data object is also cryptographically linked to the previous Layer 2 Block where the cryptographic link is derived using only the previous Layer 2 Block's data.
 
 **Layer 2 Operating Condition:** 
 
@@ -214,7 +214,7 @@ Note that the exact position of a transaction in a new block may be determined b
 
 **Sequencer:**
 
-Collects transactions, publishes them in a batch to the Layer 1 on which the Layer 2 operates, receives transaction fees from the published transactions, pays Layer 2 fees to other Layer 2 protocol participants, and, if required, participates in a consensus algorithm with other sequencers to determine transaction  ordering in a block.
+Collects transactions, publishes them in a batch to the Layer 1 on which the Layer 2 operates, receives transaction fees from the published transactions, pays Layer 2 fees to other Layer 2 protocol participants, and, if required, participates in a consensus algorithm with other sequencers to determine transaction  ordering in a Layer 2 block.
 
 **Sidechain:**
 
@@ -328,8 +328,8 @@ There are different types of transactions, and depending on the context transact
 
 There are two types of transactions in the context of this document:
 
-* **Direct Transaction:** A transaction where the Transaction Originator is also the transaction sender.
-* **Meta Transaction:** A transaction where the transaction sender is not the Transaction Originator, and the transaction fee for the Transaction Originator is different if the same transaction was a direct transaction.
+* **Direct Transaction:** A transaction where the Transaction Originator is also the Transaction Sender.
+* **Meta Transaction:** A transaction where the Transaction Sender is not the Transaction Originator, and the transaction fee for the Transaction Originator is different if the same transaction was a direct transaction.
 
 In the case of a Direct Transaction the Transaction Originator pays for the Transaction Fee based on the Transaction Fee Price the Transaction Originator is maximally willing to pay.
 
@@ -353,7 +353,7 @@ In this section we will formulate requirements in the following areas:
 
 #### **[R1]**
 
-A L2 Transaction Fee MUST be comprised as the sum of a Base Fee, a Execution Fee, and a Priority Fee.
+An L2 Transaction Fee MUST be comprised as the sum of a Base Fee, a Execution Fee, and a Priority Fee.
 
 [[R1]](#r1) Testability: Mathematical equality equations can be translated into computer code, and any computer code is testable. Therefore, the requirement is testable.
 
@@ -365,7 +365,7 @@ All components of a L2 Transaction Fee MUST NOT be less than zero.
 
 #### **[O1]**
 
-A L2 Transaction Fee or any of its components MAY BE zero.
+An L2 Transaction Fee or any of its components MAY BE zero.
 
 [[O1]](#o1) Testability: Mathematical equality equations can be translated into computer code, and any computer code is testable for specific conditions such as the sum of three elements, or each individual element being zero. Therefore, the requirement is testable.
 
@@ -397,24 +397,24 @@ Note that L2 Operating Conditions refer to a combination of the current volume o
 
 #### **[R7]**
 
-A L2 MUST record and provide access to the Transaction Fee that the Transaction Sender has included in the Transaction when a Transaction has been sent to the L2.
+An L2 MUST record and provide access to the Transaction Fee that the Transaction Sender has included in the Transaction when a Transaction has been sent to the L2.
 
-[[R7]](#r7) Testability: A L2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since L2 transactions are recorded on a Sequencer until they are recorded and finalized on both the L2 and the Layer 1, and since a Sequencer is open to a transaction's sender, and since a Sequencer is part of a L2 protocol, and since L2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+[[R7]](#r7) Testability: An L2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since L2 transactions are recorded on a Sequencer until they are recorded and finalized on both the L2 and the Layer 1, and since a Sequencer is open to a transaction's sender, and since a Sequencer is part of a L2 protocol, and since L2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
 
 #### **[R8]**
 
-A L2 MUST record and provide access to the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been processed by the L2.
+An L2 MUST record and provide access to the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been processed by the L2.
 
-[[R8]](#r8) Testability: A L2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since L2 transactions are recorded on a Sequencer until they are recorded and finalized on both the L2 and the Layer 1, and since L2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+[[R8]](#r8) Testability: An L2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since L2 transactions are recorded on a Sequencer until they are recorded and finalized on both the L2 and the Layer 1, and since L2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
 
 
 #### **[R9]**
 
-A L2 MUST record and provide access to the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been finalized on theL2.
+An L2 MUST record and provide access to the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been finalized on theL2.
 
-Transaction finality in the context of this document is defined as the condition when a transaction can no longer be reverted on a L2. Not that the finality condition will vary by L2. L2 finality requirements are outside of the scope of this document.
+Transaction finality in the context of this document is defined as the condition when a transaction can no longer be reverted on a L2. Note that the finality condition will vary by L2, and that L2 finality requirements are outside of the scope of this document.
 
-[[R9]](#r9) Testability: A L2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since L2 transactions are recorded on a Sequencer until they are recorded and finalized on both the L2 and the Layer 1, and since L2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+[[R9]](#r9) Testability: An L2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since L2 transactions are recorded on a Sequencer until they are recorded and finalized on both the L2 and the Layer 1, and since L2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
 
 
 #### **[R10]**
@@ -423,19 +423,19 @@ If there is a Transaction Fee Refund, a L2 implementation MUST record and provid
 
 A Transaction Fee Refund in the context of this document is defined as the difference between the Transaction Fee that the Transaction Sender has included in the Transaction sent to the L2 and the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been finalized on the L2.
 
-[[R10]](#r10) Testability: A L2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since L2 transactions are recorded on a Sequencer until they are recorded and finalized on both the L2 and the Layer 1, and since L2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+[[R10]](#r10) Testability: An L2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since L2 transactions are recorded on a Sequencer until they are recorded and finalized on both the L2 and the Layer 1, and since L2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
 
 
 #### **[R11]**
 
-A L2 MUST provide continuous access to the Transaction Fee, the Transaction Fee components, and Transaction Fee Refund, if applicable, of all Transaction finalized on the L2.
+An L2 MUST provide continuous access to the Transaction Fee, the Transaction Fee components, and Transaction Fee Refund, if applicable, of all Transaction finalized on the L2.
 
 [[R11]](#r11) Testability: Since L2 protocols record all transactions and their fees, and are open to access by any 3rd party, and have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
 
 
 #### **[R12]**
 
-A L2 MUST provide a capability that delivers a current Fee Price that a Transaction Fee calculation by the Transactions Sender or Transaction Originator can be based on. 
+An L2 MUST provide a capability that delivers a current Fee Price that a Transaction Fee calculation by the Transactions Sender or Transaction Originator can be based on. 
 
 [[R12]](#r12) Testability: L2 protocols typically provide Fee Prices to transactions senders which may or may not be dynamic such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests) with its test suite. Therefore, the requirement is testable. 
 
@@ -492,7 +492,7 @@ If there is a Transaction Fee Refund, an Intermediary and a Developer MUST be ab
 
 #### **[R20]**
 
-A L2 MUST provide an Intermediary with a capability to display the Transaction Fee and its components of a L2 Meta Transaction after it has been processed on the L2 to 3rd parties.
+An L2 MUST provide an Intermediary with a capability to display the Transaction Fee and its components of a L2 Meta Transaction after it has been processed on the L2 to 3rd parties.
 
 [[R20]](#r20) Testability: Given that [[R17]](#r17) that provides the necessary capability for [[R20]](#r20) to be realized is testable, and given that the ability to display a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
 
