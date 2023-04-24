@@ -1,5 +1,43 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 19 April 2022, 7:00 am PT
+
+Attending: Andreas Freund (EF), Dan Shaw (EF), Chris Cordle  (Offchain Labs), Nikolai Prokhorenko (Metis), Rami Husani (Metis), Anais Ofranc (EEA), Jonathan Knegtel (), Daniel Goldman (Offchain Labs), Omar Azhar (Matter Labs), Kartheek Solipuram (EY)
+
+Scribe: Dan Shaw
+
+Proposed agenda
+  1. Welcome, and a reminder of the WG meeting rule
+  2. Selection of scribe
+  3. Introduction of new participants
+  4. Review Open PRs (focus on new PR #43 on the Transaction Fee draft)
+  5. Review Open Issues
+  6. Open Forum for other items
+
+Notes:
+Welcome New Members
+- Chris Cordle new to Offchain Labs
+- Jonathan Knegtel, previously founder of BlockData, interested in helping develop standards for L2s
+Review Open PRs
+- PR #43 - First draft of L2 transaction fees specification submitted by Andreas.
+  * Review of abstract the L2 transaction draft specification.
+  * Review of definitions in the Glossary
+    * TODO: bridges fix “between between”
+    * TODO: Layer 2 fix “that” needs to be “than”
+    * TODO: Layer 2 Operator add “network” to “node”
+    * Omar suggested that the definition should to exclude RPC providers
+    * Daniel suggested that there are other definitions that could be added to clarify this term, specifically access providers
+    * TODO: Sequencer add “Layer 2” to “block”
+    * Nikolia has a follow-up on Transaction Fee Refund
+Review of Concepts and Design
+  * Review of 3.1 Layer 2 Transaction Fee Transparency
+    * TODO: Improve the last sentence of R7. Nikolai volunteered to look into it.
+    * TODO: R8 fix “not” to “note
+    * Finished review of 3.1
+    * Nikolai asked if there is an opportunity to add additional definitions specified by other L2s. Recommended that they be proposed.
+- Meeting adjourned
+
+
 ## Meeting Wed, 5 April 2022, 7:00 am PT
 
 Attending: Andreas Freund (EF), Nikolai Prokhorenko (Metis), Rami Husani (Metis), Anais Ofranc (EEA), Kartheek Solipuram (EY)
