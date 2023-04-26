@@ -355,37 +355,106 @@ In this section we will formulate requirements in the following areas:
 
 An L2 Transaction Fee MUST be comprised as the sum of a Base Fee, a Execution Fee, and a Priority Fee.
 
-[[R1]](#r1) Testability: Mathematical equality equations can be translated into computer code, and any computer code is testable. Therefore, the requirement is testable.
+[[R1]](#r1) Testability: Mathematical equality equations can be tested as the sum of the equations elements equaling a desired output is a passing test, and the sum of the equations element not equaling the  desired output a failing test..
 
 #### **[R2]**
 
 All components of a L2 Transaction Fee MUST NOT be less than zero.
 
-[[R2]](#r2) Testability: Mathematical equality equations can be translated into computer code, and any computer code is testable for specific conditions such as the sum of three elements, or each individual element being less than zero. Therefore, the requirement is testable.
+[[R2]](#r2) Testability: Mathematical equality or inequality equations can be expressed as testable conditions. A passing test condition is that each individual element of a transaction fee is equal to or larger than zero. A failing test condition is that one or more transaction fee elements is less than zero.
 
 #### **[O1]**
 
 An L2 Transaction Fee or any of its components MAY BE zero.
 
-[[O1]](#o1) Testability: Mathematical equality equations can be translated into computer code, and any computer code is testable for specific conditions such as the sum of three elements, or each individual element being zero. Therefore, the requirement is testable.
+[[O1]](#o1) Testability: Mathematical equality equations can be expressed as testable conditions. A test for [[R2]](#r2) also tests  this optional requirement since zero values are allowed in tests for [[R2]](#r2).
 
 #### **[R3]**
 
 The setting and/or calculation of a Base Fee MUST be well documented and verifiable.
 
-[[R3]](#r3) Testability: Documentation about the setting and/or calculation of a Base Fee can be reviewed by individuals, and subsequently compared to computer code that sets and/or calculates a Base Fee. And computer code is always testable. Therefore, the requirement is testable.
+[[R3]](#r3) Testability: 
+
+Preconditions:
+
+* The L2 must have a defined Base Fee.
+* There must be documentation available for the current Base Fee.
+* An test L2 is up and running.
+
+Test Steps:
+
+1. Verify that there is a documented process for setting and/or calculating the Base Fee.
+2. Verify that the documentation includes the value, specific formula or calculation used to determine the Base Fee.
+3. Verify that the documentation includes any relevant assumptions or dependencies that are used in the calculation.
+4. Verify that the documentation is up-to-date and accurate, and that it matches the current Base Fee being charged.
+5. Attempt to independently calculate the Base Fee using the information provided in the documentation.
+6. Verify that the calculated Base Fee matches the currently charged Base Fee.
+
+Test Passing Criteria:
+
+* The documented process for setting and/or calculating the Base Fee must be clear and unambiguous.
+* The documentation must include the specific value, formula or calculation used to determine the Base Fee, as well as any relevant assumptions or dependencies.
+* The documentation must be up-to-date and accurate.
+* The calculated Base Fee must match the currently charged Base Fee.
 
 #### **[R4]**
 
 The setting and/or calculation of an Execution Fee MUST be well documented and verifiable.
 
-[[R4]](#r4) Testability: Documentation about the setting and/or calculation of an Execution can be reviewed by individuals, and subsequently compared to computer code that sets and/or calculates an Execution Fee. And computer code is always testable. Therefore, the requirement is testable.
+[[R4]](#r4) Testability: 
+
+Preconditions:
+
+* The L2 must have a defined Execution Fee.
+* There must be documentation available for the current Execution Fee.
+* An test L2 is up and running.
+
+Test Steps:
+
+1. Verify that there is a documented process for setting and/or calculating the Execution Fee.
+2. Verify that the documentation includes the value, specific formula or calculation used to determine the Execution Fee.
+3. Verify that the documentation includes any relevant assumptions or dependencies that are used in the calculation.
+4. Verify that the documentation is up-to-date and accurate, and that it matches the current Execution Fee being charged.
+5. Attempt to independently calculate the Execution Fee using the information provided in the documentation.
+6. Verify that the calculated Execution Fee matches the currently charged Execution Fee.
+
+Test Passing Criteria:
+
+* The documented process for setting and/or calculating the Execution Fee must be clear and unambiguous.
+* The documentation must include the specific value, formula or calculation used to determine the Execution Fee, as well as any relevant assumptions or dependencies.
+* The documentation must be up-to-date and accurate.
+* The calculated Execution Fee must match the currently charged Execution Fee.
 
 #### **[R5]**
 
 The setting of a Priority Fee MUST be well documented and verifiable.
 
-[[R5]](#r5) Testability: Documentation about the setting of a Priority Fee can be reviewed by individuals, and subsequently compared to computer code that sets a Priority Fee. And computer code is always testable. Therefore, the requirement is testable.
+[[R5]](#r5) Testability: 
+
+Preconditions:
+
+* The L2 must have a defined Base Fee and Execution Fee.
+* There must be documentation available for the current Priority Fee.
+* An L2 test system must be up and running.
+* An L2 user is configured.
+
+Test Steps:
+
+1. Verify that there is a documented process for setting the Priority Fee by the L2 user.
+2. Verify that the documentation includes the specific factors or criteria used to determine and set the Priority Fee.
+3. Verify that the documentation includes any relevant assumptions or dependencies that are used in the determination and setting of the Priority Fee.
+4. Verify that the documentation is up-to-date and accurate.
+5. An L2 test user sets a priority fee for a transaction.
+6. Verify that the set Priority Fee is correctly added to the Base Fee and Execution Fee to calculate the Transaction Fee.
+7. Verify that the calculated Transaction Fee matches the currently charged Transaction Fee for the set Priority Fee.
+
+Test Passing Criteria:
+
+* The documented process for setting the Priority Fee by the L2 user must be clear and unambiguous.
+* The documentation must include the specific factors or criteria used to determine the Priority Fee, as well as any relevant assumptions or dependencies.
+* The documentation must be up-to-date and accurate.
+* The set Priority Fee must be correctly added to the Base Fee and Execution Fee to calculate the Transaction Fee.
+* The calculated Transaction Fee must match the currently charged Transaction Fee for the set Priority Fee.
 
 #### **[R6]**
 
@@ -393,20 +462,89 @@ An L2 MUST provide a capability to estimate a Transaction Fee based on a given T
 
 Note that L2 Operating Conditions refer to a combination of the current volume of L2 transactions waiting to be processed on an L2 and all the transactions currently being processed on an L2.
 
-[[R6]](#r6) Testability: Given a transaction for whom a resource consumption can be calculated based on a software emulation of the relevant L2 State Transition function which is testable, and given a Fee price based on the state of current resource consumption of the L2, and given that the testable requirements [[R1]](#r1) through [[R5]](#r5) are required to be implemented for [[R6]](#r6), the requirement [[R6]](#r6) itself is testable.
+[[R6]](#r6) Testability: 
+
+Preconditions:
+
+* An L2 test system is up and running.
+* The L2 must have a defined process for estimating a Transaction Fee based on varying Operating Conditions.
+* Operating Conditions must be measurable for the L2, including:
+    * The current number of transactions waiting to be processed on the L2.
+    * The current number of transactions currently being processed on the L2.
+    * The current available L2 resources (e.g. CPU, memory, network bandwidth).
+* The L2 must be configured to adjust the Transaction Fee estimation based on varying Operating Conditions.
+* Different sets of test Transactions with varying levels of complexity and number of transactions must be available.
+
+Test Steps:
+
+1. Verify that the L2 can provide a Transaction Fee estimate.
+2. Submit a simple test Transaction to the L2 after the first set of test transactions has been submitted to the L2.
+3. Record the estimated Transaction Fee provided by the L2.
+4. Verify that the estimated Transaction Fee is within an acceptable range of the actual Transaction Fee charged after the L2 transaction has been finalized on the L1.
+5. Increase the number of transactions waiting to be processed on the L2 by submitting another test data set with more transactions and submit a complex test Transaction.
+6. Record the estimated Transaction Fee provided by the L2.
+7. Verify that the estimated Transaction Fee has increased in response to the increase in the number of transactions waiting to be processed and currently being processed.
+8 Verify that the estimated Transaction Fee has increased in response to the increase in the number of transactions currently being processed and waiting to be processed.
+9. Repeat the test with different test Transactions of varying complexity to ensure that the Transaction Fee estimation process is accurately responsive to changes in Operating Conditions and transaction complexity.
+
+Test Passing Criteria:
+
+* The L2 must provide a Transaction Fee estimate in response to a test transaction.
+* The estimation process must take into account the current Operating Conditions of the L2.
+* The estimated Transaction Fee must be within an acceptable range of the actual Transaction Fee charged.
+* The Transaction Fee estimation process must be accurately responsive to changes in Operating Conditions, with higher Operating Conditions leading to higher estimated Transaction Fees.
 
 #### **[R7]**
 
 An L2 MUST record and provide access to the Transaction Fee that the Transaction Sender has included in the Transaction when a Transaction has been sent to the L2.
 
-[[R7]](#r7) Testability: An L2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since L2 transactions are recorded on a Sequencer until they are recorded and finalized on both the L2 and the Layer 1, and since a Sequencer is open to a transaction's sender, and since a Sequencer is part of a L2 protocol, and since L2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+[[R7]](#r7) Testability: 
+
+Preconditions:
+
+* An L2 test system is up and running.
+* The L2 must have a defined process for recording and storing the Transaction Fee included by the Transaction Sender.
+* A test Transaction must be available with a known Transaction Fee included by the Transaction Sender.
+
+Test Steps:
+
+1. Submit the test Transaction to the L2.
+2. Verify that the L2 has recorded the Transaction Fee included by the Transaction Sender.
+3. Retrieve the recorded Transaction Fee from the L2.
+4. Compare the retrieved Transaction Fee with the known Transaction Fee included by the Transaction Sender.
+5. Verify that the recorded Transaction Fee matches the known Transaction Fee included by the Transaction Sender.
+
+Test Passing Criteria:
+
+* The L2 must have recorded the Transaction Fee included by the Transaction Sender.
+* The recorded Transaction Fee must be accessible by the user.
+* The recorded Transaction Fee must match the known Transaction Fee included by the Transaction Sender.
 
 #### **[R8]**
 
 An L2 MUST record and provide access to the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been processed by the L2.
 
-[[R8]](#r8) Testability: An L2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since L2 transactions are recorded on a Sequencer until they are recorded and finalized on both the L2 and the Layer 1, and since L2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+[[R8]](#r8) Testability: 
 
+Preconditions:
+
+* An L2 test system is up and running.
+* The L2 must have a defined process for calculating and recording the Transaction Fee charged to the Transaction Sender.
+* A test Transaction must be available with a known Transaction Fee charged to the Transaction Sender.
+
+Test Steps:
+
+1. Submit the test Transaction to the L2.
+2. Wait for the Transaction to be processed by the L2, and the L2 return a message to the Transaction Sender with the processing result of the test transaction including the transaction fee.
+3. Retrieve the Transaction Fee charged to the Transaction Sender from the L2 message.
+4. Compare the retrieved Transaction Fee with the known Transaction Fee submitted by the Transaction Sender.
+5. Verify that the recorded Transaction Fee matches or is less than the known Transaction Fee submitted by the Transaction Sender.
+
+Test Passing Criteria:
+
+* The L2 must have calculated and recorded the Transaction Fee charged to the Transaction Sender.
+* The recorded Transaction Fee must be accessible by the user.
+* The recorded Transaction Fee must match or is less than the Transaction Fee submitted by the Transaction Sender.
 
 #### **[R9]**
 
@@ -414,7 +552,27 @@ An L2 MUST record and provide access to the Transaction Fee that has been charge
 
 Transaction finality in the context of this document is defined as the condition when a transaction can no longer be reverted on a L2. Note that the finality condition will vary by L2, and that L2 finality requirements are outside of the scope of this document.
 
-[[R9]](#r9) Testability: An L2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since L2 transactions are recorded on a Sequencer until they are recorded and finalized on both the L2 and the Layer 1, and since L2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+[[R9]](#r9) Testability: 
+
+Preconditions:
+
+* The L2 must have a defined process for calculating and recording the Transaction Fee charged to the Transaction Sender.
+* An L2 test system is up and running.
+* A test Transaction must be available with a known, estimated Transaction Fee to be charged to the Transaction Sender.
+* The test environment must have finalized the test Transaction on the L2 according to the L2 finality conditions.
+
+Test Steps:
+
+1. Retrieve the Transaction ID for the test Transaction.
+2. Retrieve the Transaction Fee charged to the Transaction Sender from the L2.
+3. Compare the retrieved Transaction Fee with the known, estimated Transaction Fee to be charged to the Transaction Sender.
+4. Verify that the recorded Transaction Fee matches or is less than the known Transaction Fee to be charged to the Transaction Sender.
+
+Test Passing Criteria:
+
+* The L2 must have calculated and recorded the Transaction Fee charged to the Transaction Sender.
+* The recorded and finalized Transaction Fee must be accessible by the user.
+* The recorded Transaction Fee must match or be less than the known, estimated Transaction Fee to be charged to the Transaction Sender.
 
 
 #### **[R10]**
@@ -423,21 +581,79 @@ If there is a Transaction Fee Refund, a L2 implementation MUST record and provid
 
 A Transaction Fee Refund in the context of this document is defined as the difference between the Transaction Fee that the Transaction Sender has included in the Transaction sent to the L2 and the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been finalized on the L2.
 
-[[R10]](#r10) Testability: An L2 transaction always contains a Transaction Fee as this is necessary to pay for the resource use of a submitted Transaction. Since L2 transactions are recorded on a Sequencer until they are recorded and finalized on both the L2 and the Layer 1, and since L2 protocols have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+[[R10]](#r10) Testability: 
 
+Preconditions:
+
+* The L2 must have a defined process for calculating and recording the Transaction Fee charged to the Transaction Sender and the Transaction Fee Refund.
+* An L2 test system is up and running.
+* A test Transaction must be available with a known Transaction Fee estimate to be charged to the Transaction Sender.
+* The test environment must have finalized the test Transaction on the L2 based on its finality conditions.
+
+Test Steps:
+
+1. Retrieve the Transaction ID for the finalized test Transaction.
+2. Retrieve the Transaction Fee charged to the Transaction Sender from the L2.
+3. Calculate the Transaction Fee Refund as the difference between the Transaction Fee that the Transaction Sender included in the Transaction and the Transaction Fee charged to the Transaction Sender when the Transaction was finalized.
+4. Compare the balance of the users' account protocol token balance minus the estimate Transaction Fee with the balance of the users' account protocol token balance minus the Transaction Fee of the finalized test transaction.
+5. Verify that the Transaction Fee Refund from step 3. equals the comparison value in step 4.
+
+Test Passing Criteria:
+
+* The L2 must have calculated the Transaction Fee Refund.
+* The Transaction Fee Refund must be accessible by the user.
+* The Transaction Fee Refund must match the comparison result of step 4.
 
 #### **[R11]**
 
 An L2 MUST provide continuous access to the Transaction Fee, the Transaction Fee components, and Transaction Fee Refund, if applicable, of all Transaction finalized on the L2.
 
-[[R11]](#r11) Testability: Since L2 protocols record all transactions and their fees, and are open to access by any 3rd party, and have test suits to validate, write and read transactions and their fees such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests), the requirement is testable.
+[[R11]](#r11) Testability: 
+
+Preconditions:
+
+* A test L2 is up and running.
+* The L2 must have a defined process for submitting and finalizing Transactions.
+* There is a set of test L2 transactions.
+
+Test Steps:
+
+1. Submit a set of Transactions to the L2.
+2. Wait for the L2 to finalize the Transactions using transaction confirmation notifications as finalization confirmations.
+3. Query the L2 for a Transaction ID from the set of finalized test transactions.
+4. For a given Transaction ID, retrieve the Transaction ID, Transaction Fee, Transaction Fee components (Base Fee, Execution Fee, and Priority Fee), and Transaction Fee Refund (if applicable).
+5. Verify that the retrieved Transaction Fee, Transaction Fee components, and Transaction Fee Refund (if applicable) match the values recorded in the transaction confirmations.
+6. Repeat steps 3. through 5. for each Transaction ID in the set of test transactions at random time intervals during a 24 hour period for the entire test transaction set.
+
+Test Passing Criteria:
+
+* Steps 3. through 5. are successfully completed for every transaction in the test transaction set, otherwise the test fails.
 
 
 #### **[R12]**
 
 An L2 MUST provide a capability that delivers a current Fee Price that a Transaction Fee calculation by the Transactions Sender or Transaction Originator can be based on. 
 
-[[R12]](#r12) Testability: L2 protocols typically provide Fee Prices to transactions senders which may or may not be dynamic such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests) with its test suite. Therefore, the requirement is testable. 
+[[R12]](#r12) Testability:  
+
+Preconditions:
+
+* A test L2 is running and operational
+* The L2 has a current Fee Price available
+* A Transaction Sender or Transaction Originator is ready to send a transaction on the L2
+
+Test steps:
+
+1. Retrieve the current Fee Price from the L2.
+2. Calculate a Transaction Fee based on the Fee Price obtained in step 1.
+3. Send a transaction to the L2 with the calculated Transaction Fee.
+4. Retrieve the Transaction Fee recorded by the L2 for the transaction sent in step 3.
+5. Verify that the Transaction Fee recorded by the L2 matches the calculated Transaction Fee in step 2.
+
+Test Passing criteria:
+
+* The current Fee Price is successfully retrieved from the L2 in step 1.
+* The calculated Transaction Fee matches the Transaction Fee recorded by the L2 in step 5.
 
 
 ## 3.2 Layer 2 Transaction Fee Visibility Requirements
@@ -448,67 +664,272 @@ In this section, this document discusses the visibility requirements for differe
 
 A Transaction Originator, a Transaction Sender and a Developer MUST be able to view an estimated Transaction Fee and its components before a L2 Transaction is submitted.
 
-[[R13]](#r13) Testability: Given that [[R6]](#r6) that provides the necessary capability for [[R13]](#r13) to be realized is testable, and given that the ability to view a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
+[[R13]](#r13) Testability: 
+
+Preconditions:
+
+* An L2 test instance is set up and running.
+* A Transaction Originator, a Transaction Sender, and a Developer have access to the L2 and can interact with it.
+* The L2 provides a capability to estimate Transaction Fees based on current operating conditions and other relevant factors.
+
+Test Steps:
+
+1. The Transaction Originator, the Transaction Sender, and the Developer navigate to the L2 interface and initiate the process of creating a new transaction.
+2. The L2 interface displays the estimated Transaction Fee and its components (Base Fee, Execution Fee, and Priority Fee) to the Transaction Originator, the Transaction Sender, and the Developer.
+3. The Transaction Originator, the Transaction Sender, and the Developer proceed to submit the Transaction to the L2.
+
+Test Passing Criteria:
+
+* The L2 interface displays the estimated Transaction Fee and its components accurately.
+* The Transaction Originator, the Transaction Sender, and the Developer are able to review and verify the estimated Transaction Fee and its components before submitting the Transaction.
 
 #### **[R14]**
 
 A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee and its components after a L2 Direct Transaction has been processed on the L2.
 
-[[R14]](#r14) Testability: Given that [[R8]](#r8) that provides the necessary capability for [[R14]](#r14) to be realized is testable, and given that the ability to view a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
+[[R14]](#r14) Testability: 
+
+Preconditions:
+
+* An L2 test instance is operational and available for use.
+* The Transaction Originator, Transaction Sender, and Developer have access to the L2 and can view Transaction information.
+* At least one Direct Transaction has been submitted and processed on the L2.
+* The L2 has a defined method to notify L2 users that a L2 transaction has been processed.
+
+Test Steps:
+
+1.Transaction Sender or Developer submit a Direct Transaction to the L2.
+2. The L2 processes the Direct Transaction and charges a Transaction Fee.
+3. The Transaction Originator, Transaction Sender, or Developer accesses the L2 to view the Transaction Fee and its components after a Direct Transaction has been processed on the L2 using the Transaction ID from the transaction processing confirmation notification from the L2.
+4. The Transaction Originator, Transaction Sender, or Developer verifies that they can see the Transaction Fee and its components, including the Base Fee, Execution Fee, Priority Fee.
+5. The Transaction Originator, Transaction Sender, or Developer verifies that the Transaction Fee and its components displayed on the L2 match or is less than the Transaction Fee and its components displayed to them before submitting the Direct Transaction.
+6. The Transaction Originator, Transaction Sender, or Developer verifies that the Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account.
+
+Test Passing Criteria: The test passes if,
+
+* The Transaction Originator, Transaction Sender, or Developer can access the Transaction Fee and its components on the L2 after a Direct Transaction has been processed.
+* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components displayed to them before submitting the Direct Transaction.
+* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account.
 
 
 #### **[R15]**
 
 An Intermediary and a Developer MUST be able to view a Transaction Fee and its components after a L2 Meta Transaction has been processed on the L2.
 
-[[R15]](#r15) Testability: Given that [[R8]](#r8) that provides the necessary capability for [[R15]](#r15) to be realized is testable, and given that the ability to view a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
+[[R15]](#r15) Testability: 
+
+Preconditions:
+
+* An L2 instance is operational and accepting transactions.
+* The Intermediary and Developer have access to the L2.
+* The Intermediary and Developer have a Meta Transaction ready to submit to the L2.
+* The L2 has a defined method to notify L2 users that a L2 transaction has been processed.
+
+Test Steps:
+
+1. The Intermediary and Developer submit a Meta Transaction to the L2.
+2. The L2 processes the Meta Transaction and charges a Transaction Fee.
+3. The Intermediary and Developer access the Transaction and the Transaction Fee and its components for the processed Meta Transaction using the Transaction ID from the transaction processing confirmation notification from the L2.
+4. The Intermediary and Developer verify that they can see the Transaction Fee and its components, including the Base Fee, Execution Fee, Priority Fee.
+5. The Intermediary and Developer verify that the Transaction Fee and its components displayed on the L2 match or is less than the Transaction Fee and its components displayed to them before submitting the Meta Transaction.
+6. The Intermediary and Developer verify that the Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account.
+
+Test Passing Criteria: The test passes if,
+
+* The Intermediary and Developer can access the Transaction Fee and its components on the L2 after a Meta Transaction has been processed.
+* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components displayed to them before submitting the Meta Transaction.
+* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account.
 
 #### **[R16]**
 
 A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee and its components after a L2 Direct Transaction has been finalized on the L2.
 
-[[R16]](#r16) Testability: Given that [[R9]](#r9) that provides the necessary capability for [[R16]](#r16) to be realized is testable, and given that the ability to view a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
+[[R16]](#r16) Testability: 
 
+Preconditions:
+
+* An L2 test instance is operational and available for use.
+* The Transaction Originator, Transaction Sender, and Developer have access to the L2 and can view Transaction information.
+* At least one Direct Transaction has been submitted, processed and finalized on the L2.
+* The L2 has a defined method to notify L2 users that a L2 transaction has been finalized.
+
+Test Steps:
+
+1. The Transaction Originator, Transaction Sender, or Developer accesses the L2 to view the Transaction Fee and its components after a Direct Transaction has been finalized on the L2 using the Transaction ID from the transaction finalization confirmation notification from the L2.
+2. The Transaction Originator, Transaction Sender, or Developer verifies that they can see the Transaction Fee and its components, including the Base Fee, Execution Fee, Priority Fee.
+3. The Transaction Originator, Transaction Sender, or Developer verifies that the Transaction Fee and its components displayed on the L2 match or is less than the Transaction Fee and its components displayed to them before submitting the Direct Transaction.
+4. The Transaction Originator, Transaction Sender, or Developer verifies that the Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account.
+
+Test Passing Criteria: The test passes if,
+
+* The Transaction Originator, Transaction Sender, or Developer can access the Transaction Fee and its components on the L2 after a Direct Transaction has been finalized.
+* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components displayed to them before submitting the Direct Transaction.
+* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account, if applicable.
 
 #### **[R17]**
 
 An Intermediary and a Developer MUST be able to view a Transaction Fee and its components after a L2 Meta Transaction has been finalized on the L2.
 
-[[R17]](#r17) Testability: Given that [[R9]](#r9) that provides the necessary capability for [[R17]](#r17) to be realized is testable, and given that the ability to view a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
+[[R17]](#r17) Testability: 
+
+Preconditions:
+
+* An L2 instance is operational and accepting transactions.
+* The Intermediary and Developer have access to the L2.
+* The Intermediary and Developer have a Meta Transaction ready to submit to the L2.
+* The L2 has a defined method to notify L2 users that a L2 transaction has been finalized.
+
+Test Steps:
+
+1. The Intermediary and Developer submit a Meta Transaction to the L2.
+2. The L2 processes, and finalizes the Meta Transaction and charges a Transaction Fee.
+3. The Intermediary and Developer access the Transaction and the Transaction Fee and its components for the processed Meta Transaction using the Transaction ID from the transaction finalization confirmation notification from the L2.
+4. The Intermediary and Developer verify that they can see the Transaction Fee and its components, including the Base Fee, Execution Fee, Priority Fee.
+5. The Intermediary and Developer verify that the Transaction Fee and its components displayed on the L2 match or is less than the Transaction Fee and its components displayed to them before submitting the Meta Transaction.
+6. The Intermediary and Developer verify that the Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account.
+
+Test Passing Criteria: The test passes if,
+
+* The Intermediary and Developer can access the Transaction Fee and its components on the L2 after a Meta Transaction has been finalized.
+* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components displayed to them before submitting the Meta Transaction.
+* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account.
 
 
 #### **[R18]**
 
 If there is a Transaction Fee Refund, a Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee Refund after a L2 Direct Transaction has been finalized on the L2.
 
-[[R18]](#r18) Testability: Given that [[R10]](#r10) that provides the necessary capability for [[R18]](#r18) to be realized is testable, and given that the ability to view a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
+[[R18]](#r18) Testability: 
+
+Preconditions:
+
+* An L2 test instance is operational and available for use.
+* The Transaction Originator, Transaction Sender, and Developer have access to the L2 and can view Transaction information.
+* At least one Direct Transaction has been submitted, processed and finalized on the L2.
+* The L2 has a defined method to notify L2 users that a L2 transaction has been finalized.
+
+Test Steps:
+
+1. The Transaction Originator, Transaction Sender, or Developer accesses the L2 to view the Transaction Fee and its components after a Direct Transaction has been finalized on the L2 using the Transaction ID from the transaction finalization confirmation notification from the L2.
+2. The Transaction Originator, Transaction Sender, or Developer verifies that they can see the Transaction Fee and its components, including the Base Fee, Execution Fee, Priority Fee.
+3. The Transaction Originator, Transaction Sender, or Developer verifies that the Transaction Fee and its components displayed on the L2 is less than the Transaction Fee and its components displayed to them before submitting the Direct Transaction.
+4. The Transaction Originator, Transaction Sender, or Developer verifies that the Transaction Fee and its components displayed on the L2 match the Transaction Fee and its components charged to the Transaction Sender's account.
+
+Test Passing Criteria: The test passes if,
+
+* The Transaction Originator, Transaction Sender, or Developer can access the Transaction Fee and its components on the L2 after a Direct Transaction has been finalized.
+* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components displayed to them before submitting the Direct Transaction.
+* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account, if applicable.
 
 #### **[R19]**
 
 If there is a Transaction Fee Refund, an Intermediary and a Developer MUST be able to view a Transaction Fee Refund after a L2 Meta Transaction has been finalized on the L2.
 
-[[R19]](#r19) Testability: Given that [[R10]](#r10) that provides the necessary capability for [[R19]](#r19) to be realized is testable, and given that the ability to view a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
+[[R19]](#r19) Testability: 
 
+Preconditions:
+
+* An L2 instance is operational and accepting transactions.
+* The Intermediary and Developer have access to the L2.
+* The Intermediary and Developer have a Meta Transaction ready to submit to the L2.
+* The L2 has a defined method to notify L2 users that a L2 transaction has been finalized.
+
+Test Steps:
+
+1. The Intermediary and Developer submit a Meta Transaction to the L2.
+2. The L2 processes, and finalizes the Meta Transaction and charges a Transaction Fee.
+3. The Intermediary and Developer access the Transaction and the Transaction Fee and its components for the processed Meta Transaction using the Transaction ID from the transaction finalization confirmation notification from the L2.
+4. The Intermediary and Developer verify that they can see the Transaction Fee and its components, including the Base Fee, Execution Fee, Priority Fee.
+5. The Intermediary and Developer verify that the Transaction Fee and its components displayed on the L2 is less than the Transaction Fee and its components displayed to them before submitting the Meta Transaction.
+6. The Intermediary and Developer verify that the Transaction Fee and its components displayed on the L2 match the Transaction Fee and its components charged to the Transaction Sender's account.
+
+Test Passing Criteria: The test passes if,
+
+* The Intermediary and Developer can access the Transaction Fee and its components on the L2 after a Meta Transaction has been finalized.
+* The Transaction Fee and its components displayed on the L2 are less than the Transaction Fee and its components displayed to them before submitting the Meta Transaction.
+* The Transaction Fee and its components displayed on the L2 match the Transaction Fee and its components charged to the Transaction Sender's account.
 
 #### **[R20]**
 
 An L2 MUST provide an Intermediary with a capability to display the Transaction Fee and its components of a L2 Meta Transaction after it has been processed on the L2 to 3rd parties.
 
-[[R20]](#r20) Testability: Given that [[R17]](#r17) that provides the necessary capability for [[R20]](#r20) to be realized is testable, and given that the ability to display a data object such as a Transaction Fee and its components can be realized in computer code, and since computer code is testable, the requirement is testable. 
+[[R20]](#r20) Testability: 
 
+Preconditions:
+
+* A L2 test instance is operational and accessible.
+* There is at least one Intermediary operating on the L2.
+* At least one L2 Meta Transaction has been submitted and processed on the L2.
+* The Intermediary can access the Transaction with its Transaction Fee and its Fee components.
+* The L2 is accessible by any 3rd party.
+
+Test Steps:
+
+1. The Intermediary logs into their account on the L2.
+2. The Intermediary selects the L2 Meta Transaction they wish to view the Transaction Fee and its components for using the Transaction ID from the transaction processing confirmation notification from the L2.
+3. The L2 displays the Transaction Fee and its components of the selected L2 Meta Transaction to the Intermediary.
+4. The Intermediary verifies that the displayed Transaction Fee and its components match or are less than process the Transaction Fee and its components.
+5. The Intermediary attempts to display the Transaction Fee and its components of the selected L2 Meta Transaction to a 3rd party.
+6. The 3rd party verifies that it can view displayed Transaction Fee and its components match the Transaction Fee and its components for the Transaction ID of the Meta Transaction when accessed directly on the L2 using the Transaction ID.
+
+Test Passing Criteria:
+
+* The Intermediary is able to view the Transaction Fee and its components of the selected L2 Meta Transaction.
+* The displayed Transaction Fee and its components are accurate and match the actual Transaction Fee and its components of the selected L2 Meta Transaction.
+* The Intermediary is able to display the Transaction Fee and its components of the selected L2 Meta Transaction to a 3rd party.
+* The displayed Transaction Fee and its components match the actual Transaction Fee and its components of the selected L2 Meta Transaction as verified by the 3rd party.
 
 #### **[R21]**
 
-If there is a Transaction Fee Refund, a L2 MUST provide an Intermediary with a capability to display the Transaction Fee Refund of a L2 Meta Transaction to its Transaction Originator after it has been finalized on the L2 to 3rd parties.
+If there is a Transaction Fee Refund, a L2 MUST provide an Intermediary with a capability to display the Transaction Fee Refund of a L2 Meta Transaction to its Transaction Originator after it has been finalized on the L2.
 
-[[R21]](#r21) Testability: Given that [[R18]](#r18) that provides the necessary capability for [[R21]](#r21) to be realized is testable, and given that the ability to display a data object such as a Fee Price can be realized in computer code, and since computer code is testable, the requirement is testable. 
+[[R21]](#r21) Testability:  
 
+Preconditions:
+
+* An L2 test instance is deployed and running.
+* An Intermediary is operating on the L2 and has the necessary permissions to view Transaction Fee Refunds.
+* A set of L2 Meta Transactions has been submitted and processed on the L2, resulting in at least one Transaction Fee Refund.
+
+Test steps:
+
+1. The Intermediary sends a request to the L2 to display the Transaction Fee Refund of a specific L2 Meta Transaction using the Transaction ID from the transaction finalization confirmation notification from the L2..
+2. The L2 receives the request and verifies that the Intermediary has the necessary permissions to view Transaction Fee Refunds.
+3. The L2 retrieves the Transaction Fee Refund information for the requested L2 Meta Transaction.
+4. The L2 sends the Transaction Fee Refund information to the Intermediary.
+5. The Intermediary receives the Transaction Fee Refund information.
+6. The Intermediary verifies that the Transaction Fee Refund information matches the expected values based on the difference in the L2 Meta Transaction Transaction Fee between the submitted and finalized L2 Meta Transaction.
+7. The Intermediary displays the Transaction Fee Refund information to the Transaction Originator.
+8. The Transaction Originator verifies that it can view displayed Transaction Fee and its components match the Transaction Fee and its components for the Transaction ID of the Meta Transaction when accessed directly on the L2 using the Transaction ID.
+
+Test Passing criteria:
+
+* The Intermediary is able to successfully retrieve and display the Transaction Fee Refund information for the requested L2 Meta Transaction.
+* The displayed Transaction Fee Refund information matches the expected values based on the L2 Meta Transaction.
 
 #### **[R22]**
 
 A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a current Fee Price that a Transaction Fee calculation by the Transactions Sender or Transaction Originator can be based on. 
 
-[R22]](#r22) Testability: Given that [[R12]](#r12) that provides the necessary capability for [[R22]](#r22) to be realized is testable, and given that the ability to view a data object such as a Fee Price in computer code, and since computer code is testable, the requirement is testable.
+[R22]](#r22) Testability: 
+
+Preconditions:
+
+* An L2 test instance is live and operational.
+* The Transaction Originator, Transaction Sender, and Developer have access to the L2.
+* The Fee Price calculation is based on the current Operating Condition of the L2.
+* A Fee Price Emulator that can accurately calculate a Fee Price based on current Operating Conditions on the L2. 
+
+Test steps:
+
+1. The Transaction Originator, Transaction Sender, or Developer access the current Fee Price from the L2.
+2. The L2 responds to the request by providing the current Fee Price.
+3. The Transaction Originator, Transaction Sender, or Developer verifies that the Fee Price provided by the L2 network matches the Fee Price estimate using the Fee Price Emulator.
+
+Test Passing criteria:
+
+* The current Fee Price is successfully retrieved from the L2.
+* The Fee Price provided by the L2 matches the Fee Price estimate using the Fee Price Emulator.
 
 ## 3.3 Transaction Fee Requirements for Layer 2 Transactions
 
@@ -519,14 +940,52 @@ In this section, the documents details Transaction Fee requirements for a L2 Tra
 
 Every L2 Transaction MUST contain a Transaction Fee and its components.
 
-[[R23]](#r23) Testability: L2 protocols include a Transaction Fee in a L2 Transaction such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests) with its test suite. Therefore, the requirement is testable.
+[[R23]](#r23) Testability: 
+
+Preconditions:
+
+* An L2 test instance is set up and functional.
+* There is a user account on the L2 with the necessary permissions to submit a transaction.
+* There is a sufficient balance of funds available in the user's account to cover the transaction fee.
+
+Test Steps:
+
+1. Log in to the user account on the L2.
+2. Create a new L2 transaction.
+3. Verify that the transaction contains a transaction fee and its components.
+4. Submit the transaction.
+5. Wait for the transaction to be processed and finalized on the L2.
+6. Retrieve the details of the processed and finalized transaction using using the Transaction ID from the transaction finalization confirmation notification from the L2.
+7. Verify that the transaction fee and its components are still present and accurate.
+
+Test Passing Criteria:
+
+* The L2 transaction contains a transaction fee and its components.
+* The transaction fee and its components remain present and accurate after the transaction is processed and finalized on the L2.
 
 #### **[R24]**
 
 Every L2 Block MUST contain one or more L2 account addresses to which the accumulated Transaction Fees in said L2 Block are transferred either whole or in proportion based on the specification of the L2 protocol.
 
-[[R24]](#r24) Testability: L2 protocols include one or more L2 addresses to which Transaction Fees in a L2 Block are transferred such as [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests) with its test suite. Therefore, the requirement is testable.
+[[R24]](#r24) Testability: 
 
+Preconditions:
+
+* The L2 protocol and its specifications have been implemented and tested.
+* An L2 test instance is set up and functional.
+* A set of L2 transactions have been created and finalized on the L2.
+
+Test steps:
+
+1. Verify that every L2 block has one or more L2 account 
+addresses specified to receive the accumulated Transaction Fees.
+2. Verify that the accumulated Transaction Fees from each L2 transaction in the block have been transferred to the specified L2 account address(es).
+3. Verify that the transfer of the accumulated Transaction Fees is done either whole or in proportion to the account 
+addresses specified to receive the accumulated Transaction Fees in the L2 Block.
+
+Test Passing criteria:
+
+* Step 1, 2, and 3 must pass for all L2 blocks that have been finalized on the L2 that contain the test L2 transactions.
 
 #### **[R25]**
 
@@ -534,22 +993,69 @@ If one or more L2 Transactions are reverted before they are finalized on the L2'
 
 Note that it is not important why a L2 Transactions has been reverted before it is finalized.
 
-[[R25]](#r25) Testability: Reverting one or more L2 Transactions means that the L2 State is reverted to a previous L2 State which is recorded on both the L2 and its corresponding L1, and this means that the reverted L2 transaction are removed from the L2 State. Since [[R11]](#r11) is testable and allows to view the history of all L2 Transactions and their Transactions Fees, it can be tested if a L2 transaction has been reverted, in other words has been removed from the L2, and, therefore, if a Transaction Fee has been charged to a Transaction Sender. 
+[[R25]](#r25) Testability:  
 
+Preconditions:
+
+* An L2 test instance is set up and functional.
+* There are at least two valid L2 Transactions that have not been finalized on the L2's Layer 1.
+* Each L2 Transaction has a valid Transaction Sender.
+* The L2 Transactions have Transaction Fees associated with them.
+* The L2 protocol supports the reversion of Transactions before they are finalized on Layer 1.
+
+Test Steps:
+
+1. Verify that the initial balances of the Transaction Senders are recorded.
+2. Submit the L2 Transactions to the L2.
+3. Verify that the L2 Transactions are valid and the Transaction Fees are calculated correctly.
+4. Attempt to revert one of the L2 Transactions before it is finalized on the L2's Layer 1.
+5. Verify that the reverted L2 Transaction's Transaction Fees are not charged to the Transaction Sender.
+6. Finalize the remaining L2 Transactions on the L2's Layer 1.
+7. Verify that the Transaction Fees are charged to the Transaction Senders for the finalized L2 Transactions.
+8. Verify that the balances of the Transaction Senders have been updated accordingly.
+
+Test Passing Criteria:
+
+* The balances of the Transaction Senders are updated correctly after the L2 Transactions are finalized.
+* The Transaction Fees for the finalized L2 Transactions are charged to the corresponding Transaction Senders.
+* The Transaction Fees for the reverted L2 Transactions are not charged to the corresponding Transaction Senders.
 
 #### **[D1]**
 
 If one or more L2 Meta Transactions are reverted before they are finalized on the L2's Layer 1, the Transaction Fees in the affected Meta Transactions SHOULD be returned to the Transaction Originator by the Intermediary as a Transaction Fee Refund.
 
-[[D1]](#d1) Testability: Unless the Intermediary is paid through a L2 Transactions submitted as part of a Meta Transaction, in which case the Meta Transaction reversion would also reverse the Transaction Fee paid by the Transaction Originator to the Intermediary, the Transaction Fee has been prepaid to the Intermediary by the Transaction Originator. This means the prepayment is included in a finalized L2 State. Therefore, the Intermediary must submit a new L2 Transaction which pays back the Transaction Fee of the reversed L2 Meta Transaction to the Tranaction Originator. Since L2 Transactions and their recording on a L2 are testable such as with [Arbitrum One/Nitro](https://github.com/OffchainLabs/nitro/tree/master/system_tests) with its test suite, the requirement is testable.  
+[[D1]](#d1) Testability: 
+
+Preconditions:
+
+* An L2 test instance is set up and available for testing.
+* A set of L2 Meta Transactions has been submitted by the Transaction Sender and processed on the L2.
+* Some of the L2 Meta Transactions have been reverted before being finalized on the L2's Layer 1.
+
+Test steps:
+
+1. Submit a set of L2 Meta Transactions to the L2.
+2. Verify that the Transaction Sender and Developer can view the estimated Transaction Fees and their components before submitting the L2 Meta Transactions.
+3. Verify that the Intermediary can view and record the Transaction Fees and their components after the L2 Meta Transactions have been processed on the L2.
+5. Revert some of the L2 Meta Transactions before they are finalized on the L2's Layer 1.
+6. The Intermediary returns the recorded Transaction Fees for the reverted Meta Transactions from the Transaction Sender Account or the account of the Intermediary to the account of the Transaction Originator. 
+7. Verify that the Transaction Originator received the Transaction Fee Refund and it has the right value.
+
+Test passing criteria:
+
+* The Intermediary, Transaction Sender and Developer can view the estimated Transaction Fees and their components before submitting the L2 Meta Transactions.
+* The Intermediary can view the Transaction Fees and their components after the L2 Meta Transactions have been processed on the L2.
+* The Intermediary returns the right amount of Transaction Fees as a refund to the Transaction Originator when L2 Meta Transactions are reverted.
 
 -------
 # 4 Conformance
+
 ###### L2TFSPECCONF
 
 This section describes the conformance clauses and tests required to achieve an implementation that is provably conformant with the requirements in this document.
 
 ## 4.1 Conformance Targets
+
 ###### L2TFSPECCONFT
 
 This document does not yet define a standardized set of test-fixtures with test inputs for all MUST, SHOULD, and MAY requirements with conditional MUST or SHOULD requirements. 
@@ -557,6 +1063,7 @@ This document does not yet define a standardized set of test-fixtures with test 
 A standardized set of test-fixtures with test inputs for all MUST, SHOULD, and MAY requirements with conditional MUST or SHOULD requirements is intended to be published with the next version of the standard.
 
 ## 4.2 Conformance Levels
+
 ###### L2TFSPECCONFL
 
 This section specifies the conformance levels of this standard. The conformance levels offer implementers several levels of conformance. These can be used to establish competitive differentiation.
