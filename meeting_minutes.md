@@ -1,6 +1,47 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
-## Meeting Wed, 19 April 2022, 7:00 am PT
+## Meeting Wed, 03 May 2023, 7:00 am PT
+
+Attending: Andreas Freund (EF), Tas Dienes(EF), Dan Shaw (EF), Chris Cordle (Offchain Labs), Nikolai Prokhorenko (Metis), Rami Husani (Metis), Anais Ofranc (EEA), Jose Franco (Offchain Labs), Masha Moosavi (Offchain Labs), Kartheek Solipuram (EY)
+
+Scribe: Anais Ofranc
+
+Proposed agenda
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review Open PRs (focus on new PR #43 on the Transaction Fee draft)
+5. Review Open Issues
+6. Open Forum for other items
+
+Notes:
+
+Welcome New Members
+
+ * Masha Moosavi (Offchain Labs)
+ * Jose Franco (Offchain Labs)
+
+Review Open PRs
+* PR #43 Review of the L2 transaction fees specification submitted by Andreas:
+  * The PGB has discussed the scope of testability requirements. It was agreed that a logical test should be sufficient for testability requirements (implementers have to write a test to be able to test the requirement).
+  * Review of section “3.2 Layer 2 Transaction Fee Visibility Requirements” 
+    * Update [R21] to align with [R20] change  “Transaction Originator” to 3rd Parties
+    * [R22] Testability needs another left bracket.
+  * Review of section  “3.3 Transaction Fee Requirements for Layer 2 Transactions”
+    * [R25] Change “why a L2 transactions” to “why a L2 transaction”.
+    * [D1] Agreement that this requirement should be updated to “If one or more L2 Meta Transactions are reverted before they are finalized on the L2's Layer 1 and the Transaction Originator has been charged, the Transaction Fees in the affected Meta Transactions SHOULD be refunded to the Transaction Originator by the Intermediary.”.
+  * Review of section  “4 Conformance”. 
+    * [D2] change the font - this is too big.
+
+Questions:
+
+* Anais: What is the next step? Andreas: We need to review the testability requirements
+* Nikolai: Where would that specification be published? Maybe it should be published on Wikipedia maybe? Andreas explained that it will be published on this github and as an Oasis Standard. Also, this will be published as an EIP. It will always be publicized on Ethereum Magicians. Also, L2Beat agreed to review the glossary.
+* Nikolai: Are we going to work on standardization of what constitutes a L2? Metis was not considered a L2 last year but this year, Metis is considered L2. So can we have a committee to discuss this ? Andreas: It would be useful to have a clear and agreed upon definition of what a L2 is. Ethereum.org relies on the definition of L2Beat. 
+
+
+## Meeting Wed, 19 April 2023, 7:00 am PT
 
 Attending: Andreas Freund (EF), Dan Shaw (EF), Chris Cordle  (Offchain Labs), Nikolai Prokhorenko (Metis), Rami Husani (Metis), Anais Ofranc (EEA), Jonathan Knegtel (), Daniel Goldman (Offchain Labs), Omar Azhar (Matter Labs), Kartheek Solipuram (EY)
 
@@ -38,7 +79,7 @@ Review of Concepts and Design
 - Meeting adjourned
 
 
-## Meeting Wed, 5 April 2022, 7:00 am PT
+## Meeting Wed, 5 April 2023, 7:00 am PT
 
 Attending: Andreas Freund (EF), Nikolai Prokhorenko (Metis), Rami Husani (Metis), Anais Ofranc (EEA), Kartheek Solipuram (EY)
 
@@ -65,7 +106,7 @@ Review Open PRs
 - Meeting adjourned
 
 
-## Meeting Wed, 22 March 2022, 7:00 am PT
+## Meeting Wed, 22 March 2023, 7:00 am PT
 
 Attending: Andreas Freund (EF), Tom Ngo (Metis), Nikolai Prokhorenko (Metis), Omar Azhar (Matter Labs), Rami Husani (Metis), Anais Ofranc (EEA), Kartheek Solipuram (EY)
 
@@ -96,7 +137,7 @@ Notes:
 - Meeting adjourned
 
 
-## Meeting Wed, 08 March 2022, 7:00 am PT
+## Meeting Wed, 08 March 2023, 7:00 am PT
 
 Attending: Andreas Freund (EF), Dan Shaw (EF), Tas Dienes (EF), Anais Ofranc (EEA), Daniel Goldman (Offchain Labs), Tom Ngo (Metis), Nikolai Prokhorenko (Metis), Omar Azhar (Matter Labs)
 

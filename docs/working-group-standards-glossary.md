@@ -24,7 +24,7 @@ A base blockchain network, such as Bitcoin, or Ethereum, and its underlying infr
 
 **Layer 2:**
 
-A secondary framework or protocol that is built on top of an existing Layer 1 system in such a way that it inherits the security properties of the Layer 1 system while allowing for a higher transaction throughput that the Layer 1 system.
+A secondary framework or protocol that is built on top of an existing Layer 1 system in such a way that it inherits the security properties of the Layer 1 system while allowing for a higher transaction throughput than the Layer 1 system.
 
 **Layer 3:**
 
