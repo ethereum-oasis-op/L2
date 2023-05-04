@@ -355,7 +355,7 @@ In this section we will formulate requirements in the following areas:
 
 An L2 Transaction Fee MUST be comprised as the sum of a Base Fee, a Execution Fee, and a Priority Fee.
 
-[[R1]](#r1) Testability: Mathematical equality equations can be tested as the sum of the equations elements equaling a desired output is a passing test, and the sum of the equations element not equaling the  desired output a failing test..
+[[R1]](#r1) Testability: Mathematical equality equations can be tested as the sum of the equations elements equaling a desired output. The test is passed if the sum of the elements as inputs is equal to the desired output. If the sum of the equations element do not equal the  desired output the test fails.
 
 #### **[R2]**
 
@@ -367,7 +367,7 @@ All components of an L2 Transaction Fee MUST NOT be less than zero.
 
 An L2 Transaction Fee or any of its components MAY BE zero.
 
-[[O1]](#o1) Testability: Mathematical equality equations can be expressed as testable conditions. A test for [[R2]](#r2) also tests  this optional requirement since zero values are allowed in tests for [[R2]](#r2).
+[[O1]](#o1) Testability: Mathematical equality equations can be expressed as testable conditions. A test for [[R2]](#r2) also tests this optional requirement since zero values are allowed in tests for [[R2]](#r2).
 
 #### **[R3]**
 
@@ -698,7 +698,7 @@ Preconditions:
 
 Test Steps:
 
-1.Transaction Sender or Developer submit a Direct Transaction to the L2.
+1. Transaction Sender or Developer submit a Direct Transaction to the L2.
 2. The L2 processes the Direct Transaction and charges a Transaction Fee.
 3. The Transaction Originator, Transaction Sender, or Developer accesses the L2 to view the Transaction Fee and its components after a Direct Transaction has been processed on the L2 using the Transaction ID from the transaction processing confirmation notification from the L2.
 4. The Transaction Originator, Transaction Sender, or Developer verifies that they can see the Transaction Fee and its components, including the Base Fee, Execution Fee, Priority Fee.
