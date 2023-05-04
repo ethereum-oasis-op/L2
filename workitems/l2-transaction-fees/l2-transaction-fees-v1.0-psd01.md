@@ -286,10 +286,10 @@ Subsequently, the specification section will define requirements around fee tran
 
 This document defines Transaction Fee as the fee in a Layer 2 (L2) network or protocol token to be paid by a Transaction Originator or Transaction Sender comprised of the sum of a Base Fee, an Execution Fee and a Priority Fee.
 
-Note that this document defines as Transaction as a digitally signed message sent from a L2 account that contains instructions and data that result in a L2 state transition. Also note that this document defines State and State Transition as follows:
+Note that this document defines as Transaction as a digitally signed message sent from an L2 account that contains instructions and data that result in an L2 state transition. Also note that this document defines State and State Transition as follows:
 
-* State: The set of all accounts on a L2 that are mapped to one another using a cryptographic data structure.
-* State Transition: An event that deterministically changes one or more accounts in the set of all accounts that comprise the complete state of a L2.
+* State: The set of all accounts on an L2 that are mapped to one another using a cryptographic data structure.
+* State Transition: An event that deterministically changes one or more accounts in the set of all accounts that comprise the complete state of an L2.
 
 Further note that this document defines Account as a unit that is minimally comprised of a unique account identifier, a deterministic ordering parameter, also referred to as a nonce, a balance of a Layer 1, Layer 2 or Sidechain unit of exchange, also referred to as a protocol token. Changes to an account are controlled by a unique cryptographic public and private key pair. There are typically additional account elements referring to instructions and data associated to the account that determine account changes.
 
@@ -299,13 +299,13 @@ In formula form the Transaction Fee is given as:
 
 The different components are defined as follows:
 
-* **Base Fee:** The minimum amount of Gas or a L2 gas equivalent unit of compute and storage consumption required to include a transaction on a L2.
+* **Base Fee:** The minimum amount of Gas or an L2 gas equivalent unit of compute and storage consumption required to include a transaction on an L2.
 * **Execution Fee:** A fee to be paid by the Transaction Originator or Transaction Sender sufficient to cover both the L2 and Layer 1 transaction fees.
-* **Priority Fee:** To be paid by the Transaction Originator or Transaction Sender to a L2 sequencer to obtain a desired slot for its transaction in a new block. Note that the exact position of a transaction, a slot, in a new block may be determined by factors such as time-stamp, or minimization of Maximal Extractable Value (MEV) of a block in addition to a Priority Fee. And that MEV is defined as the maximum value that can be extracted from block production in excess of the standard block reward and gas fees by including, excluding, and changing the order of transactions in a block.
+* **Priority Fee:** To be paid by the Transaction Originator or Transaction Sender to an L2 sequencer to obtain a desired slot for its transaction in a new block. Note that the exact position of a transaction, a slot, in a new block may be determined by factors such as time-stamp, or minimization of Maximal Extractable Value (MEV) of a block in addition to a Priority Fee. And that MEV is defined as the maximum value that can be extracted from block production in excess of the standard block reward and gas fees by including, excluding, and changing the order of transactions in a block.
 
-Note that a Transaction Fee has a Transaction Fee Price which is defined in the context of this document as a L2 Gas price or a price of a L2 gas equivalent unit of compute and storage consumption.
+Note that a Transaction Fee has a Transaction Fee Price which is defined in the context of this document as an L2 Gas price or a price of an L2 gas equivalent unit of compute and storage consumption.
 
-Note that a Gas price or a price of a L2 gas equivalent unit of compute and storage consumption is typically variable and changes with the level of usage of a L2 network. Note that a gas price is expressed in Giga Wei (GWEI) for EVM-compatible networks, where Wei represents the smallest unit of gas; 1 Wei = 10<sup>-18</sup> Eth in Ethereum's native token.
+Note that a Gas price or a price of an L2 gas equivalent unit of compute and storage consumption is typically variable and changes with the level of usage of an L2 network. Note that a gas price is expressed in Giga Wei (GWEI) for EVM-compatible networks, where Wei represents the smallest unit of gas; 1 Wei = 10<sup>-18</sup> Eth in Ethereum's native token.
 
 Furthermore, note that Gas in this document refers to the unit that measures the amount of computational and storage effort required to execute specific operations on an EVM-compatible network. 
 
@@ -318,7 +318,7 @@ The following roles are relevant to transaction fees, their calculation and how,
 * **Transaction Sender:** The account that sent a transaction to a Layer 1, L2, or Sidechain.
 * **Intermediary:** An entity that is the sender of a transaction for which it is not the Transaction Originator.
 * **Sequencer:** Collects transactions, publishes them in a batch to the Layer 1 on which the L2 operates, receives transaction fees from the published transactions, pays L2 fees to other L2 protocol participants, and, if required, participates in a consensus algorithm with other sequencers to determine transaction  ordering in a block.
-* **L2 Operator:** An entity responsible for the operation of a L2.
+* **L2 Operator:** An entity responsible for the operation of an L2.
 * **Developer:** An individual writing computer code for software applications that operate on a Layer 1, L2 or Sidechain.
 
 ## 2.3 Definition of Transaction Types
@@ -359,7 +359,7 @@ An L2 Transaction Fee MUST be comprised as the sum of a Base Fee, a Execution Fe
 
 #### **[R2]**
 
-All components of a L2 Transaction Fee MUST NOT be less than zero.
+All components of an L2 Transaction Fee MUST NOT be less than zero.
 
 [[R2]](#r2) Testability: Mathematical equality or inequality equations can be expressed as testable conditions. A passing test condition is that each individual element of a transaction fee is equal to or larger than zero. A failing test condition is that one or more transaction fee elements is less than zero.
 
@@ -550,7 +550,7 @@ Test Passing Criteria:
 
 An L2 MUST record and provide access to the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been finalized on theL2.
 
-Transaction finality in the context of this document is defined as the condition when a transaction can no longer be reverted on a L2. Note that the finality condition will vary by L2, and that L2 finality requirements are outside of the scope of this document.
+Transaction finality in the context of this document is defined as the condition when a transaction can no longer be reverted on an L2. Note that the finality condition will vary by L2, and that L2 finality requirements are outside of the scope of this document.
 
 [[R9]](#r9) Testability: 
 
@@ -577,7 +577,7 @@ Test Passing Criteria:
 
 #### **[R10]**
 
-If there is a Transaction Fee Refund, a L2 implementation MUST record and provide access to the Transaction Fee Refund when a Transaction has been finalized on the L2.
+If there is a Transaction Fee Refund, an L2 implementation MUST record and provide access to the Transaction Fee Refund when a Transaction has been finalized on the L2.
 
 A Transaction Fee Refund in the context of this document is defined as the difference between the Transaction Fee that the Transaction Sender has included in the Transaction sent to the L2 and the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been finalized on the L2.
 
@@ -662,7 +662,7 @@ In this section, this document discusses the visibility requirements for differe
 
 #### **[R13]**
 
-A Transaction Originator, a Transaction Sender and a Developer MUST be able to view an estimated Transaction Fee and its components before a L2 Transaction is submitted.
+A Transaction Originator, a Transaction Sender and a Developer MUST be able to view an estimated Transaction Fee and its components before an L2 Transaction is submitted.
 
 [[R13]](#r13) Testability: 
 
@@ -685,7 +685,7 @@ Test Passing Criteria:
 
 #### **[R14]**
 
-A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee and its components after a L2 Direct Transaction has been processed on the L2.
+A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee and its components after an L2 Direct Transaction has been processed on the L2.
 
 [[R14]](#r14) Testability: 
 
@@ -694,7 +694,7 @@ Preconditions:
 * An L2 test instance is operational and available for use.
 * The Transaction Originator, Transaction Sender, and Developer have access to the L2 and can view Transaction information.
 * At least one Direct Transaction has been submitted and processed on the L2.
-* The L2 has a defined method to notify L2 users that a L2 transaction has been processed.
+* The L2 has a defined method to notify L2 users that an L2 transaction has been processed.
 
 Test Steps:
 
@@ -714,7 +714,7 @@ Test Passing Criteria: The test passes if,
 
 #### **[R15]**
 
-An Intermediary and a Developer MUST be able to view a Transaction Fee and its components after a L2 Meta Transaction has been processed on the L2.
+An Intermediary and a Developer MUST be able to view a Transaction Fee and its components after an L2 Meta Transaction has been processed on the L2.
 
 [[R15]](#r15) Testability: 
 
@@ -723,7 +723,7 @@ Preconditions:
 * An L2 instance is operational and accepting transactions.
 * The Intermediary and Developer have access to the L2.
 * The Intermediary and Developer have a Meta Transaction ready to submit to the L2.
-* The L2 has a defined method to notify L2 users that a L2 transaction has been processed.
+* The L2 has a defined method to notify L2 users that an L2 transaction has been processed.
 
 Test Steps:
 
@@ -742,7 +742,7 @@ Test Passing Criteria: The test passes if,
 
 #### **[R16]**
 
-A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee and its components after a L2 Direct Transaction has been finalized on the L2.
+A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee and its components after an L2 Direct Transaction has been finalized on the L2.
 
 [[R16]](#r16) Testability: 
 
@@ -751,7 +751,7 @@ Preconditions:
 * An L2 test instance is operational and available for use.
 * The Transaction Originator, Transaction Sender, and Developer have access to the L2 and can view Transaction information.
 * At least one Direct Transaction has been submitted, processed and finalized on the L2.
-* The L2 has a defined method to notify L2 users that a L2 transaction has been finalized.
+* The L2 has a defined method to notify L2 users that an L2 transaction has been finalized.
 
 Test Steps:
 
@@ -768,7 +768,7 @@ Test Passing Criteria: The test passes if,
 
 #### **[R17]**
 
-An Intermediary and a Developer MUST be able to view a Transaction Fee and its components after a L2 Meta Transaction has been finalized on the L2.
+An Intermediary and a Developer MUST be able to view a Transaction Fee and its components after an L2 Meta Transaction has been finalized on the L2.
 
 [[R17]](#r17) Testability: 
 
@@ -777,7 +777,7 @@ Preconditions:
 * An L2 instance is operational and accepting transactions.
 * The Intermediary and Developer have access to the L2.
 * The Intermediary and Developer have a Meta Transaction ready to submit to the L2.
-* The L2 has a defined method to notify L2 users that a L2 transaction has been finalized.
+* The L2 has a defined method to notify L2 users that an L2 transaction has been finalized.
 
 Test Steps:
 
@@ -797,7 +797,7 @@ Test Passing Criteria: The test passes if,
 
 #### **[R18]**
 
-If there is a Transaction Fee Refund, a Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee Refund after a L2 Direct Transaction has been finalized on the L2.
+If there is a Transaction Fee Refund, a Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee Refund after an L2 Direct Transaction has been finalized on the L2.
 
 [[R18]](#r18) Testability: 
 
@@ -806,7 +806,7 @@ Preconditions:
 * An L2 test instance is operational and available for use.
 * The Transaction Originator, Transaction Sender, and Developer have access to the L2 and can view Transaction information.
 * At least one Direct Transaction has been submitted, processed and finalized on the L2.
-* The L2 has a defined method to notify L2 users that a L2 transaction has been finalized.
+* The L2 has a defined method to notify L2 users that an L2 transaction has been finalized.
 
 Test Steps:
 
@@ -823,7 +823,7 @@ Test Passing Criteria: The test passes if,
 
 #### **[R19]**
 
-If there is a Transaction Fee Refund, an Intermediary and a Developer MUST be able to view a Transaction Fee Refund after a L2 Meta Transaction has been finalized on the L2.
+If there is a Transaction Fee Refund, an Intermediary and a Developer MUST be able to view a Transaction Fee Refund after an L2 Meta Transaction has been finalized on the L2.
 
 [[R19]](#r19) Testability: 
 
@@ -832,7 +832,7 @@ Preconditions:
 * An L2 instance is operational and accepting transactions.
 * The Intermediary and Developer have access to the L2.
 * The Intermediary and Developer have a Meta Transaction ready to submit to the L2.
-* The L2 has a defined method to notify L2 users that a L2 transaction has been finalized.
+* The L2 has a defined method to notify L2 users that an L2 transaction has been finalized.
 
 Test Steps:
 
@@ -851,7 +851,7 @@ Test Passing Criteria: The test passes if,
 
 #### **[R20]**
 
-An L2 MUST provide an Intermediary with a capability to display the Transaction Fee and its components of a L2 Meta Transaction after it has been processed on the L2 to 3rd parties.
+An L2 MUST provide an Intermediary with a capability to display the Transaction Fee and its components of an L2 Meta Transaction after it has been processed on the L2 to 3rd parties.
 
 [[R20]](#r20) Testability: 
 
@@ -881,7 +881,7 @@ Test Passing Criteria:
 
 #### **[R21]**
 
-If there is a Transaction Fee Refund, a L2 MUST provide an Intermediary with a capability to display the Transaction Fee Refund of a L2 Meta Transaction to its Transaction Originator after it has been finalized on the L2.
+If there is a Transaction Fee Refund, an L2 MUST provide an Intermediary with a capability to display the Transaction Fee Refund of an L2 Meta Transaction to a 3rd party after it has been finalized on the L2.
 
 [[R21]](#r21) Testability:  
 
@@ -911,7 +911,7 @@ Test Passing criteria:
 
 A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a current Fee Price that a Transaction Fee calculation by the Transactions Sender or Transaction Originator can be based on. 
 
-[R22]](#r22) Testability: 
+[[R22]](#r22) Testability: 
 
 Preconditions:
 
@@ -933,7 +933,7 @@ Test Passing criteria:
 
 ## 3.3 Transaction Fee Requirements for Layer 2 Transactions
 
-In this section, the documents details Transaction Fee requirements for a L2 Transaction and its processing. 
+In this section, the documents details Transaction Fee requirements for an L2 Transaction and its processing. 
 
 
 #### **[R23]**
@@ -991,7 +991,7 @@ Test Passing criteria:
 
 If one or more L2 Transactions are reverted before they are finalized on the L2's Layer 1, the Transaction Fees in the affected Transactions MUST not be charged to the Transaction Senders.
 
-Note that it is not important why a L2 Transactions has been reverted before it is finalized.
+Note, that it is not important why an L2 Transaction has been reverted before it is finalized.
 
 [[R25]](#r25) Testability:  
 
@@ -1022,7 +1022,7 @@ Test Passing Criteria:
 
 #### **[D1]**
 
-If one or more L2 Meta Transactions are reverted before they are finalized on the L2's Layer 1, the Transaction Fees in the affected Meta Transactions SHOULD be returned to the Transaction Originator by the Intermediary as a Transaction Fee Refund.
+If an L2 Meta Transactions is reverted before it is finalized on the processing L2's Layer 1 and the Transaction Originator has been charged the Transaction Fee by the Intermediary, the Transaction Fee in the reverted Meta Transaction SHOULD be refunded to the Transaction Originator by the Intermediary.
 
 [[D1]](#d1) Testability: 
 
@@ -1073,7 +1073,7 @@ This document defines the conformance levels of L2 Transaction Fees as follows:
 * **Level 2:** All MUST and SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 * **Level 3:** All MUST, SHOULD, and MAY requirements with conditional MUST or SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 
-### **[D2]** 
+#### **[D2]** 
 A claim that a Transaction Fee conforms to this specification SHOULD describe a testing procedure carried out for each requirement to which conformance is claimed, that justifies the claim with respect to that requirement.
 
 [[D2]](#d2) Testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, and can be described as required in [[D2]](#d2).
