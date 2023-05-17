@@ -353,7 +353,7 @@ In this section we will formulate requirements in the following areas:
 
 #### **[R1]**
 
-An L2 Transaction Fee MUST be comprised as the sum of a Base Fee, a Execution Fee, and a Priority Fee.
+An L2 Transaction Fee MUST be comprised as the sum of a Base Fee, an Execution Fee, and a Priority Fee.
 
 [[R1]](#r1) Testability: Mathematical equality equations can be tested as the sum of the equations elements equaling a desired output. The test is passed if the sum of the elements as inputs is equal to the desired output. If the sum of the equations element do not equal the  desired output the test fails.
 
@@ -379,7 +379,7 @@ Preconditions:
 
 * The L2 must have a defined Base Fee.
 * There must be documentation available for the current Base Fee.
-* An test L2 is up and running.
+* An L2 test instance is up and running.
 
 Test Steps:
 
@@ -407,7 +407,7 @@ Preconditions:
 
 * The L2 must have a defined Execution Fee.
 * There must be documentation available for the current Execution Fee.
-* An test L2 is up and running.
+* An L2 test instance is up and running.
 
 Test Steps:
 
@@ -484,7 +484,7 @@ Test Steps:
 5. Increase the number of transactions waiting to be processed on the L2 by submitting another test data set with more transactions and submit a complex test Transaction.
 6. Record the estimated Transaction Fee provided by the L2.
 7. Verify that the estimated Transaction Fee has increased in response to the increase in the number of transactions waiting to be processed and currently being processed.
-8 Verify that the estimated Transaction Fee has increased in response to the increase in the number of transactions currently being processed and waiting to be processed.
+8. Verify that the estimated Transaction Fee has increased in response to the increase in the number of transactions currently being processed and waiting to be processed.
 9. Repeat the test with different test Transactions of varying complexity to ensure that the Transaction Fee estimation process is accurately responsive to changes in Operating Conditions and transaction complexity.
 
 Test Passing Criteria:
@@ -498,7 +498,7 @@ Test Passing Criteria:
 
 An L2 MUST record and provide access to the Transaction Fee that the Transaction Sender has included in the Transaction when a Transaction has been sent to the L2.
 
-[[R7]](#r7) Testability: 
+[[R7]](#r7) Testability:
 
 Preconditions:
 
