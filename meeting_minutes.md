@@ -1,5 +1,43 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 14 May 2023, 7:00 am PT
+
+Attending: Andreas Freund (EF), Nikolai Prokhorenko (Metis), Rami Husani (Metis), Kelvin Fichter (OP Labs), Anais Ofranc (EEA)
+
+Proposed agenda
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review Open PRs (focus on new PR #43 on the Transaction Fee draft)
+5. Review Open Issues
+6. Open Forum for other items
+
+Notes:
+Starting at 7:05 am PT
+
+* Kelvin F: asks a question in regard to fees: “ Which portion of the fee is meant to account for the calldata?”
+* Andreas: We could extend the definition, including any applicable L2 data fees.
+* Kelvin F: How will the execution fee be charged? There should be a dedicated process for this.
+* Andreas: How will the data be charged on the side of Originator?
+* Kelvin F: Arbitrum uses gas to subtract from your account for that. It adds additional gas. “I would recommend starting working on new standards for L2 transaction type – where there is a new field of max data fee”.
+*Andreas: EVM transaction type extension for Layer 2?
+* Kelvin F: yes
+
+*Some googling and discussion on EVM fees standards between Andreas and Kelvin F*
+
+Review open PRs:
+
+PR #43 -  Review of the L2 transaction fees specification Testability Statements (Requirements review completed during last meeting) submitted by Andreas.
+  * R1: No comments;
+  * R2: No comments;
+  * O1: No comments;
+  * R3: No comments;
+  * R4: No comments;
+  * R5: No comments;
+  * R6: Andreas found a small typo;
+	
+The meeting ended at 8:00 am PT
+
 ## Meeting Wed, 03 May 2023, 7:00 am PT
 
 Attending: Andreas Freund (EF), Tas Dienes(EF), Dan Shaw (EF), Chris Cordle (Offchain Labs), Nikolai Prokhorenko (Metis), Rami Husani (Metis), Anais Ofranc (EEA), Jose Franco (Offchain Labs), Masha Moosavi (Offchain Labs), Kartheek Solipuram (EY)
