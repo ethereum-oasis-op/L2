@@ -1,5 +1,47 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 14 June 2023, 7:00 am PT
+
+Attending: Andreas Freund (EF), Nikolai Prokhorenko (Metis), Kelvin Fichter (OP Labs), Anais Ofranc (EEA), Dan Shaw (EF)
+
+Agenda:
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review Open PRs (continue with PR #43 review on the Transaction Fee draft -- Testability Statement review)
+5. Review Open Issues
+6. Open Forum for other items
+
+Scribe: Nikolai
+
+Notes:
+* Starting at 7:12 am PT after Kelvin explained latest Optimism release.
+* Welcome of participants and explanation of rules
+* Selection of scribe (Nikolai)
+* No new participant introductions
+* Continue review of Testability Statements in PR #43 Transaction Fee Spec
+  - Andreas started with reviewing the previous points of discussions
+  - Andreas reads the R6 and testability - no objections
+  - Andreas reads the R7 and testability  - no objections
+  - Andreas reads the R8 and testability - The recorded transaction fee should be submitted by Transaction Sender, not user.
+  - Andreas reads the R9 and testability - no objections
+  - Andreas reads the R10 and testability - Discussion about the testing environment - decided to remove the test word from the line of “An L2 system is up and running”
+  - Andreas reads the R11 and testability - remove ‘during 24hours’
+  - Andreas reads the R12 and testability - no objections
+  - Andreas reads the R13 and testability - no objections
+  - Andreas reads the R14 and testability - fix the last paragraph with “them”
+  - Andreas reads the R15 and testability - the same as R14
+  - Andreas reads the R16 and testability - same as R14
+  - Andreas reads the R17 and testability - no objections
+  - Andreas reads the R18 and testability - test steps - step 3 - should be fixed
+  - Andreas reads the R19 and testability - same as R14
+* The meeting ends
+
+
+## Meeting Wed, 31 May 2023, 7:00 am PT
+
+Canceled due to lack of attendance.
+
 ## Meeting Wed, 17 May 2023, 7:00 am PT
 
 Attending: Andreas Freund (EF), Nikolai Prokhorenko (Metis), Rami Husani (Metis), Kelvin Fichter (OP Labs), Anais Ofranc (EEA)
