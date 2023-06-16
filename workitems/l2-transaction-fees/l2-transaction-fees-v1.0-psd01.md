@@ -379,7 +379,7 @@ Preconditions:
 
 * The L2 must have a defined Base Fee.
 * There must be documentation available for the current Base Fee.
-* An L2 test instance is up and running.
+* An L2 instance is up and running.
 
 Test Steps:
 
@@ -407,7 +407,7 @@ Preconditions:
 
 * The L2 must have a defined Execution Fee.
 * There must be documentation available for the current Execution Fee.
-* An L2 test instance is up and running.
+* An L2 instance is up and running.
 
 Test Steps:
 
@@ -435,7 +435,7 @@ Preconditions:
 
 * The L2 must have a defined Base Fee and Execution Fee.
 * There must be documentation available for the current Priority Fee.
-* An L2 test system must be up and running.
+* An L2 system must be up and running.
 * An L2 user is configured.
 
 Test Steps:
@@ -444,7 +444,7 @@ Test Steps:
 2. Verify that the documentation includes the specific factors or criteria used to determine and set the Priority Fee.
 3. Verify that the documentation includes any relevant assumptions or dependencies that are used in the determination and setting of the Priority Fee.
 4. Verify that the documentation is up-to-date and accurate.
-5. An L2 test user sets a priority fee for a transaction.
+5. An L2 user sets a priority fee for a transaction.
 6. Verify that the set Priority Fee is correctly added to the Base Fee and Execution Fee to calculate the Transaction Fee.
 7. Verify that the calculated Transaction Fee matches the currently charged Transaction Fee for the set Priority Fee.
 
@@ -466,7 +466,7 @@ Note that L2 Operating Conditions refer to a combination of the current volume o
 
 Preconditions:
 
-* An L2 test system is up and running.
+* An L2 system is up and running.
 * The L2 must have a defined process for estimating a Transaction Fee based on varying Operating Conditions.
 * Operating Conditions must be measurable for the L2, including:
     * The current number of transactions waiting to be processed on the L2.
@@ -502,7 +502,7 @@ An L2 MUST record and provide access to the Transaction Fee that the Transaction
 
 Preconditions:
 
-* An L2 test system is up and running.
+* An L2 system is up and running.
 * The L2 must have a defined process for recording and storing the Transaction Fee included by the Transaction Sender.
 * A test Transaction must be available with a known Transaction Fee included by the Transaction Sender.
 
@@ -528,7 +528,7 @@ An L2 MUST record and provide access to the Transaction Fee that has been charge
 
 Preconditions:
 
-* An L2 test system is up and running.
+* An L2 system is up and running.
 * The L2 must have a defined process for calculating and recording the Transaction Fee charged to the Transaction Sender.
 * A test Transaction must be available with a known Transaction Fee charged to the Transaction Sender.
 
@@ -543,7 +543,7 @@ Test Steps:
 Test Passing Criteria:
 
 * The L2 must have calculated and recorded the Transaction Fee charged to the Transaction Sender.
-* The recorded Transaction Fee must be accessible by the user.
+* The recorded Transaction Fee must be accessible by the Transaction Sender.
 * The recorded Transaction Fee must match or is less than the Transaction Fee submitted by the Transaction Sender.
 
 #### **[R9]**
@@ -557,7 +557,7 @@ Transaction finality in the context of this document is defined as the condition
 Preconditions:
 
 * The L2 must have a defined process for calculating and recording the Transaction Fee charged to the Transaction Sender.
-* An L2 test system is up and running.
+* An L2 system is up and running.
 * A test Transaction must be available with a known, estimated Transaction Fee to be charged to the Transaction Sender.
 * The test environment must have finalized the test Transaction on the L2 according to the L2 finality conditions.
 
@@ -586,7 +586,7 @@ A Transaction Fee Refund in the context of this document is defined as the diffe
 Preconditions:
 
 * The L2 must have a defined process for calculating and recording the Transaction Fee charged to the Transaction Sender and the Transaction Fee Refund.
-* An L2 test system is up and running.
+* An L2 system is up and running.
 * A test Transaction must be available with a known Transaction Fee estimate to be charged to the Transaction Sender.
 * The test environment must have finalized the test Transaction on the L2 based on its finality conditions.
 
@@ -623,7 +623,7 @@ Test Steps:
 3. Query the L2 for a Transaction ID from the set of finalized test transactions.
 4. For a given Transaction ID, retrieve the Transaction ID, Transaction Fee, Transaction Fee components (Base Fee, Execution Fee, and Priority Fee), and Transaction Fee Refund (if applicable).
 5. Verify that the retrieved Transaction Fee, Transaction Fee components, and Transaction Fee Refund (if applicable) match the values recorded in the transaction confirmations.
-6. Repeat steps 3. through 5. for each Transaction ID in the set of test transactions at random time intervals during a 24 hour period for the entire test transaction set.
+6. Repeat steps 3. through 5. for each Transaction ID in the set of test transactions at random time intervals during the test for the entire test transaction set.
 
 Test Passing Criteria:
 
@@ -668,7 +668,7 @@ A Transaction Originator, a Transaction Sender and a Developer MUST be able to v
 
 Preconditions:
 
-* An L2 test instance is set up and running.
+* An L2 instance is set up and running.
 * A Transaction Originator, a Transaction Sender, and a Developer have access to the L2 and can interact with it.
 * The L2 provides a capability to estimate Transaction Fees based on current operating conditions and other relevant factors.
 
@@ -691,7 +691,7 @@ A Transaction Originator, a Transaction Sender and a Developer MUST be able to v
 
 Preconditions:
 
-* An L2 test instance is operational and available for use.
+* An L2 instance is operational and available for use.
 * The Transaction Originator, Transaction Sender, and Developer have access to the L2 and can view Transaction information.
 * At least one Direct Transaction has been submitted and processed on the L2.
 * The L2 has a defined method to notify L2 users that an L2 transaction has been processed.
@@ -708,7 +708,7 @@ Test Steps:
 Test Passing Criteria: The test passes if,
 
 * The Transaction Originator, Transaction Sender, or Developer can access the Transaction Fee and its components on the L2 after a Direct Transaction has been processed.
-* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components displayed to them before submitting the Direct Transaction.
+* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components displayed to the Transaction Originator, Transaction Sender, or Developer before submitting the Direct Transaction.
 * The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account.
 
 
@@ -737,7 +737,7 @@ Test Steps:
 Test Passing Criteria: The test passes if,
 
 * The Intermediary and Developer can access the Transaction Fee and its components on the L2 after a Meta Transaction has been processed.
-* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components displayed to them before submitting the Meta Transaction.
+* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components displayed to the Transaction Originator, Transaction Sender, or Developer before submitting the Meta Transaction.
 * The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account.
 
 #### **[R16]**
@@ -748,7 +748,7 @@ A Transaction Originator, a Transaction Sender and a Developer MUST be able to v
 
 Preconditions:
 
-* An L2 test instance is operational and available for use.
+* An L2 instance is operational and available for use.
 * The Transaction Originator, Transaction Sender, and Developer have access to the L2 and can view Transaction information.
 * At least one Direct Transaction has been submitted, processed and finalized on the L2.
 * The L2 has a defined method to notify L2 users that an L2 transaction has been finalized.
@@ -763,8 +763,8 @@ Test Steps:
 Test Passing Criteria: The test passes if,
 
 * The Transaction Originator, Transaction Sender, or Developer can access the Transaction Fee and its components on the L2 after a Direct Transaction has been finalized.
-* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components displayed to them before submitting the Direct Transaction.
-* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account, if applicable.
+* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components displayed to the Transaction Originator, Transaction Sender, or Developer before submitting the Direct Transaction.
+* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account.
 
 #### **[R17]**
 
@@ -791,7 +791,7 @@ Test Steps:
 Test Passing Criteria: The test passes if,
 
 * The Intermediary and Developer can access the Transaction Fee and its components on the L2 after a Meta Transaction has been finalized.
-* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components displayed to them before submitting the Meta Transaction.
+* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components displayed to the Transaction Originator, Transaction Sender, or Developer before submitting the Meta Transaction.
 * The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account.
 
 
@@ -803,7 +803,7 @@ If there is a Transaction Fee Refund, a Transaction Originator, a Transaction Se
 
 Preconditions:
 
-* An L2 test instance is operational and available for use.
+* An L2 instance is operational and available for use.
 * The Transaction Originator, Transaction Sender, and Developer have access to the L2 and can view Transaction information.
 * At least one Direct Transaction has been submitted, processed and finalized on the L2.
 * The L2 has a defined method to notify L2 users that an L2 transaction has been finalized.
@@ -812,13 +812,13 @@ Test Steps:
 
 1. The Transaction Originator, Transaction Sender, or Developer accesses the L2 to view the Transaction Fee and its components after a Direct Transaction has been finalized on the L2 using the Transaction ID from the transaction finalization confirmation notification from the L2.
 2. The Transaction Originator, Transaction Sender, or Developer verifies that they can see the Transaction Fee and its components, including the Base Fee, Execution Fee, Priority Fee.
-3. The Transaction Originator, Transaction Sender, or Developer verifies that the Transaction Fee and its components displayed on the L2 is less than the Transaction Fee and its components displayed to them before submitting the Direct Transaction.
+3. The Transaction Originator, Transaction Sender, or Developer verifies that the Transaction Fee and its components displayed on the L2 is equal to or less than the Transaction Fee and its components displayed to the Transaction Originator, Transaction Sender, or Developer before submitting the Direct Transaction.
 4. The Transaction Originator, Transaction Sender, or Developer verifies that the Transaction Fee and its components displayed on the L2 match the Transaction Fee and its components charged to the Transaction Sender's account.
 
 Test Passing Criteria: The test passes if,
 
 * The Transaction Originator, Transaction Sender, or Developer can access the Transaction Fee and its components on the L2 after a Direct Transaction has been finalized.
-* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components displayed to them before submitting the Direct Transaction.
+* The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components displayed to the Transaction Originator, Transaction Sender, or Developer before submitting the Direct Transaction.
 * The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account, if applicable.
 
 #### **[R19]**
@@ -846,7 +846,7 @@ Test Steps:
 Test Passing Criteria: The test passes if,
 
 * The Intermediary and Developer can access the Transaction Fee and its components on the L2 after a Meta Transaction has been finalized.
-* The Transaction Fee and its components displayed on the L2 are less than the Transaction Fee and its components displayed to them before submitting the Meta Transaction.
+* The Transaction Fee and its components displayed on the L2 are less than the Transaction Fee and its components displayed to the Intermediary and Develope before submitting the Meta Transaction.
 * The Transaction Fee and its components displayed on the L2 match the Transaction Fee and its components charged to the Transaction Sender's account.
 
 #### **[R20]**
@@ -857,7 +857,7 @@ An L2 MUST provide an Intermediary with a capability to display the Transaction 
 
 Preconditions:
 
-* A L2 test instance is operational and accessible.
+* A L2 instance is operational and accessible.
 * There is at least one Intermediary operating on the L2.
 * At least one L2 Meta Transaction has been submitted and processed on the L2.
 * The Intermediary can access the Transaction with its Transaction Fee and its Fee components.
@@ -887,7 +887,7 @@ If there is a Transaction Fee Refund, an L2 MUST provide an Intermediary with a 
 
 Preconditions:
 
-* An L2 test instance is deployed and running.
+* An L2 instance is deployed and running.
 * An Intermediary is operating on the L2 and has the necessary permissions to view Transaction Fee Refunds.
 * A set of L2 Meta Transactions has been submitted and processed on the L2, resulting in at least one Transaction Fee Refund.
 
@@ -915,7 +915,7 @@ A Transaction Originator, a Transaction Sender and a Developer MUST be able to v
 
 Preconditions:
 
-* An L2 test instance is live and operational.
+* An L2 instance is live and operational.
 * The Transaction Originator, Transaction Sender, and Developer have access to the L2.
 * The Fee Price calculation is based on the current Operating Condition of the L2.
 * A Fee Price Emulator that can accurately calculate a Fee Price based on current Operating Conditions on the L2. 
@@ -944,7 +944,7 @@ Every L2 Transaction MUST contain a Transaction Fee and its components.
 
 Preconditions:
 
-* An L2 test instance is set up and functional.
+* An L2 instance is set up and functional.
 * There is a user account on the L2 with the necessary permissions to submit a transaction.
 * There is a sufficient balance of funds available in the user's account to cover the transaction fee.
 
@@ -972,7 +972,7 @@ Every L2 Block MUST contain one or more L2 account addresses to which the accumu
 Preconditions:
 
 * The L2 protocol and its specifications have been implemented and tested.
-* An L2 test instance is set up and functional.
+* An L2 instance is set up and functional.
 * A set of L2 transactions have been created and finalized on the L2.
 
 Test steps:
@@ -997,7 +997,7 @@ Note, that it is not important why an L2 Transaction has been reverted before it
 
 Preconditions:
 
-* An L2 test instance is set up and functional.
+* An L2 instance is set up and functional.
 * There are at least two valid L2 Transactions that have not been finalized on the L2's Layer 1.
 * Each L2 Transaction has a valid Transaction Sender.
 * The L2 Transactions have Transaction Fees associated with them.
@@ -1028,7 +1028,7 @@ If an L2 Meta Transactions is reverted before it is finalized on the processing 
 
 Preconditions:
 
-* An L2 test instance is set up and available for testing.
+* An L2 instance is set up and available for testing.
 * A set of L2 Meta Transactions has been submitted by the Transaction Sender and processed on the L2.
 * Some of the L2 Meta Transactions have been reverted before being finalized on the L2's Layer 1.
 
