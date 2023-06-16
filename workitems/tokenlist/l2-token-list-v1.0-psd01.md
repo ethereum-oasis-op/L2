@@ -57,7 +57,7 @@ NA
 The document describes the minimal set of business and technical prerequisites, functional and non-functional requirements for a token list that when implemented ensures that two or more Layer 1, Layer 2, or Sidechains can identify tokens from different Layer 1, Layer 2, or Sidechains.
 
 #### Status:
-This document is under active development and implementers are advised against implementing the specification unless they are directly involved with L2 WG.
+This document is no longer under active development. The L2 WG is looking for implementers of the specification to move the specification to Full Project Specification.
 
 <!--
 was last revised or approved by Baseline, part of the Ethereum OASIS Open Project, on the above date. The level of approval is also listed above. Check the "Latest stage" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Open Project (OP) are listed at [TBD].
