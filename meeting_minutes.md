@@ -1,5 +1,11 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 28 June 2023, 7:00 am PT
+
+Attending: Anais Ofranc (EEA), Dan Shaw (EF), Andreas Freund (EF)
+
+Canceled due to lack of attendance.
+
 ## Meeting Wed, 14 June 2023, 7:00 am PT
 
 Attending: Andreas Freund (EF), Nikolai Prokhorenko (Metis), Kelvin Fichter (OP Labs), Anais Ofranc (EEA), Dan Shaw (EF)
