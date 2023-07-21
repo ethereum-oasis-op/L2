@@ -1,5 +1,41 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 12 July 2023, 7:00 am PT
+
+Attending: Andreas Freund (EF), Nikolai Prokhorenko (Metis), Anais Ofranc (EEA), Tas Dienes (EF), Jose Franco (Offchain Labs), Omar Azhar (Matter Labs)
+
+Agenda:
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review Open PRs (continue with PR #43 review on the Transaction Fee draft -- Testability Statement review R20 onwards)
+5. Review Open Issues
+6. Open Forum for other items
+
+Scribe: Tas Dienes
+
+Notes:
+* Andreas is resolving technical issues with format of EIP submission
+* Continuing review of transaction fee spec draft PR#43 testability statements - read by Andreas
+  * R20
+    * Test step 4 should read “less than the submitted process”
+    * Test step 6 should read “... the displayed Transaction fee… ”
+  * R21
+    * Test step 2 - Nikolia will think about improved wording
+    * Test step 8 should read “... view the displayed…”
+    * In all test steps, “transaction originator” should be replaced by “third party”
+  * R22 - no issues
+  * R23 - no issues
+  * R24 - no issues
+  * R25 - no issues
+  * D1 - should read “If an L2 Meta Transaction…”
+  * D2 - no issues
+  * R26 - no issues
+* Once updated and reviewed again, Andreas will create an EIP
+* WG will skip the next 3 meetings due to summer vacation/travel.  Next meeting is Sep 6.  
+* After summer break, the WG will work on the L2 data fee spec
+
+
 ## Meeting Wed, 28 June 2023, 7:00 am PT
 
 Attending: Anais Ofranc (EEA), Dan Shaw (EF), Andreas Freund (EF)
