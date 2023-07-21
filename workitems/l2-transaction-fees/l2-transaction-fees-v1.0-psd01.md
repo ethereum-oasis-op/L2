@@ -868,9 +868,9 @@ Test Steps:
 1. The Intermediary logs into their account on the L2.
 2. The Intermediary selects the L2 Meta Transaction they wish to view the Transaction Fee and its components for using the Transaction ID from the transaction processing confirmation notification from the L2.
 3. The L2 displays the Transaction Fee and its components of the selected L2 Meta Transaction to the Intermediary.
-4. The Intermediary verifies that the displayed Transaction Fee and its components match or are less than process the Transaction Fee and its components.
+4. The Intermediary verifies that the displayed Transaction Fee and its components match or are less than the submitted Transaction Fee and its components.
 5. The Intermediary attempts to display the Transaction Fee and its components of the selected L2 Meta Transaction to a 3rd party.
-6. The 3rd party verifies that it can view displayed Transaction Fee and its components match the Transaction Fee and its components for the Transaction ID of the Meta Transaction when accessed directly on the L2 using the Transaction ID.
+6. The 3rd party verifies that the displayed Transaction Fee and its components match the Transaction Fee and its components for the Transaction ID of the Meta Transaction when accessed directly on the L2 using the Transaction ID.
 
 Test Passing Criteria:
 
@@ -893,14 +893,14 @@ Preconditions:
 
 Test steps:
 
-1. The Intermediary sends a request to the L2 to display the Transaction Fee Refund of a specific L2 Meta Transaction using the Transaction ID from the transaction finalization confirmation notification from the L2..
+1. The Intermediary sends a request to the L2 to display the Transaction Fee Refund of a specific L2 Meta Transaction using the Transaction ID from the L2's transaction finalization confirmation notification.
 2. The L2 receives the request and verifies that the Intermediary has the necessary permissions to view Transaction Fee Refunds.
 3. The L2 retrieves the Transaction Fee Refund information for the requested L2 Meta Transaction.
 4. The L2 sends the Transaction Fee Refund information to the Intermediary.
 5. The Intermediary receives the Transaction Fee Refund information.
 6. The Intermediary verifies that the Transaction Fee Refund information matches the expected values based on the difference in the L2 Meta Transaction Transaction Fee between the submitted and finalized L2 Meta Transaction.
-7. The Intermediary displays the Transaction Fee Refund information to the Transaction Originator.
-8. The Transaction Originator verifies that it can view displayed Transaction Fee and its components match the Transaction Fee and its components for the Transaction ID of the Meta Transaction when accessed directly on the L2 using the Transaction ID.
+7. The Intermediary displays the Transaction Fee Refund information to the requesting 3rd party.
+8. The requesting 3rd party verifies that the displayed Transaction Fee and its components match the Transaction Fee and its components for the Transaction ID of the Meta Transaction when accessed directly on the L2 using the Transaction ID.
 
 Test Passing criteria:
 
@@ -1022,7 +1022,7 @@ Test Passing Criteria:
 
 #### **[D1]**
 
-If an L2 Meta Transactions is reverted before it is finalized on the processing L2's Layer 1 and the Transaction Originator has been charged the Transaction Fee by the Intermediary, the Transaction Fee in the reverted Meta Transaction SHOULD be refunded to the Transaction Originator by the Intermediary.
+If an L2 Meta Transaction is reverted before it is finalized on the processing L2's Layer 1 and the Transaction Originator has been charged the Transaction Fee by the Intermediary, the Transaction Fee in the reverted Meta Transaction SHOULD be refunded to the Transaction Originator by the Intermediary.
 
 [[D1]](#d1) Testability: 
 
