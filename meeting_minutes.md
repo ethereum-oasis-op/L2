@@ -1,5 +1,42 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 6 September 2023, 7:00 am PT
+
+Note: The WG was on summer hiatus from 12 July 2023 to 6 September 2023.
+
+Attending: Andreas Freund (EF), Dan Shaw (EF), Nikolai Prokhorenko (Metis), Anais Ofranc (EEA), Landon Gingerich (Matter Labs), Rami Husani (Metis), Shawn Rogers (Accenture)
+
+Agenda:
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review approvals on Transaction Fee spec and hopefully merge.
+5. Discuss L2 Data Fee issues and create a skeleton for the spec with the most important points that must be covered.
+6. Review Open Issues
+7. Open Forum for other items
+
+Scribe: Dan Shaw
+
+Notes:
+
+* Welcome Landon Gingerich from Matter Labs, standing in from Omar from here on out.
+* Review new work items
+  * Initial draft of the L2 transaction fee specification - https://github.com/eea-oasis/L2/pull/43
+    * Landon presented the transaction profile of zkSync Era and agrees with the need to standardize across other projects
+      * L1 Call Data, Gas Fee for Data Stored on the L2
+      * Suggestion made to standardize the calculation of base fees
+      * Additional discussion 
+      * Noted that zkSync Era works primarily on state differences
+    * Nikolai and Rami presented the Metis technical approach and will follow-up with more detail later after conferring with the team
+      * Does not include L2 data on L1
+      * Thinking about posting the data to L1 to support EIP 4844 or storing the data into the upcoming sequencer pool.
+    * Ideally we would have 2 gas prices, 1 for L2 and 1 for L1
+    * L1 data is estimated based on the size of the data
+    * Detailed notes on requirements captured from zkSync Era and Metis captured in issue: https://github.com/eea-oasis/L2/issues/48#issuecomment-1708539190
+* Meeting ended at 8:00am PT
+
+
 ## Meeting Wed, 12 July 2023, 7:00 am PT
 
 Attending: Andreas Freund (EF), Nikolai Prokhorenko (Metis), Anais Ofranc (EEA), Tas Dienes (EF), Jose Franco (Offchain Labs), Omar Azhar (Matter Labs)
