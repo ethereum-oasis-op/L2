@@ -46,3 +46,4 @@ Once your pull request has been approved by the required number of Maintainers, 
 |Metis |Pavel Sinelnikov |@psinelnikov |
 | Offchain Labs (Arbitrum) | Daniel Z Goldman | @DZGoldman |
 | Metis | Nikolai Prokhorenko | @0x000hx |
+| Matter Labs | Landon Gingerich | @lgingerich
