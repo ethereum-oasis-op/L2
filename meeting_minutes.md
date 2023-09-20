@@ -1,5 +1,38 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 20 September 2023, 7:00 am PT
+
+Attending: Andreas Freund (EF), Dan Shaw (EF), Nikolai Prokhorenko (Metis), Anais Ofranc (EEA), Landon Gingerich (Matter Labs), Daniel Goldman (Offchain Labs),  Rami Husani (Metis)
+
+Agenda:
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review approvals on Transaction Fee spec and hopefully merge.
+5. Discuss L2 Data Fee issues and create a skeleton for the spec with the most important points that must be covered.
+6. Review Open Issues
+7. Open Forum for other items
+
+Scribe: Anaïs Ofranc
+
+Notes:
+
+* Welcoming Attendees
+* Issue 48 - [L2 Data Transaction Fees](https://github.com/eea-oasis/L2/issues/48)
+* Daniel Goldman explained to the group how fees are calculated on Arbitrum
+* Daniel Goldman shared https://research.arbitrum.io/t/l1-calldata-data-pricing-sequencer-reimbursement-fee-pool-model/107 
+* Daniel Goldman shared https://docs.arbitrum.io/arbos/l1-pricing#adjusting-the-l1-gas-basefee 
+* Landon asked if data compression was used by Arbitrum from the start.
+* Daniel replied that data compression has been used since Nitro.
+* Landon shared the challenges faced by Matter Labs. He states that what Abritrum is doing would work for them.
+* The group discussed different fee models and mechanisms.
+* Andreas asked Daniel Goldman what he thinks should be standardized. They agreed that the questions of “how you charge” and the “moment when you charge” are very relevant here. 
+* With Arbitrum, you charge the fees as signed in the transaction at the beginning. Then surplus and deficit have to be handled differently, amortized over future users but some L2s do it differently and charge afterwards, after the batch has been posted on the L1 and could expose users to “unpleasant surprises”. 
+* Andreas explained that one approach could be to have two sets of requirements to address those two models.
+* Nikolai Prokhorenko shared the code showing how fees are calculated with Metis.
+* Andreas asked how this is handled when using account abstraction. How does the transaction fee get estimated ? Andreas suggests that it is in the same bucket as meta transactions, MEV pools and this is implementation specific.
+* Meeting adjounred
+
 ## Meeting Wed, 6 September 2023, 7:00 am PT
 
 Note: The WG was on summer hiatus from 12 July 2023 to 6 September 2023.
