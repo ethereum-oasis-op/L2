@@ -1,5 +1,41 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 18 October 2023, 7:00 am PT
+
+Attending: Andreas Freund (EF), Dan Shaw (EF), Daniel Goldman (Offchain Labs), Kelvin Fichter (OP Labs), Tas Dienes (EF), Matt Pearring (Offchain Labs), Shawn Rogers (Accenture)
+
+Agenda:
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review approvals on Transaction Fee spec and hopefully merge.
+5. Continue the discussion on the L2 Data Transaction Fee issue and continue with a skeleton for the spec with the most important points that must be covered.
+6. Review Open Issues
+7. Open Forum for other items
+
+Scribe: Dan Shaw
+
+Notes:
+- Welcoming Attendees
+- Review approvals on Transaction Fee spec
+- Daniel and Kelvin will complete their review after the meeting to signoff or comment, as needed
+- Kelvin will sign eCLA and PR as contributor
+- Review L2 Data Transaction Fee
+  - Kelvin to contribute Optimism approach
+  - Discussion of requirement that all fees be broken out
+  - Concerns were raised that this might be too limiting for a wallet UX as an example
+  - A wallet may choose to simplify display of the fee, but the breakdown is key to compliance in both Europe and the U.S. that require fees to end consumers to be transparent. The introduction of a gas price calculation were deemed out of scope
+  - A recommendation was made to make the requirement for L2 data transaction fee calculation algorithm or method verifiability more flexible
+  - Item 8: “The utilized L1 and L2 gas price SHOULD/MUST indicate if it was derived based on a calculation or a Gas Price Data Oracle, or a combination of both.” was left open for further discussion.
+  - Please review the 8 requirement in the Suggested set of initial requirements for the L2 Transaction Data Fee spec which will be merged soon
+- Meeting adjourned
+
+## Meeting Wed, 4 October 2023, 7:00 am PT
+
+Canceled due to lack of attendance.
+
+
 ## Meeting Wed, 20 September 2023, 7:00 am PT
 
 Attending: Andreas Freund (EF), Dan Shaw (EF), Nikolai Prokhorenko (Metis), Anais Ofranc (EEA), Landon Gingerich (Matter Labs), Daniel Goldman (Offchain Labs),  Rami Husani (Metis)
