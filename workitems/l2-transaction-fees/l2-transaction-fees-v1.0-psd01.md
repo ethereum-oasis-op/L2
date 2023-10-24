@@ -159,7 +159,7 @@ A transaction where the Transaction Originator is also the Transaction Sender.
 
 **Execution Fee:**
 
-A fee to be paid by the Transaction Originator or Transaction Sender sufficient to cover both the Layer 2 and Layer 1 transaction fees.
+A fee to be paid by the Transaction Originator or Transaction Sender sufficient to cover both the Layer 2 and Layer 1 transaction fees excluding a Base Fee, or a Priority Fee.
 
 An example calculation of such an Execution Fee is:
 $$L2\space Gas\space Limit + {L1\space Transaction\space Fee \over L2\space Gas\space Price}$$
@@ -208,13 +208,13 @@ A transaction where the Transaction Sender is not the Transaction Originator, an
 
 **Priority Fee:**
 
-To be paid by the Transaction Originator or Transaction Sender to a Layer 2 sequencer to obtain a desired slot for its transaction in a new block.
+Paid by the Transaction Originator or Transaction Sender to obtain a desired slot for its transaction in a new block.
 
 Note that the exact position of a transaction in a new block may be determined by factors such as time-stamp, or minimization of Maximal Extractable Value (MEV) of a block in addition to a Priority Fee.
 
 **Sequencer:**
 
-Collects transactions, publishes them in a batch to the Layer 1 on which the Layer 2 operates, receives transaction fees from the published transactions, pays Layer 2 fees to other Layer 2 protocol participants, and, if required, participates in a consensus algorithm with other sequencers to determine transaction  ordering in a Layer 2 block.
+Collects L2 transactions, publishes them in a batch to the Layer 1 on which the Layer 2 operates, and, if required, participates in a consensus algorithm with other sequencers to determine transaction ordering in a Layer 2 block. It may collect transaction fees from the published transactions, pay Layer 2 fees to other Layer 2 protocol participants, or distribute transaction fees to 3rd parties as designated.
 
 **Sidechain:**
 
@@ -300,8 +300,8 @@ In formula form the Transaction Fee is given as:
 The different components are defined as follows:
 
 * **Base Fee:** The minimum amount of Gas or an L2 gas equivalent unit of compute and storage consumption required to include a transaction on an L2.
-* **Execution Fee:** A fee to be paid by the Transaction Originator or Transaction Sender sufficient to cover both the L2 and Layer 1 transaction fees.
-* **Priority Fee:** To be paid by the Transaction Originator or Transaction Sender to an L2 sequencer to obtain a desired slot for its transaction in a new block. Note that the exact position of a transaction, a slot, in a new block may be determined by factors such as time-stamp, or minimization of Maximal Extractable Value (MEV) of a block in addition to a Priority Fee. And that MEV is defined as the maximum value that can be extracted from block production in excess of the standard block reward and gas fees by including, excluding, and changing the order of transactions in a block.
+* **Execution Fee:** A fee to be paid by the Transaction Originator or Transaction Sender sufficient to cover both the Layer 2 and Layer 1 transaction fees excluding a Base Fee, or a Priority Fee.
+* **Priority Fee:** Paid by the Transaction Originator or Transaction Sender to obtain a desired slot for its transaction in a new block. Note that the exact position of a transaction, a slot, in a new block may be determined by factors such as time-stamp, or minimization of Maximal Extractable Value (MEV) of a block in addition to a Priority Fee. And that MEV is defined as the maximum value that can be extracted from block production in excess of the standard block reward and gas fees by including, excluding, and changing the order of transactions in a block.
 
 Note that a Transaction Fee has a Transaction Fee Price which is defined in the context of this document as an L2 Gas price or a price of an L2 gas equivalent unit of compute and storage consumption.
 
