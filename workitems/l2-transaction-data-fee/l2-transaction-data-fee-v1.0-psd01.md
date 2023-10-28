@@ -1,8 +1,9 @@
 
-![EEA Logo](../l2-transaction-fees/images/eea-symbol.png)
+![EEA Logo](../l2-transaction-data-fee/images/eea-symbol.png)
 -------
 
-# L2 Token List Version 1.0
+# Layer 2 Transaction Data Fee Specification Version 1.0
+###### L2TFSPEC
 
 ## Project Specification Draft
 
@@ -32,7 +33,9 @@ Dan Shaw (daniel.shaw@ethereum.org), [Ethereum Foundation](https://ethereum.org)
 #### Editors:
 Kelvin Fichter (kelvin@optimism.io)\
 Andreas Freund (a.freundhaskel@gmail.com)\
+Landon Gingerich (lg@matterlabs.dev)\
 Daniel Goldman (dgoldman@offchainlabs.com)\
+Nikolai Prokhorenko (nikolai.p@metis.io)
 
 <!--
 #### Additional artifacts:
@@ -50,11 +53,11 @@ This specification replaces or supersedes:
 * Specifications replaced by this specification (include hyperlink, preferably to HTML format)
  -->
 
-NA
+[L2 Transaction Fee Specification](https://github.com/eea-oasis/L2/blob/main/workitems/l2-transaction-data-fee/l2-transaction-data-fee-v1.0-psd01.md) [Not yet the version from PR 43]
 
 
 #### Abstract:
-The document describes the minimal set of business and technical prerequisites, functional and non-functional requirements for Layer 2 Transaction Fees that when implemented ensures that Layer 2 solutions are transparently and consistently calculating and displaying transaction fees.
+The document describes the minimal set of business and technical prerequisites, functional and non-functional requirements for a Layer 2 Transaction Data Fee that when implemented ensures that Layer 2 solutions are transparently and consistently calculating and displaying a Layer 2 Transaction Data Fee.
 
 #### Status:
 This document is under active development and implementers are advised against implementing the specification unless they are directly involved with L2 WG.
@@ -71,7 +74,7 @@ The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SH
 #### Citation format:
 When referencing this specification the following citation format should be used:
 
-**[l2-transaction-fees-v1.0]** _Layer 2 Transaction Fees Version 1.0_. Edited by Kelvin Fichter, Andreas Freund, Daniel Goldman. 22 February 2023. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/l2-transaction-fees/l2-transaction-fees-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/l2-transaction-fees/l2-transaction-fees-v1.0-psd01.md.
+**[l2-transaction-data-fee-v1.0]** _Layer 2 Transaction Data Fee Version 1.0_. Edited by Kelvin Fichter, Andreas Freund, Landon Gingerich,Daniel Goldman, Nikolai Prokhorenko . 27 October 2023. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/l2-transaction-data-fee/l2-transaction-data-fee-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/l2-transaction-data-fee/l2-transaction-data-fee-v1.0-psd01.md.
 
 -------
 
@@ -91,7 +94,7 @@ For complete copyright information please see the Notices section in the Appendi
 &nbsp;&nbsp;&nbsp;&nbsp;[1.3 Typographical Conventions](#13-typographical-conventions) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.3.1	Requirement Ids](#131-requirement-ids) \
 [2 Concepts and Design](#2-concepts-and-design) \
-[3 Layer 2 Transaction Fees Specification](#3-layer-2-transaction-fees-specification) \
+[3 Layer 2 Transaction Data Fee Specification](#3-layer-2-transaction-data-fee-specification) \
 [4 Conformance](#4-conformance) \
 &nbsp;&nbsp;&nbsp;&nbsp;[4.1 Conformance Targets](#41-conformance-targets) \
 &nbsp;&nbsp;&nbsp;&nbsp;[4.2 Conformance Levels](#42-conformance-levels)\
@@ -109,6 +112,7 @@ For complete copyright information please see the Notices section in the Appendi
 
 -------
 # 1 Introduction
+###### L2TFSPECINTRO
 
 The L2 WG is an open-source initiative with a scope to
 - Identify and document the most relevant use cases and business requirements for Layer 2 and other Blockchain Scalability solutions for EVM compatible public blockchains
@@ -119,36 +123,56 @@ The L2 WG is an open-source initiative with a scope to
 The work is an [EEA Community Project](https://entethalliance.org/eeacommunityprojects/), which is managed by [OASIS](https://oasis-open-projects.org/).
 
 ## 1.1 Overview
+###### L2TFSPECOVERV
 
-TBD
+A Layer 2 (L2) Transaction Data Fee is a very large, variable and, therefore, crucial element of the L2 Execution Fee which in turn is typically the largest part of an L2 Transaction Fee. Yet how a Transaction Data Fee is derived varies greatly between L2 platforms, and is not separately displayed to any of the participants in L2 platforms.
+
+Given the above, the need for transparency in a open ecosystem to build trust, and the evolving legal and regulatory landscape around fee transparency and what type of fees can be charged, this document sets out to define an L2 Transaction data Fee and specify requirements around its derivation, transparency and visibility for L2 platforms.
 
 
 ## 1.2 Glossary
+###### L2TFSPECGLOS
+
+**Account:**
+
+A unit that is minimally comprised of a unique account identifier, a deterministic ordering parameter, also referred to as a nonce, a balance of a Layer 1, Layer 2 or Sidechain unit of exchange, also referred to as a protocol token. Changes to an account are controlled by a unique cryptographic public and private key pair. There are typically additional account elements referring to instructions and data associated to the account that determine account changes. 
+
+**Base Fee:**
+
+The minimum amount of gas or a Layer 2 gas equivalent unit of compute and storage consumption required to include a transaction on a Layer 2.  
 
 **Blockchain:**
 
 An open, distributed ledger that can record transactions between two parties efficiently and in a verifiable and permanent way.
 
-**Gas**
+**Developer:**
 
-Refers to the unit that measures the amount of computational and storage effort required to execute specific operations on an EVM-compatible network.
+An individual writing computer code for software applications that operate on a Layer 1, Layer 2 or Sidechain.
 
-**Fee Price**
+**Direct Transaction:**
+
+A transaction where the Transaction Originator is also the Transaction Sender.
+
+**Execution Fee:**
+
+A fee to be paid by the Transaction Originator or Transaction Sender sufficient to cover both the Layer 2 and Layer 1 transaction fees excluding a Base Fee, or a Priority Fee.
+
+An example calculation of such an Execution Fee is:
+$$L2\space Gas\space Limit + {L1\space Transaction\space Fee \over L2\space Gas\space Price}$$
+
+**Fee Price:**
 
 A Layer 2 gas price or a price of a Layer 2 gas equivalent unit of compute and storage consumption.
 
 Note that a gas price or a price of a Layer 2 gas equivalent unit of compute and storage consumption is typically variable and changes with the level of usage of a Layer 2 network. Note, that a gas price is expressed in Giga Wei (GWEI) for EVM-compatible networks, where Wei represents the smallest unit of gas; 1 Wei = 10<sup>-18</sup> Eth in Ethereum's native token.
 
-**Base Fee**
+**Gas:**
 
-The minimum amount of gas or a Layer 2 gas equivalent unit of compute and storage consumption required to include a transaction on a Layer 2.  
+Refers to the unit that measures the amount of computational and storage effort required to execute specific operations on an EVM-compatible network.
 
-**Execution Fee**
+**Intermediary:**
 
-A fee to be paid by the transaction originator sufficient to cover both the Layer 2 and Layer 1 transaction fees.
-
-An example calculation of such an Execution Fee is:
-$$L2\space Gas\space Limit + {L1\space Transaction\space Fee \over L2\space Gas\space Price}$$
+An entity that is the sender of a transaction for which it is not the Transaction Originator.
 
 **Layer 1:**
 
@@ -156,34 +180,78 @@ A base network, such as Bitcoin, or Ethereum, and its underlying infrastructure 
 
 **Layer 2:**
 
-A secondary framework or protocol that is built on top of an existing Layer 1 system in such a way that it inherits the security properties of the Layer 1 system while allowing for a higher transaction throughput that the Layer 1 system.
+A secondary framework or protocol that is built on top of an existing Layer 1 system in such a way that it inherits the security properties of the Layer 1 system while allowing for a higher transaction throughput than the Layer 1 system.
 
-**Maximal Extractable Value**
+**Layer 2 Operator:**
 
-Refers to the maximum value that can be extracted from block production in excess of the standard block reward and gas fees by including, excluding, and changing the order of transactions in a block.
+An entity responsible for the development and/or operation of a Layer 2 network or single Layer 2 network node, except for entities that only provide access to a Layer 2.
 
-**Priority Fee**
+**Layer 2 Block:**
 
-To be paid by the transaction originator to a Layer 2 sequencer to obtain a desired slot for its transaction in a new block.
+A Layer 2 data object stored on a Layer 1 and typically comprised of a set of Layer 2 Transactions or their compressed representations and/or a cryptographic representation of the Layer 2 State after applying the set of Layer 2 Transactions to the Layer 2 state. This Layer 2 data object is also cryptographically linked to the previous Layer 2 Block where the cryptographic link is derived using only the previous Layer 2 Block's data.
+
+**Layer 2 Operating Condition:** 
+
+A combination of the current volume of L2 transactions waiting to be processed on an L2 and all the transactions currently being processed on an L2.
+
+**Meta Transaction:**
+
+A transaction where the Transaction Sender is not the Transaction Originator, and the transaction fee for the Transaction Originator is different if the same transaction was a direct transaction.
+
+**Priority Fee:**
+
+Paid by the Transaction Originator or Transaction Sender to obtain a desired slot for its transaction in a new block.
 
 Note that the exact position of a transaction in a new block may be determined by factors such as time-stamp, or minimization of Maximal Extractable Value (MEV) of a block in addition to a Priority Fee.
 
-**Sequencer**
+**Sequencer:**
 
-Collects transactions, publishes them in a batch to the Layer 1 on which the Layer 2 operates, receives transaction fees from the published transactions, pays Layer 2 fees to other Layer 2 protocol participants, and, if required, participates in a consensus algorithm with other sequencers to determine transaction  ordering in a block.
-
+Collects L2 transactions, publishes them in a batch to the Layer 1 on which the Layer 2 operates, and, if required, participates in a consensus algorithm with other sequencers to determine transaction ordering in a Layer 2 block. It may collect transaction fees from the published transactions, pay Layer 2 fees to other Layer 2 protocol participants, or distribute transaction fees to 3rd parties as designated.
 
 **Sidechain:**
 
 A secondary blockchain connected to the main blockchain with a two-way peg and using its own trust assumptions.
 
-**Transaction Fee**
+**State:**
 
-The fee in a Layer 2 network or protocol token to be paid by a transaction originator comprised of the sum of a Base Fee, an Execution Fee and a Priority Fee.
+The set of all accounts on a Layer 2 that are mapped to one another using a cryptographic data structure.
+
+**State Transition:**
+
+An event that deterministically changes one or more accounts in the set of all accounts that comprise the complete state of a Layer 2.
+
+**Transaction:**
+
+A digitally signed message sent from a Layer 2 account that contains instructions and data that result in a Layer 2 state transition. 
+
+**Transaction Fee:**
+
+The fee in a Layer 2 network or protocol token to be paid by a transaction Originator or Transaction Sender comprised of the sum of a Base Fee, an Execution Fee and a Priority Fee.
+
+**Transaction Fee Refund:**
+
+The difference between the Transaction Fee that the Transaction Sender has included in the Transaction when sent to the Layer 2 and the Transaction Fee that has been charged to the Transaction Sender when a Transaction has been finalized on the Layer 2.
+
+**Transaction Data Fee:**
+The portion of the Execution fee in a Layer 2 (L2) network or protocol token to be paid by a Transaction Originator or Transaction Sender that is derived from the amount of L2 transaction data stored on the L1.
+
+**L1 Gas Price:**
+An L2 Gas price or a price of an L2 gas equivalent unit of compute and storage consumption based on L2 transaction data stored on the L1
+
+**Transaction Originator:**
+
+The account that created a transaction for a Layer 1, Layer 2, or Sidechain.
+
+**Transaction Sender:**
+
+The account that sent a transaction to a Layer 1, Layer 2, or Sidechain.
+
 
 ## 1.3 Typographical Conventions
+###### L2TFSPECTYPO
 
 ### 1.3.1 Requirement Ids
+###### L2TFSPECREQIDS
 
 A requirement is uniquely identified by a unique ID composed of its requirement level followed by a requirement number, as per convention **[RequirementLevelRequirementNumber]**. 
 There are four requirement levels that are coded in requirement ids as per below convention: 
@@ -196,25 +264,82 @@ Note that requirements are uniquely numbered in ascending order within each requ
 
 Example : It should be read that [R1] is an absolute requirement of the specification whereas [D1] is a recommendation and [O1] is truly optional.
 
-
 -------
 
 # 2 Concepts and Design
+###### L2TFSPECCONCEPT
 
-TBD
+To specify requirements about a L2 Transaction Data Fee, this document will first:
+
+* Define the meaning of an L2 Transaction Data Fee
+* Define requirements requirements on an L2 Transaction Data Fee and its relationships to L2 transaction fee types.
+
+Note, that all definitions can be found in the [Glossary](#12-glossary)
+
+The specification section will define requirements around Transaction Data Fee transparency, estimation, final amount, and how, when and where such a fee is communicated to different roles.
+
+## 2.1 Definition of an L2 Transaction Data Fee
+###### L2TFSPECDEF
+
+This document defines an L2 Transaction Data Fee as the portion of the Execution fee in a Layer 2 (L2) network or protocol token to be paid by a Transaction Originator or Transaction Sender that is derived from the amount of L2 transaction data stored on the L1.
+
+This documents follows the definitions of Transaction, Account, State and State Transition in [L2 Transaction Fee Specification](https://github.com/eea-oasis/L2/blob/main/workitems/l2-transaction-fees/l2-transaction-fees-v1.0-psd01.md). [Note: This is not yet the merged version of PR 43]
+
+Note that a Transaction Data Fee has an L1 Gas Price which is defined in the context of this document as an L2 Gas price or a price of an L2 gas equivalent unit of compute and storage consumption based on L2 transaction data stored on the L1.
+
+Note that a Gas price or a price of an L2 gas equivalent unit of compute and storage consumption is typically variable and changes with the level of usage of an L2/L1 network. Note that a gas price is expressed in Giga Wei (GWEI) for EVM-compatible networks, where Wei represents the smallest unit of gas; 1 Wei = 10<sup>-18</sup> Eth in Ethereum's native token.
+
+Furthermore, note that Gas in this document refers to the unit that measures the amount of computational and storage effort required to execute specific operations on an EVM-compatible network.
+
+## 2.2 Definition of L2 Roles relevant to an L2 Transaction Data Fee
+###### L2TFSPECDEFROLES
+
+This document follows the role definitions in the [L2 Transaction Fee Specification](https://github.com/eea-oasis/L2/blob/main/workitems/l2-transaction-fees/l2-transaction-fees-v1.0-psd01.md). [Note: This is not yet the merged version of PR 43]
+
+## 2.3 Definition of Transaction Types
+###### L2TFSPECDEFTTYPES
+
+This document follows the definitions of transaction types in the [L2 Transaction Fee Specification](https://github.com/eea-oasis/L2/blob/main/workitems/l2-transaction-fees/l2-transaction-fees-v1.0-psd01.md). [Note: This is not yet the merged version of PR 43]
 
 -------
 
-# 3 Layer 2 Transaction Fees Specification
+# 3 Layer 2 Transaction Data Fee Specification
+###### L2TFSPECSEC
 
-TBD
+#### **[R1]**
+An L2 Transaction Data Fee MUST be indicated to be part of the Execution Fee.
+
+#### **[R2]**
+An L2 Transaction Data Fee MUST be displayed separately from the Execution Fee.
+
+#### **[R3]**
+An L2 Transaction Data Fee MUST follow the same visibility, verification and transaction requirements as the Execution Fee for all L2 roles as specified in [L2 Transaction Fee Specification](https://github.com/eea-oasis/L2/blob/main/workitems/l2-transaction-data-fee/l2-transaction-data-fee-v1.0-psd01.md).
+
+#### **[R4]**
+An L2 Transaction Data fee calculation algorithm or method MUST be published and verifiable.
+
+#### **[R5]**
+The L1 Gas Price, the L1 gas cost, and the (estimated) data size of a transaction posted to the L1 as part of an L2 Transaction Data Fee derivation MUST be displayed as part of an L2 Transaction Data Fee.
+
+#### **[R6]**
+The L1 Gas Price calculation or method used in an L2 Transaction Data Fee derivation MUST be published and verifiable.
+
+#### **[R7]**
+The utilized L1 Gas Price MUST indicate if it was derived based on a calculation or a Gas Price Data Oracle, or a combination of both.
+
+#### **[R8]**
+If there is an L2 Transaction Data Fee Refund, it MUST follow the L2 Transaction Fee specification in [R18]() and [R19]()
 
 -------
 # 4 Conformance
 
+###### L2TFSPECCONF
+
 This section describes the conformance clauses and tests required to achieve an implementation that is provably conformant with the requirements in this document.
 
 ## 4.1 Conformance Targets
+
+###### L2TFSPECCONFT
 
 This document does not yet define a standardized set of test-fixtures with test inputs for all MUST, SHOULD, and MAY requirements with conditional MUST or SHOULD requirements. 
 
@@ -222,29 +347,37 @@ A standardized set of test-fixtures with test inputs for all MUST, SHOULD, and M
 
 ## 4.2 Conformance Levels
 
+###### L2TFSPECCONFL
+
 This section specifies the conformance levels of this standard. The conformance levels offer implementers several levels of conformance. These can be used to establish competitive differentiation.
 
-This document defines the conformance levels of Layer 2 Transaction Fees as follows:
+This document defines the conformance levels of an L2 Transaction Data Fee as follows:
 * **Level 1:** All MUST requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 * **Level 2:** All MUST and SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 * **Level 3:** All MUST, SHOULD, and MAY requirements with conditional MUST or SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 
-#### **[DX]** 
-A claim that a Layer 2 transaction fee implementation conforms to this specification SHOULD describe the testing procedure used to justify the claim.
+#### **[D1]** 
+A claim that an L2 Transaction Data Fee conforms to this specification SHOULD describe a testing procedure carried out for each requirement to which conformance is claimed, that justifies the claim with respect to that requirement.
 
-#### **[RX]** 
-A claim that a Layer 2 transaction fee conforms to this specification at **level 2** or higher MUST describe the testing procedure used to justify the claim.
+[[D1]](#d1) Testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, and can be described as required in [[D1]](#d1).
+
+#### **[R9]** 
+A claim that an L2 Transaction Data Fee conforms to this specification at **Level 2** or higher MUST describe the testing procedure carried out for each requirement at **Level 2** or higher, that justifies the claim to that requirement.
+
+[[R9]](#r9) Testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, be described, be built and implemented and results can be recorded as required in [[R9]](#r9).
 
 
 -------
 
 # Appendix A - References
+###### L2TFSPECAPA
 
 This appendix contains the normative and non-normative references that are used in this document. 
 
 While any hyperlinks included in this appendix were valid at the time of publication, OASIS cannot guarantee their long-term validity.
 
 ## A.1 Normative References
+###### L2TFSPECAPREFNORM
 
 The following documents are referenced in such a way that some or all of their content constitute requirements of this document.
 
@@ -253,21 +386,35 @@ The following documents are referenced in such a way that some or all of their c
 
 
 ## A.2 Non-Normative References
+###### L2TFSPECAPREFNONNORM
 
-TBD
+#### **[W3C-String-Meta]**
+
+Strings on the Web: Language and Direction Metadata, R. Ishida, A. Phillips, August 2022,
+https://www.w3.org/TR/string-meta/
 
 
 # Appendix B - Security Considerations
+###### L2TFSPECAPBSEC
 
-TBD
+There are no additional security requirements.
+
+It should be noted that any Layer 2 should have completed a security audit by a reputable security auditor and resolved all security issues before going to production.
 
 ## B.1 Data Privacy
+###### L2TFSPECAPBDP
 
 The standard does not set any requirements for compliance to jurisdiction legislation/regulations. It is the responsibility of the implementer to comply with applicable data privacy laws.
 
 ## B.2 Production Readiness 
+###### L2TFSPECAPBPR
 
 The standard does not set any requirements for the use of specific applications/tools/libraries etc. The implementer should perform due diligence when selecting specific applications/tools/libraries.
+
+## B.3 Internationalization and Localization Reference
+###### L2TFSPECAPBINT
+
+The standard encourages implementers to follow the [W3C "Strings on the Web: Language and Direction Metadata" best practices guide](#w3c-string-meta) for identifying language and base direction for strings used on the Web wherever appropriate. 
 
 <!--
 
@@ -284,6 +431,7 @@ We encourage editors and OP members concerned with this subject to read _Guideli
 -------
 
 # Appendix C - Acknowledgments
+###### L2TFSPECAPC
 <!--
 `(Note: A Work Product approved by the OP should include a list of people who participated in the development of the Work Product. This is generally done by collecting the list of names in this appendix. This list should be initially compiled by the Chair, and any Member of the OP may add or remove their names from the list by request. Remove this note before submitting for publication.)`
 -->
@@ -292,8 +440,11 @@ The following individuals have participated in the creation of this specificatio
 
 **Participants**:
 
-Daniel Goldman \
 Kelvin Fichter \
+Daniel Goldman \
+Landon Gingerich\
+Rami Husain\
+Nikolai Prokhorenko\
 Andreas Freund \
 ...
 
@@ -301,12 +452,14 @@ Andreas Freund \
 -------
 
 # Appendix D - Revision History
+###### L2TFSPECAPD
 
-Revisions made since the initial stage of this numbered Version of this document have been tracked on [Github](https://github.com/eea-oasis/L2/tree/main/workitems/l2-transaction-fees/l2-transaction-fees-v1.0-psd01.md).
+Revisions made since the initial stage of this numbered Version of this document have been tracked on [Github](https://github.com/eea-oasis/L2/tree/main/workitems/l2-transaction-data-fee/l2-transaction-data-fee-v1.0-psd01.md).
 
 -------
 
 # Appendix E - Notices
+###### L2TFSPECAPBE
 
 Copyright © OASIS Open 2022. All Rights Reserved.
 
