@@ -1,5 +1,30 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 1 November 2023, 7:00 am PT
+
+Attending: Andreas Freund (EF), Rami Housani(Metis), Daniel Goldman (Offchain Labs), Nikolai Prokhorenko (Metis), Tas Dienes (EF), Landon Gingerich (Matter Labs)
+
+Scribe: Nikolai Prokhorenko
+
+Agenda:
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review updates to the Layer 2 Transaction Fee Specification
+5. Review open comments on the Ethereum Layer 2 and Scalability Solutions for the Enterprise: An Update
+6. Review 1st draft of the L2 Transaction Data Fee spec
+7. Review Open Issues
+8. Open Forum for other items
+
+Notes:
+- Welcoming Attendees
+- Review of updated [L2 Transaction Fee Spec](github.com/eea-oasis/L2/pull/43) after new comments (no requirements changed, only definitions)
+- Andreas reviewd the comments on the document and resolved alost all of them based on completed editorial updates – Ethereum Layer 2 and Scalability Solutions and Enterprise V2
+    - Started review of the new table comparing characteristics of different L2 stacks and made updates where required. Review still ongoing
+    - David and Andreas discuss the term of Liveness and Data Availability Assumptions. Adding footnotes describing liveness and data availability in the L2 context
+- Meeting adjourned
+
+
 ## Meeting Wed, 18 October 2023, 7:00 am PT
 
 Attending: Andreas Freund (EF), Dan Shaw (EF), Daniel Goldman (Offchain Labs), Kelvin Fichter (OP Labs), Tas Dienes (EF), Matt Pearring (Offchain Labs), Shawn Rogers (Accenture)
