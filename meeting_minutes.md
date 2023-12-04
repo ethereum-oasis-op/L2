@@ -1,5 +1,38 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 29 November 2023, 7:00 am PT
+
+Attending: Andreas Freund (EF), Dan Shaw (EF), Daniel Goldman (Offchain Labs), Kelvin Fichter (OP Labs), Anais Ofranc (EEA), Landon Gingerich (Matter Labs)
+
+Agenda:
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review open comments on the Ethereum Layer 2 and Scalability Solutions for the Enterprise: An Update
+5. Review approvals to the Layer 2 Transaction Fee Specification, and merge if enough approvals are received
+6. Review 1st draft of the L2 Transaction Data Fee spec
+7. Review Open Issues
+8. Open Forum for other items
+
+Scribe: Dan Shaw
+
+Notes:
+- Welcoming Attendees
+- Review open comments on the Ethereum Layer 2 and Scalability Solutions for the Enterprise: An Update
+  - Andreas, Daniel, and Anais discussed the removal of two security characterisitcs that were unclear / difficult to understand. Decision was made to remove the two characteristics. No other changes or removals were identified in the security section.
+  - Daniel discussed the number of confirmations for state channels and it was decided to add a footnote 
+  - Andreas also mentioned that Omar had to respond to one open response item.
+  - Andreas discussed the pending tasks he needed to complete, including adding some footnotes and sending a reminder email for an approval. 
+- EIP Process Improvements and Partnership Possibilities
+  - Dan discussed proposed improvements to the EIP process to enhance understanding of standards and processes based on discussion with EIP editors at Devconnect 2023. He also suggested the possibility of partnerships with established partners such as Oasis. Andreas suggested using recent EIP submissions based on OASIS templates as a best practice for EIPs.
+- Roll Call Group Alignment
+  - Anais shared her experience with the inaugural roll call. Group discussed that the chairs should participate in the Roll Call discussions to ensure alignment between the two efforts.
+- Transaction Fee Terminology Discussion (PR #43)
+  - The WG discussed the terminology for transaction fees, particularly the difference between an execution fee and a data fee. The WG clarified that in their internal discussions, the execution fee includes both the base fee and priority, while the data fee is an additional component. It was decided to rename the base fee to the execution fee and to explicitly call out to the data fee. It was also discussed to add verbiage to the data fee to cover future data costs such as data availability. Andreas to update definitions accordingly in the PR
+- Data Fee Requirements (Draft PR #50) Integration into PR #43
+  - After discussion it was decided to close the draft PR and integrate data fee requirements into Pr #43 and send it out for reapproval, which he expected to accomplish by the end of the week or early next week.
+- Meeting adjourned
+
 ## Meeting Wed, 1 November 2023, 7:00 am PT
 
 Attending: Andreas Freund (EF), Rami Housani(Metis), Daniel Goldman (Offchain Labs), Nikolai Prokhorenko (Metis), Tas Dienes (EF), Landon Gingerich (Matter Labs)
