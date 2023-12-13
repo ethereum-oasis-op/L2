@@ -457,7 +457,9 @@ Test Passing Criteria:
 
 #### **[R6]**
 
-The L1 Gas Price and the L1 gas cost of an L2 transaction posted to the L1 and/or to a Data Availability capability as part of a Data Fee derivation MUST be displayed as part of a Data Fee.
+The L1 Gas Price charged by an L2 and the L1 gas cost of an L2 transaction posted to the L1 and/or to a Data Availability capability as part of a Data Fee derivation MUST be displayed as part of a Data Fee.
+
+Note that the L1 Gas Price charge by an L2 for an L2 transaction may deviate from the L1 Gas Price o the L1 at the time of the L2 transaction.
 
 [[R6]](#r6) Testability:
 
@@ -531,7 +533,7 @@ Passing Criteria:
 
 #### **[R9]**
 
-The L2 Gas Price and the L2 gas cost of an L2 transaction MUST be displayed as part of an Execution Fee.
+The L2 Gas Price as charged by an L2 and the L2 gas cost of an L2 transaction MUST be displayed as part of an Execution Fee.
 
 [[R9]](#r9) Testability:
 
