@@ -1,5 +1,34 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 13 December 2023, 7:00 am PT
+
+Attending: Andreas Freund (EF), Tas dienes (EF), Dan Shaw (EF), Declan Fox (ConsenSys), Kelvin Fichter (OP Labs), Anais Ofranc (EEA), Nikolai  (Matter Labs)
+
+Agenda:
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review and approve the Layer 2 Transaction Fee Specification, and merge if enough approvals are received
+5. Discuss overlap/collaboration with the Roll Call group (L2 technical group to create L2 EIPs (not gonna say RIP)
+6. Review Open Issues
+7. Open Forum for other items
+
+Scribe: Zoom AI with human edits by Andreas Freund
+
+Notes:
+- Andreas introduced a new AI bot for note taking and welcomed Declan, the product at Linea, to the meeting for the first time. Declan introduced himself. Anais mentioned that the L2 report will be published by Friday and shared across various platforms including social media and the EEA Newsletter. Andreas then moved on to discuss the topic of transaction fees.
+- Andreas explained the adjustments made to the transaction fee PR, including removing the base fee, introducing a new data fee and updating the definition of the execution fee. The priority fee definition was not changed. Andreas noted that these changes have not altered any roles or the definitions of transaction types. He also mentioned the addition of some new requirements R6 - R11. Declan, Kelvin and Nikolai confirmed their understanding of the changes.
+- Andreas and Declan discussed the display of gas prices and costs as part of a data fee for L1 transactions. It was agreed to include the gas price charged by L2 in the requirement (R6) and a note about potential discrepancies from the current L1 gas price. The testability statement was also reviewed, which involve verifying the display of L1 gas prices and costs in the data feed, with the passing criteria being accurate display of L1 gas and costs in the data feed.
+- Andreas and Declan discussed the implementation of tests to ensure compliance. Declan expressed concerns about maintaining compatibility and the potential for compatibility issues with various tooling, while Andreas suggested that breaking out specific fee components might be necessary, and would be up to wallet implementations. L2 would just have to ensure that the components were available for display.
+- The WG discussed the method for calculating gas prices in a data fee. The WG agreed on the need for a new L2 application to provide information on the utilized L1 gas price, including its derivation method. The WG also discussed the need to display the L2 gas cost as part of an execution fee.
+- Andreas requested the WG to review and approve the PR (#43). The WG also touched upon the potential overlap with the Roll Call group's discussions. Dan highlighted the importance of coordination and potential overlaps. There were early discussions about possible improvements to the EIP process with standards, but it was too early to determine its impact on their group.
+- Andreas proposed the idea of developing a purpose-built for key storage and identity management across different chains, especially rollups, as a next work item. He suggested that this could align with decentralized identity concepts already implemented in the W3C space. Andreas requested Kelvin, Declan, and Nikolai to consider this topic. Nikolai confirmed that their team is working on digital identity management, but they are more focused on physical key storage. Declan noted that the topic is still under discussion and wallets are currently leading the development. Kelvin, however, had not personally considered the issue. Andreas then announced that they would open an issue for further discussion. 
+- WG decided to cancel the working group call on the 27th and resume meetings in the New Year. 
+- Next Steps:
+  - Andreas will update the PR with the discussed changes.
+  - Andreas to open an issue on the new work item proposal.
+  - Declan and Kelvin will review and approve the PR.
+
 ## Meeting Wed, 29 November 2023, 7:00 am PT
 
 Attending: Andreas Freund (EF), Dan Shaw (EF), Daniel Goldman (Offchain Labs), Kelvin Fichter (OP Labs), Anais Ofranc (EEA), Landon Gingerich (Matter Labs)
