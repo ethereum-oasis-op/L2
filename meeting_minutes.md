@@ -1,8 +1,46 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 07 February 2024, 7:00 am PT
+
+Attending: Andreas Freund (EF), Dan Shaw (EF), Daniel Goldman (Offchain Labs), Kelvin Fichter (OP Labs), Landon Gingerich (Matter Labs)
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Organizational Update from the EEA
+5. Update from the last RollCall breakout session in transaction fee markets
+6. Review our previous discussions on our next work item, and, hopefully, come to a decision on the next work item
+7. Review Open Issues
+8. Open Forum for other items
+
+Scribe: Zoom AI with human edits by Andreas Freund
+
+Notes:
+- Enterprise Ethereum Alliance Leadership Change and Contract Dissolution
+  Andreas Freund and Dan Shaw discussed organizational updates, particularly the leadership change and budget restructuring within the Enterprise Ethereum Alliance (EEA). They also touched on the likely dissolution of the EA's contract with OASIS, which has implications for the hosting of their working group's repository. Dan expressed openness to new members taking on chair roles and noted that there is no immediate need for changes in the working group's operations, except for potential future branding adjustments. Andreas Freund confirmed that he would share any significant updates from the upcoming OASIS Project Governance Board (PGB) meeting with the team.
+- Report from Last RollCall Meeting: Feasibility of L2 Transaction Fee Markets
+  Andreas Freund discussed the feasibility of a fee market with futures and options, which could potentially lead to fee stability and predictability for L2s and their users. He suggested that builders could hedge their exposure through the futures market. Andreas Freund also relayed a conversation with Declan from the Linea team about their plans to create a L2 Transaction Fee API, and that it would be good to start the standardization process now.
+- L2 Transaction Fee API Standardization for Wallet Integration Proposed
+  Andreas Freund proposed the creation of a standardized L2 Transaction Fee API interface compliant with the current :2 Transaction Fee spec for wallets to pull in. The team discussed the potential benefits of such a standardized interface, which could simplify integration and potentially reduce issues. Daniel confirmed that the target of standardization would be the interface. Kelvin suggested focusing on the transaction type, but Andreas Freund pointed out that answers to this are not yet ready due to variability in the L2 designs. Landon agreed with the proposal, suggesting that setting up standardization would save a lot of potential issues. Andreas Freund suggested posting the idea in the roll call channel to see if there were people who wanted to contribute directly.
+- WG Planning
+  Andreas will create a new L2 Github issue and socialize it in the RollCall Telegram channel about standardizing an API for L2 transaction fee components and invite everyone to contribute their thoughts.  
+
+
+## Meeting Wed, 24 January 2024, 7:00 am PT
+
+Canceled due to lack of attendance.
+
+## Meeting Wed, 10 January 2024, 7:00 am PT
+
+Canceled due to lack of attendance.
+
+## Meeting Wed, 27 December 2023, 7:00 am PT
+
+Canceled due to holiday season.
+
 ## Meeting Wed, 13 December 2023, 7:00 am PT
 
-Attending: Andreas Freund (EF), Tas dienes (EF), Dan Shaw (EF), Declan Fox (ConsenSys), Kelvin Fichter (OP Labs), Anais Ofranc (EEA), Nikolai  (Matter Labs)
+Attending: Andreas Freund (EF), Tas dienes (EF), Dan Shaw (EF), Declan Fox (ConsenSys), Kelvin Fichter (OP Labs), Anais Ofranc (EEA), Nikolai  (Metis)
 
 Agenda:
 1. Welcome, and a reminder of the WG meeting rule
