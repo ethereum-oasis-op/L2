@@ -1,5 +1,36 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 21 February 2024, 7:00 am PT
+
+Attending: Andreas Freund (EF), Dan Shaw (EF), Derek (Offchain Labs), Landon Gingerich (Matter Labs)
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review of 1st draft of L2 Transaction Fee API spec
+5. Review Open Issues
+6. Open Forum for other items
+
+Scribe: Zoom AI with human edits by Andreas Freund
+
+Notes:
+
+- Welcome
+- New Participant Introduction: Derek from Offchain Labs
+- L2 Transaction Fee API Specification Proposal Discussion
+  - WG proceeded to review the first draft of a proposal for an L2 transaction fee API spec, which is an open API 3.0 compliant specification with two endpoints. One endpoint estimates a proposed L2 transaction fee based on a transaction, while the other is for the actual L2 transaction fee charged after transaction submission.
+  - WG discussed the definition and usage of the priority field in the API, and discussed making the priority field optional such that application developers can either respond with either one fee if a priority is specified or with a range of fee options if it is null or not specified. 
+  - WG agreed that if the currency is not specified, the default value should be the gas unit of account of the target chain.
+  - Andreas emphasized the importance of transparency in gas pricing and the inclusion of specific fields in the gas price calculation. He clarified that these fields would help L2 operators comply with regulatory transparency requirements, especially those set by the Federal Trade Commission. 
+  - Andreas and Landon discussed the data fee and execution fee, and how they are structured. Landon raised a concern about the distinction between transaction posted to the L1 and corresponding data posted to one or more data availability layers. Andreas proposed the idea of making the data fee an array with an additional fee, if the target is one or more data availability layers apart from the L1. No final decision was made on the topic to allow other WG participants to weigh in.
+  - Andreas discussed the structure of the priority fee, which has the same structure as the execution fee, data fee, and an L2 priority gas price. The L2 gas price may be the same as the L2 priority gas price, but it may also differ. Andreas also explained the second endpoint, the L2 transaction fee for a submitted transaction. Andreas proposed adding a transaction status field to the response body, which Landon agreed would be beneficial. 
+  - Andreas concluded by suggesting to make editorial updates, add a new version to the issue, and revisit it in two weeks for further input before finalizing it into a spec document.
+- Project Status, Co-Chair Departure, and Github Contribution
+  - Dan informed the WG that the project governing board decided to maintain the status quo for a few more months until at least the end of May. He also shared his personal news about leaving the EF at the end of March to work on other ecosystem projects, and he plans to step down as Co-Chair. A search for potential co-chairs is underway. Andreas invited Derek to add himself as a contributor on Github.
+- Next steps:
+  - Andreas will update the spec based on the discussion and add a new proposal version.
+
+
 ## Meeting Wed, 07 February 2024, 7:00 am PT
 
 Attending: Andreas Freund (EF), Dan Shaw (EF), Daniel Goldman (Offchain Labs), Kelvin Fichter (OP Labs), Landon Gingerich (Matter Labs)
