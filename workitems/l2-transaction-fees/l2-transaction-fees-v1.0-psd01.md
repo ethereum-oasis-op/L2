@@ -34,6 +34,7 @@ Dan Shaw (daniel.shaw@ethereum.org), [Ethereum Foundation](https://ethereum.org)
 Kelvin Fichter (kelvin@optimism.io)\
 Andreas Freund (a.freundhaskel@gmail.com)\
 Daniel Goldman (dgoldman@offchainlabs.com)\
+Nikolai Prokhorenko (nikolai.p@metis.io)\ 
 
 <!--
 #### Additional artifacts:
@@ -1310,7 +1311,7 @@ The following individuals have participated in the creation of this specificatio
 Daniel Goldman \
 Kelvin Fichter \
 Andreas Freund \
-...
+Nikolai Prokhorenko \
 
  
 -------
