@@ -1,0 +1,327 @@
+openapi: 3.0.0
+info:
+  title: Layer 2 Transaction Fees APIs
+  version: 1.0.0
+paths:
+  /l2transactionfeeestimate:
+    post:
+      summary: Calculate an estimated L2 transaction fee based on a proposed transaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - transactionCall
+                - chainId
+              properties:
+                transactionCall:
+                  type: object
+                  required:
+                    - from
+                    - to
+                    - input
+                    - value
+                  properties:
+                    from:
+                      type: string
+                      description: The address the transaction is sent from.
+                      example: "0x1234567890abcdef1234567890abcdef12345678"
+                    to:
+                      type: string
+                      description: The address the transaction is directed to.
+                      example: "0x9876543210fedcba9876543210fedcba98765432"
+                    gas:
+                      type: integer
+                      description: The gas provided for the transaction execution.
+                      example: 21000
+                    gasPrice:
+                      type: integer
+                      description: The gasPrice used for each paid gas.
+                      example: 1000000000
+                    value:
+                      type: integer
+                      description: The value sent with this transaction.
+                      example: 1000000000000000000
+                    input:
+                      type: string
+                      description: Hash of the method signature (1st 4 bytes) and encoded parameters as a byte array. See example of setAddress(0xabcdef1234567890abcdef1234567890abcdef12)
+                      example: "e30081a0000000000000000000000000abcdef1234567890abcdef1234567890abcdef12"
+                transactionPriority:
+                  type: string
+                  enum: [high, medium, low]
+                  default: Null
+                  description: The priority of the transaction. Defaults to 'Null' if not specified, and allows the application provider to return an array of priority fees based on L2 specific definition of a priority such as high, medium, or low.
+                  example: "high"
+                currency:
+                  type: string
+                  enum: [GigaWei, ETH, USD]
+                  default: Null
+                  description: The currency in which the fees should be expressed. Defaults to 'Null' if not specified setting the currency to the gas unit of account in the respective L2 such as GigaWei.
+                  example: "ETH"
+                chainId:
+                  type: number
+                  description: The unique identifier of the blockchain network where the transaction is intended to be processed.
+                  example: 1
+      responses:
+        '200':
+          description: Transaction fee calculated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - executionFee
+                  - dataFee
+                  - priorityFee
+                  - totalL2TranactionFee
+                properties:
+                  totalL2TranactionFee:
+                    type: object
+                    required:
+                      - value_currency
+                      - value_gas
+                    properties:
+                      value_currency:
+                        type: number
+                        example: 0.00054
+                      value_gas:
+                        type: number
+                        example: 27000
+                    description: Total estimated transaction fee based on the submitted transaction, as the sum of execution, data and priority fee expressed in the requested currency and estimated gas units.
+                  executionFee:
+                    type: object
+                    required:
+                      - value_currency
+                      - value_gas
+                      - l2GasPrice
+                    properties:
+                      value_currency:
+                        type: number
+                        example: 0.00042
+                      value_gas:
+                        type: number
+                        example: 21000
+                      l2GasPrice:
+                        type: number
+                        example: 20
+                        description: The Layer 2 gas price, expressed in GigaWei. 
+                      l2GasPriceDerivationMethod:
+                        type: string
+                        description: The method used to derive the L2 gas price.
+                      l2GasPriceDerivationMethodDescription:
+                        type: string
+                        description: Description of the L2 gas price derivation method.
+                      l2GasPriceDerivationMethodSource:
+                        type: string
+                        format: uri
+                        description: The source of information for the L2 gas price derivation method. 
+                    description: Estimated execution fee based on the transaction, expressed in the requested currency and estimated gas units.
+                  dataFee:
+                    type: object
+                    required:
+                      - value_currency
+                      - value_gas
+                      - l1GasPrice
+                    properties:
+                      value_currency:
+                        type: number
+                        example: 0.00002
+                      value_gas:
+                        type: number
+                        example: 1000
+                    l1GasPrice:
+                      type: number
+                      example: 100
+                      description: The Layer 1 gas price, expressed in GigaWei.
+                    l1GasPriceDerivationMethod:
+                        type: string
+                        description: The method used to derive the L1 gas price.
+                    l1GasPriceDerivationMethodDescription:
+                      type: string
+                      description: Description of the L1 gas price derivation method.
+                    l1GasPriceDerivationMethodSource:
+                      type: string
+                      format: uri
+                      description: The source of information for the L1 gas price derivation method.  
+                    description: Estimated data fee based on the transaction, expressed in the requested currency and estimated gas units.
+                  priorityFee:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - priority
+                        - value_currency
+                        - value_gas
+                        - l2PriorityGasPrice
+                      properties:
+                        priority:
+                          type: string
+                          example: high
+                        value_currency:
+                          type: number
+                          example: 0.0001
+                        value_gas:
+                          type: number
+                          example: 5000
+                        l2PriorityGasPrice:
+                          type: number
+                          example: 20
+                          description: The Layer 2 gas price, expressed in GigaWei.
+                        l2PriorityGasPriceDerivationMethod:
+                          type: string
+                          description: The method used to derive the L2 priority gas price.
+                        l2PriorityGasPriceDerivationMethodDescription:
+                          type: string
+                          description: Description of the L2 priority gas price derivation method.
+                        l2PriorityGasPriceDerivationMethodSource:
+                          type: string
+                          format: uri
+                          description: The source of information for the L2 priority gas price derivation method.
+                      description: Suggested priority fee based on transaction priority, expressed in the requested currency and estimated gas units.
+  /l2transactionfee:
+    get:
+      summary: Get the L2 transaction fee based on a transaction hash
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - transactionHash
+                - chainId
+              properties:
+                transactionHash:
+                      type: string
+                      description: The hash of an L2 transaction
+                      example: "0x1234567890abcdef1234567890abcdef12345678"
+                currency:
+                  type: string
+                  enum: [GigaWei, ETH, USD]
+                  default: Null
+                  description: The currency in which the fees should be expressed. Defaults to 'Null' if not specified setting the currency to the gas unit of account in the respective L2 such as GigaWei.
+                chainId:
+                  type: number
+                  description: The unique identifier of the blockchain network where the transaction is intended to be processed.
+                  example: 1
+      responses:
+        '200':
+          description: L2 Transaction fee successfully retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - transactionStatus
+                  - totalL2TranactionFee
+                  - executionFee
+                  - dataFee
+                  - priorityFee
+                properties:
+                 transactionStatus:
+                    type: string
+                    example: Confirmed  
+                    description: The processing status of a submitted transaction specific to each L2.
+                 totalL2TranactionFee:
+                    type: object
+                    required:
+                      - value_currency
+                      - value_gas
+                    properties:
+                      value_currency:
+                        type: number
+                        example: 0.00054
+                      value_gas:
+                        type: number
+                        example: 27000
+                    description: Total transaction fee based on the submitted transaction hash, as the sum of execution, data, and priority fee expressed in the requested currency and estimated gas units.
+                  executionFee:
+                    type: object
+                    required:
+                      - value_currency
+                      - value_gas
+                      - l2GasPrice
+                    properties:
+                      value_currency:
+                        type: number
+                        example: 0.00042
+                      value_gas:
+                        type: number
+                        example: 21000
+                      l2GasPrice:
+                        type: number
+                        example: 20
+                        description: The Layer 2 gas price, expressed in GigaWei. 
+                      l2GasPriceDerivationMethod:
+                        type: string
+                        description: The method used to derive the L2 gas price.
+                      l2GasPriceDerivationMethodDescription:
+                        type: string
+                        description: Description of the L2 gas price derivation method.
+                      l2GasPriceDerivationMethodSource:
+                        type: string
+                        format: uri
+                        description: The source of information for the L2 gas price derivation method. 
+                    description: The execution fee charged, expressed in the requested currency and estimated gas units.
+                  dataFee:
+                    type: object
+                    required:
+                      - value_currency
+                      - value_gas
+                      - l1GasPrice
+                    properties:
+                      value_currency:
+                        type: number
+                        example: 0.00002
+                      value_gas:
+                        type: number
+                        example: 1000
+                    l1GasPrice:
+                      type: number
+                      example: 100
+                      description: The Layer 1 gas price, expressed in GigaWei.
+                    l1GasPriceDerivationMethod:
+                        type: string
+                        description: The method used to derive the L1 gas price.
+                    l1GasPriceDerivationMethodDescription:
+                      type: string
+                      description: Description of the L1 gas price derivation method.
+                    l1GasPriceDerivationMethodSource:
+                      type: string
+                      format: uri
+                      description: The source of information for the L1 gas price derivation method.  
+                    description: Data fee charged, expressed in the requested currency and estimated gas units.
+                  priorityFee:
+                    type: object
+                    required:
+                      - priority
+                      - value_currency
+                      - value_gas
+                      - l2PriorirtyGasPrice
+                    properties:
+                      priority:
+                        type: string
+                        example: High
+                      value_currency:
+                        type: number
+                        example: 0.0001
+                      value_gas:
+                        type: number
+                        example: 5000
+                      l2PriorityGasPrice:
+                        type: number
+                        example: 20
+                        description: The Layer 2 gas price, expressed in GigaWei.
+                      l2PriorityGasPriceDerivationMethod:
+                        type: string
+                        description: The method used to derive the L2 priority gas price.
+                      l2PriorityGasPriceDerivationMethodDescription:
+                        type: string
+                        description: Description of the L2 priority gas price derivation method.
+                      l2PriorityGasPriceDerivationMethodSource:
+                        type: string
+                        format: uri
+                        description: The source of information for the L2 priority gas price derivation method.     
+                    description: Priority Fee charged, expressed in the requested currency and estimated gas units.
