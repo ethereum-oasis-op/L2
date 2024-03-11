@@ -1,5 +1,29 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 6 March 2024, 7:00 am PT
+
+Attending: Andreas Freund (EF), Dan Shaw (EF), Kelvin Fichter (Optimism)
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Review of updated draft of L2 Transaction Fee API spec
+5. Review Open Issues
+6. Open Forum for other items
+
+Scribe: Andreas Freund
+
+Notes:
+
+- Welcome.
+- No new participants.
+- Review of updated draft of L2 Transaction Fee API spec
+  - Kelvin expressed concerns about data properties such as `currency` other than GigWei and ETH since it would not be native to a client. Furthermore, Kelvin expressed doubts that if the API spec deviates too much from current supported formats that adoption would be impacted.
+  - Andreas pointed out that most data properties in the spec are already available on a client, and are either already exposed or can be relatively easily exposed. However, Andreas agreed that adoption is key.
+  - Lengthy discussion revolved around strategies to solicit a wider ecosystem feedback. It was agreed that Andreas would get in touch with Ansgar from the EF RollCall to request a RollCall breakout session for an L2 Transaction Fee API spec discussion to start eliciting feedback from client teams on the spec as a next step besides posting it again in the RollCall Telegram channel. Kevin agreed to co-present the proposal.
+  - Meeting adjourned.
+  - **Action Item:** Andreas to contact Ansgar to get a breakout session on the books.  
+
 ## Meeting Wed, 21 February 2024, 7:00 am PT
 
 Attending: Andreas Freund (EF), Dan Shaw (EF), Derek (Offchain Labs), Landon Gingerich (Matter Labs)
