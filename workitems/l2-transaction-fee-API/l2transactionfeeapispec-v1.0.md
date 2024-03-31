@@ -254,7 +254,6 @@ paths:
                   type: object
                   required:
                     - from
-                    - to
                     - input
                     - value
                   properties:
@@ -290,7 +289,7 @@ paths:
                   example: "high"
                 currency:
                   type: string
-                  enum: [GigaWei, ETH, USD]
+                  enum: [GigaWei, ETH, Native Token, Fiat Currency]
                   default: Null
                   description: The currency in which the fees should be expressed. Defaults to 'Null' if not specified setting the currency to the gas unit of account in the respective L2 such as GigaWei.
                   example: "ETH"
@@ -433,9 +432,10 @@ paths:
                       example: "0x1234567890abcdef1234567890abcdef12345678"
                 currency:
                   type: string
-                  enum: [GigaWei, ETH, USD]
+                  enum: [GigaWei, ETH, Native Token, Fiat Currency]
                   default: Null
                   description: The currency in which the fees should be expressed. Defaults to 'Null' if not specified setting the currency to the gas unit of account in the respective L2 such as GigaWei.
+                  example: "ETH"
                 chainId:
                   type: number
                   description: The unique identifier of the blockchain network where the transaction is intended to be processed.
