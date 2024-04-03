@@ -83,6 +83,7 @@ For complete copyright information please see the Notices section in the Appendi
 -------
 
 # Table of Contents
+
 [1 Introduction](#1-introduction) \
 &nbsp;&nbsp;&nbsp;&nbsp;[1.1 Overview](#11-overview) \
 &nbsp;&nbsp;&nbsp;&nbsp;[1.2 Glossary](#12-glossary) \
@@ -562,7 +563,7 @@ paths:
 
 #### **[R1]** 
 
-The `/l2transactionfeeestimate` and `/l2transactionfee` API endpoints MUST have a request body, and return a response body and an HTTP code.
+The `/l2transactionfeeestimate` and `/l2transactionfee` API endpoints MUST have a request body, and return a response body with an HTTP code.
 
 [[R1]](#r1) Testability: ...
 
@@ -572,16 +573,18 @@ The `/l2transactionfeeestimate` and `/l2transactionfee` API endpoints MUST have 
 
 **Request Parameters:**
 
-The `transactionCall` API request body MUST follow the requirements below:
+The L2 Transaction Fee Estimation API request body has the following requirements:
+- `chainId`: MUST be a positive integer and a valid, publicly accessible and verifiable 'chainId'.
+
+For the `transactionCall` obbject 
   - `from`: MUST be a valid blockchain address.
   - `to`: MUST be a valid blockchain address.
   - `gas`: MUST be a positive integer.
   - `gasPrice`: MUST be a positive number.
-  - `value`: MUST be a numeric value.
+  - `value`: MUST be a non-negative numeric value.
   - `input`: MUST be a valid hexadecimal string.
-- `transactionPriority`: MUST be one of "high," "medium," or "low."
-- `currency`: MUST be a valid currency code (e.g., GigaWei, ETH, USD).
-- `chainId`: MUST be a positive integer and a valid, publicly accessible and verifiable 'chainId'.
+- `transactionPriority`: MUST be one of a set of priority levels as defined by the L2 that provides the API implementation.
+- `currency`: MUST be a valid currency code of either GigaWei or ETH, or as defined by the L2 that provides the API implementation.
 
 [[R2]](#r2) Testability: ...
 
@@ -589,7 +592,7 @@ The `transactionCall` API request body MUST follow the requirements below:
 
 **Response Parameters:**
 
-The API response body parameters MUSt follow the requirements below:
+The L2 Transaction Fee Estimation API response body parameters have the following requirements:
 - `totalL2TransactionFee`:
   - `value_currency`: MUST be a non-negative numeric value.
   - `value_gas`: MUST be a non-negative numeric value.
@@ -623,9 +626,10 @@ The API response body parameters MUSt follow the requirements below:
 #### **[R4]**
 
 **Request Parameters:**
-The request body follows the requirements below:
-- `transactionHash`: MUST be a non-empty valid transaction hash.
-- `currency`: MUST be a valid currency code (e.g., GigaWei, ETH, USD).
+
+The L2 Transaction Fee API request body has the following requirements:
+- `transactionHash`: MUST be a non-empty hexadecimal string.
+- `currency`: MUST be a valid currency code of either GigaWei or ETH, or as defined by the L2 that provides the API implementation.
 - `chainId`: MUST be a positive integer and a valid, publicly accessible and verifiable 'chainId'.
 
 [[R4]](#r4) Testability: ...
@@ -634,8 +638,8 @@ The request body follows the requirements below:
 
 #### **[R5]**
 
-The response body follows the requirements below:
-- `transactionStatus`: MUST be one of "success," "pending," or "failed."
+The L2 Transaction Fee API response body has the following requirements:
+- `transactionStatus`: MUST be one of "confirmed", "pending", or "failed".
 - `totalL2TransactionFee`:
   - `value_currency`: MUST be a non-negative numeric value.
   - `value_gas`: MUST be a non-negative numeric value.
@@ -688,12 +692,12 @@ This document defines the conformance levels of L2 Transaction Fee API as follow
 * **Level 3:** All MUST, SHOULD, and MAY requirements with conditional MUST or SHOULD requirements are fulfilled by a specific implementation as proven by a test report that proves in an easily understandable manner the implementation's conformance with each requirement based on implementation-specific test-fixtures with implementation-specific test-fixture inputs.
 
 #### **[D1]** 
-A claim that a Transaction Fee conforms to this specification SHOULD describe a testing procedure carried out for each requirement to which conformance is claimed, that justifies the claim with respect to that requirement.
+A claim that an L2 Transaction Fee API conforms to this specification SHOULD describe a testing procedure carried out for each requirement to which conformance is claimed, that justifies the claim with respect to that requirement.
 
-[[D1]](#d1) Testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, and can be described as required in [[D2]](#d2).
+[[D1]](#d1) Testability: Since each of the conformance target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, and can be described as required in [[D1]](#d1).
 
 #### **[R6]** 
-A claim that a L2 Transaction Fee API conforms to this specification at **Level 2** or higher MUST describe the testing procedure carried out for each requirement at **Level 2** or higher, that justifies the claim to that requirement.
+A claim that an L2 Transaction Fee API conforms to this specification at **Level 2** or higher MUST describe the testing procedure carried out for each requirement at **Level 2** or higher, that justifies the claim to that requirement.
 
 [[R6]](#r6) Testability: Since each of the non-conformance-target requirements in this documents is testable, so must be the totality of the requirements in this document. Therefore, conformance tests for all requirements can exist, be described, be built and implemented and results can be recorded as required in [[R6]](#r6).
 
