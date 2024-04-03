@@ -1,5 +1,32 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 20 March 2024, 7:00 am PT
+
+Attending: Andreas Freund (EF), Kelvin Fichter (Optimism), Carlos Matallana (Polygon zkEVM), Kevaundray Wedderburn
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Organization Update on EEA-OASIS Community Projects
+5. Continued Review of updated draft of L2 Transaction Fee API spec
+6. Review Open Issues
+7. Open Forum for other items
+
+Scribe: Andreas Freund
+
+Notes:
+- Welcome.
+- New participants introduction: Carlos Matallana (Polygon zkEVM) and Kevaundray Wedderburn
+- Organization Update on EEA-OASIS Community Projects: Andreas gave an update summarizing that there are no real changes for the WG except the changing of the URLs for the WG's Github repo (EEA -> Ethereum) and the removal of the EEA logo. Rest stays as-is.
+- Transaction Fee API Spec Review:
+  - Andreas reviewed the new requirements document (not yet a PR since testability statements are still missing since requirements have not yet finally been agreed upon)
+  - Discussed the concerns raised by Kelvin before about the currency data property as not readily supportable by client teams. Carlos liked the addition of currency to improve UX and since it is optional it should not impact clients teams too much. Carlos suggested to extend the enumeration on values to include native tokens.
+  - Kelvin, Carlos and Andreas discussed the to addition of a custom extension to the `transactionCall` object to accommodate new transactions types such as blob transactions. Kelvin suggested to have the `transactionCall` object be just an RLP encoded string of the transaction to be estimated. Carlos suggested that this would break the current commonly adopted schema for gas estimation and clients already have the capability to do the RLP encoding. Hence, no need to give it an RLP encoding as long as the `input` property is properly structured and encoded. 
+  - Andreas reviewed the rest of the spec without any relevant comments.
+  - WG agreed that the spec needs more eyes on it, especially from the RollCall group. Andreas said that he had reached out to one of the chairs (Ansgar Diderich) to schedule a RollCall breakout session to discuss the spec with the client teams.
+  - No more items to be discussed. Meeting adjourned
+
+
 ## Meeting Wed, 6 March 2024, 7:00 am PT
 
 Attending: Andreas Freund (EF), Dan Shaw (EF), Kelvin Fichter (Optimism)

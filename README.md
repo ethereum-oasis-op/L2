@@ -58,6 +58,7 @@ The WG primarily uses slack for real time communications. You can join our slack
 - [A DeFi Conundrum: L2s are Awesome but not yet for Real Financial Assets](https://entethalliance.org/a-defi-conundrum-l2s-are-awesome-but-not-yet-for-real-financial-assets/)
 
 - [The Current State of Layer 2 Bridges](https://entethalliance.org/2023-02-28-state-of-l2-bridges/)
+- [Ethereum Layer 2 and Scalability Solutions for the Enterprise: An Update](https://entethalliance.org/wp-content/uploads/2023/12/ethereum_layer2_scalability_solutions_2023-12-21.pdf)
 
 ### Content from Other Sources
 
