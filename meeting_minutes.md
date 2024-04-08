@@ -1,5 +1,35 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 3 April 2024, 7:00 am PT
+
+Attending: Andreas Freund (EF), Derek (Offchain Labs), Landon Gingerich (Matter Labs), Carlos (Coinbase)
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Discuss new discussion draft of article and WG feedback
+5. Review of updated draft of the L2 Transaction Fee API spec including review a draft of the full spec with requirements (PR#53)
+6. Review Open Issues
+7. Open Forum for other items
+
+Scribe: Zoom AI with human edits by Andreas Freund
+
+Notes:
+- Welcome
+- No new participants
+- New L2 WG Article Review
+  - Andreas discussed intent, structure and content of the article draft.
+  - WG requires more time for review but intent and direction of the article is good, and agreed-upon.
+  - Review of updated draft of the L2 Transaction Fee API spec:
+    - Andreas walked through the spec and explained the changes that were proposed and implemented based on previous feedback. He also walked through the specification structure as mandated by OASIS and why this particular structure is required.
+    - The WG agreed that the spec is good so far with some minor editorial updates. Testability statements can be added to the PR.
+    - Andreas updated the group on the proposed RollCall breakout session on the API spec. He had not heard anything back from Ansgar at the EF.
+- Action Items:
+  - WG to continue reviewing the article draft and the spec.
+  - Andreas to add testability statements before the next WG meeting.
+  - Andreas to follow-up with Ansgar on breakout session.
+- Meeting adjourned.
+
 ## Meeting Wed, 20 March 2024, 7:00 am PT
 
 Attending: Andreas Freund (EF), Kelvin Fichter (Optimism), Carlos Matallana (Polygon zkEVM), Kevaundray Wedderburn
@@ -12,7 +42,7 @@ Attending: Andreas Freund (EF), Kelvin Fichter (Optimism), Carlos Matallana (Pol
 6. Review Open Issues
 7. Open Forum for other items
 
-Scribe: Andreas Freund
+Scribe: Zoom AI with human edits by Andreas Freund
 
 Notes:
 - Welcome.
