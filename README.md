@@ -1,4 +1,4 @@
-# Welcome to the EEA Community L2 Project
+# Welcome to the Ethereum OASIS L2 Project
 ### Also known as the Technical Specification of Layer 2 Blockchain Scalability Solutions for Ethereum Virtual Machine Compatible Public Blockchains Project
 
 <br></br>
@@ -24,11 +24,11 @@ Layer 2 scalability solutions are not to be confused with the OSI model Layer 2 
 
 ## Interested to participate?
 
-Learn how to join and contribute [here](https://github.com/eea-oasis/L2/blob/main/CONTRIBUTING.md).
+Learn how to join and contribute [here](https://github.com/ethereum-oasis-op/L2/blob/main/CONTRIBUTING.md).
 
 ## Project Work Items
 
-The current work items the WG is focusing on is in the [Work Item folder](https://github.com/eea-oasis/L2/blob/main/workitems) and in this GitHub's open [issues](https://github.com/eea-oasis/L2/issues) section.
+The current work items the WG is focusing on is in the [Work Item folder](https://github.com/ethereum-oasis-op/L2/tree/main/workitems) and in this GitHub's open [issues](https://github.com/ethereum-oasis-op/L2/issues) section.
 
 ## WG Meetings
 
@@ -36,7 +36,7 @@ The WG currently meets every other Wednesday at 7 am PT / 10 am ET / 16:00 GMT.
 
 Please, reach out to Andreas Freund (a.freundhaskel@gmail.com) or Tas Dienes (tas.dienes@ethereum.org) or Dan Shaw (dshaw@ethereum.org) to be added to the meeting invite. You can add yourself to the mailing list by sending an email to this email -- eea-cp-l2+subscribe@lists.oasis-open-projects.org --, if interested to participate.
 
-The meeting minutes of all meetings can be found [here](https://github.com/eea-oasis/L2/blob/main/meeting_minutes.md)
+The meeting minutes of all meetings can be found [here](https://github.com/ethereum-oasis-op/L2/blob/main/meeting_minutes.md).
 
 ## WG Communications 
 
@@ -44,11 +44,11 @@ The WG primarily uses slack for real time communications. You can join our slack
 
 ## Key WG Documents
 
-* [Charter](https://github.com/eea-oasis/L2/blob/main/docs/charter.md)
-* [Governance](https://github.com/eea-oasis/L2/blob/main/docs/governance.md)
-* [Code of Conduct](https://github.com/eea-oasis/L2/blob/main/docs/Code_of_Conduct.md)
-* [Running Meeting Minutes](https://github.com/eea-oasis/L2/blob/main/meeting_minutes.md)
-* [Working Group Glossary of Terms Used](https://github.com/eea-oasis/L2/blob/main/docs/working-group-standards-glossary.md)
+* [Charter](https://github.com/ethereum-oasis-op/L2/blob/main/docs/charter.md)
+* [Governance](https://github.com/ethereum-oasis-op/L2/blob/main/docs/governance.md)
+* [Code of Conduct](https://github.com/ethereum-oasis-op/L2/blob/main/docs/Code_of_Conduct.md)
+* [Running Meeting Minutes](https://github.com/ethereum-oasis-op/L2/blob/main/meeting_minutes.md)
+* [Working Group Glossary of Terms Used](https://github.com/ethereum-oasis-op/L2/blob/main/docs/working-group-standards-glossary.md)
 
 ## WG Media Content and related Other Sources
 
