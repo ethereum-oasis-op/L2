@@ -565,7 +565,22 @@ paths:
 
 The `/l2transactionfeeestimate` and `/l2transactionfee` API endpoints MUST have a request body, and return a response body with an HTTP code.
 
-[[R1]](#r1) Testability: ...
+[[R1]](#r1) Testability: 
+
+**Test Preconditions:**
+1. L2 stack API endpoints `/l2transactionfeeestimate` and `/l2transactionfee` are accessible.
+2. The L2 stack is deployed and operational.
+3. Proper authentication credentials, if required, are available.
+
+**Test Steps:**
+1. Send a request to the `/l2transactionfeeestimate` endpoint with a valid request body containing transaction details.
+2. Verify that the endpoint returns a response body with an appropriate HTTP status code.
+3. Inspect the response body to ensure it contains the expected data related to transaction fee estimation.
+4. Repeat steps 1-3 for the `/l2transactionfee` endpoint.
+
+**Passing Criteria:**
+1. The `/l2transactionfeeestimate` endpoint returns a response body with an HTTP status code, and the response body contains the expected data for transaction fee estimation.
+2. The `/l2transactionfee` endpoint returns a response body with an HTTP status code, and the response body contains the expected data for transaction fee retrieval.
 
 ### POST /l2transactionfeeestimate
 
@@ -586,7 +601,31 @@ For the `transactionCall` obbject
 - `transactionPriority`: MUST be one of a set of priority levels as defined by the L2 that provides the API implementation.
 - `currency`: MUST be a valid currency code of either GigaWei or ETH, or as defined by the L2 that provides the API implementation.
 
-[[R2]](#r2) Testability: ...
+[[R2]](#r2) Testability:
+
+**Test Preconditions:**
+1. Access to the L2 Transaction Fee Estimation API endpoint.
+2. Proper authentication credentials, if required, are available.
+
+**Test Steps:**
+1. Prepare a request body with the following fields:
+   - `chainId`: A positive integer representing a valid, publicly accessible, and verifiable 'chainId'.
+   - `transactionCall` object containing:
+     - `from`: A valid blockchain address.
+     - `to`: A valid blockchain address.
+     - `gas`: A positive integer representing gas.
+     - `gasPrice`: A positive number representing gas price.
+     - `value`: A non-negative numeric value.
+     - `input`: A valid hexadecimal string.
+   - `transactionPriority`: One of the priority levels defined by the L2.
+   - `currency`: A valid currency code representing either GigaWei or ETH.
+
+**Passing Criteria:**
+1. The request body is correctly structured with all required fields.
+2. The `chainId` field is a positive integer and points to a valid, publicly accessible, and verifiable 'chainId'.
+3. The `transactionCall` object fields (`from`, `to`, `gas`, `gasPrice`, `value`, `input`) conform to their respective requirements.
+4. The `transactionPriority` field matches one of the priority levels defined by the L2.
+5. The `currency` field is a valid currency code representing either GigaWei or ETH, or as defined by the L2.
 
 #### **[R3]** 
 
@@ -619,7 +658,46 @@ The L2 Transaction Fee Estimation API response body parameters have the followin
     - `l2PriorityGasPriceDerivationMethodDescription`: MUST be a non-empty string.
     - `l2PriorityGasPriceDerivationMethodSource`: MUST be a non-empty string formatted as URI.
 
-[[R3]](#r3) Testability: ...
+[[R3]](#r3) Testability:
+
+**Test Preconditions:**
+1. Access to the L2 Transaction Fee Estimation API endpoint.
+2. A valid request with appropriate parameters sent to the API.
+
+**Test Steps:**
+1. Receive the API response containing parameters:
+   - `totalL2TransactionFee` object with:
+     - `value_currency`: A non-negative numeric value.
+     - `value_gas`: A non-negative numeric value.
+   - `executionFee` object with:
+     - `value_currency`: A non-negative numeric value.
+     - `value_gas`: A non-negative numeric value.
+     - `l2GasPrice`: A non-negative numeric value.
+     - `l2GasPriceDerivationMethod`: A non-empty string.
+     - `l2GasPriceDerivationMethodDescription`: A non-empty string.
+     - `l2GasPriceDerivationMethodSource`: A non-empty string formatted as URI.
+   - `dataFee` object with:
+     - `value_currency`: A non-negative numeric value.
+     - `value_gas`: A non-negative numeric value.
+     - `l1GasPrice`: A non-negative numeric value.
+     - `l1GasPriceDerivationMethod`: A non-empty string.
+     - `l1GasPriceDerivationMethodDescription`: A non-empty string.
+     - `l1GasPriceDerivationMethodSource`: A non-empty string formatted as URI.
+   - `priorityFee` array with each object containing:
+     - `priority`: A non-empty string.
+     - `value_currency`: A non-negative numeric value.
+     - `value_gas`: A non-negative numeric value.
+     - `l2PriorityGasPrice`: A non-negative numeric value.
+     - `l2PriorityGasPriceDerivationMethod`: A non-empty string.
+     - `l2PriorityGasPriceDerivationMethodDescription`: A non-empty string.
+     - `l2PriorityGasPriceDerivationMethodSource`: A non-empty string formatted as URI.
+
+**Passing Criteria:**
+1. Each parameter in the API response meets the specified requirements.
+2. All numeric values are non-negative.
+3. All strings are non-empty.
+4. URI strings are properly formatted.
+5. The `priorityFee` array contains objects with all required fields.
 
 ### GET /l2transactionfee
 
@@ -632,7 +710,24 @@ The L2 Transaction Fee API request body has the following requirements:
 - `currency`: MUST be a valid currency code of either GigaWei or ETH, or as defined by the L2 that provides the API implementation.
 - `chainId`: MUST be a positive integer and a valid, publicly accessible and verifiable 'chainId'.
 
-[[R4]](#r4) Testability: ...
+[[R4]](#r4) Testability:
+
+**Test Preconditions:**
+1. Access to the L2 Transaction Fee API endpoint.
+2. A valid request with appropriate parameters sent to the API.
+
+**Test Steps:**
+1. Send a request to the L2 Transaction Fee API endpoint with a request body containing:
+   - `transactionHash`: A non-empty hexadecimal string.
+   - `currency`: A valid currency code (e.g., GigaWei or ETH) or as defined by the L2.
+   - `chainId`: A positive integer representing a valid, publicly accessible and verifiable 'chainId'.
+
+**Passing Criteria:**
+1. The API request is successfully processed.
+2. The request body contains the specified parameters.
+3. `transactionHash` is a non-empty hexadecimal string.
+4. `currency` is a valid currency code.
+5. `chainId` is a positive integer and represents a valid, publicly accessible, and verifiable 'chainId'.
 
 **Response Parameters:**
 
@@ -665,7 +760,45 @@ The L2 Transaction Fee API response body has the following requirements:
   - `l2PriorityGasPriceDerivationMethodDescription`: MUST be a non-empty string.
   - `l2PriorityGasPriceDerivationMethodSource`: MUST be a non-empty string formatted as URI.
 
-[[R5]](#r5) Testability: ...
+[[R5]](#r5) Testability:
+
+**Test Preconditions:**
+1. Sent a valid request to the L2 Transaction Fee API endpoint.
+2. Received a response from the API.
+
+**Test Steps:**
+1. Parse the response body received from the L2 Transaction Fee API.
+2. Verify that the following fields exist and meet the specified requirements:
+   - `transactionStatus`: Must be one of "confirmed", "pending", or "failed".
+   - `totalL2TransactionFee`:
+     - `value_currency`: Must be a non-negative numeric value.
+     - `value_gas`: Must be a non-negative numeric value.
+   - `executionFee`:
+     - `value_currency`: Must be a non-negative numeric value.
+     - `value_gas`: Must be a non-negative numeric value.
+     - `l2GasPrice`: Must be a non-negative numeric value.
+     - `l2GasPriceDerivationMethod`: Must be a non-empty string.
+     - `l2GasPriceDerivationMethodDescription`: Must be a non-empty string.
+     - `l2GasPriceDerivationMethodSource`: Must be a non-empty string formatted as URI.
+   - `dataFee`:
+     - `value_currency`: Must be a non-negative numeric value.
+     - `value_gas`: Must be a non-negative numeric value.
+     - `l1GasPrice`: Must be a non-negative numeric value.
+     - `l1GasPriceDerivationMethod`: Must be a non-empty string.
+     - `l1GasPriceDerivationMethodDescription`: Must be a non-empty string.
+     - `l1GasPriceDerivationMethodSource`: Must be a non-empty string formatted as URI.
+   - `priorityFee`:
+     - `value_currency`: Must be a non-negative numeric value.
+     - `value_gas`: Must be a non-negative numeric value.
+     - `l2PriorityGasPrice`: Must be a non-negative numeric value.
+     - `l2PriorityGasPriceDerivationMethod`: Must be a non-empty string.
+     - `l2PriorityGasPriceDerivationMethodDescription`: Must be a non-empty string.
+     - `l2PriorityGasPriceDerivationMethodSource`: Must be a non-empty string formatted as URI.
+
+**Passing Criteria:**
+1. The API response is successfully received.
+2. All required fields exist in the response body.
+3. The values of each field meet the specified requirements.
 
 # 4 Conformance
 
