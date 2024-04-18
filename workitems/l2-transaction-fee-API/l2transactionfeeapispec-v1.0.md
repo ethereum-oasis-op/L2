@@ -124,7 +124,7 @@ Layer 2 (L2) Transaction Fees are a crucial element of financing the operations 
 
 Given the above, the need for transparency in a open ecosystem to build trust, and the evolving legal and regulatory landscape around fee transparency and what type of fees can be charged, this document sets out to define an Application Programmable Interface (API) based on existing [L2 Transaction Fees Specification](https://github.com/eea-oasis/L2/tree/main/workitems/l2-transaction-fees/l2-transaction-fees-v1.0-psd01.md) to allow ecosystem participants .
 
-Note, that APIs for fees associated with asset and data bridges between L2 platforms as well as between L2 platforms and centralized exchanges are beyond the scope of this document.
+Note, that APIs for fees associated with asset and data bridges between L2 platforms as well as between L2 platforms and centralized exchanges are beyond the scope of this document. Further note, while this API is in scope for an entity submitting EIP-2771-type transactions, or EIP-4337-type transactions to a Layer 2, often called a Relayer, the API is out of scope for the entity submitting EIP-2771-type or EIP-4337-type transaction requests to a Relayer.   
 
 
 ## 1.2 Glossary
@@ -175,6 +175,12 @@ Paid by the Transaction Originator or Transaction Sender to obtain a desired slo
 
 Note that the exact position of a transaction in a new block may be determined by factors such as time-stamp, or minimization of Maximal Extractable Value (MEV) of a block in addition to a Priority Fee.
 
+**Relayer:**
+
+An entity receiving EIP-2771-type and EIP-4337-type transaction requests, bundling them into one or more L2 transactions, and submitting those transaction to an L2 on behalf of the requesters.
+
+Note, that Relayers are typically organized into their own Relayer network.
+
 **Transaction:**
 
 A digitally signed message sent from a Layer 2 account that contains instructions and data that result in a Layer 2 state transition. 
@@ -220,6 +226,7 @@ The fees are broken down into `executionFee` (the cost of executing the transact
 ###### L2TFSPECSEC
 
 The specification of the L2 Transaction Fee API has two sections:
+
 - Layer 2 Transaction Fee API Data Schema
 - Layer 2 Transaction Fee Transparency Requirements
 
@@ -305,9 +312,9 @@ paths:
                   - executionFee
                   - dataFee
                   - priorityFee
-                  - totalL2TranactionFee
+                  - totalL2TransactionFee
                 properties:
-                  totalL2TranactionFee:
+                  totalL2TransactionFee:
                     type: object
                     required:
                       - value_currency
@@ -446,7 +453,7 @@ paths:
                 type: object
                 required:
                   - transactionStatus
-                  - totalL2TranactionFee
+                  - totalL2TransactionFee
                   - executionFee
                   - dataFee
                   - priorityFee
@@ -455,7 +462,7 @@ paths:
                     type: string
                     example: Confirmed  
                     description: The processing status of a submitted transaction specific to each L2.
-                 totalL2TranactionFee:
+                 totalL2TransactionFee:
                     type: object
                     required:
                       - value_currency
@@ -530,7 +537,7 @@ paths:
                       - priority
                       - value_currency
                       - value_gas
-                      - l2PriorirtyGasPrice
+                      - l2PriorityGasPrice
                     properties:
                       priority:
                         type: string

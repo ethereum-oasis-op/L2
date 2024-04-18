@@ -74,9 +74,9 @@ paths:
                   - executionFee
                   - dataFee
                   - priorityFee
-                  - totalL2TranactionFee
+                  - totalL2TransactionFee
                 properties:
-                  totalL2TranactionFee:
+                  totalL2TransactionFee:
                     type: object
                     required:
                       - value_currency
@@ -215,7 +215,7 @@ paths:
                 type: object
                 required:
                   - transactionStatus
-                  - totalL2TranactionFee
+                  - totalL2TransactionFee
                   - executionFee
                   - dataFee
                   - priorityFee
@@ -224,7 +224,7 @@ paths:
                     type: string
                     example: Confirmed  
                     description: The processing status of a submitted transaction specific to each L2.
-                 totalL2TranactionFee:
+                 totalL2TransactionFee:
                     type: object
                     required:
                       - value_currency
@@ -299,7 +299,7 @@ paths:
                       - priority
                       - value_currency
                       - value_gas
-                      - l2PriorirtyGasPrice
+                      - l2PriorityGasPrice
                     properties:
                       priority:
                         type: string
