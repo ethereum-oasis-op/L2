@@ -1,5 +1,4 @@
 
-![EEA Logo](../l2-transaction-fees/images/eea-symbol.png)
 -------
 
 # Layer 2 Transaction Fee Specification Version 1.0
@@ -25,7 +24,7 @@ https://docs.oasis-open.org/baseline/baseline-core/v1.0/baseline-core-v1.0.pdf
 URI list end (commented out except during publication by OASIS TC Admin) -->
 
 #### Open Project:
-[Layer 2 Working Group](https://github.com/eea-oasis/L2), an initiative of [EEA Community Projects](https://entethalliance.org/eeacommunityprojects/)
+[Layer 2 Working Group](https://github.com/eea-oasis/L2), an initiative of [Ethereum Community Projects](https://entethalliance.org/eeacommunityprojects/)
 
 #### Project Chair:
 Dan Shaw (daniel.shaw@ethereum.org), [Ethereum Foundation](https://ethereum.org), Andreas Freund (a.freundhaskel@gmail.com), [Ethereum Foundation](https://ethereum.org)  
@@ -119,7 +118,7 @@ The L2 WG is an open-source initiative with a scope to
 - For EVM compatible public blockchains, identify, document, and devise solution approaches for Layer 2 Blockchain scalability solution specific challenges such as MEV, block (gas) limits, TVL concentration, etc.
 - Identify and document characteristics of Layer 2 Blockchain environments for EVM compatible public blockchains that will be key in addressing mainstream and enterprise adoption.
 
-The work is an [EEA Community Project](https://entethalliance.org/eeacommunityprojects/), which is managed by [OASIS](https://oasis-open-projects.org/).
+The work is an [Ethereum Community Project](https://entethalliance.org/eeacommunityprojects/), which is managed by [OASIS](https://oasis-open-projects.org/).
 
 ## 1.1 Overview
 ###### L2TFSPECOVERV
