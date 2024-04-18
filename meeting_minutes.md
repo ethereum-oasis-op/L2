@@ -1,5 +1,29 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 17 April 2024, 7:00 am PT
+
+Attending: Andreas Freund (EF), Karen Scarborough (EEA/Microsoft), Marny (Taiko), Dror Tirosh (EF)
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Discuss new discussion draft of article and WG feedback
+5. Review of updated draft of the L2 Transaction Fee API spec including review a draft of the full spec with requirements (PR#53)
+6. Review Open Issues
+7. Open Forum for other items
+
+Scribe: Andreas Freund
+
+Notes:
+- Welcome
+- Selected Scribe
+- Introduction of new participants: Marny from Taiko, Dror from EF's Account Abstraction initiative, and Karen, EEA Executive Director.
+- L2 Transaction Fee API
+  - Brief Review of data schema for the new participants.
+  - Controversially discussed the optional transparency requirements e.g. L2 Gas Price derivation method type, description and source parameters in the response body. Andreas pointed out that they serve as a  transparency scaffolding for client teams to address enterprise requirements, and relevant regulatory fee transparency requirements, but are not mandated at this point. Karen reemphasized the importance of transparency for enterprises, and the many misconceptions about L2s present outside of the immediate L2 ecosystem. Dror pointed out that there are potentially significant trust/security issues based on the chose price methods such as oracles or fee markets. Andreas pointed out that it will be up to the end user to make the decision as to the level of trust they put into a L2 client, as is already the case today.
+  - Dror pointed out that the API is not directly applicable for EIP-2771 (Meta Transactions) and EIP-4337 (Account Abstraction) User Actions at the level of the end user since fees are often paid by a Paymaster. Hence, the API would not be directly relevant for the end user, and has limited use in the case of transactions aggregated across multiple end user as in the case of relayer networks for account abstraction. Andreas said that he would update the scope of the specification to take the discussed limitation into account.
+  - There was no time left for additional agenda items, and the meeting adjourned.    
+
 ## Meeting Wed, 3 April 2024, 7:00 am PT
 
 Attending: Andreas Freund (EF), Derek (Offchain Labs), Landon Gingerich (Matter Labs), Carlos (Coinbase)
