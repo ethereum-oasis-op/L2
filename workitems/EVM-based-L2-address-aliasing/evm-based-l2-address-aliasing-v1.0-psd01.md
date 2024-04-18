@@ -1,5 +1,3 @@
-
-![OASIS Logo](../EVM-based-L2-address-aliasing/images/eea-symbol.png)
 -------
 
 # L2 Aliasing of EVM based Addresses Version 1.0
@@ -24,7 +22,7 @@ https://docs.oasis-open.org/baseline/baseline-core/v1.0/baseline-core-v1.0.pdf
 URI list end (commented out except during publication by OASIS TC Admin) -->
 
 #### Open Project:
-[Layer 2 Working Group](https://github.com/eea-oasis/L2), an initiative of [EEA Community Projects](https://entethalliance.org/eeacommunityprojects/)
+[Layer 2 Working Group](https://github.com/eea-oasis/L2), an initiative of [Ethereum Community Projects](https://entethalliance.org/eeacommunityprojects/)
 
 #### Project Chair:
 Dan Shaw (daniel.shaw@ethereum.org), [Ethereum Foundation](https://ethereum.org), Andreas Freund (a.freundhaskel@gmail.com), [Ethereum Foundation](https://ethereum.org)  
@@ -32,7 +30,7 @@ Dan Shaw (daniel.shaw@ethereum.org), [Ethereum Foundation](https://ethereum.org)
 #### Editors:
 Kelvin Fichter (kelvin@optimism.io)\
 Andreas Freund (a.freundhaskel@gmail.com)\
-Daniel Goldman (dgoldman@offchainlabs.com)
+Daniel Goldman (dgoldman@offchainlabs.com)\
 
 <!--
 #### Additional artifacts:
@@ -57,7 +55,7 @@ NA
 The document describes the minimal set of business and technical prerequisites, functional and non-functional requirements for Aliasing of EVM based Addresses that when implemented ensures that two or more Layer 1, Layer 2, or Sidechains can identify and translate EVM based addresses from different Layer 1, Layer 2, or Sidechains.
 
 #### Status:
-This document is no longer under active development. The L2 WG is looking for implementers of the specification to move the specification to Full Project Specification.
+This document is no longer under active development and is a Project Specification Draft as of April 2023. The L2 WG is looking for implementers of the specification to move the specification to Full Project Specification.
 
 <!--
 was last revised or approved by Baseline, part of the Ethereum OASIS Open Project, on the above date. The level of approval is also listed above. Check the "Latest stage" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Open Project (OP) are listed at [TBD].
@@ -117,7 +115,7 @@ The L2 WG is an open-source initiative with a scope to
 - For EVM compatible public blockchains, identify, document, and devise solution approaches for Layer 2 Blockchain scalability solution specific challenges such as MEV, block (gas) limits, TVL concentration, etc.
 - Identify and document characteristics of Layer 2 Blockchain environments for EVM compatible public blockchains that will be key in addressing mainstream and enterprise adoption.
 
-The work is an [EEA Community Project](https://entethalliance.org/eeacommunityprojects/), which is managed by [OASIS](https://oasis-open-projects.org/).
+The work is an [Ethereum Community Project](https://entethalliance.org/eeacommunityprojects/), which is managed by [OASIS](https://oasis-open-projects.org/).
 
 ## 1.1 Overview
 

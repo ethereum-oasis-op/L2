@@ -58,7 +58,7 @@ NA
 The document describes the minimal set of business and technical prerequisites, functional and non-functional requirements for Layer 2 Transaction Fees that when implemented ensures that Layer 2 solutions are transparently and consistently calculating and displaying transaction fees.
 
 #### Status:
-This document is under active development and implementers are advised against implementing the specification unless they are directly involved with L2 WG.
+This document is an official Project Specification Draft (PSD) as of April 17, 2024, per Project Governance Board vote. Once two reference implementations have been submitted, this PSD will be submitted as a final Project Specification.
 
 <!--
 was last revised or approved by Baseline, part of the Ethereum OASIS Open Project, on the above date. The level of approval is also listed above. Check the "Latest stage" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Open Project (OP) are listed at [TBD].
