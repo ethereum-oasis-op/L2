@@ -1,5 +1,9 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 1 May 2024, 7:00 am PT
+
+Canceled due to lack of attendance.
+
 ## Meeting Wed, 17 April 2024, 7:00 am PT
 
 Attending: Andreas Freund (EF), Karen Scarborough (EEA/Microsoft), Marny (Taiko), Dror Tirosh (EF)
