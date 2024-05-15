@@ -92,7 +92,7 @@ For complete copyright information please see the Notices section in the Appendi
 [2 Concepts and Design](#2-concepts-and-design) \
 [3 Layer 2 Transaction Fee API Specification](#3-layer-2-transaction-fees-specification) \
 &nbsp;&nbsp;&nbsp;&nbsp;[3.1 Layer 2 Transaction Fee API Data Schema ](#31-layer-2-transaction-fee-api-data-schema) \
-&nbsp;&nbsp;&nbsp;&nbsp;[3.2 Layer 2 Transaction Fee Transparency Requirements](#32-layer-2-transaction-fee-transparency-requirements)
+&nbsp;&nbsp;&nbsp;&nbsp;[3.2 Layer 2 Transaction Fee Transparency Requirements](#32-layer-2-transaction-fee-transparency-requirements) \
 [4 Conformance](#4-conformance) \
 &nbsp;&nbsp;&nbsp;&nbsp;[4.1 Conformance Targets](#41-conformance-targets) \
 &nbsp;&nbsp;&nbsp;&nbsp;[4.2 Conformance Levels](#42-conformance-levels)\
@@ -188,6 +188,12 @@ A digitally signed message sent from a Layer 2 account that contains instruction
 **Transaction Fee:**
 
 The fee in a Layer 2 network or protocol token to be paid by a transaction Originator or Transaction Sender comprised of the sum of an Execution Fee, a Data Fee and a Priority Fee.
+
+**Transaction Status:**
+
+The current stage of a Layer 2 transaction in its lifecycle from initial submission on the L2 to finalization on the L1.
+
+Note that the lifecycle stages can vary between different L2 types.
 
 
 ## 1.3 Typographical Conventions
@@ -602,7 +608,7 @@ For the `transactionCall` obbject
   - `from`: MUST be a valid blockchain address.
   - `to`: MUST be a valid blockchain address.
   - `gas`: MUST be a positive integer.
-  - `gasPrice`: MUST be a positive number.
+  - `gasPrice`: MUST be a positive integer.
   - `value`: MUST be a non-negative numeric value.
   - `input`: MUST be a valid hexadecimal string.
 - `transactionPriority`: MUST be one of a set of priority levels as defined by the L2 that provides the API implementation.
@@ -621,7 +627,7 @@ For the `transactionCall` obbject
      - `from`: A valid blockchain address.
      - `to`: A valid blockchain address.
      - `gas`: A positive integer representing gas.
-     - `gasPrice`: A positive number representing gas price.
+     - `gasPrice`: A non-negative integer representing gas price.
      - `value`: A non-negative numeric value.
      - `input`: A valid hexadecimal string.
    - `transactionPriority`: One of the priority levels defined by the L2.
@@ -741,7 +747,7 @@ The L2 Transaction Fee API request body has the following requirements:
 #### **[R5]**
 
 The L2 Transaction Fee API response body has the following requirements:
-- `transactionStatus`: MUST be one of "confirmed", "pending", or "failed".
+- `transactionStatus`: MUST be minimally one of the following: "finalized", "success", "pending", "replaced", "dropped" or "failed".
 - `totalL2TransactionFee`:
   - `value_currency`: MUST be a non-negative numeric value.
   - `value_gas`: MUST be a non-negative numeric value.
@@ -766,6 +772,18 @@ The L2 Transaction Fee API response body has the following requirements:
   - `l2PriorityGasPriceDerivationMethod`: MUST be a non-empty string.
   - `l2PriorityGasPriceDerivationMethodDescription`: MUST be a non-empty string.
   - `l2PriorityGasPriceDerivationMethodSource`: MUST be a non-empty string formatted as URI.
+
+We define the minimal set of transaction statuses as follows:
+
+- Pending: An L2 transaction submitted to an L2, and waiting to be processed
+- Replaced: An L2 transaction that was "Pending" was replaced by another L2 transaction
+- Dropped: An L2 transaction that was removed from the L2 processing queue
+- Success: A Pending L2 transaction has been included into an L2 block
+- Finalized: An L2 transaction included in a L2 block that has been finalized on an L1. 
+
+Note, that the first four statuses are analogous to L1 transaction statuses. Note also, that there is still the possibility of an L1 reorganization that could revert the status of an L2 transaction back to success. Also at the time of writing, there is no possibility of an L2 reorganization unless through a malicious attacker.
+
+Finally, more fine-grained statuses such as "Pending L1 Finalization" could be introduced to dliver more insights to end-user and improve the user experience.
 
 [[R5]](#r5) Testability:
 
