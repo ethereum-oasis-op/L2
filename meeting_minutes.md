@@ -1,5 +1,32 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 15 May 2024, 7:00 am PT
+
+Attending: Andreas Freund (EF), Landon Gingerich (Matter Labs), Mohammad (Skroll)
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Finalize WG article
+5. Collect approvals L2 Transaction Fee API spec PR (PR#53)
+6. Review Open Issues
+7. Open Forum for other items
+
+Scribe: Andreas Freund (AI aided)
+
+Notes:
+- Welcome
+- Selected Scribe
+- Introduction of new participants: Mohammad  from Skroll.
+- WG Article Finalization: Decided to finalize async through comments
+- L2 Transaction Fee API PR Approval:
+  - Review of PR content for new Participant in particular data schema and requirements.
+  - Discussed extensively that there is seemingly no standard definition of a transaction status for L2s, what it should look like and how to go about creating one, if none can be found
+- Meeting adjourned
+- **Action Items:**
+  - Andreas to research if there is a standard definition of a transaction status for L1s and L2s and report back during the next meeting and update PR.
+
+
 ## Meeting Wed, 1 May 2024, 7:00 am PT
 
 Canceled due to lack of attendance.
@@ -16,7 +43,7 @@ Attending: Andreas Freund (EF), Karen Scarborough (EEA/Microsoft), Marny (Taiko)
 6. Review Open Issues
 7. Open Forum for other items
 
-Scribe: Andreas Freund
+Scribe: Andreas Freund (AI aided)
 
 Notes:
 - Welcome
