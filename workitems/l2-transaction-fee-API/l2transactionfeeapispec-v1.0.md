@@ -105,6 +105,7 @@ For complete copyright information please see the Notices section in the Appendi
 [Appendix C - Acknowledgments](#appendix-c---acknowledgments)\
 [Appendix D - Revision History](#appendix-d---revision-history)\
 [Appendix E - Notices](#appendix-e---notices)
+
 -------
 # 1 Introduction
 ###### L2TFSPECINTRO
