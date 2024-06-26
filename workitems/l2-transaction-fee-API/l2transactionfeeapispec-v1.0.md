@@ -748,7 +748,8 @@ The L2 Transaction Fee API request body has the following requirements:
 #### **[R5]**
 
 The L2 Transaction Fee API response body has the following requirements:
-- `transactionStatus`: MUST be minimally one of the following: "finalized", "success", "pending", "replaced", "dropped" or "failed".
+
+- `transactionStatus`: MUST be a string. Note, give that there is no standardization on L2 Transaction statuses, the displayed string values will depend on the specific L2 client transaction status implementation.
 - `totalL2TransactionFee`:
   - `value_currency`: MUST be a non-negative numeric value.
   - `value_gas`: MUST be a non-negative numeric value.
@@ -773,18 +774,6 @@ The L2 Transaction Fee API response body has the following requirements:
   - `l2PriorityGasPriceDerivationMethod`: MUST be a non-empty string.
   - `l2PriorityGasPriceDerivationMethodDescription`: MUST be a non-empty string.
   - `l2PriorityGasPriceDerivationMethodSource`: MUST be a non-empty string formatted as URI.
-
-We define the minimal set of transaction statuses as follows:
-
-- Pending: An L2 transaction submitted to an L2, and waiting to be processed
-- Replaced: An L2 transaction that was "Pending" was replaced by another L2 transaction
-- Dropped: An L2 transaction that was removed from the L2 processing queue
-- Success: A Pending L2 transaction has been included into an L2 block
-- Finalized: An L2 transaction included in a L2 block that has been finalized on an L1. 
-
-Note, that the first four statuses are analogous to L1 transaction statuses. Note also, that there is still the possibility of an L1 reorganization that could revert the status of an L2 transaction back to success. Also at the time of writing, there is no possibility of an L2 reorganization unless through a malicious attacker.
-
-Finally, more fine-grained statuses such as "Pending L1 Finalization" could be introduced to dliver more insights to end-user and improve the user experience.
 
 [[R5]](#r5) Testability:
 
