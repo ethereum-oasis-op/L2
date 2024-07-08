@@ -1,5 +1,43 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 26 June 2024, 7:00 am PT
+
+Attending: Cody Burns (Accenture), Kelvin Fichter (Ops Labs), Andreas Freund (EF)
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Collect approvals L2 Transaction Fee API spec PR (PR#53)
+5. Discuss L2 Transaction Statuses (see here in the PR and also see discussion in the RollUp Call Telegram Channel)
+6. Review Open Issues
+7. Open Forum for other items
+
+Scribe: Andreas Freund (AI aided)
+
+Notes:
+
+- Welcome
+- Selected Scribe
+- Introduction of new participants: None
+- L2 Transaction Fee API PR Approval: 
+  - Cody approved the PR. Kelvin still needs to review and approve it.
+- L2 Transaction Status Discussion:
+  - After a discussion, WG participants agreed to update the spec requirement on the L2 transaction status in the GET API definition to only require it to be a string, and allow the specific status to be unique to an L2 client until a standard for L2 Transaction statuses has been created.
+  - Participants agreed to create an Eth Magician's post with suggested statuses and definitions and share with the ecosystem for feedback.
+
+Next steps:
+
+- Andreas will update the L2 Transaction Fee API spec PR to require the transaction status to be a string with a value depending on the specific L2 client before a standard naming convention with definitions has been agreed upon.
+- Andreas will post suggested status definitions on Eth Magician site for ecosystem feedback.
+
+## Meeting Wed, 12 June 2024, 7:00 am PT
+
+Canceled Due To Lack of Discussion Topics. L2 Transaction Fee API Spec and the L2 Keystore paper are ready for approvals, and, conversely, publication.
+
+## Meeting Wed, 29 May 2024, 7:00 am PT
+
+Canceled Due To Consensus 2024 Conference.
+
 ## Meeting Wed, 15 May 2024, 7:00 am PT
 
 Attending: Andreas Freund (EF), Landon Gingerich (Matter Labs), Mohammad (Skroll)
