@@ -1,5 +1,47 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 24 July 2024, 7:00 am PT
+
+Attending: Andreas Freund (EF), Landon Gingerich (Matter Labs), Sam Bacha (Manifold Finance)
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Collect approvals for [L2 Transaction Fee API spec PR](https://github.com/ethereum-oasis-op/L2/pull/53)
+5. Discuss L2 Transaction Statuses Work item: [Issue](https://github.com/ethereum-oasis-op/L2/issues/54) and [Eth Magician Post](https://ethereum-magicians.org/t/rip-idea-l2-transaction-status-standard/20511/5)
+6. Review Open Issues
+7. Open Forum for other items
+
+Scribe: Andreas Freund (AI aided)
+
+Notes:
+
+- Welcome
+- Selected Scribe: Andreas (with AI support)
+- Introduction of new participants: Sam Bacha
+- L2 Transaction Fee API PR Approval:
+  - Need to follow up with Offchain Labs, Ops Labs, and Metis for approvals.
+  - Sam agreed to review the PR and provide feedback.
+- L2 Transaction Status Proposal:
+  - The WG discussed the proposed standardized transaction statuses and their trust assumptions. Andreas emphasized the importance of standardizing the statuses across implementations while allowing for additional data based on specific client architectures. The discussion focused on the definitions and trust assumptions for different transaction statuses.
+  - Andreas explained the different statuses and guarantees associated with L.2 transactions. He also discussed the varying guarantees depending on the squencer's ordering protocol and whether it's centralized or decentralized. Furthermore, he explained that the L.2 transaction finalization guarantee is equivalent to an L.1 transaction finalization guarantee and a finalized L.1 block. However, he noted that the finalization guarantee depends on the consensus algorithm used.
+  - The WG did not believe that the current proposal needed any changes before a RollCall breakout session. Andreas agreed to organize such as session with the RollCall organizers. 
+- Open Items:
+  - Andreas and Sam discussed the inclusion of L2 transaction status in the return payload of the RPC method "getTransactionBySenderAndNonce". Sam explained that the method's initial purpose was for cross-chain communication, but it could also be useful for tracking transactions after system failures or detecting reorganizations. Andreas questioned how to distinguish between transactions dropped from the mempool versus reorganized, suggesting the need for archive nodes to retain transaction histories. WG agreed that knowing the reason for a missing transaction is important for deciding on the appropriate action.
+  - Andreas and Sam discussed the handling of replacement transactions by clients. Sam explained that clients generally don't evict transactions unless they're priced at least 10% higher or are conflicting views from different nodes. Andreas clarified that the decision depends on the builder and their view of the public and private Mempools. They also discussed potential contention when submitting transactions to multiple builders, but Sam stated that this doesn't often occur. The possibility of flash loan transactions causing issues was raised by Andreas.
+- Meeting Adjourned
+
+Next steps:
+
+- Andreas to propose a breakout session for the RollCall to discuss the L2 transaction statuses proposal.
+- Andreas to turn the L2 transaction statuses proposal into an RIP after the breakout session.
+- Sam to review the L2 Transaction Fee API spec and provide feedback.
+- Andreas to add Sam to the email list for regular updates.
+
+## Meeting Wed, 10 July 2024, 7:00 am PT
+
+Meeting Canceled because of EthCC Brussels
+
 ## Meeting Wed, 26 June 2024, 7:00 am PT
 
 Attending: Cody Burns (Accenture), Kelvin Fichter (Ops Labs), Andreas Freund (EF)
