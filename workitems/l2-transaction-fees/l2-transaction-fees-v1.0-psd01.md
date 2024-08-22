@@ -945,11 +945,11 @@ Test Passing Criteria: The test passes if,
 * The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account.
 
 
-#### **[R18]**
+#### **[R24]**
 
 If there is a Transaction Fee Refund, a Transaction Originator, a Transaction Sender and a Developer MUST be able to view a Transaction Fee Refund after an L2 Direct Transaction has been finalized on the L2.
 
-[[R18]](#r18) Testability: 
+[[R24]](#r24) Testability: 
 
 Preconditions:
 
@@ -971,11 +971,11 @@ Test Passing Criteria: The test passes if,
 * The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components displayed to the Transaction Originator, Transaction Sender, or Developer before submitting the Direct Transaction.
 * The Transaction Fee and its components displayed on the L2 match or are less than the Transaction Fee and its components charged to the Transaction Sender's account, if applicable.
 
-#### **[R19]**
+#### **[R25]**
 
 If there is a Transaction Fee Refund, an Intermediary and a Developer MUST be able to view a Transaction Fee Refund after an L2 Meta Transaction has been finalized on the L2.
 
-[[R19]](#r19) Testability: 
+[[R25]](#r25) Testability: 
 
 Preconditions:
 
@@ -999,11 +999,11 @@ Test Passing Criteria: The test passes if,
 * The Transaction Fee and its components displayed on the L2 are less than the Transaction Fee and its components displayed to the Intermediary and Develope before submitting the Meta Transaction.
 * The Transaction Fee and its components displayed on the L2 match the Transaction Fee and its components charged to the Transaction Sender's account.
 
-#### **[R20]**
+#### **[R26]**
 
 An L2 MUST provide an Intermediary with a capability to display the Transaction Fee and its components of an L2 Meta Transaction after it has been processed on the L2 to 3rd parties.
 
-[[R20]](#r20) Testability: 
+[[R26]](#r26) Testability: 
 
 Preconditions:
 
@@ -1029,11 +1029,11 @@ Test Passing Criteria:
 * The Intermediary is able to display the Transaction Fee and its components of the selected L2 Meta Transaction to a 3rd party.
 * The displayed Transaction Fee and its components match the actual Transaction Fee and its components of the selected L2 Meta Transaction as verified by the 3rd party.
 
-#### **[R21]**
+#### **[R27]**
 
 If there is a Transaction Fee Refund, an L2 MUST provide an Intermediary with a capability to display the Transaction Fee Refund of an L2 Meta Transaction to a 3rd party after it has been finalized on the L2.
 
-[[R21]](#r21) Testability:  
+[[R27]](#r27) Testability:  
 
 Preconditions:
 
@@ -1057,11 +1057,11 @@ Test Passing criteria:
 * The Intermediary is able to successfully retrieve and display the Transaction Fee Refund information for the requested L2 Meta Transaction.
 * The displayed Transaction Fee Refund information matches the expected values based on the L2 Meta Transaction.
 
-#### **[R22]**
+#### **[R28]**
 
 A Transaction Originator, a Transaction Sender and a Developer MUST be able to view a current Fee Price that a Transaction Fee calculation by the Transactions Sender or Transaction Originator can be based on. 
 
-[[R22]](#r22) Testability: 
+[[R28]](#r28) Testability: 
 
 Preconditions:
 
@@ -1086,11 +1086,11 @@ Test Passing criteria:
 In this section, the documents details Transaction Fee requirements for an L2 Transaction and its processing. 
 
 
-#### **[R23]**
+#### **[R29]**
 
 Every L2 Transaction MUST contain a Transaction Fee and its components.
 
-[[R23]](#r23) Testability: 
+[[R29]](#r29) Testability: 
 
 Preconditions:
 
@@ -1113,11 +1113,11 @@ Test Passing Criteria:
 * The L2 transaction contains a transaction fee and its components.
 * The transaction fee and its components remain present and accurate after the transaction is processed and finalized on the L2.
 
-#### **[R24]**
+#### **[R30]**
 
 Every L2 Block MUST contain one or more L2 account addresses to which the accumulated Transaction Fees in said L2 Block are transferred either whole or in proportion based on the specification of the L2 protocol.
 
-[[R24]](#r24) Testability: 
+[[R30]](#r30) Testability: 
 
 Preconditions:
 
@@ -1137,13 +1137,13 @@ Test Passing criteria:
 
 * Step 1, 2, and 3 must pass for all L2 blocks that have been finalized on the L2 that contain the test L2 transactions.
 
-#### **[R25]**
+#### **[R31]**
 
 If one or more L2 Transactions are reverted before they are finalized on the L2's Layer 1, the Transaction Fees in the affected Transactions MUST not be charged to the Transaction Senders.
 
 Note, that it is not important why an L2 Transaction has been reverted before it is finalized.
 
-[[R25]](#r25) Testability:  
+[[R31]](#r31) Testability:  
 
 Preconditions:
 
