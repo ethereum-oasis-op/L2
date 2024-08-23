@@ -1,5 +1,36 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 22 August 2024, 7:00 am PT
+
+Attending: Andreas Freund (EF), Nicolas Cosigny (EF), Dom (Skroll)
+
+1. Welcome, and a reminder of the WG meeting rule
+2. Selection of scribe
+3. Introduction of new participants
+4. Collect approvals for [L2 Transaction Fee API spec PR](https://github.com/ethereum-oasis-op/L2/pull/53)
+5. Discuss L2 Transaction Statuses Work item: [PR](https://github.com/ethereum-oasis-op/L2/pull/55), [Issue](https://github.com/ethereum-oasis-op/L2/issues/54) and [Eth Magician Post](https://ethereum-magicians.org/t/rip-idea-l2-transaction-status-standard/20511/5)
+6. Review Open Issues
+7. Open Forum for other items
+
+Scribe: Andreas Freund (AI aided)
+
+Notes:
+
+- Welcome
+- Selected Scribe: Andreas (with AI support)
+- Introduction of new participants: Sam Bacha
+- L2 Transaction Fee API PR Approval:
+  - Need to follow up with Offchain Labs, Ops Labs, and Metis for approvals.
+- L2 Transaction Status Proposal:
+  - The WG members reviewed again the proposed standardized transaction statuses, codes, and their trust assumptions.
+  - No changes requested
+  - No Open & Other items
+  - Meeting adjourned
+
+## Meeting Wed, 8 August 2024, 7:00 am PT
+
+Meeting canceled due to lack of attendance.
+
 ## Meeting Wed, 24 July 2024, 7:00 am PT
 
 Attending: Andreas Freund (EF), Landon Gingerich (Matter Labs), Sam Bacha (Manifold Finance)
