@@ -236,13 +236,24 @@ The Transaction Status Code MUST be an alphanumeric string of no more than 32 ch
 [[R1]](#r1) Testability: 
 
 **Test Preconditions:**
-...
+A valid L2 transaction has been processed by an L2 system and the corresponding Transaction Status Code is available.
 
 **Test Steps:**
-...
+
+1. Retrieve the Transaction Status Code from the L2 transaction API response.
+2. Verify the length of the Transaction Status Code:
+    - Ensure the code contains no more than 32 characters.
+3. Check the leading characters of the Transaction Status Code:
+    - Confirm that the first four characters are L2TS.
+4. Validate the remaining characters of the Transaction Status Code:
+    - Ensure the remaining characters (if any) are alphanumeric (letters and digits only).
 
 **Passing Criteria:**
-...
+
+1. The Transaction Status Code is retrieved successfully.
+2. The length of the Transaction Status Code is 32 characters or less.
+3. The first four characters of the Transaction Status Code are L2TS.
+4. All characters following L2TS (if any) are strictly alphanumeric.
 
 
 # 4 Conformance
