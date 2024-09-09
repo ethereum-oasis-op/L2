@@ -223,7 +223,7 @@ The minimal set of transaction statuses is defined as follows:
 7. **L2 Finalized, L1 Finalized** 
     - **Definition**: An L2 transaction included in a L2 block that has been included in a finalized L1 transaction. 
     - **Trust Assumption**: The L2 transaction finalization guarantee is equivalent to an L1 transaction finalization guarantee in a finalized L1 block.
-    - **Transaction Status Code**: `L2TS00600`
+    - **Transaction Status Code**: `L2TS00700`
 
 
 ## 3.2 Layer 2 Transaction Fee Transparency Requirements
