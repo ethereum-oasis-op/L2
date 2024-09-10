@@ -205,23 +205,23 @@ The minimal set of transaction statuses is defined as follows:
     - **Trust Assumption**: Same as L2 Pending
     - **Transaction Status Code**: `L2TS00200`
 3. **L2 Dropped**
-    - **Definition**: An L2 transaction that was removed from the L2 processing queue
+    - **Definition**: An L2 transaction that was removed from the L2 processing queue.
     - **Trust Assumption**: NA
     - **Transaction Status Code**: `L2TS00300`
-4. **L2 Confirmed** 
+4. **L2 Confirmed**
     - **Definition**: An L2 transaction processed by a sequencer and assigned an order in a proposed L2 block by the sequencer by applying an L2 client-specific L2 transaction ordering protocol
-    - **Trust Assumption**: The L2 transaction order guarantee is based on the security guarantee of the ordering protocol. Inclusion in finalized L2 and L1 blocks is not guaranteed
+    - **Trust Assumption**: The L2 transaction order guarantee is based on the security guarantee of the ordering protocol. Inclusion in finalized L2 and L1 blocks is not guaranteed.
     - **Transaction Status Code**: `L2TS00400`
 5. **L2 Included, L1 Pending**
-    - **Definition**: An L2 transaction included in an L2 block but not yet submitted to the L1 
-    - **Trust Assumption**: The L2 inclusion guarantee is dependent on the submission guarantee of the L2 block to the L1 and L1 Finalization
+    - **Definition**: An L2 transaction included in an L2 block but not yet submitted to the L1.
+    - **Trust Assumption**: The L2 inclusion guarantee is dependent on the submission guarantee of the L2 block to the L1 and the L1 finalization.
     - **Transaction Status Code**: `L2TS00500`
 6. **L2 Included, L1 Included**
-    - **Definition**: An L2 transaction included in an L2 block submitted to the L1 
-    - **Trust Assumption**: The L2 inclusion guarantee is dependent on L1 finalization
+    - **Definition**: An L2 transaction included in an L2 block included in an L1 block that is not yet L1 finalized.
+    - **Trust Assumption**: The L2 inclusion guarantee is dependent on the L1 block finalization containing the L2 block.
     - **Transaction Status Code**: `L2TS00600`
 7. **L2 Finalized, L1 Finalized** 
-    - **Definition**: An L2 transaction included in a L2 block that has been included in a finalized L1 transaction. 
+    - **Definition**: An L2 transaction included in a L2 block that has been included in a transaction in a finalized L1 block. 
     - **Trust Assumption**: The L2 transaction finalization guarantee is equivalent to an L1 transaction finalization guarantee in a finalized L1 block.
     - **Transaction Status Code**: `L2TS00700`
 
