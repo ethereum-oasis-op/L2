@@ -1,5 +1,17 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 02 October 2024, 7:00 am PT
+
+Joint Session with RollCall Group as a RollCall Breakout on L2 Transaction Statuses. Canceled due to lack of participation.
+
+## Meeting Wed, 18 September 2024, 7:00 am PT
+
+Canceled due to lack of action items.
+
+## Meeting Wed, 04 September 2024, 7:00 am PT
+
+Canceled due to lack of participation.
+
 ## Meeting Wed, 22 August 2024, 7:00 am PT
 
 Attending: Andreas Freund (EF), Nicolas Cosigny (EF), Dom (Skroll)
