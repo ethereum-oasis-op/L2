@@ -59,6 +59,7 @@ The WG primarily uses slack for real time communications. You can join our slack
 
 - [The Current State of Layer 2 Bridges](https://entethalliance.org/2023-02-28-state-of-l2-bridges/)
 - [Ethereum Layer 2 and Scalability Solutions for the Enterprise: An Update](https://entethalliance.org/wp-content/uploads/2023/12/ethereum_layer2_scalability_solutions_2023-12-21.pdf)
+- [Bringing Ecosystems Together: How W3C DIDs and VCs can help with Ethereum’s Three Transitions](https://entethalliance.org/w3cs-did-and-vc-technology-can-help-with-ethereums-three-transitions/)
 
 ### Content from Other Sources
 
