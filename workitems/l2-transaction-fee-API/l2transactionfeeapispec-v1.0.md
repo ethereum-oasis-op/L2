@@ -125,7 +125,7 @@ Layer 2 (L2) Transaction Fees are a crucial element of financing the operations 
 
 Given the above, the need for transparency in a open ecosystem to build trust, and the evolving legal and regulatory landscape around fee transparency and what type of fees can be charged, this document sets out to define an Application Programmable Interface (API) based on existing [L2 Transaction Fees Specification](https://github.com/eea-oasis/L2/tree/main/workitems/l2-transaction-fees/l2-transaction-fees-v1.0-psd01.md) to allow ecosystem participants .
 
-Note, that APIs for fees associated with asset and data bridges between L2 platforms as well as between L2 platforms and centralized exchanges are beyond the scope of this document. Further note, while this API is in scope for an entity submitting EIP-2771-type transactions, or EIP-4337-type transactions to a Layer 2, often called a Relayer, the API is out of scope for the entity submitting EIP-2771-type or EIP-4337-type transaction requests to a Relayer.   
+Note, that APIs for fees associated with asset and data bridges between L2 platforms as well as between L2 platforms and centralized exchanges are beyond the scope of this document. Further note, while this API is in scope for an entity submitting EIP-2771-type transactions, or EIP-4337-type transactions to a Layer 2, often called a Relayer, the API is out of scope for the entity submitting EIP-2771-type or EIP-4337-type transaction requests to a Relayer.Furthermore, L2 client-specific fees are also out of scope
 
 
 ## 1.2 Glossary
@@ -134,6 +134,10 @@ Note, that APIs for fees associated with asset and data bridges between L2 platf
 **Account:**
 
 A unit that is minimally comprised of a unique account identifier, a deterministic ordering parameter, also referred to as a nonce, a balance of a Layer 1, Layer 2 or Sidechain unit of exchange, also referred to as a protocol token. Changes to an account are controlled by a unique cryptographic public and private key pair. There are typically additional account elements referring to instructions and data associated to the account that determine account changes. 
+
+**Blob Gas:**
+
+A separate L1 gas fee and fee market, separate from the L1 gas fee for non-blob transactions introduced with EIP-1559  It is specifically designed for transactions that include blobs of data. These blobs are chunks of data introduced with the Ethereum Dencun upgrade under EIP-4844 to improve scalability, particularly for Layer 2 solutions.
 
 **Blockchain:**
 
@@ -378,7 +382,7 @@ paths:
                     l1GasPrice:
                       type: number
                       example: 100
-                      description: The Layer 1 gas price, expressed in GigaWei.
+                      description: The Layer 1 gas price, expressed in GigaWei. The gas price is either the gas price for L1 data or for L1 blob data, whichever price is cheaper.
                     l1GasPriceDerivationMethod:
                         type: string
                         description: The method used to derive the L1 gas price.
@@ -526,7 +530,7 @@ paths:
                     l1GasPrice:
                       type: number
                       example: 100
-                      description: The Layer 1 gas price, expressed in GigaWei.
+                      description: The Layer 1 gas price, expressed in GigaWei. The gas price is either the gas price for L1 data or for L1 blob data, whichever price is cheaper.
                     l1GasPriceDerivationMethod:
                         type: string
                         description: The method used to derive the L1 gas price.
