@@ -1,5 +1,13 @@
 # Meeting Minutes: Technical Specification of General Layer 2 Blockchain Scalability Solutions for EVM-compatible public Blockchains WG
 
+## Meeting Wed, 9 January 2025, 7:00 am PT
+
+Canceled due to lack of attendance.
+
+## Meeting Wed, 11 & 25 December 2024, 7:00 am PT
+
+Canceled due to holidays
+
 ## Meeting Wed, 27 November 2024, 7:00 am PT
 
 Attending: Andreas Freund (EF),  James Harsh, Nikola (Nethermind), Ohad Banta (Starknet), Jan Grozny (Zircuit), Nemanja (Eternal)
