@@ -35,7 +35,7 @@ A fee to be paid by the Transaction Originator or Transaction Sender sufficient 
 
 A fee to be paid by the Transaction Originator or Transaction Sender sufficient to cover the Layer 2 transaction fees excluding a Priority Fee and a Data Fee.
 
-**Externally Owned Account**
+**Externally Owned Account (EOA)**
 
 An Ethereum address that is controlled by a cryptographic private key.
 

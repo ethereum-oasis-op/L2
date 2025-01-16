@@ -34,7 +34,7 @@ The current work items the WG is focusing on is in the [Work Item folder](https:
 
 The WG currently meets every other Wednesday at 7 am PT / 10 am ET / 16:00 GMT.
 
-Please, reach out to Andreas Freund (a.freundhaskel@gmail.com) or Tas Dienes (tas.dienes@ethereum.org) or Dan Shaw (dshaw@ethereum.org) to be added to the meeting invite. You can add yourself to the mailing list by sending an email to this email -- eea-cp-l2+subscribe@lists.oasis-open-projects.org --, if interested to participate.
+Please, reach out to Andreas Freund (a.freundhaskel@gmail.com) or Tas Dienes (tas.dienes@ethereum.org) to be added to the meeting invite. You can add yourself to the mailing list by sending an email to this email -- ethereum-cp-l2+subscribe@lists.oasis-open-projects.org --, if interested to participate.
 
 The meeting minutes of all meetings can be found [here](https://github.com/ethereum-oasis-op/L2/blob/main/meeting_minutes.md).
 
@@ -60,6 +60,7 @@ The WG primarily uses slack for real time communications. You can join our slack
 - [The Current State of Layer 2 Bridges](https://entethalliance.org/2023-02-28-state-of-l2-bridges/)
 - [Ethereum Layer 2 and Scalability Solutions for the Enterprise: An Update](https://entethalliance.org/wp-content/uploads/2023/12/ethereum_layer2_scalability_solutions_2023-12-21.pdf)
 - [Bringing Ecosystems Together: How W3C DIDs and VCs can help with Ethereum’s Three Transitions](https://entethalliance.org/w3cs-did-and-vc-technology-can-help-with-ethereums-three-transitions/)
+- [Current State of Layer 2 Bridges: 2024](https://entethalliance.org/wp-content/uploads/2024/09/DLT-CaseStudy-Sept2024.pdf)
 
 ### Content from Other Sources
 
