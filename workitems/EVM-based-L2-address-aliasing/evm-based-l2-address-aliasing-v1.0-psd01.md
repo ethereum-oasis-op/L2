@@ -1,72 +1,37 @@
--------
 
+![OASIS Logo](http://docs.oasis-open.org/templates/OASISLogo-v2.0.jpg)
+-------
 # L2 Aliasing of EVM based Addresses Version 1.0
 
 ## Project Specification Draft
 
-<!-- URI list start (commented out except during publication by OASIS TC Admin)
-
-#### This stage:
-https://docs.oasis-open.org/baseline/baseline-core/v1.0/psd01/baseline-core-v1.0-psd01.md (Authoritative) \
-https://docs.oasis-open.org/baseline/baseline-core/v1.0/psd01/baseline-core-v1.0-psd01.html \
-https://docs.oasis-open.org/baseline/baseline-core/v1.0/psd01/baseline-core-v1.0-psd01.pdf
-
-#### Previous stage:
-N/A
-
-#### Latest stage:
-https://docs.oasis-open.org/baseline/baseline-core/v1.0/baseline-core-v1.0.md (Authoritative) \
-https://docs.oasis-open.org/baseline/baseline-core/v1.0/baseline-core-v1.0.html \
-https://docs.oasis-open.org/baseline/baseline-core/v1.0/baseline-core-v1.0.pdf
-
-URI list end (commented out except during publication by OASIS TC Admin) -->
-
 #### Open Project:
-[Layer 2 Working Group](https://github.com/eea-oasis/L2), an initiative of [Ethereum Community Projects](https://entethalliance.org/eeacommunityprojects/)
+[Layer 2 Working Group](https://github.com/eea-oasis/L2), an initiative of [Oasis Open Projects](https://www.oasis-open.org/open-projects/)
 
-#### Project Chair:
+### Project Chair:
 Dan Shaw (daniel.shaw@ethereum.org), [Ethereum Foundation](https://ethereum.org), Andreas Freund (a.freundhaskel@gmail.com), [Ethereum Foundation](https://ethereum.org)  
 
-#### Editors:
+### Editors:
 Kelvin Fichter (kelvin@optimism.io)\
 Andreas Freund (a.freundhaskel@gmail.com)\
 Daniel Goldman (dgoldman@offchainlabs.com)\
 
-<!--
-#### Additional artifacts:
-This prose specification is one component of a Work Product that also includes:
-* XML schemas: (list file names or directory name)
-* Other parts (list titles and/or file names)
-* `(Note: Any normative computer language definitions that are part of the Work Product, such as XML instances, schemas and Java(TM) code, including fragments of such, must be (a) well formed and valid, (b) provided in separate plain text files, (c) referenced from the Work Product; and (d) where any definition in these separate files disagrees with the definition found in the specification, the definition in the separate file prevails. Remove this note before submitting for publication.)`
- -->
-
 #### Related work:
-
-<!--
-This specification replaces or supersedes:
-* _Baseline Protocol Version 1.0_ - 
-* Specifications replaced by this specification (include hyperlink, preferably to HTML format)
- -->
 
 NA
 
-
-#### Abstract:
+### Abstract:
 The document describes the minimal set of business and technical prerequisites, functional and non-functional requirements for Aliasing of EVM based Addresses that when implemented ensures that two or more Layer 1, Layer 2, or Sidechains can identify and translate EVM based addresses from different Layer 1, Layer 2, or Sidechains.
 
-#### Status:
+### Status:
 This document is no longer under active development and is a Project Specification Draft as of April 2023. The L2 WG is looking for implementers of the specification to move the specification to Full Project Specification.
-
-<!--
-was last revised or approved by Baseline, part of the Ethereum OASIS Open Project, on the above date. The level of approval is also listed above. Check the "Latest stage" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Open Project (OP) are listed at [TBD].
--->
 
 Comments on this work can be provided by opening issues in the project repository.
 
-#### Keywords:
+### Keywords:
 The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [[RFC2119](#rfc2119)] when, and only when, they appear in all capitals, as shown here.
 
-#### Citation format:
+### Citation format:
 When referencing this specification the following citation format should be used:
 
 **[evm-based-l2-address-aliasing-v1.0]** _EVM based Address Aliasing Specification Version 1.0_. Edited by Kelvin Fichter, and Andreas Freund. 08 February 2023. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/EVM-based-L2-address-aliasing/evm-based-l2-address-aliasing-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/EVM-based-L2-address-aliasing/evm-based-l2-address-aliasing-v1.0-psd01.md.

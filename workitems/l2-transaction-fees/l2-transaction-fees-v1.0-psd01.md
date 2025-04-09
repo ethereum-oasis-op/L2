@@ -1,4 +1,5 @@
 
+![OASIS Logo](http://docs.oasis-open.org/templates/OASISLogo-v2.0.jpg)
 -------
 
 # Layer 2 Transaction Fee Specification Version 1.0
@@ -23,13 +24,13 @@ https://docs.oasis-open.org/baseline/baseline-core/v1.0/baseline-core-v1.0.pdf
 
 URI list end (commented out except during publication by OASIS TC Admin) -->
 
-#### Open Project:
-[Layer 2 Working Group](https://github.com/eea-oasis/L2), an initiative of [Ethereum Community Projects](https://entethalliance.org/eeacommunityprojects/)
+### Open Project:
+[Layer 2 Working Group](https://github.com/eea-oasis/L2), an initiative of [Oasis Open Projects](https://www.oasis-open.org/open-projects/)
 
-#### Project Chair:
+### Project Chair:
 Dan Shaw (daniel.shaw@ethereum.org), [Ethereum Foundation](https://ethereum.org), Andreas Freund (a.freundhaskel@gmail.com), [Ethereum Foundation](https://ethereum.org)  
 
-#### Editors:
+### Editors:
 Kelvin Fichter (kelvin@optimism.io)\
 Andreas Freund (a.freundhaskel@gmail.com)\
 Daniel Goldman (dgoldman@offchainlabs.com)\
@@ -43,7 +44,7 @@ This prose specification is one component of a Work Product that also includes:
 * `(Note: Any normative computer language definitions that are part of the Work Product, such as XML instances, schemas and Java(TM) code, including fragments of such, must be (a) well formed and valid, (b) provided in separate plain text files, (c) referenced from the Work Product; and (d) where any definition in these separate files disagrees with the definition found in the specification, the definition in the separate file prevails. Remove this note before submitting for publication.)`
  -->
 
-#### Related work:
+### Related work:
 
 <!--
 This specification replaces or supersedes:
@@ -54,10 +55,10 @@ This specification replaces or supersedes:
 NA
 
 
-#### Abstract:
+### Abstract:
 The document describes the minimal set of business and technical prerequisites, functional and non-functional requirements for Layer 2 Transaction Fees that when implemented ensures that Layer 2 solutions are transparently and consistently calculating and displaying transaction fees.
 
-#### Status:
+### Status:
 This document is an official Project Specification Draft (PSD) as of April 17, 2024, per Project Governance Board vote. Once two reference implementations have been submitted, this PSD will be submitted as a final Project Specification.
 
 <!--
@@ -66,10 +67,10 @@ was last revised or approved by Baseline, part of the Ethereum OASIS Open Projec
 
 Comments on this work can be provided by opening issues in the project repository.
 
-#### Keywords:
+### Keywords:
 The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [[RFC2119](#rfc2119)] when, and only when, they appear in all capitals, as shown here.
 
-#### Citation format:
+### Citation format:
 When referencing this specification the following citation format should be used:
 
 **[l2-transaction-fees-v1.0]** _Layer 2 Transaction Fees Version 1.0_. Edited by Kelvin Fichter, Andreas Freund, Daniel Goldman. 22 February 2023. OASIS Standard. https://github.com/eea-oasis/L2/tree/main/workitems/l2-transaction-fees/l2-transaction-fees-v1.0-psd01.md. Latest stage: https://github.com/eea-oasis/L2/tree/main/workitems/l2-transaction-fees/l2-transaction-fees-v1.0-psd01.md.
@@ -118,7 +119,7 @@ The L2 WG is an open-source initiative with a scope to
 - For EVM compatible public blockchains, identify, document, and devise solution approaches for Layer 2 Blockchain scalability solution specific challenges such as MEV, block (gas) limits, TVL concentration, etc.
 - Identify and document characteristics of Layer 2 Blockchain environments for EVM compatible public blockchains that will be key in addressing mainstream and enterprise adoption.
 
-The work is an [Ethereum Community Project](https://entethalliance.org/eeacommunityprojects/), which is managed by [OASIS](https://oasis-open-projects.org/).
+The work is an [Oasis Open Project](https://oasis-open-projects.org/).
 
 ## 1.1 Overview
 ###### L2TFSPECOVERV
