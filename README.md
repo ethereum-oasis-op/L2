@@ -1,4 +1,6 @@
-# Welcome to the Ethereum OASIS L2 Project
+_The Ethereum OASIS Open Project and this Working Group closed on May 31, 2025. The open source assets remain publicly accessible. Pleae visit [docs.oasis-open.org/ethereum/layer2/](https://docs.oasis-open.org/ethereum/layer2/) for appoved and published Project Specification Drafts. OASIS appreciates the efforts of all those who participated in this work._
+
+## Welcome to the Ethereum OASIS L2 Project
 ### Also known as the Technical Specification of Layer 2 Blockchain Scalability Solutions for Ethereum Virtual Machine Compatible Public Blockchains Project
 
 <br></br>
